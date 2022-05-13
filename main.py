@@ -27,7 +27,7 @@ async def on_ready():
     print('------')
 
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching,
-                                                        name="for commands in The Quester's Rest. Type /help."))
+                                                        name="over The Quester's Rest. Type /help ."))
 
 
 @bot.slash_command(name="help", description="Get help for using the bot.", guild_ids=[guild_id])
@@ -40,8 +40,7 @@ async def help(ctx):
     '''
 
     embed = create_embed(title="Collapsus v2 Help", description=description, color=discord.Color.green(),
-                         image=logo_url, url=website_url,
-                         footer="© CompuGenius Programs. All rights reserved.")
+                         image=logo_url, url=website_url)
     await ctx.respond(embed=embed)
 
 
@@ -62,7 +61,8 @@ async def parse_quests(ctx):
     with open("quests.json", "w+", encoding="utf-8") as fp:
         json.dump(data, fp, indent=4)
 
-    await ctx.followup.send("%i Quests Parsed Successfully" % len(quests))
+    embed = create_embed("%i Quests Parsed Successfully" % len(quests), None, discord.Color.green())
+    await ctx.followup.send(embed=embed)
 
 
 @bot.slash_command(name="quest_info", description="Sends info about a quest.", guild_ids=[guild_id])
@@ -78,7 +78,7 @@ async def quest_info(ctx, quest_number: Option(int, "Quest Number (1-184)", requ
     color = discord.Color.gold() if quest.story else discord.Color.green()
     embed = create_embed(
         title,
-        None, color, "Pre-reqs: %s" % quest.prerequisite
+        None, color,
     )
     if quest.location != "":
         embed.add_field(name="Location", value=quest.location, inline=False)
@@ -89,11 +89,13 @@ async def quest_info(ctx, quest_number: Option(int, "Quest Number (1-184)", requ
     if quest.reward != "":
         embed.add_field(name="Reward", value=quest.reward, inline=False)
     embed.add_field(name="Repeat", value="Yes" if quest.repeat else "No", inline=False)
+    embed.add_field(name="Pre-reqs", value=quest.prerequisite, inline=False)
 
     await ctx.respond(embed=embed)
 
 
-def create_embed(title, description, color, footer, image="", *, url="", author="", author_url=""):
+def create_embed(title, description, color, footer="© CompuGenius Programs. All rights reserved.", image="", *, url="",
+                 author="", author_url=""):
     embed = discord.Embed(title=title, description=description, url=url, color=color)
     embed.set_footer(text=footer)
     embed.set_thumbnail(url=image)

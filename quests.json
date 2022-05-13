@@ -7,9 +7,9 @@
             "location": "Angel Falls (Girl in front of the church)",
             "request": "Bring her a Tangleweb.",
             "solution": "",
-            "reward": "Sleeping Hibiscus (same for repeat).",
+            "reward": "Sleeping Hibiscus (Same for repeat).",
             "prerequisite": "None",
-            "repeat": false
+            "repeat": true
         },
         {
             "number": 2,

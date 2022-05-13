@@ -50,7 +50,8 @@ async def parse_quests(ctx):
 
     quests = []
     channel = bot.get_channel(quests_channel)
-    for thread in channel.threads:
+    archived_threads = await channel.archived_threads().flatten()
+    for thread in archived_threads:
         messages = await thread.history(oldest_first=True).flatten()
         for message in messages:
             quests.append(parsers.parse_regex(parsers.Quest, message.content))

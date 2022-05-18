@@ -43,7 +43,7 @@ async def help(ctx):
 
     `/quest_info [Quest Number]` | Displays all info for a specific quest
     
-    `/grotto_info [Material]` [Environment] [Suffix] [Level] <Location>` | Displays all grotto info for a name combination
+    `/grotto_info [Material] [Environment] [Suffix] [Level] <Location>` | Displays all grotto info for a name combination
     
     `/help` | Displays this message
     '''

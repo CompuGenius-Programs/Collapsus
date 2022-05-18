@@ -103,9 +103,9 @@ async def quest_info(ctx, quest_number: Option(int, "Quest Number (1-184)", requ
 
 @bot.slash_command(name="grotto_info", description="Sends info about a grotto.", guild_ids=[guild_id])
 async def quest_info(ctx,
-                     material: Option(str, "Material (Ex. Granite)", required=True),
-                     environment: Option(str, "Environment (Ex. Tunnel)", required=True),
-                     suffix: Option(str, "Suffix (Ex. Woe)", required=True),
+                     material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
+                     environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments, required=True),
+                     suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
                      level: Option(int, "Level (Ex. 1)", required=True),
                      location: Option(str, "Location (Ex. 05)", required=False)):
     async with aiohttp.ClientSession() as session:

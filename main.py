@@ -117,7 +117,7 @@ async def quest_info(ctx,
             "level": str(level),
         }
 
-        if location != "":
+        if location is not None:
             params["loc"] = str(int(location, base=16))
 
         async with session.get(grotto_search_url, params=params) as response:

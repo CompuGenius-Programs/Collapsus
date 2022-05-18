@@ -40,9 +40,12 @@ async def help(ctx):
     description = '''
     A bot created by <@496392770374860811> for The Quester's Rest.
 
-    /quest_info [Quest Number (1-184)] | Displays all info for a specific quest
-    /grotto_info [Material (Ex. Granite)] [Environment (Ex. Tunnel)] [Suffix (Ex. Woe)] [Level (Ex. 1)] <Location (Ex. 05)>
-    /help | Displays this message
+
+    `/quest_info [Quest Number]` | Displays all info for a specific quest
+    
+    `/grotto_info [Material]` [Environment] [Suffix] [Level] <Location>` | Displays all grotto info for a name combination
+    
+    `/help` | Displays this message
     '''
 
     embed = create_embed(title="Collapsus v2 Help", description=description, color=discord.Color.green(),

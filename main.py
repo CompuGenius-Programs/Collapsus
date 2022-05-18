@@ -115,8 +115,10 @@ async def quest_info(ctx,
             "envname": str(parsers.grotto_environments.index(environment.title()) + 1),
             "suffix": str(parsers.grotto_suffixes.index(suffix.title()) + 1),
             "level": str(level),
-            "loc": str(int(location, base=16))
         }
+
+        if location != "":
+            params["loc"] = str(int(location, base=16))
 
         async with session.get(grotto_search_url, params=params) as response:
             text = await response.text()

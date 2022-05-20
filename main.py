@@ -42,9 +42,11 @@ async def help(ctx):
     A bot created by <@496392770374860811> for The Quester's Rest.
 
 
-    `/quest_info [Quest Number]` | Displays all info for a specific quest
+    `/quest [Quest Number]` | Displays all info for a specific quest
     
-    `/grotto_info [Material] [Environment] [Suffix] [Level] <Location>` | Displays all grotto info for a name combination
+    `/grotto [Material] [Environment] [Suffix] [Level] <Location>` | Displays all grotto info for a name combination
+    
+    `/recipe [Creation]` | Displays all info for a recipe
     
     `/help` | Displays this message
     '''
@@ -75,8 +77,8 @@ async def parse_quests(ctx):
     await ctx.followup.send(embed=embed)
 
 
-@bot.slash_command(name="quest_info", description="Sends info about a quest.")
-async def quest_info(ctx, quest_number: Option(int, "Quest Number (1-184)", required=True)):
+@bot.slash_command(name="quest", description="Sends info about a quest.")
+async def quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required=True)):
     with open("quests.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
@@ -101,8 +103,8 @@ async def quest_info(ctx, quest_number: Option(int, "Quest Number (1-184)", requ
     await ctx.respond(embed=embed)
 
 
-@bot.slash_command(name="alchemy_info", description="Sends info about a recipe.")
-async def quest_info(ctx, creation_name: Option(str, "Name of creation (Ex. Special Medicine)", required=True)):
+@bot.slash_command(name="recipe", description="Sends info about a recipe.")
+async def recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine)", required=True)):
     with open("recipes.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
@@ -129,8 +131,8 @@ async def quest_info(ctx, creation_name: Option(str, "Name of creation (Ex. Spec
     await ctx.respond(embed=embed)
 
 
-@bot.slash_command(name="grotto_info", description="Sends info about a grotto.", guild_ids=[guild_id])
-async def quest_info(ctx,
+@bot.slash_command(name="grotto", description="Sends info about a grotto.", guild_ids=[guild_id])
+async def grotto(ctx,
                      material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
                      environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments, required=True),
                      suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),

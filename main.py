@@ -133,11 +133,12 @@ async def recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine
 
 @bot.slash_command(name="grotto", description="Sends info about a grotto.", guild_ids=[guild_id])
 async def grotto(ctx,
-                     material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
-                     environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments, required=True),
-                     suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
-                     level: Option(int, "Level (Ex. 1)", required=True),
-                     location: Option(str, "Location (Ex. 05)", required=False)):
+                 material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
+                 environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
+                                     required=True),
+                 suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
+                 level: Option(int, "Level (Ex. 1)", required=True),
+                 location: Option(str, "Location (Ex. 05)", required=False)):
     async with aiohttp.ClientSession() as session:
         params = {
             "search": "Search",
@@ -175,10 +176,9 @@ async def grotto(ctx,
                             value = ":star: %s :star:" % value
                         embed.title = value
                     else:
-                        if key == "Chests (S - I)":
-                            ranks = ["**S**", "**A**", "**B**", "**C**", "**D**", "**E**", "**F**", "**G**", "**H**", "**I**"]
+                        if key == "Chests":
                             values = [str(x) for x in parsed[i:i + 10]]
-                            chests = list(zip(ranks, values))
+                            chests = list(zip(parsers.grotto_ranks, values))
                             value = ", ".join([': '.join(x) for x in chests])
                         embed.add_field(name=key, value=value, inline=False)
                 embed.url = str(response.url)
@@ -199,7 +199,8 @@ async def grotto(ctx,
             await ctx.respond(embed=embed)
 
 
-def create_embed(title, description=None, color=discord.Color.green(), footer="© CompuGenius Programs. All rights reserved.", image="", *, url="",
+def create_embed(title, description=None, color=discord.Color.green(),
+                 footer="© CompuGenius Programs. All rights reserved.", image="", *, url="",
                  author="", author_url=""):
     embed = discord.Embed(title=title, description=description, url=url, color=color)
     embed.set_footer(text=footer)

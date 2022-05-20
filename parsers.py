@@ -1,6 +1,5 @@
 import re
-from dataclasses import dataclass, field
-from typing import Dict
+from dataclasses import dataclass
 
 from dataclasses_json import dataclass_json
 
@@ -11,14 +10,14 @@ class Recipe:
     """Class for a recipe."""
     type: str = ""
     result: str = ""
-    qty1: int = 0
-    item1: str = ""
-    qty2: int = 0
-    item2: str = ""
-    qty3: int = 0
-    item3: str = ""
+    qty1: int = None
+    item1: str = None
+    qty2: int = None
+    item2: str = None
+    qty3: int = None
+    item3: str = None
     alchemiracle: bool = False
-    notes: str = ""
+    notes: str = None
 
 
 @dataclass_json
@@ -35,36 +34,6 @@ class Quest:
     prerequisite: str = ""
     repeat: bool = False
 
-
-@dataclass
-class Grotto:
-    """Class for a grotto."""
-    seed: str = ""
-    rank: str = ""
-    name: str = ""
-    boss: str = ""
-    type: str = ""
-    floors: int = 0
-    monster_rank: str = ""
-    chests: Dict[str, int] = field(default_factory=dict)
-    locations: int = 0
-    grotto_special: bool = False
-
-
-grotto_bosses = [
-    "Equinox",
-    "Nemean",
-    "Shogum",
-    "Trauminator",
-    "Elusid",
-    "Sir Sanguinus",
-    "Atlas",
-    "Hammibal",
-    "Fowleye",
-    "Excalipurr",
-    "Tyrannosaurus Wrecks",
-    "Greygnarl"
-]
 
 grotto_prefixes = [
     "Clay",
@@ -131,18 +100,12 @@ grotto_suffixes = [
     "Death"
 ]
 
-grotto_types = [
-    "Caves",
-    "Ruins",
-    "Ice",
-    "Water",
-    "Fire"
-]
-
 grotto_special = "Has a special floor"
 grotto_keys = ("Seed", "Rank", "Name",
                "Boss", "Type", "Floors",
-               "Monster Rank", "Chests (S - I)")
+               "Monster Rank", "Chests")
+
+grotto_ranks = ["**S**", "**A**", "**B**", "**C**", "**D**", "**E**", "**F**", "**G**", "**H**", "**I**"]
 
 quests_regex = r'^(?:(?:(⭐) )?\*\*Quest #(\d+) - (.+)\*\*(?: \1)?(?:```yml)?|(\w+): (.+?)(?:```)?)$'
 grotto_cleanup_regex = r'([\w\d\.\-:/() ]+)'
@@ -181,8 +144,7 @@ def create_grotto(datas):
                 for i, converter in enumerate(converters):
                     try:
                         converted = converter(stripped)
-                    except Exception:
-                        converted = None
+                    except:
                         continue
                     else:
                         if isinstance(converted, str):
@@ -212,9 +174,6 @@ def parse_regex(type, string):
         regex = quests_regex
 
     matches = re.findall(regex, string, flags=re.MULTILINE)
-
-    # for match in matches:
-    #     print(match)
 
     if type == Quest:
         number = int(matches[0][1])

@@ -7,6 +7,7 @@ import dotenv
 from discord import Option
 from discord.ext.pages import Paginator, Page
 from parsel import Selector
+from titlecase import titlecase
 
 import parsers
 
@@ -35,7 +36,7 @@ async def on_ready():
                                                         name="over The Quester's Rest. Type /help ."))
 
 
-@bot.slash_command(name="help", description="Get help for using the bot.", guild_ids=[guild_id])
+@bot.slash_command(name="help", description="Get help for using the bot.")
 async def help(ctx):
     description = '''
     A bot created by <@496392770374860811> for The Quester's Rest.
@@ -48,12 +49,11 @@ async def help(ctx):
     `/help` | Displays this message
     '''
 
-    embed = create_embed(title="Collapsus v2 Help", description=description, color=discord.Color.green(),
-                         image=logo_url, url=website_url)
+    embed = create_embed("Collapsus v2 Help", description=description, image=logo_url, url=website_url)
     await ctx.respond(embed=embed)
 
 
-@bot.slash_command(name="parse_quests", description="Parses the quests.", guild_ids=[guild_id])
+@bot.slash_command(name="parse_quests", description="Parses the quests.")
 async def parse_quests(ctx):
     await ctx.defer()
 
@@ -71,11 +71,11 @@ async def parse_quests(ctx):
     with open("quests.json", "w+", encoding="utf-8") as fp:
         json.dump(data, fp, indent=4)
 
-    embed = create_embed("%i Quests Parsed Successfully" % len(quests), None, discord.Color.green())
+    embed = create_embed("%i Quests Parsed Successfully" % len(quests))
     await ctx.followup.send(embed=embed)
 
 
-@bot.slash_command(name="quest_info", description="Sends info about a quest.", guild_ids=[guild_id])
+@bot.slash_command(name="quest_info", description="Sends info about a quest.")
 async def quest_info(ctx, quest_number: Option(int, "Quest Number (1-184)", required=True)):
     with open("quests.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
@@ -86,10 +86,7 @@ async def quest_info(ctx, quest_number: Option(int, "Quest Number (1-184)", requ
     title = ":star: Quest #%i - %s :star:" % (quest.number, quest.name) if quest.story \
         else "Quest #%i - %s" % (quest.number, quest.name)
     color = discord.Color.gold() if quest.story else discord.Color.green()
-    embed = create_embed(
-        title,
-        None, color,
-    )
+    embed = create_embed(title, color=color)
     if quest.location != "":
         embed.add_field(name="Location", value=quest.location, inline=False)
     if quest.request != "":
@@ -104,6 +101,34 @@ async def quest_info(ctx, quest_number: Option(int, "Quest Number (1-184)", requ
     await ctx.respond(embed=embed)
 
 
+@bot.slash_command(name="alchemy_info", description="Sends info about a recipe.")
+async def quest_info(ctx, creation_name: Option(str, "Name of creation (Ex. Special Medicine)", required=True)):
+    with open("recipes.json", "r", encoding="utf-8") as fp:
+        data = json.load(fp)
+
+    recipes = data["recipes"]
+    recipe = parsers.Recipe.from_dict(next((x for x in recipes if x["result"] == creation_name.lower()), None))
+
+    if recipe is None:
+        embed = create_embed("No recipe found. Please check spelling and try again.")
+        return await ctx.respond(embed=embed)
+
+    title = ":star: %s :star:" % titlecase(recipe.result) if recipe.alchemiracle else "%s" % titlecase(recipe.result)
+    color = discord.Color.gold() if recipe.alchemiracle else discord.Color.green()
+    embed = create_embed(title, color=color)
+    embed.add_field(name="Type", value=recipe.type, inline=False)
+    if recipe.item1 is not None:
+        embed.add_field(name="Item 1", value="%ix %s" % (recipe.qty1, titlecase(recipe.item1)), inline=False)
+    if recipe.item2 is not None:
+        embed.add_field(name="Item 2", value="%ix %s" % (recipe.qty2, titlecase(recipe.item2)), inline=False)
+    if recipe.item3 is not None:
+        embed.add_field(name="Item 3", value="%ix %s" % (recipe.qty3, titlecase(recipe.item3)), inline=False)
+    if recipe.notes is not None:
+        embed.add_field(name="Notes", value="%s" % recipe.notes, inline=False)
+
+    await ctx.respond(embed=embed)
+
+
 @bot.slash_command(name="grotto_info", description="Sends info about a grotto.", guild_ids=[guild_id])
 async def quest_info(ctx,
                      material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
@@ -114,9 +139,9 @@ async def quest_info(ctx,
     async with aiohttp.ClientSession() as session:
         params = {
             "search": "Search",
-            "prefix": str(parsers.grotto_prefixes.index(material.title()) + 1),
-            "envname": str(parsers.grotto_environments.index(environment.title()) + 1),
-            "suffix": str(parsers.grotto_suffixes.index(suffix.title()) + 1),
+            "prefix": str(parsers.grotto_prefixes.index(titlecase(material)) + 1),
+            "envname": str(parsers.grotto_environments.index(titlecase(environment)) + 1),
+            "suffix": str(parsers.grotto_suffixes.index(titlecase(suffix)) + 1),
             "level": str(level),
         }
 
@@ -135,7 +160,7 @@ async def quest_info(ctx,
             for parsed in parsers.create_grotto(grottos):
                 special = parsers.is_special(parsed)
                 color = discord.Color.gold() if special else discord.Color.green()
-                embed = create_embed(None, None, color)
+                embed = create_embed(None, color=color)
 
                 if special:
                     parsed = parsed[1:]
@@ -160,7 +185,7 @@ async def quest_info(ctx,
             if len(entries) == 1:
                 embed = entries[0]
             elif len(entries) == 0:
-                embed = create_embed("Invalid Grotto", None, discord.Color.green())
+                embed = create_embed("No grotto found. Please check parameters and try again.")
 
         if len(entries) > 1:
             pages = []
@@ -172,7 +197,7 @@ async def quest_info(ctx,
             await ctx.respond(embed=embed)
 
 
-def create_embed(title, description, color, footer="© CompuGenius Programs. All rights reserved.", image="", *, url="",
+def create_embed(title, description=None, color=discord.Color.green(), footer="© CompuGenius Programs. All rights reserved.", image="", *, url="",
                  author="", author_url=""):
     embed = discord.Embed(title=title, description=description, url=url, color=color)
     embed.set_footer(text=footer)

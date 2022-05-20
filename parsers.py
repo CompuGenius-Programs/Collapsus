@@ -7,6 +7,22 @@ from dataclasses_json import dataclass_json
 
 @dataclass_json
 @dataclass
+class Recipe:
+    """Class for a recipe."""
+    type: str = ""
+    result: str = ""
+    qty1: int = 0
+    item1: str = ""
+    qty2: int = 0
+    item2: str = ""
+    qty3: int = 0
+    item3: str = ""
+    alchemiracle: bool = False
+    notes: str = ""
+
+
+@dataclass_json
+@dataclass
 class Quest:
     """Class for a quest."""
     number: int = 0
@@ -20,7 +36,6 @@ class Quest:
     repeat: bool = False
 
 
-@dataclass_json
 @dataclass
 class Grotto:
     """Class for a grotto."""

@@ -83,7 +83,11 @@ async def quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required=
         data = json.load(fp)
 
     quests = data["quests"]
-    quest = parsers.Quest.from_dict(quests[quest_number - 1])
+    index = quest_number - 1
+    if index > len(quests) or index < 0:
+        return await ctx.respond("Invalid quest. Please check number and try again.")
+
+    quest = parsers.Quest.from_dict(quests[index])
 
     title = ":star: Quest #%i - %s :star:" % (quest.number, quest.name) if quest.story \
         else "Quest #%i - %s" % (quest.number, quest.name)
@@ -109,11 +113,13 @@ async def recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine
         data = json.load(fp)
 
     recipes = data["recipes"]
-    recipe = parsers.Recipe.from_dict(next((x for x in recipes if x["result"] == creation_name.lower()), None))
+    index = next(filter(lambda r: r["result"] == creation_name.lower(), recipes), None)
 
-    if recipe is None:
+    if index is None:
         embed = create_embed("No recipe found. Please check spelling and try again.")
         return await ctx.respond(embed=embed)
+
+    recipe = parsers.Recipe.from_dict(index)
 
     title = ":star: %s :star:" % titlecase(recipe.result) if recipe.alchemiracle else "%s" % titlecase(recipe.result)
     color = discord.Color.gold() if recipe.alchemiracle else discord.Color.green()

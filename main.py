@@ -84,7 +84,7 @@ async def quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required=
 
     quests = data["quests"]
     index = quest_number - 1
-    if index > len(quests) or index < 0:
+    if index >= len(quests) or index < 0:
         return await ctx.respond("Invalid quest. Please check number and try again.")
 
     quest = parsers.Quest.from_dict(quests[index])

@@ -35,6 +35,37 @@ class Quest:
     repeat: bool = False
 
 
+@dataclass_json
+@dataclass
+class Monster:
+    """Class for a monster."""
+    number: int = 0
+    num_str: str = ""
+    level: int = 0
+    name: str = ""
+    exp: int = 0
+    gold: int = 0
+    family: str = ""
+    hp: int = 0
+    mp: int = 0
+    atk: int = 0
+    defn: int = 0
+    agi: int = 0
+    fire: int = 0
+    ice: int = 0
+    wind: int = 0
+    blast: int = 0
+    earth: int = 0
+    dark: int = 0
+    light: int = 0
+    dazzle: int = 0
+    sleep: int = 0
+    death: int = 0
+    haunts: str = ""
+    drop1: str = ""
+    drop2: str = ""
+
+
 grotto_prefixes = [
     "Clay",
     "Rock",
@@ -108,7 +139,7 @@ grotto_keys = ("Seed", "Rank", "Name",
 grotto_ranks = ["**S**", "**A**", "**B**", "**C**", "**D**", "**E**", "**F**", "**G**", "**H**", "**I**"]
 
 quests_regex = r'^(?:(?:(⭐) )?\*\*Quest #(\d+) - (.+)\*\*(?: \1)?(?:```yml)?|(\w+): (.+?)(?:```)?)$'
-grotto_cleanup_regex = r'([\w\d\.\-:/() ]+)'
+cleanup_regex = r'([\w\d\.\-:/() ]+)'
 
 
 def _hex(value):
@@ -135,7 +166,7 @@ def create_grotto(datas):
     ye = []
 
     for data in datas:
-        match_found = re.compile(grotto_cleanup_regex).match(data)
+        match_found = re.compile(cleanup_regex).match(data)
 
         if match_found:
             stripped = str.strip(match_found.group(), "' ")

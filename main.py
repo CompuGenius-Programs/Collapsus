@@ -24,6 +24,8 @@ website_url = "https://dq9.carrd.co"
 
 grotto_search_url = "https://www.yabd.org/apps/dq9/grottosearch.php"
 
+monster_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/monster/%s.webp"
+
 
 @bot.event
 async def on_ready():
@@ -39,17 +41,17 @@ async def on_ready():
 @bot.slash_command(name="help", description="Get help for using the bot.")
 async def help(ctx):
     description = '''
-    A bot created by <@496392770374860811> for The Quester's Rest.
+A bot created by <@496392770374860811> for The Quester's Rest.
 
 
-    `/quest [Quest Number]` | Displays all info for a specific quest
-    
-    `/grotto [Material] [Environment] [Suffix] [Level] <Location>` | Displays all grotto info for a name combination
-    
-    `/recipe [Creation]` | Displays all info for a recipe
-    
-    `/help` | Displays this message
-    '''
+`/quest [Quest Number]` | Displays all info for a specific quest
+
+`/grotto [Material] [Environment] [Suffix] [Level] <Location>` | Displays all grotto info for a name combination
+
+`/recipe [Creation]` | Displays all info for a recipe
+
+`/help` | Displays this message
+'''
 
     embed = create_embed("Collapsus v2 Help", description=description, image=logo_url, url=website_url)
     await ctx.respond(embed=embed)
@@ -78,7 +80,7 @@ async def parse_quests(ctx):
 
 
 @bot.slash_command(name="quest", description="Sends info about a quest.")
-async def quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required=True)):
+async def _quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required=True)):
     with open("quests.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
@@ -109,7 +111,7 @@ async def quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required=
 
 
 @bot.slash_command(name="recipe", description="Sends info about a recipe.")
-async def recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine)", required=True)):
+async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine)", required=True)):
     with open("recipes.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
@@ -122,7 +124,7 @@ async def recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine
 
     recipe = parsers.Recipe.from_dict(index)
 
-    title = ":star: %s :star:" % titlecase(recipe.result) if recipe.alchemiracle else "%s" % titlecase(recipe.result)
+    title = ":star: %s :star:" % titlecase(recipe.result) if recipe.alchemiracle else titlecase(recipe.result)
     color = discord.Color.gold() if recipe.alchemiracle else discord.Color.green()
     embed = create_embed(title, color=color)
     embed.add_field(name="Type", value=recipe.type, inline=False)
@@ -138,14 +140,74 @@ async def recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine
     await ctx.respond(embed=embed)
 
 
+@bot.slash_command(name="monster", description="Sends info about a monster.")
+async def _monster(ctx,
+                   monster_name: Option(str, "Monster Name (Ex. Slime)", required=False),
+                   monster_number: Option(int, "Monster Number (Ex. 1)", required=False)):
+    with open("monsters.json", "r", encoding="utf-8") as fp:
+        data = json.load(fp)
+
+    monsters = data["monsters"]
+    if monster_name == "BLUETHING":
+        indexes = list(filter(lambda r: r["name"].lower() == "slime", monsters))
+    elif monster_name is not None:
+        indexes = list(filter(lambda r: clean_text(r["name"].lower()) == clean_text(monster_name.lower()), monsters))
+    elif monster_number is not None:
+        indexes = list(filter(lambda r: int_from_string(r["number"]) == monster_number, monsters))
+    else:
+        indexes = []
+
+    if len(indexes) == 0:
+        embed = create_embed("No monster found. Please check spelling and try again.")
+        return await ctx.respond(embed=embed)
+
+    embeds = []
+    for index in indexes:
+        index["num_str"] = index["number"]
+        index["number"] = int_from_string(index["number"])
+
+        monster = parsers.Monster.from_dict(index)
+
+        title = "#%s - %s" % (monster.num_str, monster.name)
+        description = '''
+**Family:** %s | **EXP:** %s | **Gold:** %s
+
+**HP:** %s | **MP:** %s | **ATK:** %s | **DEF:** %s | **AGI:** %s
+
+**Fire:** %s | **Ice:** %s | **Wind:** %s
+**Blast:** %s | **Earth:** %s | **Dark:** %s | **Light:** %s
+
+**Haunts:** %s
+
+**Drops:**
+%s
+''' % (monster.family, monster.exp, monster.gold,
+       monster.hp, monster.mp, monster.atk, monster.defn, monster.agi,
+       monster.fire, monster.ice, monster.wind,
+       monster.blast, monster.earth, monster.dark, monster.light,
+       monster.haunts,
+       '\n'.join([monster.drop1, monster.drop2]))
+
+        image_url = monster_images_url % clean_text(monster.name)
+
+        embed = create_embed(title, description.center(100, ' '), image=image_url)
+        embeds.append(embed)
+
+    if len(embeds) > 1:
+        paginator = create_paginator(embeds)
+        await paginator.respond(ctx.interaction)
+    else:
+        await ctx.respond(embed=embeds[0])
+
+
 @bot.slash_command(name="grotto", description="Sends info about a grotto.", guild_ids=[guild_id])
-async def grotto(ctx,
-                 material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
-                 environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
-                                     required=True),
-                 suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
-                 level: Option(int, "Level (Ex. 1)", required=True),
-                 location: Option(str, "Location (Ex. 05)", required=False)):
+async def _grotto(ctx,
+                  material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
+                  environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
+                                      required=True),
+                  suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
+                  level: Option(int, "Level (Ex. 1)", required=True),
+                  location: Option(str, "Location (Ex. 05)", required=False)):
     async with aiohttp.ClientSession() as session:
         params = {
             "search": "Search",
@@ -165,7 +227,7 @@ async def grotto(ctx,
             divs = selector.xpath('//div[@class="inner"]//text()')
             grottos = divs.getall()
 
-            entries = []
+            embeds = []
 
             for parsed in parsers.create_grotto(grottos):
                 special = parsers.is_special(parsed)
@@ -189,21 +251,37 @@ async def grotto(ctx,
                             value = ", ".join([': '.join(x) for x in chests])
                         embed.add_field(name=key, value=value, inline=False)
                 embed.url = str(response.url)
-                entries.append(embed)
+                embeds.append(embed)
 
-            if len(entries) == 1:
-                embed = entries[0]
-            elif len(entries) == 0:
+            if len(embeds) == 1:
+                embed = embeds[0]
+            elif len(embeds) == 0:
                 embed = create_embed("No grotto found. Please check parameters and try again.")
 
-        if len(entries) > 1:
-            pages = []
-            for entry in entries:
-                pages.append(Page(embeds=[entry]))
-            paginator = Paginator(pages=pages)
+        if len(embeds) > 1:
+            paginator = create_paginator(embeds)
             await paginator.respond(ctx.interaction)
         else:
             await ctx.respond(embed=embed)
+
+
+def int_from_string(string):
+    integer = ''.join(filter(str.isdigit, string))
+    if integer != "":
+        return int(integer)
+    else:
+        return ""
+
+
+def clean_text(text):
+    return text.lower().replace(" ", "_").replace("'", "").replace("-", "_").replace("ñ", "n")
+
+
+def create_paginator(embeds):
+    pages = []
+    for entry in embeds:
+        pages.append(Page(embeds=[entry]))
+    return Paginator(pages=pages)
 
 
 def create_embed(title, description=None, color=discord.Color.green(),

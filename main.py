@@ -50,6 +50,8 @@ A bot created by <@496392770374860811> for The Quester's Rest.
 
 `/recipe [Creation]` | Displays all info for a recipe
 
+`/monster [Monster Identifier]` | Displays all info for a monster
+
 `/help` | Displays this message
 '''
 

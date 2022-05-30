@@ -142,20 +142,17 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
 
 @bot.slash_command(name="monster", description="Sends info about a monster.")
 async def _monster(ctx,
-                   monster_name: Option(str, "Monster Name (Ex. Slime)", required=False),
-                   monster_number: Option(int, "Monster Number (Ex. 1)", required=False)):
+                   monster_identifier: Option(str, "Monster Identifier (Ex. Slime or 1)", required=True)):
     with open("monsters.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
     monsters = data["monsters"]
-    if monster_name == "BLUETHING":
+    if monster_identifier == "BLUETHING":
         indexes = list(filter(lambda r: r["name"].lower() == "slime", monsters))
-    elif monster_name is not None:
-        indexes = list(filter(lambda r: clean_text(r["name"].lower()) == clean_text(monster_name.lower()), monsters))
-    elif monster_number is not None:
-        indexes = list(filter(lambda r: int_from_string(r["number"]) == monster_number, monsters))
+    elif int_from_string(monster_identifier) == "":
+        indexes = list(filter(lambda r: clean_text(r["name"].lower()) == clean_text(monster_identifier.lower()), monsters))
     else:
-        indexes = []
+        indexes = list(filter(lambda r: int_from_string(r["number"]) == int_from_string(monster_identifier), monsters))
 
     if len(indexes) == 0:
         embed = create_embed("No monster found. Please check spelling and try again.")

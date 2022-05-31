@@ -167,7 +167,7 @@ async def _monster(ctx,
 
         monster = parsers.Monster.from_dict(index)
 
-        title = "#%s - %s" % (monster.num_str, monster.name)
+        title = "%s - %s" % (monster.num_str, monster.name)
         description = '''
 **Family:** %s | **EXP:** %s | **Gold:** %s
 
@@ -177,15 +177,17 @@ async def _monster(ctx,
 **Blast:** %s | **Earth:** %s | **Dark:** %s | **Light:** %s
 
 **Haunts:** %s
-
-**Drops:**
-%s
 ''' % (monster.family, monster.exp, monster.gold,
        monster.hp, monster.mp, monster.atk, monster.defn, monster.agi,
        monster.fire, monster.ice, monster.wind,
        monster.blast, monster.earth, monster.dark, monster.light,
-       monster.haunts,
-       '\n'.join([monster.drop1, monster.drop2]))
+       monster.haunts)
+        if monster.drop1 != "":
+            description += "\n**__Drop 1 | Common Drop__**\n%s\n" % monster.drop1
+        if monster.drop2 != "":
+            description += "\n**__Drop 2 | Rare Drop__**\n%s\n" % monster.drop2
+        if monster.drop3 != "":
+            description += "\n**__Drop 3 | Half-Inch Drop__**\n%s\n" % monster.drop3
 
         image_url = monster_images_url % clean_text(monster.name)
 

@@ -64,6 +64,7 @@ class Monster:
     haunts: str = ""
     drop1: str = ""
     drop2: str = ""
+    drop3: str = ""
 
 
 grotto_prefixes = [

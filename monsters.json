@@ -22,7 +22,8 @@
       "haunts": "Angel Falls, Pluvi Isle",
       "drop1": "Medicinal herb ( 12.5% )",
       "drop2": "Slimedrop ( 6.25% )",
-      "drop3": ""
+      "drop3": "",
+      "image": "https://cdn.discordapp.com/emojis/781593582455881799.gif?v=1"
     },
     {
       "number": "#001b",
@@ -46,7 +47,8 @@
       "haunts": "Alltrades Abbey",
       "drop1": "Medicinal herb ( 12.5% )",
       "drop2": "Slimedrop ( 6.25% )",
-      "drop3": ""
+      "drop3": "",
+      "image": "https://cdn.discordapp.com/emojis/781593582455881799.gif?v=1"
     },
     {
       "number": "#001c",
@@ -70,7 +72,8 @@
       "haunts": "Bloomingdale",
       "drop1": "Medicinal herb ( 12.5% )",
       "drop2": "Slimedrop ( 6.25% )",
-      "drop3": ""
+      "drop3": "",
+      "image": "https://cdn.discordapp.com/emojis/781593582455881799.gif?v=1"
     },
     {
       "number": "#002",
@@ -5182,7 +5185,8 @@
       "haunts": "Grotto",
       "drop1": "Slime crown ( 0.78% )",
       "drop2": "Orichalcum ( 0.39% )",
-      "drop3": ""
+      "drop3": "",
+      "image": "https://cdn.discordapp.com/emojis/716429709109493770.?v=1"
     },
     {
       "number": "#215",
@@ -6692,7 +6696,7 @@
       "dark": 50,
       "light": 125,
       "haunts": "Gittingham Palace",
-      "drop1": "None",
+      "drop1": "",
       "drop2": "",
       "drop3": ""
     },
@@ -6764,7 +6768,7 @@
       "dark": 50,
       "light": 150,
       "haunts": "Realm of the Mighty",
-      "drop1": "None",
+      "drop1": "",
       "drop2": "",
       "drop3": ""
     },
@@ -6788,9 +6792,10 @@
       "dark": 50,
       "light": 150,
       "haunts": "Realm of the Mighty",
-      "drop1": "None",
+      "drop1": "",
       "drop2": "",
-      "drop3": ""
+      "drop3": "",
+      "image": "https://www.woodus.com/den/gallery/graphics/dq9ds/monster/corvus_2.webp"
     },
     {
       "number": "#278",
@@ -6934,7 +6939,8 @@
       "haunts": "Grotto",
       "drop1": "Dragontail whip ( 10% )",
       "drop2": "Vesta gauntlets ( 2% )",
-      "drop3": "Dragon Scale ( 6.25% )"
+      "drop3": "Dragon Scale ( 6.25% )",
+      "image": "https://cdn.discordapp.com/emojis/786220764311060531.gif?v=1"
     },
     {
       "number": "#284",
@@ -7198,7 +7204,8 @@
       "haunts": "Grotto",
       "drop1": "Dragonlord’s map ( 5% )",
       "drop2": "Orichalcum ( 10% )",
-      "drop3": "Yggdrasil leaf ( 1.56% )"
+      "drop3": "Yggdrasil leaf ( 1.56% )",
+      "image": "https://cdn.discordapp.com/emojis/786222635860230154.gif?v=1"
     },
     {
       "number": "#295",

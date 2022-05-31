@@ -189,9 +189,10 @@ async def _monster(ctx,
         if monster.drop3 != "":
             description += "\n**__Drop 3 | Half-Inch Drop__**\n%s\n" % monster.drop3
 
-        image_url = monster_images_url % clean_text(monster.name)
+        if monster.image == "":
+            monster.image = monster_images_url % clean_text(monster.name)
 
-        embed = create_embed(title, description.center(100, ' '), image=image_url)
+        embed = create_embed(title, description.center(100, ' '), image=monster.image)
         embeds.append(embed)
 
     if len(embeds) > 1:

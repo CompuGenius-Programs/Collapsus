@@ -65,6 +65,7 @@ class Monster:
     drop1: str = ""
     drop2: str = ""
     drop3: str = ""
+    image: str = ""
 
 
 grotto_prefixes = [

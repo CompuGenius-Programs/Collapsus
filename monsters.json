@@ -6647,7 +6647,7 @@
       "earth": 100,
       "dark": 125,
       "light": 75,
-      "haunts": "Realm of the Mighty",
+      "haunts": "Gittingham Palace",
       "drop1": "Fizzle foil ( 100% )",
       "drop2": "Agility ring ( 100% )",
       "drop3": ""
@@ -6671,7 +6671,7 @@
       "earth": 100,
       "dark": 125,
       "light": 75,
-      "haunts": "Gittingham Palace",
+      "haunts": "Realm of the Mighty",
       "drop1": "Fizzle foil ( 100% )",
       "drop2": "Agility ring ( 100% )",
       "drop3": ""
@@ -6722,7 +6722,8 @@
       "haunts": "Gittingham Palace",
       "drop1": "Sceptre of Gitt ( 100% )",
       "drop2": "",
-      "drop3": ""
+      "drop3": "",
+      "image": "https://www.woodus.com/den/gallery/graphics/dq9ds/monster/king_godwyn_2.webp"
     },
     {
       "number": "#275",

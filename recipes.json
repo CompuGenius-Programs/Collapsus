@@ -10,7 +10,7 @@
       "qty3": 1,
       "item3": "warrior's helm",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -22,7 +22,7 @@
       "qty3": 1,
       "item3": "lava lump",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -34,7 +34,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -46,7 +46,7 @@
       "qty3": 1,
       "item3": "mythril ore",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -58,7 +58,7 @@
       "qty3": 1,
       "item3": "holy water",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -70,7 +70,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -79,10 +79,10 @@
       "item1": "dragonsbane",
       "qty2": 1,
       "item2": "mighty armlet",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -91,10 +91,10 @@
       "item1": "falcon blade",
       "qty2": 1,
       "item2": "meteorite bracer",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -103,10 +103,10 @@
       "item1": "miracle sword",
       "qty2": 2,
       "item2": "life bracer",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -118,7 +118,7 @@
       "qty3": 1,
       "item3": "rockbomb shard",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -130,7 +130,7 @@
       "qty3": 3,
       "item3": "rockbomb shard",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -142,7 +142,7 @@
       "qty3": 6,
       "item3": "slimedrop",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -154,7 +154,7 @@
       "qty3": 1,
       "item3": "slime crown",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -166,7 +166,7 @@
       "qty3": 1,
       "item3": "orichalcum",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -175,10 +175,10 @@
       "item1": "supernova sword",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -190,7 +190,7 @@
       "qty3": 1,
       "item3": "silver orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -202,7 +202,7 @@
       "qty3": 3,
       "item3": "silver orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Swords",
@@ -214,7 +214,7 @@
       "qty3": 3,
       "item3": "silver orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -226,7 +226,7 @@
       "qty3": 1,
       "item3": "lava lump",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -238,7 +238,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -250,7 +250,7 @@
       "qty3": 2,
       "item3": "platinum ore",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -259,10 +259,10 @@
       "item1": "iron spear",
       "qty2": 1,
       "item2": "gold rosary",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -274,7 +274,7 @@
       "qty3": 2,
       "item3": "crimson coral",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -286,7 +286,7 @@
       "qty3": 2,
       "item3": "densinium",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -298,7 +298,7 @@
       "qty3": 2,
       "item3": "glass frit",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -307,10 +307,10 @@
       "item1": "partisan",
       "qty2": 1,
       "item2": "battle-axe",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -322,7 +322,7 @@
       "qty3": 1,
       "item3": "mythril ore",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -334,7 +334,7 @@
       "qty3": 1,
       "item3": "gold bar",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -346,7 +346,7 @@
       "qty3": 1,
       "item3": "malicite",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -358,7 +358,7 @@
       "qty3": 6,
       "item3": "slimedrop",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -370,7 +370,7 @@
       "qty3": 1,
       "item3": "slime crown",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -379,10 +379,10 @@
       "item1": "split-pot poker",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -394,7 +394,7 @@
       "qty3": 1,
       "item3": "red orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -406,7 +406,7 @@
       "qty3": 3,
       "item3": "red orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Spears",
@@ -418,7 +418,7 @@
       "qty3": 3,
       "item3": "red orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -427,10 +427,10 @@
       "item1": "bronze knife",
       "qty2": 3,
       "item2": "holy water",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -442,7 +442,7 @@
       "qty3": 1,
       "item3": "manky mud",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -454,7 +454,7 @@
       "qty3": 3,
       "item3": "butterfly wing",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -466,7 +466,7 @@
       "qty3": 5,
       "item3": "butterfly wing",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -475,10 +475,10 @@
       "item1": "magic beast horn",
       "qty2": 3,
       "item2": "manky mud",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -490,7 +490,7 @@
       "qty3": 3,
       "item3": "agility ring",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -502,7 +502,7 @@
       "qty3": 2,
       "item3": "evencloth",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -514,7 +514,7 @@
       "qty3": 1,
       "item3": "edged boomerang",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -526,7 +526,7 @@
       "qty3": 3,
       "item3": "magic beast horn",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -538,7 +538,7 @@
       "qty3": 1,
       "item3": "spirit bracer",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -547,10 +547,10 @@
       "item1": "flame tang",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -562,7 +562,7 @@
       "qty3": 3,
       "item3": "crimson coral",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -571,10 +571,10 @@
       "item1": "dashing dagger",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -586,7 +586,7 @@
       "qty3": 1,
       "item3": "purple orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -598,7 +598,7 @@
       "qty3": 3,
       "item3": "purple orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Knives",
@@ -610,7 +610,7 @@
       "qty3": 3,
       "item3": "purple orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -622,7 +622,7 @@
       "qty3": 1,
       "item3": "magic water",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -634,7 +634,7 @@
       "qty3": 1,
       "item3": "sage's elixir",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -646,7 +646,7 @@
       "qty3": 3,
       "item3": "crimson coral",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -658,7 +658,7 @@
       "qty3": 1,
       "item3": "enchanted stone",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -670,7 +670,7 @@
       "qty3": 1,
       "item3": "magic water",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -682,7 +682,7 @@
       "qty3": 1,
       "item3": "sage's elixir",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -694,7 +694,7 @@
       "qty3": 3,
       "item3": "brighten rock",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -706,7 +706,7 @@
       "qty3": 5,
       "item3": "magic water",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -718,7 +718,7 @@
       "qty3": 3,
       "item3": "sage's elixir",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -730,7 +730,7 @@
       "qty3": 3,
       "item3": "mythril ore",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -742,7 +742,7 @@
       "qty3": 3,
       "item3": "sage's elixir",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -751,10 +751,10 @@
       "item1": "brilliant staff",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -766,7 +766,7 @@
       "qty3": 1,
       "item3": "blue orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -778,7 +778,7 @@
       "qty3": 3,
       "item3": "blue orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Wands",
@@ -790,7 +790,7 @@
       "qty3": 3,
       "item3": "blue orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -799,10 +799,10 @@
       "item1": "leather whip",
       "qty2": 3,
       "item2": "snakeskin",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -814,7 +814,7 @@
       "qty3": 1,
       "item3": "magic beast horn",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -826,7 +826,7 @@
       "qty3": 1,
       "item3": "tough guy tattoo",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -838,7 +838,7 @@
       "qty3": 1,
       "item3": "lava lump",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -850,7 +850,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -862,7 +862,7 @@
       "qty3": 1,
       "item3": "aggressence",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -874,7 +874,7 @@
       "qty3": 3,
       "item3": "wing of bat",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -886,7 +886,7 @@
       "qty3": 1,
       "item3": "malicite",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -895,10 +895,10 @@
       "item1": "archdemon whip",
       "qty2": 1,
       "item2": "saint's ashes",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -910,7 +910,7 @@
       "qty3": 1,
       "item3": "monarchic mark",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -922,7 +922,7 @@
       "qty3": 1,
       "item3": "agate of evolution",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -931,10 +931,10 @@
       "item1": "giga gringham whip",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -946,7 +946,7 @@
       "qty3": 1,
       "item3": "green orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -958,7 +958,7 @@
       "qty3": 3,
       "item3": "green orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Whips",
@@ -970,7 +970,7 @@
       "qty3": 3,
       "item3": "green orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -982,7 +982,7 @@
       "qty3": 1,
       "item3": "lava lump",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -994,7 +994,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1003,10 +1003,10 @@
       "item1": "oaken pole",
       "qty2": 1,
       "item2": "utility belt",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1018,7 +1018,7 @@
       "qty3": 1,
       "item3": "narspicious",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1027,10 +1027,10 @@
       "item1": "driller pillar",
       "qty2": 1,
       "item2": "mighty armlet",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1042,7 +1042,7 @@
       "qty3": 3,
       "item3": "flurry feather",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1054,7 +1054,7 @@
       "qty3": 1,
       "item3": "agility ring",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1066,7 +1066,7 @@
       "qty3": 1,
       "item3": "mercury's bandana",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1078,7 +1078,7 @@
       "qty3": 3,
       "item3": "sainted soma",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1087,10 +1087,10 @@
       "item1": "orichalcum",
       "qty2": 3,
       "item2": "hephaestus' flame",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1099,10 +1099,10 @@
       "item1": "catatonic cosh",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1114,7 +1114,7 @@
       "qty3": 1,
       "item3": "blue orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1126,7 +1126,7 @@
       "qty3": 3,
       "item3": "blue orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Staves",
@@ -1138,7 +1138,7 @@
       "qty3": 3,
       "item3": "blue orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1150,7 +1150,7 @@
       "qty3": 1,
       "item3": "lava lump",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1162,7 +1162,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1171,10 +1171,10 @@
       "item1": "iron claws",
       "qty2": 1,
       "item2": "holy talisman",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1183,10 +1183,10 @@
       "item1": "crow's claws",
       "qty2": 1,
       "item2": "agility ring",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1195,10 +1195,10 @@
       "item1": "kestrel claws",
       "qty2": 2,
       "item2": "enchanted stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1210,7 +1210,7 @@
       "qty3": 1,
       "item3": "iron ore",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1222,7 +1222,7 @@
       "qty3": 1,
       "item3": "rockbomb shard",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1234,7 +1234,7 @@
       "qty3": 3,
       "item3": "rockbomb shard",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1246,7 +1246,7 @@
       "qty3": 4,
       "item3": "wing of bat",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1258,7 +1258,7 @@
       "qty3": 9,
       "item3": "magic beast horn",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1270,7 +1270,7 @@
       "qty3": 2,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1279,10 +1279,10 @@
       "item1": "dragovian lord claws",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1294,7 +1294,7 @@
       "qty3": 1,
       "item3": "red orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1306,7 +1306,7 @@
       "qty3": 3,
       "item3": "red orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Claws",
@@ -1318,7 +1318,7 @@
       "qty3": 3,
       "item3": "red orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1330,7 +1330,7 @@
       "qty3": 1,
       "item3": "lava lump",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1342,7 +1342,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1354,7 +1354,7 @@
       "qty3": 1,
       "item3": "agility ring",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1366,7 +1366,7 @@
       "qty3": 1,
       "item3": "agility ring",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1378,7 +1378,7 @@
       "qty3": 1,
       "item3": "evencloth",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1390,7 +1390,7 @@
       "qty3": 1,
       "item3": "tortoiseshell",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1402,7 +1402,7 @@
       "qty3": 2,
       "item3": "seashell",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1414,7 +1414,7 @@
       "qty3": 1,
       "item3": "kitty shield",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1426,7 +1426,7 @@
       "qty3": 2,
       "item3": "crimson coral",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1438,7 +1438,7 @@
       "qty3": 1,
       "item3": "razor-wing boomerang",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1450,7 +1450,7 @@
       "qty3": 1,
       "item3": "dragon scale",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1462,7 +1462,7 @@
       "qty3": 2,
       "item3": "dragon scale",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1474,7 +1474,7 @@
       "qty3": 1,
       "item3": "lucida shard",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1486,7 +1486,7 @@
       "qty3": 3,
       "item3": "crimson coral",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1498,7 +1498,7 @@
       "qty3": 9,
       "item3": "horse manure",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1507,10 +1507,10 @@
       "item1": "hypercritical fan",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1522,7 +1522,7 @@
       "qty3": 1,
       "item3": "green orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1534,7 +1534,7 @@
       "qty3": 3,
       "item3": "green orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Fans",
@@ -1546,7 +1546,7 @@
       "qty3": 3,
       "item3": "green orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1558,7 +1558,7 @@
       "qty3": 1,
       "item3": "lava lump",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1570,7 +1570,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1579,10 +1579,10 @@
       "item1": "iron axe",
       "qty2": 1,
       "item2": "gold bar",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1594,7 +1594,7 @@
       "qty3": 1,
       "item3": "mystifying mixture",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1606,7 +1606,7 @@
       "qty3": 3,
       "item3": "mystifying mixture",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1615,10 +1615,10 @@
       "item1": "golden axe",
       "qty2": 1,
       "item2": "slime crown",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1630,7 +1630,7 @@
       "qty3": 1,
       "item3": "monarchic mark",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1642,7 +1642,7 @@
       "qty3": 1,
       "item3": "raging ruby",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1654,7 +1654,7 @@
       "qty3": 3,
       "item3": "icicle dirk",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1666,7 +1666,7 @@
       "qty3": 1,
       "item3": "agate of evolution",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1675,10 +1675,10 @@
       "item1": "climaxe",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1690,7 +1690,7 @@
       "qty3": 1,
       "item3": "purple orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1702,7 +1702,7 @@
       "qty3": 3,
       "item3": "purple orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Axes",
@@ -1714,7 +1714,7 @@
       "qty3": 3,
       "item3": "purple orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1723,10 +1723,10 @@
       "item1": "oaken club",
       "qty2": 3,
       "item2": "belle cap",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1735,10 +1735,10 @@
       "item1": "war hammer",
       "qty2": 1,
       "item2": "mighty armlet",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1750,7 +1750,7 @@
       "qty3": 1,
       "item3": "flintstone",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1762,7 +1762,7 @@
       "qty3": 2,
       "item3": "densinium",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1774,7 +1774,7 @@
       "qty3": 3,
       "item3": "ethereal stone",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1786,7 +1786,7 @@
       "qty3": 1,
       "item3": "tough guy tattoo",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1798,7 +1798,7 @@
       "qty3": 3,
       "item3": "densinium",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1810,7 +1810,7 @@
       "qty3": 1,
       "item3": "mighty armlet",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1819,10 +1819,10 @@
       "item1": "moonmasher",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1834,7 +1834,7 @@
       "qty3": 1,
       "item3": "yellow orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1846,7 +1846,7 @@
       "qty3": 3,
       "item3": "yellow orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Hammers",
@@ -1858,7 +1858,7 @@
       "qty3": 3,
       "item3": "yellow orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -1867,10 +1867,10 @@
       "item1": "boomerang",
       "qty2": 3,
       "item2": "iron nails",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -1882,7 +1882,7 @@
       "qty3": 3,
       "item3": "iron nails",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -1894,7 +1894,7 @@
       "qty3": 1,
       "item3": "gold rosary",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -1903,8 +1903,8 @@
       "item1": "razor-wing boomerang",
       "qty2": 3,
       "item2": "lunaria",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
       "notes": "Note the spelling: razEr-wing and razOr-wing"
     },
@@ -1930,7 +1930,7 @@
       "qty3": 3,
       "item3": "flurry feather",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -1942,7 +1942,7 @@
       "qty3": 1,
       "item3": "agility ring",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -1954,7 +1954,7 @@
       "qty3": 2,
       "item3": "agility ring",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -1966,7 +1966,7 @@
       "qty3": 3,
       "item3": "rockbomb shard",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -1978,7 +1978,7 @@
       "qty3": 3,
       "item3": "rockbomb shard",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -1987,10 +1987,10 @@
       "item1": "hexarang",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -2002,7 +2002,7 @@
       "qty3": 3,
       "item3": "mythril ore",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -2011,10 +2011,10 @@
       "item1": "stellarang",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -2026,7 +2026,7 @@
       "qty3": 1,
       "item3": "silver orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -2038,7 +2038,7 @@
       "qty3": 3,
       "item3": "silver orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Boomerangs",
@@ -2050,7 +2050,7 @@
       "qty3": 3,
       "item3": "silver orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2059,10 +2059,10 @@
       "item1": "short bow",
       "qty2": 1,
       "item2": "laundry pole",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2071,10 +2071,10 @@
       "item1": "longbow",
       "qty2": 1,
       "item2": "chain whip",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2086,7 +2086,7 @@
       "qty3": 1,
       "item3": "archer's armguard",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2098,7 +2098,7 @@
       "qty3": 1,
       "item3": "agility ring",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2110,7 +2110,7 @@
       "qty3": 2,
       "item3": "celestial skein",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2122,7 +2122,7 @@
       "qty3": 3,
       "item3": "celestial skein",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2134,7 +2134,7 @@
       "qty3": 3,
       "item3": "enchanted stone",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2146,7 +2146,7 @@
       "qty3": 3,
       "item3": "ethereal stone",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2155,10 +2155,10 @@
       "item1": "odin's bow",
       "qty2": 1,
       "item2": "malicite",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2167,10 +2167,10 @@
       "item1": "oh-no bow",
       "qty2": 3,
       "item2": "saint's ashes",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2179,10 +2179,10 @@
       "item1": "aeon's bow",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2194,7 +2194,7 @@
       "qty3": 1,
       "item3": "yellow orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2206,7 +2206,7 @@
       "qty3": 3,
       "item3": "yellow orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Bows",
@@ -2218,7 +2218,7 @@
       "qty3": 3,
       "item3": "yellow orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2227,10 +2227,10 @@
       "item1": "silver platter",
       "qty2": 1,
       "item2": "gold bracer",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2239,10 +2239,10 @@
       "item1": "gold platter",
       "qty2": 1,
       "item2": "platinum ore",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2251,10 +2251,10 @@
       "item1": "scale shield",
       "qty2": 1,
       "item2": "tortoiseshell",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2266,7 +2266,7 @@
       "qty3": 1,
       "item3": "royal soil",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2278,7 +2278,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2287,10 +2287,10 @@
       "item1": "light shield",
       "qty2": 1,
       "item2": "kitty litter",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2299,10 +2299,10 @@
       "item1": "kitty shield",
       "qty2": 2,
       "item2": "kitty litter",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2314,7 +2314,7 @@
       "qty3": 5,
       "item3": "holy water",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2323,10 +2323,10 @@
       "item1": "magic shield",
       "qty2": 1,
       "item2": "enchanted stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2335,10 +2335,10 @@
       "item1": "enchanted shield",
       "qty2": 1,
       "item2": "ethereal stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2350,7 +2350,7 @@
       "qty3": 1,
       "item3": "resurrock",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2362,7 +2362,7 @@
       "qty3": 1,
       "item3": "resurrock",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2374,7 +2374,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2386,7 +2386,7 @@
       "qty3": 1,
       "item3": "raging ruby",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2398,7 +2398,7 @@
       "qty3": 1,
       "item3": "ruby of protection",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2410,7 +2410,7 @@
       "qty3": 1,
       "item3": "panacea",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2419,10 +2419,10 @@
       "item1": "power shield",
       "qty2": 2,
       "item2": "life bracer",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2434,7 +2434,7 @@
       "qty3": 1,
       "item3": "mythril ore",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2446,7 +2446,7 @@
       "qty3": 5,
       "item3": "magic beast horn",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2458,7 +2458,7 @@
       "qty3": 2,
       "item3": "mythril ore",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2470,7 +2470,7 @@
       "qty3": 1,
       "item3": "mighty armlet",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2479,10 +2479,10 @@
       "item1": "ruinous shield",
       "qty2": 3,
       "item2": "saint's ashes",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2494,7 +2494,7 @@
       "qty3": 1,
       "item3": "orichalcum",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2506,7 +2506,7 @@
       "qty3": 6,
       "item3": "slimedrop",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2518,7 +2518,7 @@
       "qty3": 1,
       "item3": "slime crown",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2530,7 +2530,7 @@
       "qty3": 1,
       "item3": "orichalcum",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2539,10 +2539,10 @@
       "item1": "devilry drinker",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2554,7 +2554,7 @@
       "qty3": 1,
       "item3": "green orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2566,7 +2566,7 @@
       "qty3": 3,
       "item3": "green orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Shields",
@@ -2578,7 +2578,7 @@
       "qty3": 3,
       "item3": "green orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2590,7 +2590,7 @@
       "qty3": 1,
       "item3": "royal soil",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2602,7 +2602,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2614,7 +2614,7 @@
       "qty3": 1,
       "item3": "silver tiara",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2626,7 +2626,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2635,10 +2635,10 @@
       "item1": "mail coif",
       "qty2": 2,
       "item2": "mythril ore",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2650,7 +2650,7 @@
       "qty3": 3,
       "item3": "sorcerer's stone",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2662,7 +2662,7 @@
       "qty3": 1,
       "item3": "sage's elixir",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2674,7 +2674,7 @@
       "qty3": 1,
       "item3": "tough guy tattoo",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2686,7 +2686,7 @@
       "qty3": 1,
       "item3": "mighty armlet",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2695,10 +2695,10 @@
       "item1": "great helm",
       "qty2": 1,
       "item2": "malicite",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2707,10 +2707,10 @@
       "item1": "platinum headgear",
       "qty2": 3,
       "item2": "mythril ore",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2719,10 +2719,10 @@
       "item1": "hades' helm",
       "qty2": 1,
       "item2": "saint's ashes",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2734,7 +2734,7 @@
       "qty3": 1,
       "item3": "mythril ore",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2743,10 +2743,10 @@
       "item1": "apollo's crown",
       "qty2": 1,
       "item2": "malicite",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2755,10 +2755,10 @@
       "item1": "skull helm",
       "qty2": 3,
       "item2": "saint's ashes",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2770,7 +2770,7 @@
       "qty3": 1,
       "item3": "sunstone",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2782,7 +2782,7 @@
       "qty3": 6,
       "item3": "slimedrop",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2794,7 +2794,7 @@
       "qty3": 1,
       "item3": "slime crown",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2806,7 +2806,7 @@
       "qty3": 1,
       "item3": "orichalcum",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2815,10 +2815,10 @@
       "item1": "wonder helm",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2830,7 +2830,7 @@
       "qty3": 1,
       "item3": "purple orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2842,7 +2842,7 @@
       "qty3": 3,
       "item3": "purple orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2854,7 +2854,7 @@
       "qty3": 3,
       "item3": "purple orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2863,10 +2863,10 @@
       "item1": "bandana",
       "qty2": 1,
       "item2": "bow tie",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2875,10 +2875,10 @@
       "item1": "trailblazing bandana",
       "qty2": 1,
       "item2": "agility ring",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2887,10 +2887,10 @@
       "item1": "leather hat",
       "qty2": 1,
       "item2": "flurry feather",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2899,10 +2899,10 @@
       "item1": "hairband",
       "qty2": 2,
       "item2": "bunny tail",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2911,10 +2911,10 @@
       "item1": "hairband",
       "qty2": 2,
       "item2": "kitty litter",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2926,7 +2926,7 @@
       "qty3": 1,
       "item3": "lambswool",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2935,10 +2935,10 @@
       "item1": "leather hat",
       "qty2": 1,
       "item2": "magic beast horn",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2950,7 +2950,7 @@
       "qty3": 1,
       "item3": "gold bracer",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2959,10 +2959,10 @@
       "item1": "pointy hat",
       "qty2": 3,
       "item2": "slimedrop",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2971,10 +2971,10 @@
       "item1": "hairband",
       "qty2": 2,
       "item2": "flurry feather",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2986,7 +2986,7 @@
       "qty3": 1,
       "item3": "magic beast hide",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -2998,7 +2998,7 @@
       "qty3": 1,
       "item3": "lambswool",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3010,7 +3010,7 @@
       "qty3": 1,
       "item3": "gold bracer",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3019,10 +3019,10 @@
       "item1": "gold circlet",
       "qty2": 1,
       "item2": "lucida shard",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3034,7 +3034,7 @@
       "qty3": 1,
       "item3": "snakeskin",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3043,10 +3043,10 @@
       "item1": "turban",
       "qty2": 2,
       "item2": "evencloth",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3058,7 +3058,7 @@
       "qty3": 2,
       "item3": "narspicious",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3070,7 +3070,7 @@
       "qty3": 3,
       "item3": "narspicious",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3079,10 +3079,10 @@
       "item1": "feathered cap",
       "qty2": 2,
       "item2": "brainy bracer",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3094,7 +3094,7 @@
       "qty3": 3,
       "item3": "magic beast hide",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3106,7 +3106,7 @@
       "qty3": 1,
       "item3": "sorcerer's stone",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3115,10 +3115,10 @@
       "item1": "unhappy hat",
       "qty2": 1,
       "item2": "lucky pendant",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3130,7 +3130,7 @@
       "qty3": 1,
       "item3": "gold bar",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3142,7 +3142,7 @@
       "qty3": 3,
       "item3": "slipweed",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3154,7 +3154,7 @@
       "qty3": 1,
       "item3": "green orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3166,7 +3166,7 @@
       "qty3": 1,
       "item3": "green orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3178,7 +3178,7 @@
       "qty3": 1,
       "item3": "green orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Head",
@@ -3190,7 +3190,7 @@
       "qty3": 1,
       "item3": "green orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3202,7 +3202,7 @@
       "qty3": 1,
       "item3": "snakeskin",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3211,10 +3211,10 @@
       "item1": "iron cuirass",
       "qty2": 1,
       "item2": "silver platter",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3226,7 +3226,7 @@
       "qty3": 1,
       "item3": "royal soil",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3238,7 +3238,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3250,7 +3250,7 @@
       "qty3": 1,
       "item3": "emerald moss",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3262,7 +3262,7 @@
       "qty3": 2,
       "item3": "emerald moss",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3274,7 +3274,7 @@
       "qty3": 1,
       "item3": "gold bracer",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3286,7 +3286,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3295,10 +3295,10 @@
       "item1": "magic armour",
       "qty2": 1,
       "item2": "enchanted stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3307,10 +3307,10 @@
       "item1": "enchanted armour",
       "qty2": 1,
       "item2": "ethereal stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3322,7 +3322,7 @@
       "qty3": 1,
       "item3": "raging ruby",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3334,7 +3334,7 @@
       "qty3": 5,
       "item3": "iron nails",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3346,7 +3346,7 @@
       "qty3": 1,
       "item3": "mythril ore",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3358,7 +3358,7 @@
       "qty3": 1,
       "item3": "life bracer",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3370,7 +3370,7 @@
       "qty3": 1,
       "item3": "sober ring",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3382,7 +3382,7 @@
       "qty3": 1,
       "item3": "catholicon ring",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3394,7 +3394,7 @@
       "qty3": 6,
       "item3": "slimedrop",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3406,7 +3406,7 @@
       "qty3": 1,
       "item3": "slime crown",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3418,7 +3418,7 @@
       "qty3": 1,
       "item3": "orichalcum",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3427,10 +3427,10 @@
       "item1": "mythical armour",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3442,7 +3442,7 @@
       "qty3": 1,
       "item3": "red orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3454,7 +3454,7 @@
       "qty3": 3,
       "item3": "red orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3466,7 +3466,7 @@
       "qty3": 3,
       "item3": "red orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3475,10 +3475,10 @@
       "item1": "training top",
       "qty2": 1,
       "item2": "finessence",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3487,10 +3487,10 @@
       "item1": "leather cape",
       "qty2": 3,
       "item2": "magic beast hide",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3502,7 +3502,7 @@
       "qty3": 1,
       "item3": "lambswool",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3511,10 +3511,10 @@
       "item1": "garish garb",
       "qty2": 3,
       "item2": "slimedrop",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3526,7 +3526,7 @@
       "qty3": 3,
       "item3": "brighten rock",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3538,7 +3538,7 @@
       "qty3": 2,
       "item3": "magic beast hide",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3550,7 +3550,7 @@
       "qty3": 2,
       "item3": "finessence",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3562,7 +3562,7 @@
       "qty3": 1,
       "item3": "technicolour dreamcloth",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3574,7 +3574,7 @@
       "qty3": 1,
       "item3": "technicolour dreamcloth",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3583,10 +3583,10 @@
       "item1": "fur poncho",
       "qty2": 3,
       "item2": "magic beast hide",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3595,10 +3595,10 @@
       "item1": "star's suit",
       "qty2": 3,
       "item2": "lucida shard",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3607,10 +3607,10 @@
       "item1": "tint-tastic tutu",
       "qty2": 1,
       "item2": "technicolour dreamcloth",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3622,7 +3622,7 @@
       "qty3": 2,
       "item3": "crimson coral",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3634,7 +3634,7 @@
       "qty3": 2,
       "item3": "astral plume",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3646,7 +3646,7 @@
       "qty3": 2,
       "item3": "finessence",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3658,7 +3658,7 @@
       "qty3": 3,
       "item3": "slipweed",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3670,7 +3670,7 @@
       "qty3": 3,
       "item3": "terrible tattoo",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3682,7 +3682,7 @@
       "qty3": 3,
       "item3": "brighten rock",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3694,7 +3694,7 @@
       "qty3": 3,
       "item3": "brighten rock",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3703,10 +3703,10 @@
       "item1": "divine bustier",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3718,7 +3718,7 @@
       "qty3": 3,
       "item3": "silk robe",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3730,7 +3730,7 @@
       "qty3": 3,
       "item3": "sainted soma",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3739,10 +3739,10 @@
       "item1": "mesotoga",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3754,7 +3754,7 @@
       "qty3": 1,
       "item3": "blue orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3766,7 +3766,7 @@
       "qty3": 3,
       "item3": "blue orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3778,7 +3778,7 @@
       "qty3": 3,
       "item3": "blue orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3790,7 +3790,7 @@
       "qty3": 3,
       "item3": "lambswool",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3799,10 +3799,10 @@
       "item1": "magical robes",
       "qty2": 1,
       "item2": "enchanted stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3811,10 +3811,10 @@
       "item1": "enchanted robes",
       "qty2": 1,
       "item2": "ethereal stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3826,7 +3826,7 @@
       "qty3": 3,
       "item3": "grubby bandage",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3838,7 +3838,7 @@
       "qty3": 3,
       "item3": "grubby bandage",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3850,7 +3850,7 @@
       "qty3": 3,
       "item3": "thinkincense",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3859,10 +3859,10 @@
       "item1": "enchanted robes",
       "qty2": 3,
       "item2": "celestial skein",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3874,7 +3874,7 @@
       "qty3": 3,
       "item3": "sage's elixir",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3883,10 +3883,10 @@
       "item1": "shimmering dress",
       "qty2": 1,
       "item2": "monarchic mark",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3898,7 +3898,7 @@
       "qty3": 2,
       "item3": "lambswool",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3910,7 +3910,7 @@
       "qty3": 3,
       "item3": "lambswool",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3919,10 +3919,10 @@
       "item1": "twinkling tuxedo",
       "qty2": 1,
       "item2": "monarchic mark",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3934,7 +3934,7 @@
       "qty3": 2,
       "item3": "lambswool",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3946,7 +3946,7 @@
       "qty3": 3,
       "item3": "lambswool",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3955,10 +3955,10 @@
       "item1": "nightmare gown",
       "qty2": 3,
       "item2": "saint's ashes",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3970,7 +3970,7 @@
       "qty3": 7,
       "item3": "astral plume",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3982,7 +3982,7 @@
       "qty3": 1,
       "item3": "dragon dress",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -3991,10 +3991,10 @@
       "item1": "aeon's robe",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -4006,7 +4006,7 @@
       "qty3": 1,
       "item3": "yellow orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -4018,7 +4018,7 @@
       "qty3": 3,
       "item3": "yellow orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -4030,7 +4030,7 @@
       "qty3": 3,
       "item3": "yellow orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4042,7 +4042,7 @@
       "qty3": 1,
       "item3": "royal soil",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4054,7 +4054,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4063,10 +4063,10 @@
       "item1": "magic mittens",
       "qty2": 1,
       "item2": "enchanted stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4075,10 +4075,10 @@
       "item1": "enchanted gloves",
       "qty2": 1,
       "item2": "ethereal stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4090,7 +4090,7 @@
       "qty3": 1,
       "item3": "aggressence",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4102,7 +4102,7 @@
       "qty3": 1,
       "item3": "aggressence",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4114,7 +4114,7 @@
       "qty3": 2,
       "item3": "sage's elixir",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4126,7 +4126,7 @@
       "qty3": 6,
       "item3": "slimedrop",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4138,7 +4138,7 @@
       "qty3": 1,
       "item3": "slime crown",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4150,7 +4150,7 @@
       "qty3": 1,
       "item3": "orichalcum",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4159,10 +4159,10 @@
       "item1": "tempestes gauntlets",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4174,7 +4174,7 @@
       "qty3": 1,
       "item3": "red orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4186,7 +4186,7 @@
       "qty3": 3,
       "item3": "red orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4198,7 +4198,7 @@
       "qty3": 3,
       "item3": "red orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4207,10 +4207,10 @@
       "item1": "cotton gloves",
       "qty2": 1,
       "item2": "magic beast hide",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4219,10 +4219,10 @@
       "item1": "mayoress's mittens",
       "qty2": 1,
       "item2": "monarchic mark",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4231,10 +4231,10 @@
       "item1": "marquess's mittens",
       "qty2": 1,
       "item2": "highness heels",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4246,7 +4246,7 @@
       "qty3": 2,
       "item3": "sage's elixir",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4255,10 +4255,10 @@
       "item1": "heavy handwear",
       "qty2": 3,
       "item2": "evencloth",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4270,7 +4270,7 @@
       "qty3": 3,
       "item3": "evencloth",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4282,7 +4282,7 @@
       "qty3": 1,
       "item3": "mercury's bandana",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4291,10 +4291,10 @@
       "item1": "grandmaster's gloves",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4306,7 +4306,7 @@
       "qty3": 1,
       "item3": "silver orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4318,7 +4318,7 @@
       "qty3": 3,
       "item3": "silver orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Arms",
@@ -4330,7 +4330,7 @@
       "qty3": 3,
       "item3": "silver orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4339,10 +4339,10 @@
       "item1": "boxer shorts",
       "qty2": 1,
       "item2": "magic beast hide",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4351,10 +4351,10 @@
       "item1": "training trousers",
       "qty2": 1,
       "item2": "finessence",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4363,10 +4363,10 @@
       "item1": "boxer shorts",
       "qty2": 1,
       "item2": "boomerang",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4375,10 +4375,10 @@
       "item1": "boomer briefs",
       "qty2": 1,
       "item2": "aggressence",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4390,7 +4390,7 @@
       "qty3": 1,
       "item3": "royal soil",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4402,7 +4402,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4414,7 +4414,7 @@
       "qty3": 3,
       "item3": "crimson coral",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4426,7 +4426,7 @@
       "qty3": 2,
       "item3": "astral plume",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4438,7 +4438,7 @@
       "qty3": 2,
       "item3": "lambswool",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4450,7 +4450,7 @@
       "qty3": 2,
       "item3": "magic beast hide",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4462,7 +4462,7 @@
       "qty3": 1,
       "item3": "narspicious",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4474,7 +4474,7 @@
       "qty3": 2,
       "item3": "iron nails",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4483,10 +4483,10 @@
       "item1": "pop socks",
       "qty2": 4,
       "item2": "crimson coral",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4495,10 +4495,10 @@
       "item1": "pop socks",
       "qty2": 4,
       "item2": "emerald moss",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4507,10 +4507,10 @@
       "item1": "pop socks",
       "qty2": 4,
       "item2": "seashell",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4522,7 +4522,7 @@
       "qty3": 1,
       "item3": "white tights",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4534,7 +4534,7 @@
       "qty3": 2,
       "item3": "finessence",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4546,7 +4546,7 @@
       "qty3": 2,
       "item3": "sage's elixir",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4558,7 +4558,7 @@
       "qty3": 1,
       "item3": "orichalcum",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4567,10 +4567,10 @@
       "item1": "eternity trousers",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4582,7 +4582,7 @@
       "qty3": 1,
       "item3": "purple orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4594,7 +4594,7 @@
       "qty3": 3,
       "item3": "purple orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Legs",
@@ -4606,7 +4606,7 @@
       "qty3": 3,
       "item3": "purple orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4615,10 +4615,10 @@
       "item1": "leather boots",
       "qty2": 1,
       "item2": "magic beast hide",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4630,7 +4630,7 @@
       "qty3": 1,
       "item3": "royal soil",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4642,7 +4642,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4654,7 +4654,7 @@
       "qty3": 2,
       "item3": "iron nails",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4666,7 +4666,7 @@
       "qty3": 2,
       "item3": "sage's elixir",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4678,7 +4678,7 @@
       "qty3": 6,
       "item3": "slimedrop",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4690,7 +4690,7 @@
       "qty3": 1,
       "item3": "slime crown",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4699,10 +4699,10 @@
       "item1": "emperor's boots",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4714,7 +4714,7 @@
       "qty3": 1,
       "item3": "yellow orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4726,7 +4726,7 @@
       "qty3": 3,
       "item3": "yellow orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4738,7 +4738,7 @@
       "qty3": 3,
       "item3": "yellow orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4747,10 +4747,10 @@
       "item1": "clogs",
       "qty2": 2,
       "item2": "belle cap",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4759,10 +4759,10 @@
       "item1": "high heels",
       "qty2": 1,
       "item2": "fishnet stockings",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4771,10 +4771,10 @@
       "item1": "stiletto heels",
       "qty2": 1,
       "item2": "monarchic mark",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4786,7 +4786,7 @@
       "qty3": 2,
       "item3": "belle cap",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4795,10 +4795,10 @@
       "item1": "kung fu shoes",
       "qty2": 2,
       "item2": "finessence",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4810,7 +4810,7 @@
       "qty3": 1,
       "item3": "mythril ore",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4822,7 +4822,7 @@
       "qty3": 1,
       "item3": "orichalcum",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4831,10 +4831,10 @@
       "item1": "depressing shoes",
       "qty2": 1,
       "item2": "lucky pendant",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4843,10 +4843,10 @@
       "item1": "elevating shoes",
       "qty2": 2,
       "item2": "elfin charm",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4855,10 +4855,10 @@
       "item1": "pixie boots",
       "qty2": 1,
       "item2": "agate of evolution",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4867,10 +4867,10 @@
       "item1": "sapient sandals",
       "qty2": 1,
       "item2": "reset stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4882,7 +4882,7 @@
       "qty3": 1,
       "item3": "blue orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4894,7 +4894,7 @@
       "qty3": 3,
       "item3": "blue orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Feet",
@@ -4906,7 +4906,7 @@
       "qty3": 3,
       "item3": "blue orb",
       "alchemiracle": true,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -4915,10 +4915,10 @@
       "item1": "gold ring",
       "qty2": 1,
       "item2": "aggressence",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -4927,10 +4927,10 @@
       "item1": "terrible tattoo",
       "qty2": 1,
       "item2": "aggressence",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -4939,10 +4939,10 @@
       "item1": "strength ring",
       "qty2": 1,
       "item2": "corundum",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -4954,7 +4954,7 @@
       "qty3": 1,
       "item3": "tough guy tattoo",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -4963,10 +4963,10 @@
       "item1": "slimedrop",
       "qty2": 1,
       "item2": "gold ring",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -4975,10 +4975,10 @@
       "item1": "dragon scale",
       "qty2": 1,
       "item2": "corundum",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -4987,10 +4987,10 @@
       "item1": "butterfly wing",
       "qty2": 1,
       "item2": "grubby bandage",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5002,7 +5002,7 @@
       "qty3": 1,
       "item3": "grubby bandage",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5011,10 +5011,10 @@
       "item1": "prayer ring",
       "qty2": 2,
       "item2": "flurry feather",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5026,7 +5026,7 @@
       "qty3": 3,
       "item3": "lucida shard",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5035,10 +5035,10 @@
       "item1": "skull ring",
       "qty2": 1,
       "item2": "saint's ashes",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5050,7 +5050,7 @@
       "qty3": 3,
       "item3": "thinkincense",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5059,10 +5059,10 @@
       "item1": "gold bracer",
       "qty2": 2,
       "item2": "sorcerer's stone",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5071,10 +5071,10 @@
       "item1": "gold bracer",
       "qty2": 2,
       "item2": "life ring",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5086,7 +5086,7 @@
       "qty3": 1,
       "item3": "elfin charm",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5098,7 +5098,7 @@
       "qty3": 1,
       "item3": "ruby of protection",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5107,10 +5107,10 @@
       "item1": "gold ring",
       "qty2": 2,
       "item2": "sage's elixir",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5122,7 +5122,7 @@
       "qty3": 1,
       "item3": "resurrock",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5134,7 +5134,7 @@
       "qty3": 1,
       "item3": "panacea",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5146,7 +5146,7 @@
       "qty3": 1,
       "item3": "special antidote",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5158,7 +5158,7 @@
       "qty3": 1,
       "item3": "lunaria",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5170,7 +5170,7 @@
       "qty3": 3,
       "item3": "wakerobin",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5182,7 +5182,7 @@
       "qty3": 3,
       "item3": "angel bell",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5194,7 +5194,7 @@
       "qty3": 1,
       "item3": "contra band",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5203,10 +5203,10 @@
       "item1": "sorcerer's ring",
       "qty2": 1,
       "item2": "malicite",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5218,7 +5218,7 @@
       "qty3": 3,
       "item3": "emerald moss",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5227,10 +5227,10 @@
       "item1": "prayer ring",
       "qty2": 3,
       "item2": "resurrock",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5242,7 +5242,7 @@
       "qty3": 1,
       "item3": "gold bar",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5251,10 +5251,10 @@
       "item1": "lucky pendant",
       "qty2": 1,
       "item2": "malicite",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Accessories",
@@ -5263,34 +5263,34 @@
       "item1": "reckless necklace",
       "qty2": 1,
       "item2": "saint's ashes",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
       "result": "strong medicine",
       "qty1": 2,
       "item1": "medicinal herb",
-      "qty2": null,
-      "item2": null,
-      "qty3": null,
-      "item3": null,
+      "qty2": "",
+      "item2": "",
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
       "result": "special medicine",
       "qty1": 2,
       "item1": "strong medicine",
-      "qty2": null,
-      "item2": null,
-      "qty3": null,
-      "item3": null,
+      "qty2": "",
+      "item2": "",
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5299,10 +5299,10 @@
       "item1": "medicinal herb",
       "qty2": 1,
       "item2": "strong medicine",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5311,22 +5311,22 @@
       "item1": "antidotal herb",
       "qty2": 1,
       "item2": "medicinal herb",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
       "result": "special antidote",
       "qty1": 2,
       "item1": "strong antidote",
-      "qty2": null,
-      "item2": null,
-      "qty3": null,
-      "item3": null,
+      "qty2": "",
+      "item2": "",
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5335,22 +5335,22 @@
       "item1": "strong medicine",
       "qty2": 1,
       "item2": "moonwort bulb",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
       "result": "lunaria",
       "qty1": 3,
       "item1": "moonwort bulb",
-      "qty2": null,
-      "item2": null,
-      "qty3": null,
-      "item3": null,
+      "qty2": "",
+      "item2": "",
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5362,7 +5362,7 @@
       "qty3": 5,
       "item3": "sleeping hibiscus",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5374,7 +5374,7 @@
       "qty3": 1,
       "item3": "moonwort bulb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5386,7 +5386,7 @@
       "qty3": 1,
       "item3": "wakerobin",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5395,10 +5395,10 @@
       "item1": "yggdrasil leaf",
       "qty2": 1,
       "item2": "elfin elixir",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5410,7 +5410,7 @@
       "qty3": 1,
       "item3": "nectar",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5422,7 +5422,7 @@
       "qty3": 3,
       "item3": "nectar",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5434,7 +5434,7 @@
       "qty3": 5,
       "item3": "nectar",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5446,7 +5446,7 @@
       "qty3": 3,
       "item3": "cowpat",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5458,7 +5458,7 @@
       "qty3": 1,
       "item3": "silver orb",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5467,10 +5467,10 @@
       "item1": "flintstone",
       "qty2": 3,
       "item2": "iron ore",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5482,7 +5482,7 @@
       "qty3": 5,
       "item3": "birdsong nectar",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5494,7 +5494,7 @@
       "qty3": 1,
       "item3": "toad oil",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5506,7 +5506,7 @@
       "qty3": 1,
       "item3": "mystifying mixture",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5518,7 +5518,7 @@
       "qty3": 2,
       "item3": "narspicious",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5530,7 +5530,7 @@
       "qty3": 1,
       "item3": "angel bell",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5539,10 +5539,10 @@
       "item1": "fresh water",
       "qty2": 5,
       "item2": "tangleweb",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5554,7 +5554,7 @@
       "qty3": 1,
       "item3": "celestial skein",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5566,7 +5566,7 @@
       "qty3": 2,
       "item3": "astral plume",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5575,10 +5575,10 @@
       "item1": "brighten rock",
       "qty2": 3,
       "item2": "evencloth",
-      "qty3": null,
-      "item3": null,
+      "qty3": "",
+      "item3": "",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5590,7 +5590,7 @@
       "qty3": 1,
       "item3": "chronocrystal",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5602,7 +5602,7 @@
       "qty3": 1,
       "item3": "hephaestus' flame",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5614,7 +5614,7 @@
       "qty3": 3,
       "item3": "narspicious",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5626,7 +5626,7 @@
       "qty3": 1,
       "item3": "superior medicine",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     },
     {
       "type": "Items",
@@ -5638,7 +5638,7 @@
       "qty3": 1,
       "item3": "softwort",
       "alchemiracle": false,
-      "notes": null
+      "notes": ""
     }
   ]
 }

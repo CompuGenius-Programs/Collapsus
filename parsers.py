@@ -10,14 +10,15 @@ class Recipe:
     """Class for a recipe."""
     type: str = ""
     result: str = ""
-    qty1: int = None
-    item1: str = None
-    qty2: int = None
-    item2: str = None
-    qty3: int = None
-    item3: str = None
+    qty1: int = ""
+    item1: str = ""
+    qty2: int = ""
+    item2: str = ""
+    qty3: int = ""
+    item3: str = ""
     alchemiracle: bool = False
-    notes: str = None
+    notes: str = ""
+    image: str = ""
 
 
 @dataclass_json

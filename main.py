@@ -26,6 +26,12 @@ grotto_search_url = "https://www.yabd.org/apps/dq9/grottosearch.php"
 
 monster_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/monster/%s.webp"
 
+item_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/item/%s.png"
+weapon_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/weapon/%s.png"
+armor_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/armor/%s.png"
+accessory_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/accessory/%s.png"
+recipe_images_urls = [item_images_url, weapon_images_url, armor_images_url, accessory_images_url]
+
 
 @bot.event
 async def on_ready():
@@ -128,15 +134,26 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
 
     title = ":star: %s :star:" % titlecase(recipe.result) if recipe.alchemiracle else titlecase(recipe.result)
     color = discord.Color.gold() if recipe.alchemiracle else discord.Color.green()
-    embed = create_embed(title, color=color)
+
+    if recipe.image == "":
+        recipe_images_url = ""
+        for url in recipe_images_urls:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url % clean_text(recipe.result)) as resp:
+                    if resp.status == 200:
+                        recipe_images_url = url
+                        break
+        recipe.image = recipe_images_url % clean_text(recipe.result)
+    embed = create_embed(title, color=color, image=recipe.image)
+
     embed.add_field(name="Type", value=recipe.type, inline=False)
-    if recipe.item1 is not None:
+    if recipe.item1 != "":
         embed.add_field(name="Item 1", value="%ix %s" % (recipe.qty1, titlecase(recipe.item1)), inline=False)
-    if recipe.item2 is not None:
+    if recipe.item2 != "":
         embed.add_field(name="Item 2", value="%ix %s" % (recipe.qty2, titlecase(recipe.item2)), inline=False)
-    if recipe.item3 is not None:
+    if recipe.item3 != "":
         embed.add_field(name="Item 3", value="%ix %s" % (recipe.qty3, titlecase(recipe.item3)), inline=False)
-    if recipe.notes is not None:
+    if recipe.notes != "":
         embed.add_field(name="Notes", value="%s" % recipe.notes, inline=False)
 
     await ctx.respond(embed=embed)

@@ -203,7 +203,7 @@ async def _monster(ctx,
         if monster.drop2 != "":
             description += "\n**__Drop 2 | Rare Drop__**\n%s\n" % titlecase(monster.drop2)
         if monster.drop3 != "":
-            description += "\n**__Drop 3 | Half-Inch Drop__**\n%s\n" % titlecase(monster.drop3)
+            description += "\n**__Drop 3__**\n%s\n" % titlecase(monster.drop3)
 
         if monster.image == "":
             monster.image = monster_images_url % clean_text(monster.name)

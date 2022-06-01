@@ -166,10 +166,9 @@ async def _monster(ctx,
         data = json.load(fp)
 
     monsters = data["monsters"]
-    if monster_identifier == "BLUETHING":
-        indexes = list(filter(lambda r: r["name"].lower() == "slime", monsters))
-    elif int_from_string(monster_identifier) == "":
-        indexes = list(filter(lambda r: clean_text(r["name"].lower()) == clean_text(monster_identifier.lower()), monsters))
+    if int_from_string(monster_identifier) == "":
+        indexes = list(filter(lambda r: clean_text(r["name"].lower()) == clean_text(monster_identifier.lower()) or
+                              clean_text(r.get("altname", "").lower()) == clean_text(monster_identifier.lower()), monsters))
     else:
         indexes = list(filter(lambda r: int_from_string(r["number"]) == int_from_string(monster_identifier), monsters))
 

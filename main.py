@@ -292,7 +292,7 @@ def int_from_string(string):
 
 
 def clean_text(text):
-    return text.lower().replace(" ", "_").replace("'", "").replace("-", "_").replace("ñ", "n")
+    return text.lower().replace(" ", "").replace("'", "").replace("-", "").replace("ñ", "n")
 
 
 def create_paginator(embeds):

@@ -54,6 +54,8 @@ A bot created by <@496392770374860811> for The Quester's Rest.
 
 `/grotto [Material] [Environment] [Suffix] [Level] <Location>` | Displays all grotto info for a name combination
 
+`/gg [Material] [Environment] [Suffix] [Level] [Location]` | Displays all grotto info for a name combination with location required
+
 `/recipe [Creation]` | Displays all info for a recipe
 
 `/monster [Monster Identifier]` | Displays all info for a monster
@@ -226,6 +228,21 @@ async def _grotto(ctx,
                   suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
                   level: Option(int, "Level (Ex. 1)", required=True),
                   location: Option(str, "Location (Ex. 05)", required=False)):
+    await grotto_func(ctx, material, environment, suffix, level, location)
+
+
+@bot.slash_command(name="gg", description="Sends info about a grotto with location required.", guild_ids=[guild_id])
+async def _grotto_location(ctx,
+                  material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
+                  environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
+                                      required=True),
+                  suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
+                  level: Option(int, "Level (Ex. 1)", required=True),
+                  location: Option(str, "Location (Ex. 05)", required=True)):
+    await grotto_func(ctx, material, environment, suffix, level, location)
+
+
+async def grotto_func(ctx, material, environment, suffix, level, location):
     async with aiohttp.ClientSession() as session:
         params = {
             "search": "Search",

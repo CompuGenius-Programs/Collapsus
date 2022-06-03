@@ -177,7 +177,8 @@ async def _monster(ctx,
         indexes = list(filter(lambda r: int_from_string(r["number"]) == int_from_string(monster_identifier), monsters))
 
     if len(indexes) == 0:
-        embed = create_embed("No monster found with the name `%s`. Please check spelling and try again.")
+        embed = create_embed("No monster found with the identifier `%s`. Please check spelling and try again."
+                             % monster_identifier)
         return await ctx.respond(embed=embed)
 
     embeds = []

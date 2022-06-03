@@ -98,7 +98,7 @@ async def _quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required
     quests = data["quests"]
     index = quest_number - 1
     if index >= len(quests) or index < 0:
-        embed = create_embed("Invalid quest. Please check number and try again.")
+        embed = create_embed("No quest found with the number `%s`. Please check number and try again." % quest_number)
         return await ctx.respond(embed=embed)
 
     quest = parsers.Quest.from_dict(quests[index])
@@ -131,7 +131,7 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
 
     if index is None:
         embed = create_embed("Ahem! Oh dear. I'm afraid I don't seem to be\nable to make anything with that particular"
-                             "\ncreation name.", image=krak_pop_image_url)
+                             "\ncreation name of `%s`." % creation_name, image=krak_pop_image_url)
         return await ctx.respond(embed=embed)
 
     recipe = parsers.Recipe.from_dict(index)
@@ -177,7 +177,7 @@ async def _monster(ctx,
         indexes = list(filter(lambda r: int_from_string(r["number"]) == int_from_string(monster_identifier), monsters))
 
     if len(indexes) == 0:
-        embed = create_embed("No monster found. Please check spelling and try again.")
+        embed = create_embed("No monster found with the name `%s`. Please check spelling and try again.")
         return await ctx.respond(embed=embed)
 
     embeds = []

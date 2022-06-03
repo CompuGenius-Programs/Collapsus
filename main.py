@@ -185,7 +185,7 @@ async def _monster(ctx,
 
         monster = parsers.Monster.from_dict(index)
 
-        title = "%s - %s" % (monster.num_str, titlecase(monster.name))
+        title = "%s - %s (Level: %s)" % (monster.num_str, titlecase(monster.name), monster.level)
         description = '''
 **Family:** %s | **EXP:** %s | **Gold:** %s
 

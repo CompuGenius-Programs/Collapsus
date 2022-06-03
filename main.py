@@ -26,6 +26,7 @@ grotto_search_url = "https://www.yabd.org/apps/dq9/grottosearch.php"
 
 monster_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/monster/%s.webp"
 
+krak_pop_image_url = "https://cdn.discordapp.com/attachments/698157074420334612/982389321506099300/unknown.png"
 item_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/item/%s.png"
 weapon_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/weapon/%s.png"
 armor_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/armor/%s.png"
@@ -129,7 +130,8 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
     index = next(filter(lambda r: r["result"] == creation_name.lower(), recipes), None)
 
     if index is None:
-        embed = create_embed("No recipe found. Please check spelling and try again.")
+        embed = create_embed("Ahem! Oh dear. I'm afraid I don't seem to be\nable to make anything with that particular"
+                             "\ncreation name.", image=krak_pop_image_url)
         return await ctx.respond(embed=embed)
 
     recipe = parsers.Recipe.from_dict(index)

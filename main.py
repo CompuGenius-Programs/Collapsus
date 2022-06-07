@@ -211,9 +211,9 @@ async def _monster(ctx,
             description += "\n**__Drop 3__**\n%s\n" % titlecase(monster.drop3)
 
         if monster.image == "":
-            monster.image = monster_images_url % clean_text(monster.name)
+            monster.image = monster_images_url % clean_text(monster.name, False)
 
-        embed = create_embed(title, description.center(100, ' '), image=monster.image)
+        embed = create_embed(title, description, image=monster.image)
         embeds.append(embed)
 
     if len(embeds) > 1:
@@ -311,8 +311,14 @@ def int_from_string(string):
         return ""
 
 
-def clean_text(text):
-    return text.lower().replace(" ", "").replace("'", "").replace("-", "").replace("ñ", "n")
+def clean_text(text, remove_spaces=True):
+    text = text.lower().replace("'", "").replace("-", "").replace("ñ", "n")
+    if remove_spaces:
+        text = text.replace(" ", "")
+    else:
+        text = text.replace(" ", "_")
+
+    return text
 
 
 def create_paginator(embeds):

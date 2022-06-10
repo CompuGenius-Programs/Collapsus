@@ -62,6 +62,8 @@ A bot created by <@496392770374860811> for The Quester's Rest.
 
 `/monster [Monster Identifier]` | Displays all info for a monster
 
+`/character` | Displays info for a random character
+
 `/help` | Displays this message
 '''
 

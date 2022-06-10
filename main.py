@@ -1,5 +1,6 @@
 import json
 import os
+import random
 
 import aiohttp
 import discord
@@ -221,6 +222,36 @@ async def _monster(ctx,
         await paginator.respond(ctx.interaction)
     else:
         await ctx.respond(embed=embeds[0])
+
+
+@bot.slash_command(name="character", description="Sends info for a random character.")
+async def _character(ctx):
+    gender = random.choice(["Male", "Female"])
+    body_type = random.randint(1, 5)
+    hair_style = random.randint(1, 10)
+    hair_color = random.randint(1, 10)
+    face_style = random.randint(1, 10)
+    skin_tone = random.randint(1, 8)
+    eye_color = random.randint(1, 8)
+
+    description = '''
+**Gender:** %s
+    
+**Body Type:** %s
+    
+**Hair Style:** %s
+    
+**Hair Color:** %s
+    
+**Face Style:** %s
+    
+**Skin Tone:** %s
+    
+**Eye Color:** %s
+''' % (gender, body_type, hair_style, hair_color, face_style, skin_tone, eye_color)
+    embed = create_embed("Random Character Generator", description)
+
+    await ctx.respond(embed=embed)
 
 
 @bot.slash_command(name="grotto", description="Sends info about a grotto.", guild_ids=[guild_id])

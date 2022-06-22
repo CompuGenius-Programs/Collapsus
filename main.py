@@ -115,7 +115,7 @@ async def _quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required
     if quest.request != "":
         embed.add_field(name="Request", value=quest.request, inline=False)
     if quest.solution != "":
-        embed.add_field(name="Solution", value=quest.solution, inline=False)
+        embed.add_field(name="Solution", value="||%s||" % quest.solution, inline=False)
     if quest.reward != "":
         embed.add_field(name="Reward", value=quest.reward, inline=False)
     embed.add_field(name="Repeat", value="Yes" if quest.repeat else "No", inline=False)

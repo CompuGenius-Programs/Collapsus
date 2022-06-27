@@ -146,11 +146,11 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
         recipe_images_url = ""
         for url in recipe_images_urls:
             async with aiohttp.ClientSession() as session:
-                async with session.get(url % clean_text(recipe.result)) as resp:
+                async with session.get(url % clean_text(recipe.result, False)) as resp:
                     if resp.status == 200:
                         recipe_images_url = url
                         break
-        recipe.image = recipe_images_url % clean_text(recipe.result)
+        recipe.image = recipe_images_url % clean_text(recipe.result, False)
     embed = create_embed(title, color=color, image=recipe.image)
 
     embed.add_field(name="Type", value=recipe.type, inline=False)

@@ -150,7 +150,8 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
                     if resp.status == 200:
                         recipe_images_url = url
                         break
-        recipe.image = recipe_images_url % clean_text(recipe.result, False)
+        if recipe_images_url != "":
+            recipe.image = recipe_images_url % clean_text(recipe.result, False)
     embed = create_embed(title, color=color, image=recipe.image)
 
     embed.add_field(name="Type", value=recipe.type, inline=False)

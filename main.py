@@ -315,7 +315,7 @@ async def grotto_func(ctx, material, environment, suffix, level, location):
                     if key == "Name":
                         if special:
                             value = ":star: %s :star:" % value
-                        embed.title = value
+                        embed.title = "%s [Click For Full Info]" % value
                     else:
                         if key == "Chests":
                             values = [str(x) for x in parsed[i:i + 10]]

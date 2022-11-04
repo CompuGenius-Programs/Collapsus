@@ -257,7 +257,7 @@ async def _character(ctx):
     await ctx.respond(embed=embed)
 
 
-@bot.slash_command(name="grotto", description="Sends info about a grotto.", guild_ids=[guild_id])
+@bot.slash_command(name="grotto", description="Sends info about a grotto.")
 async def _grotto(ctx,
                   material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
                   environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
@@ -268,7 +268,7 @@ async def _grotto(ctx,
     await grotto_func(ctx, material, environment, suffix, level, location)
 
 
-@bot.slash_command(name="gg", description="Sends info about a grotto with location required.", guild_ids=[guild_id])
+@bot.slash_command(name="gg", description="Sends info about a grotto with location required.")
 async def _grotto_location(ctx,
                   material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
                   environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
@@ -295,7 +295,7 @@ async def grotto_func(ctx, material, environment, suffix, level, location):
         async with session.get(grotto_search_url, params=params) as response:
             text = await response.text()
             selector = Selector(text=text)
-            selector.xpath('//div[@class="minimap"]').remove()
+            selector.xpath('//div[@class="minimap"]').drop()
             divs = selector.xpath('//div[@class="inner"]//text()')
             grottos = divs.getall()
 

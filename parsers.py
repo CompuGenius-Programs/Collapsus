@@ -96,7 +96,6 @@ translation_files = [
     "accolades_translated.json"
 ]
 
-
 grotto_prefixes = [
     "Clay",
     "Rock",

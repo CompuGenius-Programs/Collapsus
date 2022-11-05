@@ -93,7 +93,7 @@ translation_languages = [
 translation_languages_simple = [
     "english",
     "japanese",
-    "spanish)",
+    "spanish",
     "french",
     "german",
     "italian"

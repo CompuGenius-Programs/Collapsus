@@ -1,0 +1,460 @@
+{
+    "translations": [
+        {
+            "english": "Clay",
+            "japanese": "はかなき",
+            "spanish": "de Arcilla",
+            "french": "d’argile",
+            "german": "Lehm-",
+            "italian": "Argilla"
+        },
+        {
+            "english": "Rock",
+            "japanese": "ちいさな",
+            "spanish": "de Roca",
+            "french": "de pierre",
+            "german": "Fels-",
+            "italian": "Roccia"
+        },
+        {
+            "english": "Granite",
+            "japanese": "うす暗き",
+            "spanish": "de Granito",
+            "french": "de granit",
+            "german": "Granit-",
+            "italian": "Granito"
+        },
+        {
+            "english": "Basalt",
+            "japanese": "ゆらめく",
+            "spanish": "de Basalto",
+            "french": "de basalte",
+            "german": "Basalt-",
+            "italian": "Basalto"
+        },
+        {
+            "english": "Graphite",
+            "japanese": "ざわめく",
+            "spanish": "de Grafita",
+            "french": "de graphite",
+            "german": "Graphit-",
+            "italian": "Grafite"
+        },
+        {
+            "english": "Iron",
+            "japanese": "ねむれる",
+            "spanish": "de Hierro",
+            "french": "de fer",
+            "german": "Eisen-",
+            "italian": "Ferro"
+        },
+        {
+            "english": "Copper",
+            "japanese": "怒れる",
+            "spanish": "de Cobre",
+            "french": "de cuivre",
+            "german": "Kupfer-",
+            "italian": "Rame"
+        },
+        {
+            "english": "Bronze",
+            "japanese": "呪われし",
+            "spanish": "de Bronce",
+            "french": "de bronze",
+            "german": "Bronze-",
+            "italian": "Bronzo"
+        },
+        {
+            "english": "Steel",
+            "japanese": "放たれし",
+            "spanish": "de Acero",
+            "french": "d’acier",
+            "german": "Stahl-",
+            "italian": "Acciaio"
+        },
+        {
+            "english": "Silver",
+            "japanese": "けだかき",
+            "spanish": "de Plata",
+            "french": "d’argent",
+            "german": "Silber-",
+            "italian": "Argento"
+        },
+        {
+            "english": "Gold",
+            "japanese": "わななく",
+            "spanish": "de Oro",
+            "french": "d’or",
+            "german": "Gold-",
+            "italian": "Oro"
+        },
+        {
+            "english": "Platinum",
+            "japanese": "残された",
+            "spanish": "de Platino",
+            "french": "de platine",
+            "german": "Platin-",
+            "italian": "Platino"
+        },
+        {
+            "english": "Ruby",
+            "japanese": "見えざる",
+            "spanish": "de Rubí",
+            "french": "de rubis",
+            "german": "Rubin-",
+            "italian": "Rubino"
+        },
+        {
+            "english": "Emerald",
+            "japanese": "あらぶる",
+            "spanish": "de Esmeralda",
+            "french": "d’émeraude",
+            "german": "Smaragd-",
+            "italian": "Smeraldo"
+        },
+        {
+            "english": "Sapphire",
+            "japanese": "とどろく",
+            "spanish": "de Zafiro",
+            "french": "de saphir",
+            "german": "Saphir-",
+            "italian": "Zaffiro"
+        },
+        {
+            "english": "Diamond",
+            "japanese": "大いなる",
+            "spanish": "de Diamante",
+            "french": "de diamant",
+            "german": "Diamant-",
+            "italian": "Diamante"
+        },
+        {
+            "english": "Cave",
+            "japanese": "洞くつ",
+            "spanish": "Cueva",
+            "french": "Grotte",
+            "german": "Höhle",
+            "italian": "Grotta"
+        },
+        {
+            "english": "Tunnel",
+            "japanese": "地下道",
+            "spanish": "Galería",
+            "french": "Tunnel",
+            "german": "Tunnel",
+            "italian": "Galleria"
+        },
+        {
+            "english": "Mine",
+            "japanese": "坑道",
+            "spanish": "Mina",
+            "french": "Mine",
+            "german": "Mine",
+            "italian": "Miniera"
+        },
+        {
+            "english": "Crevasse",
+            "japanese": "雪道",
+            "spanish": "Sima",
+            "french": "Crevasse",
+            "german": "Spalte",
+            "italian": "Crepaccio"
+        },
+        {
+            "english": "Marsh",
+            "japanese": "沼地",
+            "spanish": "Marisma",
+            "french": "Marais",
+            "german": "Marsch",
+            "italian": "Palude"
+        },
+        {
+            "english": "Lair",
+            "japanese": "アジト",
+            "spanish": "Guarida",
+            "french": "Repaire",
+            "german": "Versteck",
+            "italian": "Tana"
+        },
+        {
+            "english": "Icepit",
+            "japanese": "氷穴",
+            "spanish": "Sima Helada",
+            "french": "Puits",
+            "german": "Eisgrube",
+            "italian": "Abisso"
+        },
+        {
+            "english": "Lake",
+            "japanese": "地底湖",
+            "spanish": "Laguna",
+            "french": "Lac",
+            "german": "See",
+            "italian": "Lago"
+        },
+        {
+            "english": "Crater",
+            "japanese": "火口",
+            "spanish": "Boca",
+            "french": "Cratėre",
+            "german": "Krater",
+            "italian": "Cratere"
+        },
+        {
+            "english": "Path",
+            "japanese": "道",
+            "spanish": "Galería",
+            "french": "Sentier",
+            "german": "Pfad",
+            "italian": "Sentiero"
+        },
+        {
+            "english": "Snowhall",
+            "japanese": "雪原",
+            "spanish": "Nevera",
+            "french": "Fosse",
+            "german": "Eispalast",
+            "italian": "Dedalo"
+        },
+        {
+            "english": "Moor",
+            "japanese": "湿原",
+            "spanish": "Landa",
+            "french": "Lande",
+            "german": "Moor",
+            "italian": "Brughiera"
+        },
+        {
+            "english": "Dungeon",
+            "japanese": "牢ごく",
+            "spanish": "Mazmorra",
+            "french": "Donjon",
+            "german": "Kerker",
+            "italian": "Segreta"
+        },
+        {
+            "english": "Crypt",
+            "japanese": "墓場",
+            "spanish": "Cripta",
+            "french": "Crypte",
+            "german": "Krypta",
+            "italian": "Cripta"
+        },
+        {
+            "english": "Nest",
+            "japanese": "巣",
+            "spanish": "Covacha",
+            "french": "Taniėre",
+            "german": "Nest",
+            "italian": "Nido"
+        },
+        {
+            "english": "Ruins",
+            "japanese": "遺跡",
+            "spanish": "Ruina",
+            "french": "Vestiges",
+            "german": "Ruine",
+            "italian": "Rovina"
+        },
+        {
+            "english": "Tundra",
+            "japanese": "凍土",
+            "spanish": "Tundra",
+            "french": "Steppe",
+            "german": "Tundra",
+            "italian": "Tundra"
+        },
+        {
+            "english": "Waterway",
+            "japanese": "水脈",
+            "spanish": "Rivera",
+            "french": "Riviėre",
+            "german": "Gewässer",
+            "italian": "Canale"
+        },
+        {
+            "english": "Nest",
+            "japanese": "巣",
+            "spanish": "Guarida",
+            "french": "Taniėre",
+            "german": "Nest",
+            "italian": "Nido"
+        },
+        {
+            "english": "World",
+            "japanese": "世界",
+            "spanish": "Tierra",
+            "french": "Monde",
+            "german": "Welt",
+            "italian": "Reame"
+        },
+        {
+            "english": "Abyss",
+            "japanese": "奈落",
+            "spanish": "Cuenca",
+            "french": "Gouffre",
+            "german": "Abgrund",
+            "italian": "Abisso"
+        },
+        {
+            "english": "Maze",
+            "japanese": "迷宮",
+            "spanish": "Laberinto",
+            "french": "Déale",
+            "german": "Labyrinth",
+            "italian": "Dedalo"
+        },
+        {
+            "english": "Glacier",
+            "japanese": "氷河",
+            "spanish": "Tundra",
+            "french": "Glacier",
+            "german": "Gletscher",
+            "italian": "Ghiacciaio"
+        },
+        {
+            "english": "Chasm",
+            "japanese": "眠る地",
+            "spanish": "Madriguera",
+            "french": "Faille",
+            "german": "Kluft",
+            "italian": "Spelonca"
+        },
+        {
+            "english": "Void",
+            "japanese": "じごく",
+            "spanish": "Sima",
+            "french": "Néant",
+            "german": "Leere",
+            "italian": "Vuoto"
+        },
+        {
+            "english": "of Joy",
+            "japanese": "花の",
+            "spanish": "de la Alegría",
+            "french": "de la Joie",
+            "german": "der Freude",
+            "italian": "della Gioia"
+        },
+        {
+            "english": "of Bliss",
+            "japanese": "岩の",
+            "spanish": "de la Felicidad",
+            "french": "de la Félicité",
+            "german": "der Seligkeit",
+            "italian": "della Benedizione"
+        },
+        {
+            "english": "of Glee",
+            "japanese": "風の",
+            "spanish": "del Júbilo",
+            "french": "de l’Allégresse",
+            "german": "der Wonne",
+            "italian": "dell’Esultanza"
+        },
+        {
+            "english": "of Doubt",
+            "japanese": "空の",
+            "spanish": "de la Duda",
+            "french": "de l’Incertitude",
+            "german": "des Zweifels",
+            "italian": "della Miseria"
+        },
+        {
+            "english": "of Woe",
+            "japanese": "獣の",
+            "spanish": "de la Congoja",
+            "french": "de la Détresse",
+            "german": "des Grams",
+            "italian": "dell’Angoscia"
+        },
+        {
+            "english": "of Dolour",
+            "japanese": "夢の",
+            "spanish": "del Dolor",
+            "french": "de l’Affliction",
+            "german": "des Schmerzes",
+            "italian": "della Pena"
+        },
+        {
+            "english": "of Regret",
+            "japanese": "影の",
+            "spanish": "de los Lamentos",
+            "french": "du Regret",
+            "german": "der Reue",
+            "italian": "della Nostalgia"
+        },
+        {
+            "english": "of Bane",
+            "japanese": "大地の",
+            "spanish": "de la Ruina",
+            "french": "du Malheur",
+            "german": "des Verderbens",
+            "italian": "della Disgrazia"
+        },
+        {
+            "english": "of Fear",
+            "japanese": "運命の",
+            "spanish": "del Miedo",
+            "french": "de la Peur",
+            "german": "der Furcht",
+            "italian": "della Paura"
+        },
+        {
+            "english": "of Dread",
+            "japanese": "魂の",
+            "spanish": "del Terror",
+            "french": "de l’Effroi",
+            "german": "des Grauens",
+            "italian": "della Fobia"
+        },
+        {
+            "english": "of Hurt",
+            "japanese": "闇の",
+            "spanish": "del Sufrimiento",
+            "french": "de la Souffrance",
+            "german": "der Qual",
+            "italian": "della Sofferenza"
+        },
+        {
+            "english": "of Gloom",
+            "japanese": "光の",
+            "spanish": "de la Melancolía",
+            "french": "de la Mélancolie",
+            "german": "der Trübsal",
+            "italian": "della Malasorte"
+        },
+        {
+            "english": "of Doom",
+            "japanese": "魔神の",
+            "spanish": "del Sino",
+            "french": "de l’Infortune",
+            "german": "des Schicksals",
+            "italian": "della Maledizione"
+        },
+        {
+            "english": "of Evil",
+            "japanese": "星々の",
+            "spanish": "del Mal",
+            "french": "de l’Horreur",
+            "german": "des Bösen",
+            "italian": "della Malvagità"
+        },
+        {
+            "english": "of Ruin",
+            "japanese": "悪霊の",
+            "spanish": "de la Desgracia",
+            "french": "du Désastre",
+            "german": "des Ruins",
+            "italian": "della Fine"
+        },
+        {
+            "english": "of Death",
+            "japanese": "神々の",
+            "spanish": "de la Muerte",
+            "french": "de la Mort",
+            "german": "des Todes",
+            "italian": "della Morte"
+        }
+    ]
+}

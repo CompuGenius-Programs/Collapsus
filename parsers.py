@@ -69,6 +69,34 @@ class Monster:
     image: str = ""
 
 
+@dataclass_json
+@dataclass
+class Translation:
+    """Class for a translation."""
+    english: str = ""
+    japanese: str = ""
+    spanish: str = ""
+    french: str = ""
+    german: str = ""
+    italian: str = ""
+
+
+translation_languages = [
+    "English",
+    "Japanese (日本語)",
+    "Spanish (Español)",
+    "French (Français)",
+    "German (Deutsch)",
+    "Italian (Italiano)"
+]
+
+translation_files = [
+    "items_translated.json",
+    "grottos_translated.json",
+    "accolades_translated.json"
+]
+
+
 grotto_prefixes = [
     "Clay",
     "Rock",

@@ -124,6 +124,87 @@ async def _quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required
     await ctx.respond(embed=embed)
 
 
+@bot.slash_command(name="translate", description="Translate a word or phrase to a different language.")
+async def _translate(ctx,
+                     phrase: Option(str, "Word or Phrase (Ex. Copper Sword)", required=True),
+                     language_input: Option(str, "Input Language (Ex. English)", choices=parsers.translation_languages,
+                                            required=True),
+                     language_output: Option(str, "Output Language (Ex. Japanese)",
+                                             choices=parsers.translation_languages, required=False)):
+    data = {
+        "translations": []
+    }
+    for file in parsers.translation_files:
+        with open(file, "r", encoding="utf-8") as fp:
+            data["translations"] += json.load(fp)["translations"]
+
+    english = parsers.translation_languages[0]
+    japanese = parsers.translation_languages[1]
+    spanish = parsers.translation_languages[2]
+    french = parsers.translation_languages[3]
+    german = parsers.translation_languages[4]
+    italian = parsers.translation_languages[5]
+
+    translations = data["translations"]
+
+    index = None
+    if language_input == english:
+        index = next(filter(lambda r: r["english"].lower() == phrase.lower(), translations), None)
+    if language_input == japanese:
+        index = next(filter(lambda r: r["japanese"].lower() == phrase.lower(), translations), None)
+    if language_input == spanish:
+        index = next(filter(lambda r: r["spanish"].lower() == phrase.lower(), translations), None)
+    if language_input == french:
+        index = next(filter(lambda r: r["french"].lower() == phrase.lower(), translations), None)
+    if language_input == german:
+        index = next(filter(lambda r: r["german"].lower() == phrase.lower(), translations), None)
+    if language_input == italian:
+        index = next(filter(lambda r: r["italian"].lower() == phrase.lower(), translations), None)
+    if index is None:
+        embed = create_embed("No word or phrase found matching `%s`. Please check phrase and try again." % phrase)
+        return await ctx.respond(embed=embed)
+
+    translation = parsers.Translation.from_dict(index)
+
+    title = "Translation of: %s" % titlecase(phrase)
+    color = discord.Color.green()
+    embed = create_embed(title, color=color)
+    if language_output is not None:
+        value = ""
+        if language_output == english:
+            value = translation.english
+        if language_output == japanese:
+            value = translation.japanese
+        elif language_output == spanish:
+            value = translation.spanish
+        elif language_output == french:
+            value = translation.french
+        elif language_output == german:
+            value = translation.german
+        elif language_output == italian:
+            value = translation.italian
+        if value != "":
+            embed.add_field(name=language_output, value=value, inline=False)
+        else:
+            embed = create_embed("The word or phrase `%s` has not been translated to `%s`." % (phrase, language_output))
+            return await ctx.respond(embed=embed)
+    else:
+        if translation.english != "":
+            embed.add_field(name=english, value=translation.english, inline=False)
+        if translation.japanese != "":
+            embed.add_field(name=japanese, value=translation.japanese, inline=False)
+        if translation.spanish != "":
+            embed.add_field(name=spanish, value=translation.spanish, inline=False)
+        if translation.french != "":
+            embed.add_field(name=french, value=translation.french, inline=False)
+        if translation.german != "":
+            embed.add_field(name=german, value=translation.german, inline=False)
+        if translation.italian != "":
+            embed.add_field(name=italian, value=translation.italian, inline=False)
+
+    await ctx.respond(embed=embed)
+
+
 @bot.slash_command(name="recipe", description="Sends info about a recipe.")
 async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine)", required=True)):
     with open("recipes.json", "r", encoding="utf-8") as fp:
@@ -176,7 +257,8 @@ async def _monster(ctx,
     monsters = data["monsters"]
     if int_from_string(monster_identifier) == "":
         indexes = list(filter(lambda r: clean_text(r["name"].lower()) == clean_text(monster_identifier.lower()) or
-                              clean_text(r.get("altname", "").lower()) == clean_text(monster_identifier.lower()), monsters))
+                                        clean_text(r.get("altname", "").lower()) == clean_text(
+            monster_identifier.lower()), monsters))
     else:
         indexes = list(filter(lambda r: int_from_string(r["number"]) == int_from_string(monster_identifier), monsters))
 
@@ -270,12 +352,13 @@ async def _grotto(ctx,
 
 @bot.slash_command(name="gg", description="Sends info about a grotto with location required.")
 async def _grotto_location(ctx,
-                  material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
-                  environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
-                                      required=True),
-                  suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
-                  level: Option(int, "Level (Ex. 1)", required=True),
-                  location: Option(str, "Location (Ex. 05)", required=True)):
+                           material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
+                                            required=True),
+                           environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
+                                               required=True),
+                           suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
+                           level: Option(int, "Level (Ex. 1)", required=True),
+                           location: Option(str, "Location (Ex. 05)", required=True)):
     await grotto_func(ctx, material, environment, suffix, level, location)
 
 

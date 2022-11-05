@@ -22,6 +22,7 @@ quests_channel = 766039065849495574
 
 logo_url = "https://cdn.discordapp.com/emojis/856330729528361000.png"
 website_url = "https://dq9.carrd.co"
+server_invite_url = "https://discord.gg/DQ9"
 
 grotto_search_url = "https://www.yabd.org/apps/dq9/grottosearch.php"
 
@@ -49,29 +50,21 @@ async def on_ready():
 @bot.slash_command(name="help", description="Get help for using the bot.")
 async def _help(ctx):
     description = '''
-A bot created by <@496392770374860811> for The Quester's Rest.
+A bot created by <@496392770374860811> for The Quester's Rest (<%s>).
 
+**/quest** - *Displays all info for a specific quest*
+**/grotto** - *Displays all info for a grotto*
+**/gg** - *Displays all info for a grotto (location required)*
+**/translate** - *Translate a word or phrase*
+**/translate_grotto** - *Translate a grotto name*
+**/recipe** - *Displays all info for a recipe*
+**/monster** - *Displays all info for a monster*
+**/character** - *Displays info for a random character*
+**/help** - *Displays this message*
+''' % server_invite_url
 
-`/quest [Quest Number]` | Displays all info for a specific quest
-
-`/grotto [Material] [Environment] [Suffix] [Level] <Location>` | Displays all grotto info for a name combination
-
-`/gg [Material] [Environment] [Suffix] [Level] [Location]` | Displays all grotto info for a name combination with location required
-
-`/translate [Word or Phrase] [Input Language] <Output Language>` | Translate a word or phrase
-
-`/translate_grotto [Material] [Environment] [Suffix] <Output Language>` | Translate a grotto name
-
-`/recipe [Creation]` | Displays all info for a recipe
-
-`/monster [Monster Identifier]` | Displays all info for a monster
-
-`/character` | Displays info for a random character
-
-`/help` | Displays this message
-'''
-
-    embed = create_embed("Collapsus v2 Help", description=description, image=logo_url, url=website_url)
+    embed = create_embed("Collapsus v2 Help [Click For Server Website]", description=description, image=logo_url,
+                         url=website_url)
     await ctx.respond(embed=embed)
 
 

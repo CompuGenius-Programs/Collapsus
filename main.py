@@ -140,20 +140,9 @@ async def _translate(ctx,
 
     translations = data["translations"]
 
-    index = None
-    phrase_lower = clean_text(phrase.lower())
-    if language_input == parsers.translation_languages[0]:
-        index = next(filter(lambda r: clean_text(r["english"].lower()) == phrase_lower, translations), None)
-    if language_input == parsers.translation_languages[1]:
-        index = next(filter(lambda r: clean_text(r["japanese"].lower()) == phrase_lower, translations), None)
-    if language_input == parsers.translation_languages[2]:
-        index = next(filter(lambda r: clean_text(r["spanish"].lower()) == phrase_lower, translations), None)
-    if language_input == parsers.translation_languages[3]:
-        index = next(filter(lambda r: clean_text(r["french"].lower()) == phrase_lower, translations), None)
-    if language_input == parsers.translation_languages[4]:
-        index = next(filter(lambda r: clean_text(r["german"].lower()) == phrase_lower, translations), None)
-    if language_input == parsers.translation_languages[5]:
-        index = next(filter(lambda r: clean_text(r["italian"].lower()) == phrase_lower, translations), None)
+    index = next(filter(lambda r: clean_text(r[parsers.translation_languages_simple[
+        parsers.translation_languages.index(language_input)]].lower()) == clean_text(phrase.lower()), translations),
+                 None)
     if index is None:
         embed = create_embed("No word or phrase found matching `%s`. Please check phrase and try again." % phrase)
         return await ctx.respond(embed=embed)

@@ -90,6 +90,15 @@ translation_languages = [
     "Italian (Italiano)"
 ]
 
+translation_languages_simple = [
+    "english",
+    "japanese",
+    "spanish)",
+    "french",
+    "german",
+    "italian"
+]
+
 translation_files = [
     "items_translated.json",
     "grottos_translated.json",

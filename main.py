@@ -58,6 +58,10 @@ A bot created by <@496392770374860811> for The Quester's Rest.
 
 `/gg [Material] [Environment] [Suffix] [Level] [Location]` | Displays all grotto info for a name combination with location required
 
+`/translate [Word or Phrase] [Input Language] <Output Language>` | Translate a word or phrase
+
+`/translate_grotto [Material] [Environment] [Suffix] <Output Language>` | Translate a grotto name
+
 `/recipe [Creation]` | Displays all info for a recipe
 
 `/monster [Monster Identifier]` | Displays all info for a monster

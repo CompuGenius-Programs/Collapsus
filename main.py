@@ -47,7 +47,7 @@ async def on_ready():
 
 
 @bot.slash_command(name="help", description="Get help for using the bot.")
-async def help(ctx):
+async def _help(ctx):
     description = '''
 A bot created by <@496392770374860811> for The Quester's Rest.
 
@@ -72,7 +72,7 @@ A bot created by <@496392770374860811> for The Quester's Rest.
 
 
 @bot.slash_command(name="parse_quests", description="Parses the quests.")
-async def parse_quests(ctx):
+async def _parse_quests(ctx):
     await ctx.defer()
 
     quests = []
@@ -138,70 +138,50 @@ async def _translate(ctx,
         with open(file, "r", encoding="utf-8") as fp:
             data["translations"] += json.load(fp)["translations"]
 
-    english = parsers.translation_languages[0]
-    japanese = parsers.translation_languages[1]
-    spanish = parsers.translation_languages[2]
-    french = parsers.translation_languages[3]
-    german = parsers.translation_languages[4]
-    italian = parsers.translation_languages[5]
-
     translations = data["translations"]
 
     index = None
     phrase_lower = clean_text(phrase.lower())
-    if language_input == english:
+    if language_input == parsers.translation_languages[0]:
         index = next(filter(lambda r: clean_text(r["english"].lower()) == phrase_lower, translations), None)
-    if language_input == japanese:
+    if language_input == parsers.translation_languages[1]:
         index = next(filter(lambda r: clean_text(r["japanese"].lower()) == phrase_lower, translations), None)
-    if language_input == spanish:
+    if language_input == parsers.translation_languages[2]:
         index = next(filter(lambda r: clean_text(r["spanish"].lower()) == phrase_lower, translations), None)
-    if language_input == french:
+    if language_input == parsers.translation_languages[3]:
         index = next(filter(lambda r: clean_text(r["french"].lower()) == phrase_lower, translations), None)
-    if language_input == german:
+    if language_input == parsers.translation_languages[4]:
         index = next(filter(lambda r: clean_text(r["german"].lower()) == phrase_lower, translations), None)
-    if language_input == italian:
+    if language_input == parsers.translation_languages[5]:
         index = next(filter(lambda r: clean_text(r["italian"].lower()) == phrase_lower, translations), None)
     if index is None:
         embed = create_embed("No word or phrase found matching `%s`. Please check phrase and try again." % phrase)
         return await ctx.respond(embed=embed)
 
     translation = parsers.Translation.from_dict(index)
+    all_languages = [
+        translation.english,
+        translation.japanese,
+        translation.spanish,
+        translation.french,
+        translation.german,
+        translation.italian
+    ]
 
     title = "Translation of: %s" % titlecase(phrase)
     color = discord.Color.green()
     embed = create_embed(title, color=color)
     if language_output is not None:
-        value = ""
-        if language_output == english:
-            value = translation.english
-        if language_output == japanese:
-            value = translation.japanese
-        elif language_output == spanish:
-            value = translation.spanish
-        elif language_output == french:
-            value = translation.french
-        elif language_output == german:
-            value = translation.german
-        elif language_output == italian:
-            value = translation.italian
+        value = all_languages[parsers.translation_languages.index(language_output)]
         if value != "":
             embed.add_field(name=language_output, value=value, inline=False)
         else:
             embed = create_embed("The word or phrase `%s` has not been translated to `%s`." % (phrase, language_output))
             return await ctx.respond(embed=embed)
     else:
-        if translation.english != "":
-            embed.add_field(name=english, value=translation.english, inline=False)
-        if translation.japanese != "":
-            embed.add_field(name=japanese, value=translation.japanese, inline=False)
-        if translation.spanish != "":
-            embed.add_field(name=spanish, value=translation.spanish, inline=False)
-        if translation.french != "":
-            embed.add_field(name=french, value=translation.french, inline=False)
-        if translation.german != "":
-            embed.add_field(name=german, value=translation.german, inline=False)
-        if translation.italian != "":
-            embed.add_field(name=italian, value=translation.italian, inline=False)
+        for language, translation in zip(parsers.translation_languages, all_languages):
+            if translation != "":
+                embed.add_field(name=language, value=translation, inline=False)
 
     await ctx.respond(embed=embed)
 
@@ -218,13 +198,6 @@ async def _translate_grotto(ctx,
     with open("grottos_translated.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
-    english = parsers.translation_languages[0]
-    japanese = parsers.translation_languages[1]
-    spanish = parsers.translation_languages[2]
-    french = parsers.translation_languages[3]
-    german = parsers.translation_languages[4]
-    italian = parsers.translation_languages[5]
-
     translations = data["translations"]
 
     translation = parsers.Translation
@@ -236,7 +209,9 @@ async def _translate_grotto(ctx,
     translation_german = []
     translation_italian = []
 
-    phrases = [material, environment, "of %s" % suffix]
+    suffix = "of %s" % suffix
+
+    phrases = [material, environment, suffix]
     for p in phrases:
         index = next(filter(lambda r: r["english"].lower() == p.lower(), translations), None)
 
@@ -250,44 +225,32 @@ async def _translate_grotto(ctx,
         translation_italian.append(translation.italian)
 
     translation.english = "%s %s %s" % (translation_english[0], translation_english[1], translation_english[2])
-    translation.japanese = "%s %s %s" % (translation_japanese[0], translation_japanese[2], translation_japanese[1])
+    translation.japanese = "%s%s%s" % (translation_japanese[0], translation_japanese[2], translation_japanese[1])
     translation.spanish = "%s %s %s" % (translation_spanish[1], translation_spanish[0], translation_spanish[2])
     translation.french = "%s %s %s" % (translation_french[1], translation_french[0], translation_french[2])
     translation.german = "%s%s %s" % (translation_german[0], translation_german[1], translation_german[2])
     translation.italian = "%s %s %s" % (translation_italian[1], translation_italian[0], translation_italian[2])
 
-    title = "Translation of: %s" % titlecase("%s %s of %s" % (material, environment, suffix))
+    all_languages = [
+        translation.english,
+        translation.japanese,
+        translation.spanish,
+        translation.french,
+        translation.german,
+        translation.italian
+    ]
+
+    title = "Translation of: %s" % titlecase("%s %s %s" % (material, environment, suffix))
     color = discord.Color.green()
     embed = create_embed(title, color=color)
     if language_output is not None:
-        value = ""
-        if language_output == english:
-            value = translation.english
-        if language_output == japanese:
-            value = translation.japanese
-        elif language_output == spanish:
-            value = translation.spanish
-        elif language_output == french:
-            value = translation.french
-        elif language_output == german:
-            value = translation.german
-        elif language_output == italian:
-            value = translation.italian
+        value = all_languages[parsers.translation_languages.index(language_output)]
         if value != "":
             embed.add_field(name=language_output, value=value, inline=False)
     else:
-        if translation.english != "":
-            embed.add_field(name=english, value=translation.english, inline=False)
-        if translation.japanese != "":
-            embed.add_field(name=japanese, value=translation.japanese, inline=False)
-        if translation.spanish != "":
-            embed.add_field(name=spanish, value=translation.spanish, inline=False)
-        if translation.french != "":
-            embed.add_field(name=french, value=translation.french, inline=False)
-        if translation.german != "":
-            embed.add_field(name=german, value=translation.german, inline=False)
-        if translation.italian != "":
-            embed.add_field(name=italian, value=translation.italian, inline=False)
+        for language, translation in zip(parsers.translation_languages, all_languages):
+            if translation != "":
+                embed.add_field(name=language, value=translation, inline=False)
 
     await ctx.respond(embed=embed)
 
@@ -343,9 +306,10 @@ async def _monster(ctx,
 
     monsters = data["monsters"]
     if int_from_string(monster_identifier) == "":
-        indexes = list(filter(lambda r: clean_text(r["name"].lower()) == clean_text(monster_identifier.lower()) or
-                                        clean_text(r.get("altname", "").lower()) == clean_text(
-            monster_identifier.lower()), monsters))
+        indexes = list(filter(
+            lambda r: clean_text(r["name"].lower()) == clean_text(monster_identifier.lower()) or clean_text(
+                r.get("altname", "").lower()) == clean_text(
+                monster_identifier.lower()), monsters))
     else:
         indexes = list(filter(lambda r: int_from_string(r["number"]) == int_from_string(monster_identifier), monsters))
 
@@ -371,10 +335,8 @@ async def _monster(ctx,
 **Blast:** %s | **Earth:** %s | **Dark:** %s | **Light:** %s
 
 **Haunts:** %s
-''' % (monster.family, monster.exp, monster.gold,
-       monster.hp, monster.mp, monster.atk, monster.defn, monster.agi,
-       monster.fire, monster.ice, monster.wind,
-       monster.blast, monster.earth, monster.dark, monster.light,
+''' % (monster.family, monster.exp, monster.gold, monster.hp, monster.mp, monster.atk, monster.defn, monster.agi,
+       monster.fire, monster.ice, monster.wind, monster.blast, monster.earth, monster.dark, monster.light,
        titlecase(monster.haunts))
         if monster.drop1 != "":
             description += "\n**__Drop 1 | Common Drop__**\n%s\n" % titlecase(monster.drop1)

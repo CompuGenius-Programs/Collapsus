@@ -1,0 +1,52 @@
+{
+  "translations": [
+    {
+      "english": "Strength",
+      "german": "Stärke"
+    },
+    {
+      "english": "Agility",
+      "german": "Flinkheit"
+    },
+    {
+      "english": "Resilience",
+      "german": "Ausdauer"
+    },
+    {
+      "english": "Deftness",
+      "german": "Geschick"
+    },
+    {
+      "english": "Charm",
+      "german": "Charme"
+    },
+    {
+      "english": "Magical Mending",
+      "german": "Magische Medizin"
+    },
+    {
+      "english": "Magical Might",
+      "german": "Magische Macht"
+    },
+    {
+      "english": "Max. HP",
+      "german": "LP-Max."
+    },
+    {
+      "english": "Max. MP",
+      "german": "MP-Max."
+    },
+    {
+      "english": "Attack",
+      "german": "Angriff"
+    },
+    {
+      "english": "Defence",
+      "german": "Abwehr"
+    },
+    {
+      "english": "Style",
+      "german": "Stil"
+    }
+  ]
+}

@@ -93,7 +93,9 @@ translation_languages = [
 translation_files = [
     "items_translated.json",
     "grottos_translated.json",
-    "accolades_translated.json"
+    "accolades_translated.json",
+    "places_translated.json",
+    "attributes_translated.json"
 ]
 
 grotto_prefixes = [

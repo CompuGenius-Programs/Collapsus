@@ -148,18 +148,19 @@ async def _translate(ctx,
     translations = data["translations"]
 
     index = None
+    phrase_lower = clean_text(phrase.lower())
     if language_input == english:
-        index = next(filter(lambda r: r["english"].lower() == phrase.lower(), translations), None)
+        index = next(filter(lambda r: clean_text(r["english"].lower()) == phrase_lower, translations), None)
     if language_input == japanese:
-        index = next(filter(lambda r: r["japanese"].lower() == phrase.lower(), translations), None)
+        index = next(filter(lambda r: clean_text(r["japanese"].lower()) == phrase_lower, translations), None)
     if language_input == spanish:
-        index = next(filter(lambda r: r["spanish"].lower() == phrase.lower(), translations), None)
+        index = next(filter(lambda r: clean_text(r["spanish"].lower()) == phrase_lower, translations), None)
     if language_input == french:
-        index = next(filter(lambda r: r["french"].lower() == phrase.lower(), translations), None)
+        index = next(filter(lambda r: clean_text(r["french"].lower()) == phrase_lower, translations), None)
     if language_input == german:
-        index = next(filter(lambda r: r["german"].lower() == phrase.lower(), translations), None)
+        index = next(filter(lambda r: clean_text(r["german"].lower()) == phrase_lower, translations), None)
     if language_input == italian:
-        index = next(filter(lambda r: r["italian"].lower() == phrase.lower(), translations), None)
+        index = next(filter(lambda r: clean_text(r["italian"].lower()) == phrase_lower, translations), None)
     if index is None:
         embed = create_embed("No word or phrase found matching `%s`. Please check phrase and try again." % phrase)
         return await ctx.respond(embed=embed)
@@ -188,6 +189,92 @@ async def _translate(ctx,
         else:
             embed = create_embed("The word or phrase `%s` has not been translated to `%s`." % (phrase, language_output))
             return await ctx.respond(embed=embed)
+    else:
+        if translation.english != "":
+            embed.add_field(name=english, value=translation.english, inline=False)
+        if translation.japanese != "":
+            embed.add_field(name=japanese, value=translation.japanese, inline=False)
+        if translation.spanish != "":
+            embed.add_field(name=spanish, value=translation.spanish, inline=False)
+        if translation.french != "":
+            embed.add_field(name=french, value=translation.french, inline=False)
+        if translation.german != "":
+            embed.add_field(name=german, value=translation.german, inline=False)
+        if translation.italian != "":
+            embed.add_field(name=italian, value=translation.italian, inline=False)
+
+    await ctx.respond(embed=embed)
+
+
+@bot.slash_command(name="translate_grotto", description="Translate a grotto to a different language.")
+async def _translate_grotto(ctx,
+                            material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
+                                             required=True),
+                            environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
+                                                required=True),
+                            suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
+                            language_output: Option(str, "Output Language (Ex. Japanese)",
+                                                    choices=parsers.translation_languages, required=False)):
+    with open("grottos_translated.json", "r", encoding="utf-8") as fp:
+        data = json.load(fp)
+
+    english = parsers.translation_languages[0]
+    japanese = parsers.translation_languages[1]
+    spanish = parsers.translation_languages[2]
+    french = parsers.translation_languages[3]
+    german = parsers.translation_languages[4]
+    italian = parsers.translation_languages[5]
+
+    translations = data["translations"]
+
+    translation = parsers.Translation
+
+    translation_english = []
+    translation_japanese = []
+    translation_spanish = []
+    translation_french = []
+    translation_german = []
+    translation_italian = []
+
+    phrases = [material, environment, "of %s" % suffix]
+    for p in phrases:
+        index = next(filter(lambda r: r["english"].lower() == p.lower(), translations), None)
+
+        translation = parsers.Translation.from_dict(index)
+
+        translation_english.append(translation.english)
+        translation_japanese.append(translation.japanese)
+        translation_spanish.append(translation.spanish)
+        translation_french.append(translation.french)
+        translation_german.append(translation.german)
+        translation_italian.append(translation.italian)
+
+    translation.english = "%s %s %s" % (translation_english[0], translation_english[1], translation_english[2])
+    translation.japanese = "%s %s %s" % (translation_japanese[0], translation_japanese[2], translation_japanese[1])
+    translation.spanish = "%s %s %s" % (translation_spanish[1], translation_spanish[0], translation_spanish[2])
+    translation.french = "%s %s %s" % (translation_french[1], translation_french[0], translation_french[2])
+    translation.german = "%s%s %s" % (translation_german[0], translation_german[1], translation_german[2])
+    translation.italian = "%s %s %s" % (translation_italian[1], translation_italian[0], translation_italian[2])
+
+    title = "Translation of: %s" % titlecase("%s %s of %s" % (material, environment, suffix))
+    color = discord.Color.green()
+    embed = create_embed(title, color=color)
+    if language_output is not None:
+        value = ""
+        if language_output == english:
+            value = translation.english
+        if language_output == japanese:
+            value = translation.japanese
+        elif language_output == spanish:
+            value = translation.spanish
+        elif language_output == french:
+            value = translation.french
+        elif language_output == german:
+            value = translation.german
+        elif language_output == italian:
+            value = translation.italian
+        if value != "":
+            embed.add_field(name=language_output, value=value, inline=False)
     else:
         if translation.english != "":
             embed.add_field(name=english, value=translation.english, inline=False)
@@ -429,7 +516,7 @@ def int_from_string(string):
 
 
 def clean_text(text, remove_spaces=True):
-    text = text.lower().replace("'", "").replace("-", "").replace("ñ", "n")
+    text = text.lower().replace("'", "").replace("-", "").replace("ñ", "n").replace(".", "")
     if remove_spaces:
         text = text.replace(" ", "")
     else:

@@ -57,6 +57,7 @@ A bot created by <@496392770374860811> for The Quester's Rest (<%s>).
 **/gg** - *Displays all info for a grotto (location required)*
 **/translate** - *Translate a word or phrase*
 **/translate_grotto** - *Translate a grotto name*
+**/translate_grotto_[language]** - *Translate a grotto name from another language*
 **/recipe** - *Displays all info for a recipe*
 **/monster** - *Displays all info for a monster*
 **/character** - *Displays info for a random character*

@@ -2,51 +2,63 @@
   "translations": [
     {
       "english": "Strength",
-      "german": "Stärke"
+      "german": "Stärke",
+      "French": "Force"
     },
     {
       "english": "Agility",
-      "german": "Flinkheit"
+      "german": "Flinkheit",
+      "French": "Agilité"
     },
     {
       "english": "Resilience",
-      "german": "Ausdauer"
+      "german": "Ausdauer",
+      "French": "Vitalité"
     },
     {
       "english": "Deftness",
-      "german": "Geschick"
+      "german": "Geschick",
+      "French": "Adresse"
     },
     {
       "english": "Charm",
-      "german": "Charme"
+      "german": "Charme",
+      "French": "Charme"
     },
     {
       "english": "Magical Mending",
-      "german": "Magische Medizin"
+      "german": "Magische Medizin",
+      "French": "Soins magiques"
     },
     {
       "english": "Magical Might",
-      "german": "Magische Macht"
+      "german": "Magische Macht",
+      "French": "Puissance magique"
     },
     {
       "english": "Max. HP",
-      "german": "LP-Max."
+      "german": "LP-Max.",
+      "French": "PV max."
     },
     {
       "english": "Max. MP",
-      "german": "MP-Max."
+      "german": "MP-Max.",
+      "French": "PM max."
     },
     {
       "english": "Attack",
-      "german": "Angriff"
+      "german": "Angriff",
+      "French": "Attaque"
     },
     {
       "english": "Defence",
-      "german": "Abwehr"
+      "german": "Abwehr",
+      "French": "Défence"
     },
     {
       "english": "Style",
-      "german": "Stil"
+      "german": "Stil",
+      "French": "Style"
     }
   ]
 }

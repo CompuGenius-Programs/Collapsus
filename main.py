@@ -181,63 +181,85 @@ async def _translate_grotto(ctx,
                             suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
                             language_output: Option(str, "Output Language (Ex. Japanese)",
                                                     choices=parsers.translation_languages, required=False)):
-    with open("grottos_translated.json", "r", encoding="utf-8") as fp:
-        data = json.load(fp)
+    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[0], language_output)
+    await ctx.respond(embed=embed)
 
-    translations = data["translations"]
 
-    translation = parsers.Translation
+@bot.slash_command(name="translate_grotto_japanese",
+                   description="Translate a grotto from Japanese to a different language.")
+async def _translate_grotto_japanese(ctx,
+                                     material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
+                                                      required=True),
+                                     suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes,
+                                                    required=True),
+                                     environment: Option(str, "Environment (Ex. Tunnel)",
+                                                         choices=parsers.grotto_environments,
+                                                         required=True),
+                                     language_output: Option(str, "Output Language (Ex. Japanese)",
+                                                             choices=parsers.translation_languages, required=False)):
+    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[1], language_output)
+    await ctx.respond(embed=embed)
 
-    translation_english = []
-    translation_japanese = []
-    translation_spanish = []
-    translation_french = []
-    translation_german = []
-    translation_italian = []
 
-    suffix = "of %s" % suffix
+@bot.slash_command(name="translate_grotto_spanish",
+                   description="Translate a grotto from Spanish to a different language.")
+async def _translate_grotto_spanish(ctx,
+                                    environment: Option(str, "Environment (Ex. Tunnel)",
+                                                        choices=parsers.grotto_environments,
+                                                        required=True),
+                                    material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
+                                                     required=True),
+                                    suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes,
+                                                   required=True),
+                                    language_output: Option(str, "Output Language (Ex. Japanese)",
+                                                            choices=parsers.translation_languages, required=False)):
+    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[2], language_output)
+    await ctx.respond(embed=embed)
 
-    phrases = [material, environment, suffix]
-    for p in phrases:
-        index = next(filter(lambda r: r["english"].lower() == p.lower(), translations), None)
 
-        translation = parsers.Translation.from_dict(index)
+@bot.slash_command(name="translate_grotto_french",
+                   description="Translate a grotto from French to a different language.")
+async def _translate_grotto_french(ctx,
+                                   environment: Option(str, "Environment (Ex. Tunnel)",
+                                                       choices=parsers.grotto_environments,
+                                                       required=True),
+                                   material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
+                                                    required=True),
+                                   suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes,
+                                                  required=True),
+                                   language_output: Option(str, "Output Language (Ex. Japanese)",
+                                                           choices=parsers.translation_languages, required=False)):
+    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[3], language_output)
+    await ctx.respond(embed=embed)
 
-        translation_english.append(translation.english)
-        translation_japanese.append(translation.japanese)
-        translation_spanish.append(translation.spanish)
-        translation_french.append(translation.french)
-        translation_german.append(translation.german)
-        translation_italian.append(translation.italian)
 
-    translation.english = "%s %s %s" % (translation_english[0], translation_english[1], translation_english[2])
-    translation.japanese = "%s%s%s" % (translation_japanese[0], translation_japanese[2], translation_japanese[1])
-    translation.spanish = "%s %s %s" % (translation_spanish[1], translation_spanish[0], translation_spanish[2])
-    translation.french = "%s %s %s" % (translation_french[1], translation_french[0], translation_french[2])
-    translation.german = "%s%s %s" % (translation_german[0], translation_german[1], translation_german[2])
-    translation.italian = "%s %s %s" % (translation_italian[1], translation_italian[0], translation_italian[2])
+@bot.slash_command(name="translate_grotto_german",
+                   description="Translate a grotto from German to a different language.")
+async def _translate_grotto_german(ctx,
+                                   material: Option(str, "Material (Ex. Granite)",
+                                                    choices=parsers.grotto_prefixes_german, required=True),
+                                   environment: Option(str, "Environment (Ex. Tunnel)",
+                                                       choices=parsers.grotto_environments_german, required=True),
+                                   suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_german,
+                                                  required=True),
+                                   language_output: Option(str, "Output Language (Ex. English)",
+                                                           choices=parsers.translation_languages, required=False)):
+    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[4], language_output)
+    await ctx.respond(embed=embed)
 
-    all_languages = [
-        translation.english,
-        translation.japanese,
-        translation.spanish,
-        translation.french,
-        translation.german,
-        translation.italian
-    ]
 
-    title = "Translation of: %s" % titlecase("%s %s %s" % (material, environment, suffix))
-    color = discord.Color.green()
-    embed = create_embed(title, color=color)
-    if language_output is not None:
-        value = all_languages[parsers.translation_languages.index(language_output)]
-        if value != "":
-            embed.add_field(name=language_output, value=value, inline=False)
-    else:
-        for language, translation in zip(parsers.translation_languages, all_languages):
-            if translation != "":
-                embed.add_field(name=language, value=translation, inline=False)
-
+@bot.slash_command(name="translate_grotto_italian",
+                   description="Translate a grotto from Italian to a different language.")
+async def _translate_grotto_italian(ctx,
+                                    environment: Option(str, "Environment (Ex. Tunnel)",
+                                                        choices=parsers.grotto_environments_italian, required=True),
+                                    material: Option(str, "Material (Ex. Granite)",
+                                                     choices=parsers.grotto_prefixes_italian, required=True),
+                                    suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_italian,
+                                                   required=True),
+                                    language_output: Option(str, "Output Language (Ex. English)",
+                                                            choices=parsers.translation_languages, required=False)):
+    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[5], language_output)
     await ctx.respond(embed=embed)
 
 
@@ -453,6 +475,65 @@ async def grotto_func(ctx, material, environment, suffix, level, location):
             await paginator.respond(ctx.interaction)
         else:
             await ctx.respond(embed=embed)
+
+
+def translate_grotto(material, environment, suffix, language_input, language_output):
+    with open("grottos_translated.json", "r", encoding="utf-8") as fp:
+        data = json.load(fp)
+
+    translations = data["translations"]
+
+    translation = parsers.Translation
+
+    translation_english = []
+    translation_japanese = []
+    translation_spanish = []
+    translation_french = []
+    translation_german = []
+    translation_italian = []
+
+    phrases = [material, environment, suffix]
+    for p in phrases:
+        index = next(filter(lambda r: r[language_input].lower() == p.lower(), translations), None)
+
+        translation = parsers.Translation.from_dict(index)
+
+        translation_english.append(translation.english)
+        translation_japanese.append(translation.japanese)
+        translation_spanish.append(translation.spanish)
+        translation_french.append(translation.french)
+        translation_german.append(translation.german)
+        translation_italian.append(translation.italian)
+
+    translation.english = "%s %s %s" % (translation_english[0], translation_english[1], translation_english[2])
+    translation.japanese = "%s%s%s" % (translation_japanese[0], translation_japanese[2], translation_japanese[1])
+    translation.spanish = "%s %s %s" % (translation_spanish[1], translation_spanish[0], translation_spanish[2])
+    translation.french = "%s %s %s" % (translation_french[1], translation_french[0], translation_french[2])
+    translation.german = "%s%s %s" % (translation_german[0], translation_german[1], translation_german[2])
+    translation.italian = "%s %s %s" % (translation_italian[1], translation_italian[0], translation_italian[2])
+
+    all_languages = [
+        translation.english,
+        translation.japanese,
+        translation.spanish,
+        translation.french,
+        translation.german,
+        translation.italian
+    ]
+
+    title = "Translation of: %s" % titlecase(all_languages[parsers.translation_languages_simple.index(language_input)])
+    color = discord.Color.green()
+    embed = create_embed(title, color=color)
+    if language_output is not None:
+        value = all_languages[parsers.translation_languages.index(language_output)]
+        if value != "":
+            embed.add_field(name=language_output, value=value, inline=False)
+    else:
+        for language, translation in zip(parsers.translation_languages, all_languages):
+            if translation != "":
+                embed.add_field(name=language, value=translation, inline=False)
+
+    return embed
 
 
 def int_from_string(string):

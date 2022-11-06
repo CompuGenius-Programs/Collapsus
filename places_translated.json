@@ -1,184 +1,169 @@
 {
   "translations": [
     {
-      "english": "Strength",
-      "german": "Stärke"
-    },
-    {
-      "english": "Agility",
-      "german": "Flinkheit"
-    },
-    {
-      "english": "Resilience",
-      "german": "Ausdauer"
-    },
-    {
-      "english": "Deftness",
-      "german": "Geschick"
-    },
-    {
-      "english": "Charm",
-      "german": "Charme"
-    },
-    {
-      "english": "Magical Mending",
-      "german": "Magische Medizin"
-    },
-    {
-      "english": "Magical Might",
-      "german": "Magische Macht"
-    },
-    {
-      "english": "Max. HP",
-      "german": "LP-Max."
-    },
-    {
-      "english": "Max. MP",
-      "german": "MP-Max."
-    },
-    {
-      "english": "Attack",
-      "german": "Angriff"
-    },
-    {
-      "english": "Defence",
-      "german": "Abwehr"
-    },
-    {
-      "english": "Style",
-      "german": "Stil"
-    },
-    {
       "english": "Angel Falls",
-      "german": "Engelsfälle"
+      "german": "Engelsfälle",
+      "french": "Chérubelle"
     },
     {
       "english": "Zere",
-      "german": "Bühltau"
+      "german": "Bühltau",
+      "french": "Le Plicata"
     },
     {
       "english": "Stornway",
-      "german": "Stinsbruck"
+      "german": "Stinsbruck",
+      "french": "Ablithia"
     },
     {
       "english": "Coffinwell",
-      "german": "Siechau"
+      "german": "Siechau",
+      "french": "Bacilli"
     },
     {
       "english": "Alltrades Abbey",
-      "german": "Allesneu-Abtei"
+      "german": "Allesneu-Abtei",
+      "french": "Abbaye des Vocations"
     },
     {
       "english": "Port Llaffan",
-      "german": "Labskausen"
+      "german": "Labskausen",
+      "french": "Port Ehcep"
     },
     {
       "english": "Slurry Quay",
-      "german": "Altpier"
+      "german": "Altpier",
+      "french": "Rivesall"
     },
     {
       "english": "Dourbridge",
-      "german": "Welkham"
+      "german": "Welkham",
+      "french": "Pontaudy"
     },
     {
       "english": "Zere Rocks",
-      "german": "Neu-Bühltau"
+      "german": "Neu-Bühltau",
+      "french": "Pic Lata"
     },
     {
       "english": "Bloomingdale",
-      "german": "Blümlingen"
+      "german": "Blümlingen",
+      "french": "Finefleur"
     },
     {
       "english": "Gleeba",
-      "german": "Wasaba"
+      "german": "Wasaba",
+      "french": "Ouadi"
     },
     {
       "english": "Batsureg",
-      "german": "Batsureg"
+      "german": "Batsureg",
+      "french": "Batsureg"
     },
     {
       "english": "Swinedimples Academy",
-      "german": "Schweinspickel-Schule"
+      "german": "Schweinspickel-Schule",
+      "french": "Ecole Saint-Sévaire"
     },
     {
       "english": "Wormwood Creek",
-      "german": "Wurmwald"
+      "german": "Wurmwald",
+      "french": "Dracocardis"
     },
     {
       "english": "Upover",
-      "german": "Brennbergen"
+      "german": "Brennbergen",
+      "french": "Kilimagmaro"
     },
     {
       "english": "Magmaroo - Summit",
-      "german": "Magmaar - Gipfel"
+      "german": "Magmaar - Gipfel",
+      "french": "Le Pahoehoe - Sommet"
     },
     {
       "english": "Gortress",
-      "german": "Fiese Festung"
+      "german": "Fiese Festung",
+      "french": "Morteresse"
     },
     {
       "english": "Gittingham Palace",
-      "german": "Schloss Schroffenheim"
+      "german": "Schloss Schroffenheim",
+      "french": "Palais de Lanfair"
     },
     {
       "english": "The Hexagon",
-      "german": "Das Hexagon"
+      "german": "Das Hexagon",
+      "french": "L'Hexatère"
     },
     {
       "english": "Brigadoom",
-      "german": "Schloss Schickstal"
+      "german": "Schloss Schickstal",
+      "french": "Mortepeine"
     },
     {
       "english": "Quarantomb",
-      "german": "Quarantomben"
+      "german": "Quarantomben",
+      "french": "Quarantombe"
     },
     {
       "english": "Tower of Trades",
-      "german": "Fort Bieldung"
+      "german": "Fort Bieldung",
+      "french": "Tour des Vocations"
     },
     {
       "english": "Tywll Cave",
-      "german": "Gruselige Grotte"
+      "german": "Gruselige Grotte",
+      "french": "Grotte Erion"
     },
     {
       "english": "Heights of Loneliness",
-      "german": "Gipfel der Einsamkeit"
+      "german": "Gipfel der Einsamkeit",
+      "french": "Haut d'Isolmont"
     },
     {
       "english": "Bad Cave",
-      "german": "Ganovengrotte"
+      "german": "Ganovengrotte",
+      "french": "Tanières des Tyrans "
     },
     {
       "english": "The Plumbed Depths",
-      "german": "Die Glucksenden Tiefen"
+      "german": "Die Glucksenden Tiefen",
+      "french": "Les foggaras"
     },
     {
       "english": "Gerzuun",
-      "german": "Gerzuun"
+      "german": "Gerzuun",
+      "french": "Geerzuun"
     },
     {
       "english": "The Old School",
-      "german": "Die Alte Schule"
+      "german": "Die Alte Schule",
+      "french": "L'ancienne école"
     },
     {
       "english": "The Bowhole",
-      "german": "Die Olle Kuhle"
+      "german": "Die Olle Kuhle",
+      "french": "La grotte de Sagitta"
     },
     {
       "english": "The Magmaroo",
-      "german": "Der Magmaar"
+      "german": "Der Magmaar",
+      "french": "Le Pahoehoe"
     },
     {
       "english": "Oubliette",
-      "german": "Oubliette"
+      "german": "Oubliette",
+      "french": "Oubliettes"
     },
     {
       "english": "Realm of the Mighty",
-      "german": "Reich des Mächtigen"
+      "german": "Reich des Mächtigen",
+      "french": "Royaume du Puissant"
     },
     {
       "english": "Tower of Nod",
-      "german": "Turm des Schläfers"
+      "german": "Turm des Schläfers",
+      "french": "Tour de l'Atonie"
     }
   ]
 }

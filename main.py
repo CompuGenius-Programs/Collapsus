@@ -56,11 +56,10 @@ A bot created by <@496392770374860811> for The Quester's Rest (<%s>).
 **/grotto** - *Displays all info for a grotto*
 **/gg** - *Displays all info for a grotto (location required)*
 **/translate** - *Translate a word or phrase*
-**/translate_grotto** - *Translate a grotto name*
-**/translate\_grotto_[language]** - *Translate a grotto name from another language*
+**/translate_grotto(\_[language])** - *Translate a grotto name*
 **/recipe** - *Displays all info for a recipe*
 **/monster** - *Displays all info for a monster*
-**/character** - *Displays info for a random character*
+**/character** - *Displays randomly-generated info for a character*
 **/help** - *Displays this message*
 ''' % server_invite_url
 

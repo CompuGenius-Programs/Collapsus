@@ -422,7 +422,7 @@ async def grotto_func(ctx, material, environment, suffix, level, location):
             "search": "Search",
             "prefix": str(parsers.grotto_prefixes.index(titlecase(material)) + 1),
             "envname": str(parsers.grotto_environments.index(titlecase(environment)) + 1),
-            "suffix": str(parsers.grotto_suffixes.index(titlecase(suffix)) + 1),
+            "suffix": str(parsers.grotto_suffixes.index(suffix) + 1),
             "level": str(level),
         }
 

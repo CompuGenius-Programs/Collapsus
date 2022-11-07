@@ -3,62 +3,74 @@
     {
       "english": "Strength",
       "german": "Stärke",
-      "french": "Force"
+      "french": "Force",
+      "spanish": "Fuerza"
     },
     {
       "english": "Agility",
       "german": "Flinkheit",
-      "french": "Agilité"
+      "french": "Agilité",
+      "spanish": "Agilidad"
     },
     {
       "english": "Resilience",
       "german": "Ausdauer",
-      "french": "Vitalité"
+      "french": "Vitalité",
+      "spanish": "Resistencia"
     },
     {
       "english": "Deftness",
       "german": "Geschick",
-      "french": "Adresse"
+      "french": "Adresse",
+      "spanish": "Pericia"
     },
     {
       "english": "Charm",
       "german": "Charme",
-      "french": "Charme"
+      "french": "Charme",
+      "spanish": "Encanto"
     },
     {
       "english": "Magical Mending",
       "german": "Magische Medizin",
-      "french": "Soins magiques"
+      "french": "Soins magiques",
+      "spanish": "Terapeucidad"
     },
     {
       "english": "Magical Might",
       "german": "Magische Macht",
-      "french": "Puissance magique"
+      "french": "Puissance magique",
+      "spanish": "Fuerza mágica"
     },
     {
       "english": "Max. HP",
       "german": "LP-Max.",
-      "french": "PV max."
+      "french": "PV max.",
+      "spanish": "PV máx."
     },
     {
       "english": "Max. MP",
       "german": "MP-Max.",
-      "french": "PM max."
+      "french": "PM max.",
+      "spanish": "PM máx."
     },
     {
       "english": "Attack",
       "german": "Angriff",
-      "french": "Attaque"
+      "french": "Attaque",
+      "spanish": "Ataque"
     },
     {
       "english": "Defence",
       "german": "Abwehr",
-      "french": "Défence"
+      "french": "Défence",
+      "spanish": "Defensa"
     },
     {
       "english": "Style",
       "german": "Stil",
-      "french": "Style"
+      "french": "Style",
+      "spanish": "Estilo"
     }
   ]
 }

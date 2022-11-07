@@ -3,167 +3,200 @@
     {
       "english": "Angel Falls",
       "german": "Engelsfälle",
-      "french": "Chérubelle"
+      "french": "Chérubelle",
+      "spanish": "Salto del Ángel"
     },
     {
       "english": "Zere",
       "german": "Bühltau",
-      "french": "Le Plicata"
+      "french": "Le Plicata",
+      "spanish": "Zere"
     },
     {
       "english": "Stornway",
       "german": "Stinsbruck",
-      "french": "Ablithia"
+      "french": "Ablithia",
+      "spanish": "Pedranía"
     },
     {
       "english": "Coffinwell",
       "german": "Siechau",
-      "french": "Bacilli"
+      "french": "Bacilli",
+      "spanish": "Catacumba"
     },
     {
       "english": "Alltrades Abbey",
       "german": "Allesneu-Abtei",
-      "french": "Abbaye des Vocations"
+      "french": "Abbaye des Vocations",
+      "spanish": "Abadía Vocationis"
     },
     {
       "english": "Port Llaffan",
       "german": "Labskausen",
-      "french": "Port Ehcep"
+      "french": "Port Ehcep",
+      "spanish": "Puerto Cachalote"
     },
     {
       "english": "Slurry Quay",
       "german": "Altpier",
-      "french": "Rivesall"
+      "french": "Rivesall",
+      "spanish": "Muelle Limoso"
     },
     {
       "english": "Dourbridge",
       "german": "Welkham",
-      "french": "Pontaudy"
+      "french": "Pontaudy",
+      "spanish": "Las Chungeras"
     },
     {
       "english": "Zere Rocks",
       "german": "Neu-Bühltau",
-      "french": "Pic Lata"
+      "french": "Pic Lata",
+      "spanish": "Macizo de Zere"
     },
     {
       "english": "Bloomingdale",
       "german": "Blümlingen",
-      "french": "Finefleur"
+      "french": "Finefleur",
+      "spanish": "Moraleja del Soto"
     },
     {
       "english": "Gleeba",
       "german": "Wasaba",
-      "french": "Ouadi"
+      "french": "Ouadi",
+      "spanish": "Sheba"
     },
     {
       "english": "Batsureg",
       "german": "Batsureg",
-      "french": "Batsureg"
+      "french": "Batsureg",
+      "spanish": "Batsureg"
     },
     {
       "english": "Swinedimples Academy",
       "german": "Schweinspickel-Schule",
-      "french": "Ecole Saint-Sévaire"
+      "french": "Ecole Saint-Sévaire",
+      "spanish": "Academia Paracelso"
     },
     {
       "english": "Wormwood Creek",
       "german": "Wurmwald",
-      "french": "Dracocardis"
+      "french": "Dracocardis",
+      "spanish": "Draquipoche"
     },
     {
       "english": "Upover",
       "german": "Brennbergen",
-      "french": "Kilimagmaro"
+      "french": "Kilimagmaro",
+      "spanish": "Chimbamba"
     },
     {
       "english": "Magmaroo - Summit",
       "german": "Magmaar - Gipfel",
-      "french": "Le Pahoehoe - Sommet"
+      "french": "Le Pahoehoe - Sommet",
+      "spanish": "El Magmánimo - Cumbre"
     },
     {
       "english": "Gortress",
       "german": "Fiese Festung",
-      "french": "Morteresse"
+      "french": "Morteresse",
+      "spanish": "Kerker"
     },
     {
       "english": "Gittingham Palace",
       "german": "Schloss Schroffenheim",
-      "french": "Palais de Lanfair"
+      "french": "Palais de Lanfair",
+      "spanish": "Palacio Impío"
     },
     {
       "english": "The Hexagon",
       "german": "Das Hexagon",
-      "french": "L'Hexatère"
+      "french": "L'Hexatère",
+      "spanish": "El Hexágono"
     },
     {
       "english": "Brigadoom",
       "german": "Schloss Schickstal",
-      "french": "Mortepeine"
+      "french": "Mortepeine",
+      "spanish": "Hado"
     },
     {
       "english": "Quarantomb",
       "german": "Quarantomben",
-      "french": "Quarantombe"
+      "french": "Quarantombe",
+      "spanish": "Cuarantumba"
     },
     {
       "english": "Tower of Trades",
       "german": "Fort Bieldung",
-      "french": "Tour des Vocations"
+      "french": "Tour des Vocations",
+      "spanish": "Torre Vocacional"
     },
     {
       "english": "Tywll Cave",
       "german": "Gruselige Grotte",
-      "french": "Grotte Erion"
+      "french": "Grotte Erion",
+      "spanish": "Cueva Ojcura"
     },
     {
       "english": "Heights of Loneliness",
       "german": "Gipfel der Einsamkeit",
-      "french": "Haut d'Isolmont"
+      "french": "Haut d'Isolmont",
+      "spanish": "Cumbres Solitarias"
     },
     {
       "english": "Bad Cave",
       "german": "Ganovengrotte",
-      "french": "Tanières des Tyrans "
+      "french": "Tanières des Tyrans ",
+      "spanish": "La Malcueva"
     },
     {
       "english": "The Plumbed Depths",
       "german": "Die Glucksenden Tiefen",
-      "french": "Les foggaras"
+      "french": "Les foggaras",
+      "spanish": "Prof. mistuberiosas"
     },
     {
       "english": "Gerzuun",
       "german": "Gerzuun",
-      "french": "Geerzuun"
+      "french": "Geerzuun",
+      "spanish": "Gerzuun"
     },
     {
       "english": "The Old School",
       "german": "Die Alte Schule",
-      "french": "L'ancienne école"
+      "french": "L'ancienne école",
+      "spanish": "La vieja escuela"
     },
     {
       "english": "The Bowhole",
       "german": "Die Olle Kuhle",
-      "french": "La grotte de Sagitta"
+      "french": "La grotte de Sagitta",
+      "spanish": "Boca del Carcaj"
     },
     {
       "english": "The Magmaroo",
       "german": "Der Magmaar",
-      "french": "Le Pahoehoe"
+      "french": "Le Pahoehoe",
+      "spanish": "El Magmánimo"
     },
     {
       "english": "Oubliette",
       "german": "Oubliette",
-      "french": "Oubliettes"
+      "french": "Oubliettes",
+      "spanish": "Oubliette"
     },
     {
       "english": "Realm of the Mighty",
       "german": "Reich des Mächtigen",
-      "french": "Royaume du Puissant"
+      "french": "Royaume du Puissant",
+      "spanish": "Reino del Poderoso"
     },
     {
       "english": "Tower of Nod",
       "german": "Turm des Schläfers",
-      "french": "Tour de l'Atonie"
+      "french": "Tour de l'Atonie",
+      "spanish": "Torre Leonina"
     }
   ]
 }

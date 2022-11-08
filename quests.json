@@ -182,7 +182,7 @@
       "story": false,
       "location": "Angel Falls (Girl inside house near the entrance).",
       "request": "Bring her 5 Belle Caps and 5 Fisticups.",
-      "solution": "Find the mushrooms at their respective spawn points and bring them to the girl to receive the Packed Lunch. Bring the Packed Lunch to her father who is near the entrance of Hexagon and then report back to the girl in Angel Falls. (Refer to \".gq Map\").",
+      "solution": "Find the mushrooms at their respective spawn points and bring them to the girl to receive the Packed Lunch. Bring the Packed Lunch to her father who is near the entrance of Hexagon and then report back to the girl in Angel Falls.",
       "reward": "Prayer Ring",
       "prerequisite": "None",
       "repeat": false
@@ -193,7 +193,7 @@
       "story": false,
       "location": "Mountain Pass (Woman at the north).",
       "request": "Find the family's pet slime.",
-      "solution": "Use the Alchemy Pot to create a Slood and Gooey Gear. Only have the hero in your party and only equip those two items on him or her.     Defeat a Slime (#001) in battle and once it joins you report back to the woman.",
+      "solution": "Use the Alchemy Pot to create a Slood and Gooey Gear. Only have the hero in your party and only equip those two items on him or her. Defeat a Slime (#001) in battle and once it joins you report back to the woman.",
       "reward": "Seed of Skill",
       "prerequisite": "None",
       "repeat": false
@@ -633,7 +633,7 @@
       "story": false,
       "location": "Newid Isle (Tree on cliff near Alltrades Abbey, Boy on the cliff).",
       "request": "Steal a Titanic Tincture from Atlas when his life is below 700 HP.",
-      "solution": "Atlas (#289) is a mid to high level grotto boss depending on how many times your Hero has revocated. Do 6000 damage to him and then      begin to use Half-Inch to steal the Titanic Tincture.",
+      "solution": "Atlas (#289) is a mid to high level grotto boss depending on how many times your Hero has revocated. Do 6000 damage to him and then begin to use Half-Inch to steal the Titanic Tincture.",
       "reward": "Random Grotto Treasure Map",
       "prerequisite": "Post-game, Sterling's Whistle, Half-Inch and access to mid to high BQ grottoes",
       "repeat": false
@@ -666,7 +666,7 @@
       "story": false,
       "location": "Western Wormwood (In a well on top of the Plateau).",
       "request": "Bring Cephalgernon some Hexite.",
-      "solution": "Find and defeat a Shogum  (Grotto Boss).",
+      "solution": "Find and defeat a Shogum (Grotto Boss).",
       "reward": "A Lucida Shard (same for repeat).",
       "prerequisite": "Post-Game.",
       "repeat": true
@@ -1183,7 +1183,7 @@
       "story": false,
       "location": "Gleeba (Paladin on Gleeba's roof)",
       "request": "Use H-Pathy on a character with only 1 HP 5 times in battle.",
-      "solution": "Have two people who know H-Pathy in your party. Have one character keep giving HP to another character until his HP drops to 1. Then have the other character who knows H-Pathy use the skill on him. You can only do this once per battle so finish that battle and do it four more times. Alternatively, you can go to a dungeon area that has damaging tiles (like poison, electricity, lava, etc) and walk until you have a a character at 1 HP.  Then go into a battle and use H-Pathy.",
+      "solution": "Have two people who know H-Pathy in your party. Have one character keep giving HP to another character until his HP drops to 1. Then have the other character who knows H-Pathy use the skill on him. You can only do this once per battle so finish that battle and do it four more times. Alternatively, you can go to a dungeon area that has damaging tiles (like poison, electricity, lava, etc) and walk until you have a a character at 1 HP. Then go into a battle and use H-Pathy.",
       "reward": "\"Paladin's Primer\": Solar Flair",
       "prerequisite": "Finish Quest 107, Lv 40 Paladin",
       "repeat": false
@@ -1328,7 +1328,7 @@
       "request": "Bring her a Clump of Cloud.",
       "solution": "Defeat Cumulus Rex (#158) around Upover with the Miracle Sword (32 mini medals or buy from WiFi shop) equipped until it drops the item.",
       "reward": "Astral Plume; same for repeat",
-      "prerequisite": "DLC, Escape from Goretress",
+      "prerequisite": "DLC, Escape from Gortress",
       "repeat": true
     },
     {
@@ -1512,7 +1512,7 @@
       "name": "Shaman You!",
       "story": false,
       "location": "Small Island by lake near Stornway (Talk to the shaman)",
-      "request": "Equip 3 pieces of cursed equipment.",
+      "request": "Equip 3 pieces of cursed equipment on the hero.",
       "solution": "If all of your cursed equipment is no longer cursed, you can use Malicites to curse them again.",
       "reward": "Mitre",
       "prerequisite": "DLC",
@@ -1611,8 +1611,8 @@
       "name": "Licensed to Drive",
       "story": true,
       "location": "Inside the Starflight Express (Talk to Sterling)",
-      "request": "Collect 9 Goretress Guerilla Stamps. Restrictions are that you can only land the Starflight Express 6 times & you can't use Zoom or Evac",
-      "solution": "Sterling will give you the first stamp. Fly to Batsureg and talk to Conner behind a tent to get your next stamp. Fly to the Heights of Lonlieness and talk to Victor at the entrance. Walk to Bloomingdale and go to the church's rooftop to find Dusty. Fly to Angel Falls and to the west of the waterfall you will find Godfrey. Walk to Coffinwell and to the north west you will find Dodger. Fly to Alltrades Abbey and Cribber will be by the 1F stairs. Fly to Wormwood Creek to find Forger inside the weapon shop. Fly to the Goretress and the last member, Digby, will be at the top of the tower. Board the Starflight and use the inside view to talk to Sterling. Go to the locked door at the very back.",
+      "request": "Collect 9 Gortress Guerilla Stamps. Restrictions are that you can only land the Starflight Express 6 times & you can't use Zoom or Evac",
+      "solution": "Sterling will give you the first stamp. Fly to Batsureg and talk to Conner behind a tent to get your next stamp. Fly to the Heights of Lonlieness and talk to Victor at the entrance. Walk to Bloomingdale and go to the church's rooftop to find Dusty. Fly to Angel Falls and to the west of the waterfall you will find Godfrey. Walk to Coffinwell and to the north west you will find Dodger. Fly to Alltrades Abbey and Cribber will be by the 1F stairs. Fly to Wormwood Creek to find Forger inside the weapon shop. Fly to the Gortress and the last member, Digby, will be at the top of the tower. Board the Starflight and use the inside view to talk to Sterling. Go to the locked door at the very back.",
       "reward": "Driver's Licence",
       "prerequisite": "DLC, Finish Quest 146",
       "repeat": false
@@ -1931,7 +1931,7 @@
       "story": false,
       "location": "Well on a hill, south of Batsureg (Man in the well)",
       "request": "Bring him some Cannibelle rage.",
-      "solution": "Fight Cannibelle (#230) in mid to high level Ice grotto. Use the Warrior's skill, Whistle to enrage her 10 times.  You can also fight Cannibelles on the island east of Stornway that has two cabins, and they are found as an uncommon spawn.",
+      "solution": "Fight Cannibelle (#230) in mid to high level Ice grotto. Use the Warrior's skill, Whistle to enrage her 10 times. You can also fight Cannibelles on the island east of Stornway that has two cabins, and they are found as an uncommon spawn.",
       "reward": "Orgodemir Map; Resurrock for repeat",
       "prerequisite": "DLC, access to mid to high level Ice grottos",
       "repeat": true

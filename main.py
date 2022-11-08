@@ -76,15 +76,15 @@ async def _parse_quests(ctx):
     channel = bot.get_channel(quests_channel)
     archived_threads = await channel.archived_threads().flatten()
     for thread in archived_threads:
-        messages = await thread.history(oldest_first=True).flatten()
+        messages = await thread.history().flatten()
         for message in messages:
             quests.append(parsers.parse_regex(parsers.Quest, message.content))
 
     data = {
-        "quests": quests
+        "quests": sorted(quests, key=lambda quest: quest["number"])
     }
     with open("quests.json", "w+", encoding="utf-8") as fp:
-        json.dump(data, fp, indent=4)
+        json.dump(data, fp, indent=2)
 
     embed = create_embed("%i Quests Parsed Successfully" % len(quests))
     await ctx.followup.send(embed=embed)

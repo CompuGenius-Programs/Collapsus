@@ -174,6 +174,10 @@ quests_regex = r'^(?:(?:(⭐) )?\*\*Quest #(\d+) - (.+)\*\*(?: \1)?(?:```yml)?|(
 cleanup_regex = r'([\w\d\.\-:/() ]+)'
 
 
+def remove_extra_whitespace(string):
+    return re.sub(' +', ' ', string).strip()
+
+
 def _hex(value):
     n = int(value)
     if n <= 16:
@@ -252,7 +256,8 @@ def parse_regex(type, string):
 
         for info in matches[1:]:
             title = info[3].lower()
-            data = info[4].strip()
+            data = remove_extra_whitespace(info[4].strip())
+
             if title == "location":
                 location = data
             if title == "request":

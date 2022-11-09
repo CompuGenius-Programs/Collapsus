@@ -17,6 +17,9 @@ token = os.getenv("TOKEN")
 
 bot = discord.Bot()
 
+dev_id = 496392770374860811
+dev_tag = "@CompuGenius Programs#2368"
+
 guild_id = 655390550698098700
 quests_channel = 766039065849495574
 
@@ -35,6 +38,8 @@ armor_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/armor/%s.p
 accessory_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/accessory/%s.png"
 recipe_images_urls = [item_images_url, weapon_images_url, armor_images_url, accessory_images_url]
 
+translation_url = "https://docs.google.com/spreadsheets/d/1WBwv9QfbHSnKX9y_Z-I4PtlUF2ECipSLTD5XEb1nvpM"
+
 
 @bot.event
 async def on_ready():
@@ -50,7 +55,7 @@ async def on_ready():
 @bot.slash_command(name="help", description="Get help for using the bot.")
 async def _help(ctx):
     description = '''
-A bot created by <@496392770374860811> for The Quester's Rest (<%s>).
+A bot created by <@%s> for The Quester's Rest (<%s>).
 
 **/quest** - *Displays all info for a specific quest*
 **/grotto** - *Displays all info for a grotto*
@@ -61,10 +66,10 @@ A bot created by <@496392770374860811> for The Quester's Rest (<%s>).
 **/monster** - *Displays all info for a monster*
 **/character** - *Displays randomly-generated info for a character*
 **/help** - *Displays this message*
-''' % server_invite_url
+''' % (dev_id, server_invite_url)
 
-    embed = create_embed("Collapsus v2 Help [Click For Server Website]", description=description, image=logo_url,
-                         url=website_url)
+    embed = create_embed("Collapsus v2 Help [Click For Server Website]", description=description, error="",
+                         image=logo_url, url=website_url)
     await ctx.respond(embed=embed)
 
 
@@ -156,7 +161,7 @@ async def _translate(ctx,
 
     title = "Translation of: %s" % titlecase(phrase)
     color = discord.Color.green()
-    embed = create_embed(title, color=color)
+    embed = create_embed(title, color=color, error="Any errors? Want to contribute? %s" % translation_url)
     if language_output is not None:
         value = all_languages[parsers.translation_languages.index(language_output)]
         if value != "":
@@ -363,7 +368,7 @@ async def _monster(ctx,
         await ctx.respond(embed=embeds[0])
 
 
-@bot.slash_command(name="character", description="Sends info for a random character.")
+@bot.slash_command(name="character", description="Sends info for a randomly-generated character.")
 async def _character(ctx):
     gender = random.choice(["Male", "Female"])
     body_type = random.randint(1, 5)
@@ -520,7 +525,7 @@ def translate_grotto(material, environment, suffix, language_input, language_out
 
     title = "Translation of: %s" % titlecase(all_languages[parsers.translation_languages_simple.index(language_input)])
     color = discord.Color.green()
-    embed = create_embed(title, color=color)
+    embed = create_embed(title, color=color, error="Any errors? Want to contribute? %s" % translation_url)
     if language_output is not None:
         value = all_languages[parsers.translation_languages.index(language_output)]
         if value != "":
@@ -559,10 +564,11 @@ def create_paginator(embeds):
 
 
 def create_embed(title, description=None, color=discord.Color.green(),
-                 footer="© CompuGenius Programs. All rights reserved.", image="", *, url="",
-                 author="", author_url=""):
+                 footer="© CompuGenius Programs. All rights reserved.",
+                 error="Any errors? Please report to %s" % dev_tag,
+                 image="", *, url="", author="", author_url=""):
     embed = discord.Embed(title=title, description=description, url=url, color=color)
-    embed.set_footer(text=footer)
+    embed.set_footer(text="%s\n%s" % (footer, error))
     embed.set_thumbnail(url=image)
     embed.set_author(name=author, url=author_url)
     return embed

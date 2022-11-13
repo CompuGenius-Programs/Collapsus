@@ -146,7 +146,8 @@ async def _translate(ctx,
         parsers.translation_languages.index(language_input)]].lower()) == clean_text(phrase.lower()), translations),
                  None)
     if index is None:
-        embed = create_embed("No word or phrase found matching `%s`. Please check phrase and try again." % phrase)
+        embed = create_embed("No word or phrase found matching `%s`. Please check phrase and try again." % phrase,
+                             error="Any errors? Want to contribute?\n\n%s" % translation_url)
         return await ctx.respond(embed=embed)
 
     translation = parsers.Translation.from_dict(index)
@@ -161,13 +162,14 @@ async def _translate(ctx,
 
     title = "Translation of: %s" % titlecase(phrase)
     color = discord.Color.green()
-    embed = create_embed(title, color=color, error="Any errors? Want to contribute? %s" % translation_url)
+    embed = create_embed(title, color=color, error="Any errors? Want to contribute?\n\n%s" % translation_url)
     if language_output is not None:
         value = all_languages[parsers.translation_languages.index(language_output)]
         if value != "":
             embed.add_field(name=language_output, value=value, inline=False)
         else:
-            embed = create_embed("The word or phrase `%s` has not been translated to `%s`." % (phrase, language_output))
+            embed = create_embed("The word or phrase `%s` has not been translated to `%s`." % (phrase, language_output),
+                                 error="Any errors? Want to contribute?\n\n%s" % translation_url)
             return await ctx.respond(embed=embed)
     else:
         for language, translation in zip(parsers.translation_languages, all_languages):
@@ -525,7 +527,7 @@ def translate_grotto(material, environment, suffix, language_input, language_out
 
     title = "Translation of: %s" % titlecase(all_languages[parsers.translation_languages_simple.index(language_input)])
     color = discord.Color.green()
-    embed = create_embed(title, color=color, error="Any errors? Want to contribute? %s" % translation_url)
+    embed = create_embed(title, color=color, error="Any errors? Want to contribute?\n\n%s" % translation_url)
     if language_output is not None:
         value = all_languages[parsers.translation_languages.index(language_output)]
         if value != "":

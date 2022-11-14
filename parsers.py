@@ -173,6 +173,12 @@ grotto_ranks = ["**S**", "**A**", "**B**", "**C**", "**D**", "**E**", "**F**", "
 quests_regex = r'^(?:(?:(⭐) )?\*\*Quest #(\d+) - (.+)\*\*(?: \1)?(?:```yml)?|(\w+): (.+?)(?:```)?)$'
 cleanup_regex = r'([\w\d\.\-:/() ]+)'
 
+item_types = ["items"]
+weapon_types = ["claws", "axes", "fans", "bows", "wands", "knives", "boomerangs", "staves", "whips", "spears", "swords",
+                "hammers"]
+armor_types = ["torso", "legs", "feet", "head", "shields", "arms"]
+accessory_types = ["accessories"]
+
 
 def remove_extra_whitespace(string):
     return re.sub(' +', ' ', string).strip()

@@ -36,7 +36,6 @@ item_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/item/%s.png
 weapon_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/weapon/%s.png"
 armor_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/armor/%s.png"
 accessory_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/accessory/%s.png"
-recipe_images_urls = [item_images_url, weapon_images_url, armor_images_url, accessory_images_url]
 
 translation_url = "https://docs.google.com/spreadsheets/d/1WBwv9QfbHSnKX9y_Z-I4PtlUF2ECipSLTD5XEb1nvpM"
 
@@ -273,6 +272,7 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
         data = json.load(fp)
 
     recipes = data["recipes"]
+
     index = next(filter(lambda r: r["result"] == creation_name.lower(), recipes), None)
 
     if index is None:
@@ -287,12 +287,15 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
 
     if recipe.image == "":
         recipe_images_url = ""
-        for url in recipe_images_urls:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(url % clean_text(recipe.result, False)) as resp:
-                    if resp.status == 200:
-                        recipe_images_url = url
-                        break
+        if recipe.type.lower() in parsers.item_types:
+            recipe_images_url = item_images_url
+        elif recipe.type.lower() in parsers.weapon_types:
+            recipe_images_url = weapon_images_url
+        elif recipe.type.lower() in parsers.armor_types:
+            recipe_images_url = armor_images_url
+        elif recipe.type.lower() in parsers.accessory_types:
+            recipe_images_url = accessory_images_url
+
         if recipe_images_url != "":
             recipe.image = recipe_images_url % clean_text(recipe.result, False)
     embed = create_embed(title, color=color, image=recipe.image)

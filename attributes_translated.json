@@ -2,75 +2,75 @@
   "translations": [
     {
       "english": "Strength",
-      "german": "Stärke",
+      "spanish": "Fuerza",
       "french": "Force",
-      "spanish": "Fuerza"
+      "german": "Stärke"
     },
     {
       "english": "Agility",
-      "german": "Flinkheit",
+      "spanish": "Agilidad",
       "french": "Agilité",
-      "spanish": "Agilidad"
+      "german": "Flinkheit"
     },
     {
       "english": "Resilience",
-      "german": "Ausdauer",
+      "spanish": "Resistencia",
       "french": "Vitalité",
-      "spanish": "Resistencia"
+      "german": "Ausdauer"
     },
     {
       "english": "Deftness",
-      "german": "Geschick",
+      "spanish": "Pericia",
       "french": "Adresse",
-      "spanish": "Pericia"
+      "german": "Geschick"
     },
     {
       "english": "Charm",
-      "german": "Charme",
+      "spanish": "Encanto",
       "french": "Charme",
-      "spanish": "Encanto"
+      "german": "Charme"
     },
     {
       "english": "Magical Mending",
-      "german": "Magische Medizin",
+      "spanish": "Terapeucidad",
       "french": "Soins magiques",
-      "spanish": "Terapeucidad"
+      "german": "Magische Medizin"
     },
     {
       "english": "Magical Might",
-      "german": "Magische Macht",
+      "spanish": "Fuerza mágica",
       "french": "Puissance magique",
-      "spanish": "Fuerza mágica"
+      "german": "Magische Macht"
     },
     {
       "english": "Max. HP",
-      "german": "LP-Max.",
+      "spanish": "PV máx.",
       "french": "PV max.",
-      "spanish": "PV máx."
+      "german": "LP-Max."
     },
     {
       "english": "Max. MP",
-      "german": "MP-Max.",
+      "spanish": "PM máx.",
       "french": "PM max.",
-      "spanish": "PM máx."
+      "german": "MP-Max."
     },
     {
       "english": "Attack",
-      "german": "Angriff",
+      "spanish": "Ataque",
       "french": "Attaque",
-      "spanish": "Ataque"
+      "german": "Angriff"
     },
     {
       "english": "Defence",
-      "german": "Abwehr",
+      "spanish": "Defensa",
       "french": "Défence",
-      "spanish": "Defensa"
+      "german": "Abwehr"
     },
     {
       "english": "Style",
-      "german": "Stil",
+      "spanish": "Estilo",
       "french": "Style",
-      "spanish": "Estilo"
+      "german": "Stil"
     }
   ]
 }

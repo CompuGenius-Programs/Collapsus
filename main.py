@@ -10,18 +10,32 @@ from discord.ext.pages import Paginator, Page
 from parsel import Selector
 from titlecase import titlecase
 
+import emoji
+
 import parsers
 
 dotenv.load_dotenv()
 token = os.getenv("TOKEN")
 
-bot = discord.Bot()
+bot = discord.Bot(intents=discord.Intents.all())
 
 dev_id = 496392770374860811
 dev_tag = "@CompuGenius Programs#2368"
 
 guild_id = 655390550698098700
 quests_channel = 766039065849495574
+
+welcome_channel = 965688638295924766
+rules_channel_en = 688480621856686196
+rules_channel_fr = 965694046049800222
+rules_channel_de = 965693961907875850
+rules_channel_jp = 965693827568529448
+
+role_en = 879436700256964700
+role_fr = 965696709290262588
+role_de = 965696853951795221
+role_jp = 859563030220374057
+role_celestrian = 655438935278878720
 
 logo_url = "https://cdn.discordapp.com/emojis/856330729528361000.png"
 website_url = "https://dq9.carrd.co"
@@ -36,8 +50,6 @@ item_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/item/%s.png
 weapon_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/weapon/%s.png"
 armor_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/armor/%s.png"
 accessory_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/accessory/%s.png"
-
-translation_url = "https://docs.google.com/spreadsheets/d/1WBwv9QfbHSnKX9y_Z-I4PtlUF2ECipSLTD5XEb1nvpM"
 
 
 @bot.event
@@ -146,7 +158,7 @@ async def _translate(ctx,
                  None)
     if index is None:
         embed = create_embed("No word or phrase found matching `%s`. Please check phrase and try again." % phrase,
-                             error="Any errors? Want to contribute?\n\n%s" % translation_url)
+                             error="Any errors? Want to contribute? Please speak to %s" % dev_tag)
         return await ctx.respond(embed=embed)
 
     translation = parsers.Translation.from_dict(index)
@@ -161,14 +173,14 @@ async def _translate(ctx,
 
     title = "Translation of: %s" % titlecase(phrase)
     color = discord.Color.green()
-    embed = create_embed(title, color=color, error="Any errors? Want to contribute?\n\n%s" % translation_url)
+    embed = create_embed(title, color=color, error="Any errors? Want to contribute? Please speak to %s" % dev_tag)
     if language_output is not None:
         value = all_languages[parsers.translation_languages.index(language_output)]
         if value != "":
             embed.add_field(name=language_output, value=value, inline=False)
         else:
             embed = create_embed("The word or phrase `%s` has not been translated to `%s`." % (phrase, language_output),
-                                 error="Any errors? Want to contribute?\n\n%s" % translation_url)
+                                 error="Any errors? Want to contribute? Please speak to %s" % dev_tag)
             return await ctx.respond(embed=embed)
     else:
         for language, translation in zip(parsers.translation_languages, all_languages):
@@ -530,7 +542,7 @@ def translate_grotto(material, environment, suffix, language_input, language_out
 
     title = "Translation of: %s" % titlecase(all_languages[parsers.translation_languages_simple.index(language_input)])
     color = discord.Color.green()
-    embed = create_embed(title, color=color, error="Any errors? Want to contribute?\n\n%s" % translation_url)
+    embed = create_embed(title, color=color, error="Any errors? Want to contribute? Please speak to %s" % dev_tag)
     if language_output is not None:
         value = all_languages[parsers.translation_languages.index(language_output)]
         if value != "":
@@ -541,6 +553,62 @@ def translate_grotto(material, environment, suffix, language_input, language_out
                 embed.add_field(name=language, value=translation, inline=False)
 
     return embed
+
+
+@bot.event
+async def on_raw_reaction_add(payload):
+    emoji_name = emoji.demojize(payload.emoji.name)
+    channel = bot.get_channel(payload.channel_id)
+    guild = bot.get_guild(payload.guild_id)
+    user = guild.get_member(payload.user_id)
+
+    rules_channels = [
+        bot.get_channel(rules_channel_en),
+        bot.get_channel(rules_channel_fr),
+        bot.get_channel(rules_channel_de),
+        bot.get_channel(rules_channel_jp)
+    ]
+
+    message = await channel.fetch_message(payload.message_id)
+    if message.channel == bot.get_channel(welcome_channel):
+        role_id = 0
+        if emoji_name == ":United_Kingdom:":
+            role_id = role_en
+        if emoji_name == ":France:":
+            role_id = role_fr
+        if emoji_name == ":Germany:":
+            role_id = role_de
+        if emoji_name == ":Japan:":
+            role_id = role_jp
+
+        await user.add_roles(discord.utils.get(guild.roles, id=role_id), reason="User assigned role to themselves.")
+
+    elif message.channel in rules_channels:
+        if emoji_name == ":thumbs_up:":
+            await user.add_roles(discord.utils.get(guild.roles, id=role_celestrian), reason="User accepted rules.")
+            await message.remove_reaction(payload.emoji, user)
+
+
+@bot.event
+async def on_raw_reaction_remove(payload):
+    emoji_name = emoji.demojize(payload.emoji.name)
+    channel = bot.get_channel(payload.channel_id)
+    guild = bot.get_guild(payload.guild_id)
+    user = guild.get_member(payload.user_id)
+
+    message = await channel.fetch_message(payload.message_id)
+    if message.channel == bot.get_channel(welcome_channel):
+        role_id = 0
+        if emoji_name == ":United_Kingdom:":
+            role_id = role_en
+        if emoji_name == ":France:":
+            role_id = role_fr
+        if emoji_name == ":Germany:":
+            role_id = role_de
+        if emoji_name == ":Japan:":
+            role_id = role_jp
+
+        await user.remove_roles(discord.utils.get(guild.roles, id=role_id), reason="User removed role from themselves.")
 
 
 def int_from_string(string):

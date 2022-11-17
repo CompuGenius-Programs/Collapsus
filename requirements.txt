@@ -4,3 +4,4 @@ dataclasses-json
 aiohttp
 parsel
 titlecase
+emoji

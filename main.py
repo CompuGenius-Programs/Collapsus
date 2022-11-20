@@ -68,14 +68,15 @@ async def _help(ctx):
     description = '''
 A bot created by <@%s> for The Quester's Rest (<%s>).
 
-**/quest** - *Displays all info for a specific quest*
-**/grotto** - *Displays all info for a grotto*
+**/character** - *Displays randomly-generated info for a character*
 **/gg** - *Displays all info for a grotto (location required)*
+**/grotto** - *Displays all info for a grotto*
+**/monster** - *Displays all info for a monster*
+**/quest** - *Displays all info for a specific quest*
+**/recipe** - *Displays all info for a recipe*
 **/translate** - *Translate a word or phrase*
 **/translate_grotto(\_[language])** - *Translate a grotto name*
-**/recipe** - *Displays all info for a recipe*
-**/monster** - *Displays all info for a monster*
-**/character** - *Displays randomly-generated info for a character*
+
 **/help** - *Displays this message*
 ''' % (dev_id, server_invite_url)
 

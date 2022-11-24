@@ -585,7 +585,8 @@ def translate_grotto(material, environment, suffix, language_input, language_out
 
     view = None
     if level is not None:
-        view = TranslationGrottoSearchView(material, environment, suffix, level, location)
+        view = TranslationGrottoSearchView(translation_english[0], translation_english[1], translation_english[2],
+                                           level, location)
 
     return embed, view
 

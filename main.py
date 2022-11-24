@@ -5,12 +5,11 @@ import random
 import aiohttp
 import discord
 import dotenv
+import emoji
 from discord import Option
 from discord.ext.pages import Paginator, Page
 from parsel import Selector
 from titlecase import titlecase
-
-import emoji
 
 import parsers
 
@@ -199,9 +198,12 @@ async def _translate_grotto(ctx,
                                                 required=True),
                             suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
                             language_output: Option(str, "Output Language (Ex. Japanese)",
-                                                    choices=parsers.translation_languages, required=False)):
-    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[0], language_output)
-    await ctx.respond(embed=embed)
+                                                    choices=parsers.translation_languages, required=False),
+                            level: Option(int, "Level (Ex. 1)", required=False),
+                            location: Option(str, "Location (Ex. 05)", required=False)):
+    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[0],
+                                   language_output, level, location)
+    await ctx.respond(embed=embed, view=view)
 
 
 @bot.slash_command(name="translate_grotto_japanese",
@@ -214,9 +216,12 @@ async def _translate_grotto_japanese(ctx,
                                      environment: Option(str, "Environment (Ex. Tunnel)",
                                                          choices=parsers.grotto_environments_japanesh, required=True),
                                      language_output: Option(str, "Output Language (Ex. Japanese)",
-                                                             choices=parsers.translation_languages, required=False)):
-    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[1], language_output)
-    await ctx.respond(embed=embed)
+                                                             choices=parsers.translation_languages, required=False),
+                                     level: Option(int, "Level (Ex. 1)", required=False),
+                                     location: Option(str, "Location (Ex. 05)", required=False)):
+    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[1],
+                                   language_output, level, location)
+    await ctx.respond(embed=embed, view=view)
 
 
 @bot.slash_command(name="translate_grotto_spanish",
@@ -229,9 +234,12 @@ async def _translate_grotto_spanish(ctx,
                                     suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_spanish,
                                                    required=True),
                                     language_output: Option(str, "Output Language (Ex. Japanese)",
-                                                            choices=parsers.translation_languages, required=False)):
-    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[2], language_output)
-    await ctx.respond(embed=embed)
+                                                            choices=parsers.translation_languages, required=False),
+                                    level: Option(int, "Level (Ex. 1)", required=False),
+                                    location: Option(str, "Location (Ex. 05)", required=False)):
+    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[2],
+                                   language_output, level, location)
+    await ctx.respond(embed=embed, view=view)
 
 
 @bot.slash_command(name="translate_grotto_french",
@@ -244,9 +252,12 @@ async def _translate_grotto_french(ctx,
                                    suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_french,
                                                   required=True),
                                    language_output: Option(str, "Output Language (Ex. Japanese)",
-                                                           choices=parsers.translation_languages, required=False)):
-    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[3], language_output)
-    await ctx.respond(embed=embed)
+                                                           choices=parsers.translation_languages, required=False),
+                                   level: Option(int, "Level (Ex. 1)", required=False),
+                                   location: Option(str, "Location (Ex. 05)", required=False)):
+    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[3],
+                                   language_output, level, location)
+    await ctx.respond(embed=embed, view=view)
 
 
 @bot.slash_command(name="translate_grotto_german",
@@ -259,9 +270,12 @@ async def _translate_grotto_german(ctx,
                                    suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_german,
                                                   required=True),
                                    language_output: Option(str, "Output Language (Ex. English)",
-                                                           choices=parsers.translation_languages, required=False)):
-    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[4], language_output)
-    await ctx.respond(embed=embed)
+                                                           choices=parsers.translation_languages, required=False),
+                                   level: Option(int, "Level (Ex. 1)", required=False),
+                                   location: Option(str, "Location (Ex. 05)", required=False)):
+    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[4],
+                                   language_output, level, location)
+    await ctx.respond(embed=embed, view=view)
 
 
 @bot.slash_command(name="translate_grotto_italian",
@@ -274,9 +288,12 @@ async def _translate_grotto_italian(ctx,
                                     suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_italian,
                                                    required=True),
                                     language_output: Option(str, "Output Language (Ex. English)",
-                                                            choices=parsers.translation_languages, required=False)):
-    embed = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[5], language_output)
-    await ctx.respond(embed=embed)
+                                                            choices=parsers.translation_languages, required=False),
+                                    level: Option(int, "Level (Ex. 1)", required=False),
+                                    location: Option(str, "Location (Ex. 05)", required=False)):
+    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[5],
+                                   language_output, level, location)
+    await ctx.respond(embed=embed, view=view)
 
 
 @bot.slash_command(name="recipe", description="Sends info about a recipe.")
@@ -424,7 +441,18 @@ async def _grotto(ctx,
                   suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
                   level: Option(int, "Level (Ex. 1)", required=True),
                   location: Option(str, "Location (Ex. 05)", required=False)):
-    await grotto_func(ctx, material, environment, suffix, level, location)
+    embeds = await grotto_func(ctx, material, environment, suffix, level, location)
+
+    if len(embeds) > 1:
+        paginator = create_paginator(embeds)
+        await paginator.respond(ctx.interaction)
+    else:
+        if len(embeds) == 1:
+            embed = embeds[0]
+        else:
+            embed = create_embed("No grotto found. Please check parameters and try again.")
+
+        await ctx.respond(embed=embed)
 
 
 @bot.slash_command(name="gg", description="Sends info about a grotto with location required.")
@@ -436,7 +464,18 @@ async def _grotto_location(ctx,
                            suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
                            level: Option(int, "Level (Ex. 1)", required=True),
                            location: Option(str, "Location (Ex. 05)", required=True)):
-    await grotto_func(ctx, material, environment, suffix, level, location)
+    embeds = await grotto_func(ctx, material, environment, suffix, level, location)
+
+    if len(embeds) > 1:
+        paginator = create_paginator(embeds)
+        await paginator.respond(ctx.interaction)
+    else:
+        if len(embeds) == 1:
+            embed = embeds[0]
+        else:
+            embed = create_embed("No grotto found. Please check parameters and try again.")
+
+        await ctx.respond(embed=embed)
 
 
 async def grotto_func(ctx, material, environment, suffix, level, location):
@@ -485,19 +524,10 @@ async def grotto_func(ctx, material, environment, suffix, level, location):
                 embed.url = str(response.url)
                 embeds.append(embed)
 
-            if len(embeds) == 1:
-                embed = embeds[0]
-            elif len(embeds) == 0:
-                embed = create_embed("No grotto found. Please check parameters and try again.")
-
-        if len(embeds) > 1:
-            paginator = create_paginator(embeds)
-            await paginator.respond(ctx.interaction)
-        else:
-            await ctx.respond(embed=embed)
+        return embeds
 
 
-def translate_grotto(material, environment, suffix, language_input, language_output):
+def translate_grotto(material, environment, suffix, language_input, language_output, level, location):
     with open("grottos_translated.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
@@ -553,7 +583,37 @@ def translate_grotto(material, environment, suffix, language_input, language_out
             if translation != "":
                 embed.add_field(name=language, value=translation, inline=False)
 
-    return embed
+    view = None
+    if level is not None:
+        view = TranslationGrottoSearchView(material, environment, suffix, level, location)
+
+    return embed, view
+
+
+class TranslationGrottoSearchView(discord.ui.View):
+    def __init__(self, material, environment, suffix, level, location):
+        super().__init__()
+        self.material = material
+        self.environment = environment
+        self.suffix = suffix
+        self.level = level
+        self.location = location
+
+    @discord.ui.button(label="Search Grotto", style=discord.ButtonStyle.success)
+    async def button_callback(self, button, interaction):
+        await interaction.response.defer()
+        embeds = await grotto_func(interaction, self.material, self.environment, self.suffix, self.level, self.location)
+
+        if len(embeds) > 1:
+            paginator = create_paginator(embeds)
+            await paginator.respond(interaction)
+        else:
+            if len(embeds) == 1:
+                embed = embeds[0]
+            else:
+                embed = create_embed("No grotto found. Please check parameters and try again.")
+
+            await interaction.followup(embed=embed)
 
 
 @bot.event

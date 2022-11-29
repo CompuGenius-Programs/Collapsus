@@ -20,6 +20,7 @@ bot = discord.Bot(intents=discord.Intents.all())
 
 dev_id = 496392770374860811
 dev_tag = "@CompuGenius Programs#2368"
+dev_paypal = "paypal.me/compugeniusprograms"
 
 guild_id = 655390550698098700
 quests_channel = 766039065849495574
@@ -699,7 +700,7 @@ def create_paginator(embeds):
 
 
 def create_embed(title, description=None, color=discord.Color.green(),
-                 footer="© CompuGenius Programs. All rights reserved.",
+                 footer="Consider supporting the developer at %s" % dev_paypal,
                  error="Any errors? Please report to %s" % dev_tag,
                  image="", *, url="", author="", author_url=""):
     embed = discord.Embed(title=title, description=description, url=url, color=color)

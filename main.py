@@ -304,7 +304,7 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
 
     recipes = data["recipes"]
 
-    index = next(filter(lambda r: r["result"] == creation_name.lower(), recipes), None)
+    index = next(filter(lambda r: clean_text(r["result"]) == clean_text(creation_name.lower()), recipes), None)
 
     if index is None:
         embed = create_embed("Ahem! Oh dear. I'm afraid I don't seem to be\nable to make anything with that particular"

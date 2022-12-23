@@ -615,7 +615,7 @@ class TranslationGrottoSearchView(discord.ui.View):
             else:
                 embed = create_embed("No grotto found. Please check parameters and try again.")
 
-            await interaction.followup(embed=embed)
+            await interaction.followup.send(embed=embed)
 
 
 @bot.event

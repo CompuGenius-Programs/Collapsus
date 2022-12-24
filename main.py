@@ -172,11 +172,11 @@ async def _translate(ctx,
         translation.italian
     ]
 
-    title = "Translation of: %s" % all_languages[parsers.translation_languages.index(language_input)]
+    title = "Translation of: %s" % titlecase(all_languages[parsers.translation_languages.index(language_input)])
     color = discord.Color.green()
     embed = create_embed(title, color=color, error="Any errors? Want to contribute? Please speak to %s" % dev_tag)
     if language_output is not None:
-        value = all_languages[parsers.translation_languages.index(language_output)]
+        value = titlecase(all_languages[parsers.translation_languages.index(language_output)])
         if value != "":
             embed.add_field(name=language_output, value=value, inline=False)
         else:
@@ -186,7 +186,7 @@ async def _translate(ctx,
     else:
         for language, translation in zip(parsers.translation_languages, all_languages):
             if translation != "":
-                embed.add_field(name=language, value=translation, inline=False)
+                embed.add_field(name=language, value=titlecase(translation), inline=False)
 
     await ctx.respond(embed=embed)
 

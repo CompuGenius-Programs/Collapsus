@@ -683,7 +683,8 @@ def int_from_string(string):
 
 
 def clean_text(text, remove_spaces=True):
-    text = text.lower().replace("'", "").replace("’", "").replace("-", "").replace("ñ", "n").replace(".", "")
+    text = text.lower().replace("'", "").replace("’", "").replace("-", "").replace("ñ", "n").replace("ó", "o").replace(
+        ".", "")
     if remove_spaces:
         text = text.replace(" ", "")
     else:

@@ -164,9 +164,7 @@ grotto_suffixes_italian = ['della Gioia', 'della Benedizione', 'dell’Esultanza
                            'della Morte']
 
 grotto_special = "Has a special floor"
-grotto_keys = ("Seed", "Rank", "Name",
-               "Boss", "Type", "Floors",
-               "Monster Rank", "Chests")
+grotto_keys = ("Seed", "Rank", "Name", "Boss", "Type", "Floors", "Monster Rank", "Chests", "Locations")
 
 grotto_ranks = ["**S**", "**A**", "**B**", "**C**", "**D**", "**E**", "**F**", "**G**", "**H**", "**I**"]
 
@@ -191,10 +189,10 @@ def _hex(value):
     n = int(value, base=16)
 
     hex_str = str.upper(hex(n)[2:])
-    return hex_str.zfill(4)
+    return hex_str.zfill(2)
 
 
-def is_special(data: tuple):
+def is_special(data):
     try:
         return data[0] == grotto_special
     except ValueError:
@@ -204,8 +202,10 @@ def is_special(data: tuple):
 def create_grotto(datas):
     converters = (_hex, int, str)
 
-    magic = 17
-    ye = []
+    res = []
+
+    seed_found = False
+    next_grotto = False
 
     for data in datas:
         match_found = re.compile(cleanup_regex).match(data)
@@ -222,23 +222,27 @@ def create_grotto(datas):
                     else:
                         if isinstance(converted, str):
                             if converted.find(":") > -1:
+                                if converted == "Seed:":
+                                    if not seed_found:
+                                        seed_found = True
+                                    else:
+                                        next_grotto = True
                                 continue
                             elif converted == grotto_special:
-                                magic = 18
-                                ye.insert(0, converted)
+                                res.insert(0, converted)
                             else:
-                                ye.append(converted)
+                                res.append(converted)
                         else:
-                            ye.append(converted)
+                            res.append(converted)
                         break
                     finally:
-                        if len(ye) == magic:
-                            yield tuple(ye)
-                            magic = 17
-                            ye = []
+                        if next_grotto:
+                            yield tuple(res)
+                            res = []
+                            next_grotto = False
 
-    if len(ye) > 0:
-        yield tuple(ye)
+    if len(res) > 0:
+        yield tuple(res)
 
 
 def parse_regex(type, string):

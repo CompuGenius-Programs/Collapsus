@@ -1,3 +1,4 @@
+import io
 import json
 import os
 import random
@@ -11,6 +12,7 @@ from discord.ext.pages import Paginator, Page
 from parsel import Selector
 from titlecase import titlecase
 
+import grotto_image_recognition
 import parsers
 
 dotenv.load_dotenv()
@@ -23,6 +25,8 @@ dev_tag = "@CompuGenius Programs#2368"
 dev_paypal = "paypal.me/compugeniusprograms"
 
 guild_id = 655390550698098700
+testing_channel = 973619817317797919
+
 quests_channel = 766039065849495574
 
 welcome_channel = 965688638295924766
@@ -36,6 +40,8 @@ role_fr = 965696709290262588
 role_de = 965696853951795221
 role_jp = 859563030220374057
 role_celestrian = 655438935278878720
+
+grotto_bot_channel = 845339551173050389
 
 logo_url = "https://cdn.discordapp.com/emojis/856330729528361000.png"
 website_url = "https://dq9.carrd.co"
@@ -398,7 +404,7 @@ async def _monster(ctx,
         embeds.append(embed)
 
     if len(embeds) > 1:
-        paginator = create_paginator(embeds)
+        paginator = create_paginator(embeds, None)
         await paginator.respond(ctx.interaction)
     else:
         await ctx.respond(embed=embeds[0])
@@ -442,10 +448,10 @@ async def _grotto(ctx,
                   suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
                   level: Option(int, "Level (Ex. 1)", required=True),
                   location: Option(str, "Location (Ex. 05)", required=False)):
-    embeds = await grotto_func(ctx, material, environment, suffix, level, location)
+    embeds, files = await grotto_func(material, environment, suffix, level, location)
 
     if len(embeds) > 1:
-        paginator = create_paginator(embeds)
+        paginator = create_paginator(embeds, files)
         await paginator.respond(ctx.interaction)
     else:
         if len(embeds) == 1:
@@ -453,7 +459,7 @@ async def _grotto(ctx,
         else:
             embed = create_embed("No grotto found. Please check parameters and try again.")
 
-        await ctx.respond(embed=embed)
+        await ctx.respond(embed=embed, file=files[0])
 
 
 @bot.slash_command(name="gg", description="Sends info about a grotto with location required.")
@@ -465,10 +471,10 @@ async def _grotto_location(ctx,
                            suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
                            level: Option(int, "Level (Ex. 1)", required=True),
                            location: Option(str, "Location (Ex. 05)", required=True)):
-    embeds = await grotto_func(ctx, material, environment, suffix, level, location)
+    embeds, files = await grotto_func(material, environment, suffix, level, location)
 
     if len(embeds) > 1:
-        paginator = create_paginator(embeds)
+        paginator = create_paginator(embeds, files)
         await paginator.respond(ctx.interaction)
     else:
         if len(embeds) == 1:
@@ -476,10 +482,10 @@ async def _grotto_location(ctx,
         else:
             embed = create_embed("No grotto found. Please check parameters and try again.")
 
-        await ctx.respond(embed=embed)
+        await ctx.respond(embed=embed, file=files[0])
 
 
-async def grotto_func(ctx, material, environment, suffix, level, location):
+async def grotto_func(material, environment, suffix, level, location):
     async with aiohttp.ClientSession() as session:
         params = {
             "search": "Search",
@@ -495,11 +501,12 @@ async def grotto_func(ctx, material, environment, suffix, level, location):
         async with session.get(grotto_search_url, params=params) as response:
             text = await response.text()
             selector = Selector(text=text)
-            selector.xpath('//div[@class="minimap"]').drop()
+            # selector.xpath('//div[@class="minimap"]').drop()
             divs = selector.xpath('//div[@class="inner"]//text()')
             grottos = divs.getall()
 
             embeds = []
+            files = []
 
             for parsed in parsers.create_grotto(grottos):
                 special = parsers.is_special(parsed)
@@ -517,15 +524,25 @@ async def grotto_func(ctx, material, environment, suffix, level, location):
                             value = ":star: %s :star:" % value
                         embed.title = "%s\n[Click For Full Info]" % value
                     else:
+                        if key == "Seed":
+                            value = str(value).zfill(4)
                         if key == "Chests":
                             values = [str(x) for x in parsed[i:i + 10]]
                             chests = list(zip(parsers.grotto_ranks, values))
                             value = ", ".join([': '.join(x) for x in chests])
+                        if key == "Locations":
+                            values = [str(x).zfill(2) for x in parsed[i + 9:]]
+                            for v in values:
+                                file = discord.File("grotto_images/%s.png" % v)
+                                files.append({"id": len(embeds), "file": file})
+                            if len(values) == 1:
+                                embed.set_image(url="attachment://%s.png" % values[0])
+                            value = ', '.join(values)
                         embed.add_field(name=key, value=value, inline=False)
                 embed.url = str(response.url)
                 embeds.append(embed)
 
-        return embeds
+        return embeds, files
 
 
 def translate_grotto(material, environment, suffix, language_input, language_output, level, location):
@@ -604,10 +621,10 @@ class TranslationGrottoSearchView(discord.ui.View):
     @discord.ui.button(label="Search Grotto", style=discord.ButtonStyle.success)
     async def button_callback(self, button, interaction):
         await interaction.response.defer()
-        embeds = await grotto_func(interaction, self.material, self.environment, self.suffix, self.level, self.location)
+        embeds, files = await grotto_func(self.material, self.environment, self.suffix, self.level, self.location)
 
         if len(embeds) > 1:
-            paginator = create_paginator(embeds)
+            paginator = create_paginator(embeds, files)
             await paginator.respond(interaction)
         else:
             if len(embeds) == 1:
@@ -615,7 +632,7 @@ class TranslationGrottoSearchView(discord.ui.View):
             else:
                 embed = create_embed("No grotto found. Please check parameters and try again.")
 
-            await interaction.followup.send(embed=embed)
+            await interaction.followup.send(embed=embed, file=files[0])
 
 
 @bot.event
@@ -674,6 +691,23 @@ async def on_raw_reaction_remove(payload):
         await user.remove_roles(discord.utils.get(guild.roles, id=role_id), reason="User removed role from themselves.")
 
 
+@bot.event
+async def on_message(message):
+    if message.channel == bot.get_channel(grotto_bot_channel) or message.channel == bot.get_channel(testing_channel):
+        # if message.author != bot.user:
+        if message.author.id == dev_id:
+            if len(message.attachments) >= 1:
+                for attachment in message.attachments:
+                    async with aiohttp.ClientSession() as session:
+                        async with session.get(attachment.url) as response:
+                            bytes = await response.read()
+                            path = io.BytesIO(bytes)
+                            location = grotto_image_recognition.match_image(path)
+                            location = location.removesuffix(".png")
+                            embed = create_embed("Location %s" % location)
+                            await message.reply(embed=embed)
+
+
 def int_from_string(string):
     integer = ''.join(filter(str.isdigit, string))
     if integer != "":
@@ -693,10 +727,15 @@ def clean_text(text, remove_spaces=True):
     return text
 
 
-def create_paginator(embeds):
+def create_paginator(embeds, files):
     pages = []
     for entry in embeds:
-        pages.append(Page(embeds=[entry]))
+        if files is None:
+            page = Page(embeds=[entry])
+        else:
+            fs = [file["file"] for file in files if file["id"] == embeds.index(entry)]
+            page = Page(embeds=[entry], files=fs)
+        pages.append(page)
     return Paginator(pages=pages)
 
 

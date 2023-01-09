@@ -1,5 +1,6 @@
 import io
 import json
+import math
 import os
 import random
 
@@ -7,6 +8,7 @@ import aiohttp
 import discord
 import dotenv
 import emoji
+from PIL import Image
 from discord import Option
 from discord.ext.pages import Paginator, Page
 from parsel import Selector
@@ -448,6 +450,8 @@ async def _grotto(ctx,
                   suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
                   level: Option(int, "Level (Ex. 1)", required=True),
                   location: Option(str, "Location (Ex. 05)", required=False)):
+    await ctx.defer()
+
     embeds, files = await grotto_func(material, environment, suffix, level, location)
 
     if len(embeds) > 1:
@@ -458,8 +462,9 @@ async def _grotto(ctx,
             embed = embeds[0]
         else:
             embed = create_embed("No grotto found. Please check parameters and try again.")
+            files = [None]
 
-        await ctx.respond(embed=embed, file=files[0])
+        await ctx.followup.send(embed=embed, file=files[0])
 
 
 @bot.slash_command(name="gg", description="Sends info about a grotto with location required.")
@@ -533,8 +538,7 @@ async def grotto_func(material, environment, suffix, level, location):
                         if key == "Locations":
                             values = [str(x).zfill(2) for x in parsed[i + 9:]]
                             for v in values:
-                                file = discord.File("grotto_images/%s.png" % v)
-                                files.append({"id": len(embeds), "file": file})
+                                files.append({"id": len(embeds), "file": "grotto_images/%s.png" % v})
                             if len(values) == 1:
                                 embed.set_image(url="attachment://%s.png" % values[0])
                             value = ', '.join(values)
@@ -734,9 +738,28 @@ def create_paginator(embeds, files):
             page = Page(embeds=[entry])
         else:
             fs = [file["file"] for file in files if file["id"] == embeds.index(entry)]
-            page = Page(embeds=[entry], files=fs)
+            file_name = "collages/collage%s.png" % embeds.index(entry)
+            create_collage(fs, file_name)
+            file = discord.File(file_name)
+            entry.set_image(url="attachment://%s" % file_name.removeprefix("collages/"))
+            page = Page(embeds=[entry], files=[file])
         pages.append(page)
     return Paginator(pages=pages)
+
+
+def create_collage(files, file_name):
+    columns = math.ceil(math.sqrt(len(files)))
+    rows = math.ceil(len(files) / columns)
+    collage = Image.new("RGBA", (128 * columns, 96 * rows))
+    index = 0
+    for row in range(rows):
+        for col in range(columns):
+            if index < len(files):
+                image = Image.open(files[index])
+                collage.paste(image, (128 * col, 96 * row))
+                index += 1
+
+    collage.save(file_name)
 
 
 def create_embed(title, description=None, color=discord.Color.green(),

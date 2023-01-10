@@ -9,7 +9,6 @@ from tensorflow.keras.preprocessing import image
 base_model = VGG16(weights='imagenet')
 model = Model(inputs=base_model.input, outputs=base_model.get_layer('fc1').output)
 
-
 images_dir = "grotto_images"
 images = os.listdir(images_dir)
 
@@ -18,7 +17,7 @@ all_features = np.loadtxt("all_features.txt", delimiter=",")
 
 def extract(img):
     img = img.resize((224, 224))  # Resize the image
-    img = img.convert('RGB')  # Convert the image color space
+    img = img.convert("RGB")  # Convert the image color space
     x = image.img_to_array(img)  # Reformat the image
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
@@ -34,12 +33,6 @@ def match_image(name):
     id = np.argsort(dists)[0]  # Extract image that has the lowest distance
 
     return images[int(id)]
-
-
-# match_image("test7D.png")
-# match_image("test56.png")
-# match_image("test6A.png")
-# match_image("test74.png")
 
 # import os
 #

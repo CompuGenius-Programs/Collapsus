@@ -486,6 +486,7 @@ async def _grotto_location(ctx,
             embed = embeds[0]
         else:
             embed = create_embed("No grotto found. Please check parameters and try again.")
+            files = [None]
 
         await ctx.respond(embed=embed, file=files[0])
 
@@ -765,11 +766,12 @@ def create_collage(files, file_name):
 def create_embed(title, description=None, color=discord.Color.green(),
                  footer="Consider supporting the developer at %s" % dev_paypal,
                  error="Any errors? Please report to %s" % dev_tag,
-                 image="", *, url="", author="", author_url=""):
+                 image="", *, url="", author=""):
     embed = discord.Embed(title=title, description=description, url=url, color=color)
     embed.set_footer(text="%s\n%s" % (footer, error))
-    embed.set_thumbnail(url=image)
-    embed.set_author(name=author, url=author_url)
+    if image != "":
+        embed.set_thumbnail(url=image)
+    embed.set_author(name=author)
     return embed
 
 

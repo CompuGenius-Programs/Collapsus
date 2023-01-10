@@ -450,21 +450,7 @@ async def _grotto(ctx,
                   suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
                   level: Option(int, "Level (Ex. 1)", required=True),
                   location: Option(str, "Location (Ex. 05)", required=False)):
-    await ctx.defer()
-
-    embeds, files = await grotto_func(material, environment, suffix, level, location)
-
-    if len(embeds) > 1:
-        paginator = create_paginator(embeds, files)
-        await paginator.respond(ctx.interaction)
-    else:
-        if len(embeds) == 1:
-            embed = embeds[0]
-        else:
-            embed = create_embed("No grotto found. Please check parameters and try again.")
-            files = [None]
-
-        await ctx.followup.send(embed=embed, file=files[0])
+    await grotto_command(ctx, material, environment, suffix, level, location)
 
 
 @bot.slash_command(name="gg", description="Sends info about a grotto with location required.")
@@ -476,6 +462,12 @@ async def _grotto_location(ctx,
                            suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
                            level: Option(int, "Level (Ex. 1)", required=True),
                            location: Option(str, "Location (Ex. 05)", required=True)):
+    await grotto_command(ctx, material, environment, suffix, level, location)
+
+
+async def grotto_command(ctx, material, environment, suffix, level, location):
+    await ctx.defer()
+
     embeds, files = await grotto_func(material, environment, suffix, level, location)
 
     if len(embeds) > 1:
@@ -484,11 +476,14 @@ async def _grotto_location(ctx,
     else:
         if len(embeds) == 1:
             embed = embeds[0]
+            fs = [file["file"] for file in files][0]
+            file = discord.File(fs)
+            embed.set_image(url="attachment://%s" % fs.removeprefix("grotto_images/"))
         else:
             embed = create_embed("No grotto found. Please check parameters and try again.")
-            files = [None]
+            file = None
 
-        await ctx.respond(embed=embed, file=files[0])
+        await ctx.followup.send(embed=embed, file=file)
 
 
 async def grotto_func(material, environment, suffix, level, location):
@@ -540,8 +535,6 @@ async def grotto_func(material, environment, suffix, level, location):
                             values = [str(x).zfill(2) for x in parsed[i + 9:]]
                             for v in values:
                                 files.append({"id": len(embeds), "file": "grotto_images/%s.png" % v})
-                            if len(values) == 1:
-                                embed.set_image(url="attachment://%s.png" % values[0])
                             value = ', '.join(values)
                         embed.add_field(name=key, value=value, inline=False)
                 embed.url = str(response.url)

@@ -734,7 +734,9 @@ def create_paginator(embeds, files):
             fs = [file["file"] for file in files if file["id"] == embeds.index(entry)]
             file_name = "collages/collage%s.png" % embeds.index(entry)
             create_collage(fs, file_name)
-            file = discord.File(file_name)
+            with open(file_name, 'rb') as fp:
+                data = io.BytesIO(fp.read())
+            file = discord.File(data, file_name.removeprefix("collages/"))
             entry.set_image(url="attachment://%s" % file_name.removeprefix("collages/"))
             page = Page(embeds=[entry], files=[file])
         pages.append(page)

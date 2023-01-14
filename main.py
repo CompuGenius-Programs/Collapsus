@@ -10,7 +10,7 @@ import dotenv
 import emoji
 from PIL import Image
 from discord import Option
-from discord.ext.pages import Paginator, Page
+from discord.ext.pages import Paginator, Page as _Page
 from parsel import Selector
 from titlecase import titlecase
 
@@ -210,9 +210,7 @@ async def _translate_grotto(ctx,
                                                     choices=parsers.translation_languages, required=False),
                             level: Option(int, "Level (Ex. 1)", required=False),
                             location: Option(str, "Location (Ex. 05)", required=False)):
-    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[0],
-                                   language_output, level, location)
-    await ctx.respond(embed=embed, view=view)
+    await translate_grotto_command(ctx, material, environment, suffix, 0, language_output, level, location)
 
 
 @bot.slash_command(name="translate_grotto_japanese",
@@ -228,9 +226,7 @@ async def _translate_grotto_japanese(ctx,
                                                              choices=parsers.translation_languages, required=False),
                                      level: Option(int, "Level (Ex. 1)", required=False),
                                      location: Option(str, "Location (Ex. 05)", required=False)):
-    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[1],
-                                   language_output, level, location)
-    await ctx.respond(embed=embed, view=view)
+    await translate_grotto_command(ctx, material, environment, suffix, 1, language_output, level, location)
 
 
 @bot.slash_command(name="translate_grotto_spanish",
@@ -246,9 +242,7 @@ async def _translate_grotto_spanish(ctx,
                                                             choices=parsers.translation_languages, required=False),
                                     level: Option(int, "Level (Ex. 1)", required=False),
                                     location: Option(str, "Location (Ex. 05)", required=False)):
-    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[2],
-                                   language_output, level, location)
-    await ctx.respond(embed=embed, view=view)
+    await translate_grotto_command(ctx, material, environment, suffix, 2, language_output, level, location)
 
 
 @bot.slash_command(name="translate_grotto_french",
@@ -264,9 +258,7 @@ async def _translate_grotto_french(ctx,
                                                            choices=parsers.translation_languages, required=False),
                                    level: Option(int, "Level (Ex. 1)", required=False),
                                    location: Option(str, "Location (Ex. 05)", required=False)):
-    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[3],
-                                   language_output, level, location)
-    await ctx.respond(embed=embed, view=view)
+    await translate_grotto_command(ctx, material, environment, suffix, 3, language_output, level, location)
 
 
 @bot.slash_command(name="translate_grotto_german",
@@ -282,9 +274,7 @@ async def _translate_grotto_german(ctx,
                                                            choices=parsers.translation_languages, required=False),
                                    level: Option(int, "Level (Ex. 1)", required=False),
                                    location: Option(str, "Location (Ex. 05)", required=False)):
-    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[4],
-                                   language_output, level, location)
-    await ctx.respond(embed=embed, view=view)
+    await translate_grotto_command(ctx, material, environment, suffix, 4, language_output, level, location)
 
 
 @bot.slash_command(name="translate_grotto_italian",
@@ -300,9 +290,19 @@ async def _translate_grotto_italian(ctx,
                                                             choices=parsers.translation_languages, required=False),
                                     level: Option(int, "Level (Ex. 1)", required=False),
                                     location: Option(str, "Location (Ex. 05)", required=False)):
-    embed, view = translate_grotto(material, environment, suffix, parsers.translation_languages_simple[5],
-                                   language_output, level, location)
-    await ctx.respond(embed=embed, view=view)
+    await translate_grotto_command(ctx, material, environment, suffix, 5, language_output, level, location)
+
+
+async def translate_grotto_command(ctx, material, environment, suffix, language_input, language_output, level, location):
+    await ctx.defer()
+
+    embed, material, environment, suffix = await translate_grotto(material, environment, suffix,
+                                                                  parsers.translation_languages_simple[language_input],
+                                                                  language_output)
+    await ctx.followup.send(embed=embed)
+
+    if level is not None:
+        await grotto_command(ctx, material, environment, suffix, level, location)
 
 
 @bot.slash_command(name="recipe", description="Sends info about a recipe.")
@@ -389,9 +389,11 @@ async def _monster(ctx,
 **Blast:** %s | **Earth:** %s | **Dark:** %s | **Light:** %s
 
 **Haunts:** %s
-''' % (monster.family, monster.exp, monster.gold, monster.hp, monster.mp, monster.atk, monster.defn, monster.agi,
-       monster.fire, monster.ice, monster.wind, monster.blast, monster.earth, monster.dark, monster.light,
-       titlecase(monster.haunts))
+''' % (
+            monster.family, monster.exp, monster.gold, monster.hp, monster.mp, monster.atk, monster.defn, monster.agi,
+            monster.fire, monster.ice, monster.wind, monster.blast, monster.earth, monster.dark, monster.light,
+            titlecase(monster.haunts)
+        )
         if monster.drop1 != "":
             description += "\n**__Drop 1 | Common Drop__**\n%s\n" % titlecase(monster.drop1)
         if monster.drop2 != "":
@@ -466,7 +468,8 @@ async def _grotto_location(ctx,
 
 
 async def grotto_command(ctx, material, environment, suffix, level, location):
-    await ctx.defer()
+    if not ctx.response.is_done():
+        await ctx.defer()
 
     embeds, files = await grotto_func(material, environment, suffix, level, location)
 
@@ -476,9 +479,13 @@ async def grotto_command(ctx, material, environment, suffix, level, location):
     else:
         if len(embeds) == 1:
             embed = embeds[0]
-            fs = [file["file"] for file in files][0]
-            file = discord.File(fs)
-            embed.set_image(url="attachment://%s" % fs.removeprefix("grotto_images/"))
+            fs = [file["file"] for file in files if file["id"] == 0]
+            file_name = "collages/collage0.png"
+            create_collage(fs, file_name)
+            with open(file_name, 'rb') as fp:
+                data = io.BytesIO(fp.read())
+            file = discord.File(data, file_name.removeprefix("collages/"))
+            embed.set_image(url="attachment://%s" % file_name.removeprefix("collages/"))
         else:
             embed = create_embed("No grotto found. Please check parameters and try again.")
             file = None
@@ -543,7 +550,7 @@ async def grotto_func(material, environment, suffix, level, location):
         return embeds, files
 
 
-def translate_grotto(material, environment, suffix, language_input, language_output, level, location):
+async def translate_grotto(material, environment, suffix, language_input, language_output):
     with open("grottos_translated.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
@@ -599,38 +606,7 @@ def translate_grotto(material, environment, suffix, language_input, language_out
             if translation != "":
                 embed.add_field(name=language, value=translation, inline=False)
 
-    view = None
-    if level is not None:
-        view = TranslationGrottoSearchView(translation_english[0], translation_english[1], translation_english[2],
-                                           level, location)
-
-    return embed, view
-
-
-class TranslationGrottoSearchView(discord.ui.View):
-    def __init__(self, material, environment, suffix, level, location):
-        super().__init__()
-        self.material = material
-        self.environment = environment
-        self.suffix = suffix
-        self.level = level
-        self.location = location
-
-    @discord.ui.button(label="Search Grotto", style=discord.ButtonStyle.success)
-    async def button_callback(self, button, interaction):
-        await interaction.response.defer()
-        embeds, files = await grotto_func(self.material, self.environment, self.suffix, self.level, self.location)
-
-        if len(embeds) > 1:
-            paginator = create_paginator(embeds, files)
-            await paginator.respond(interaction)
-        else:
-            if len(embeds) == 1:
-                embed = embeds[0]
-            else:
-                embed = create_embed("No grotto found. Please check parameters and try again.")
-
-            await interaction.followup.send(embed=embed, file=files[0])
+    return embed, translation_english[0], translation_english[1], translation_english[2]
 
 
 @bot.event
@@ -729,7 +705,7 @@ def create_paginator(embeds, files):
     pages = []
     for entry in embeds:
         if files is None:
-            page = Page(embeds=[entry])
+            page = _Page(embeds=[entry])
         else:
             fs = [file["file"] for file in files if file["id"] == embeds.index(entry)]
             file_name = "collages/collage%s.png" % embeds.index(entry)
@@ -738,7 +714,7 @@ def create_paginator(embeds, files):
                 data = io.BytesIO(fp.read())
             file = discord.File(data, file_name.removeprefix("collages/"))
             entry.set_image(url="attachment://%s" % file_name.removeprefix("collages/"))
-            page = Page(embeds=[entry], files=[file])
+            page = _Page(embeds=[entry], files=[file])
         pages.append(page)
     return Paginator(pages=pages)
 

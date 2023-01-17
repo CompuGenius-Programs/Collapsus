@@ -3,6 +3,7 @@ import json
 import math
 import os
 import random
+from typing import Optional, List
 
 import aiohttp
 import discord
@@ -293,7 +294,8 @@ async def _translate_grotto_italian(ctx,
     await translate_grotto_command(ctx, material, environment, suffix, 5, language_output, level, location)
 
 
-async def translate_grotto_command(ctx, material, environment, suffix, language_input, language_output, level, location):
+async def translate_grotto_command(ctx, material, environment, suffix, language_input, language_output, level,
+                                   location):
     await ctx.defer()
 
     embed, material, environment, suffix = await translate_grotto(material, environment, suffix,
@@ -490,7 +492,10 @@ async def grotto_command(ctx, material, environment, suffix, level, location):
             embed = create_embed("No grotto found. Please check parameters and try again.")
             file = None
 
-        await ctx.followup.send(embed=embed, file=file)
+        if file is not None:
+            await ctx.followup.send(embed=embed, file=file)
+        else:
+            await ctx.followup.send(embed=embed)
 
 
 async def grotto_func(material, environment, suffix, level, location):
@@ -701,11 +706,33 @@ def clean_text(text, remove_spaces=True):
     return text
 
 
+class Page(_Page):
+    def update_files(self) -> Optional[List[discord.File]]:
+        for file in self._files:
+            if not isinstance(file.fp, io.BufferedReader):
+                file.fp.seek(0)
+                self._files[self._files.index(file)] = discord.File(
+                    file.fp,  # type: ignore
+                    filename=file.filename,
+                    description=file.description,
+                    spoiler=file.spoiler,
+                )
+            else:
+                with open(file.fp.name, "rb") as fp:  # type: ignore
+                    self._files[self._files.index(file)] = discord.File(
+                        fp,  # type: ignore
+                        filename=file.filename,
+                        description=file.description,
+                        spoiler=file.spoiler,
+                    )
+        return self._files
+
+
 def create_paginator(embeds, files):
     pages = []
     for entry in embeds:
         if files is None:
-            page = _Page(embeds=[entry])
+            page = Page(embeds=[entry])
         else:
             fs = [file["file"] for file in files if file["id"] == embeds.index(entry)]
             file_name = "collages/collage%s.png" % embeds.index(entry)
@@ -714,7 +741,7 @@ def create_paginator(embeds, files):
                 data = io.BytesIO(fp.read())
             file = discord.File(data, file_name.removeprefix("collages/"))
             entry.set_image(url="attachment://%s" % file_name.removeprefix("collages/"))
-            page = _Page(embeds=[entry], files=[file])
+            page = Page(embeds=[entry], files=[file])
         pages.append(page)
     return Paginator(pages=pages)
 

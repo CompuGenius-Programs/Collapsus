@@ -1,38 +1,63 @@
+import cv2
 import os
 
 import numpy as np
-from PIL import Image
-from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
-from tensorflow.keras.models import Model
-from tensorflow.keras.preprocessing import image
-
-base_model = VGG16(weights='imagenet')
-model = Model(inputs=base_model.input, outputs=base_model.get_layer('fc1').output)
 
 images_dir = "grotto_images"
 images = os.listdir(images_dir)
 
-all_features = np.loadtxt("all_features.txt", delimiter=",")
+image_features = []
 
 
-def extract(img):
-    img = img.resize((224, 224))  # Resize the image
-    img = img.convert("RGB")  # Convert the image color space
-    x = image.img_to_array(img)  # Reformat the image
-    x = np.expand_dims(x, axis=0)
-    x = preprocess_input(x)
-    feature = model.predict(x)[0]  # Extract Features
-    return feature / np.linalg.norm(feature)
+# create a SIFT feature detector and descriptor
+sift = cv2.xfeatures2d.SIFT_create()
+
+
+# loop through each map image and match its features with the input image
+for i, map_img_name in enumerate(images):
+    # load the map image
+    map_img = cv2.imread(images_dir + "/" + map_img_name)
+
+    # detect and compute the features of the map image
+    kp2, des2 = sift.detectAndCompute(map_img, None)
+    image_features.append(des2)
 
 
 def match_image(name):
-    img = Image.open(name)
-    # img = img.convert("L")
-    query = extract(img=img)  # Extract its features
-    dists = np.linalg.norm(all_features - query, axis=1)  # Calculate the similarity (distance) between images
-    id = np.argsort(dists)[0]  # Extract image that has the lowest distance
+    # create a brute-force matcher
+    bf = cv2.BFMatcher()
 
-    return images[int(id)]
+    # convert io.bytesIO to file
+    input_img = cv2.imdecode(np.frombuffer(name.getbuffer(), np.uint8), cv2.IMREAD_UNCHANGED)
+
+    # load the input image
+    # input_img = cv2.imread(img)
+
+    # detect and compute the features of the input image
+    kp1, des1 = sift.detectAndCompute(input_img, None)
+
+    # initialize the minimum distance and closest map index
+    min_dist = float('inf')
+    closest_map_index = -1
+
+    # loop through each map image and match its features with the input image
+    for i, des2 in enumerate(image_features):
+        # match the features between the two images
+        matches = bf.match(des1, des2)
+
+        # calculate the distance between the matched features
+        dist = sum([m.distance for m in matches])
+
+        # check if this map image is closer than the previous ones
+        if dist < min_dist:
+            min_dist = dist
+            closest_map_index = i
+
+    # print the closest map index
+    image = images[closest_map_index + 1]
+    print(f"The input image is closest to map {image}")
+    return image
+
 
 # import os
 #

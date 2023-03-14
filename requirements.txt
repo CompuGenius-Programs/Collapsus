@@ -5,5 +5,5 @@ aiohttp
 parsel
 titlecase
 emoji
-tensorflow-macos
 Pillow
+opencv-contrib-python

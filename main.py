@@ -14,7 +14,6 @@ from discord.ext.pages import Paginator, Page as _Page
 from parsel import Selector
 from titlecase import titlecase
 
-import grotto_image_recognition
 import parsers
 
 dotenv.load_dotenv()
@@ -669,21 +668,21 @@ async def on_raw_reaction_remove(payload):
         await user.remove_roles(discord.utils.get(guild.roles, id=role_id), reason="User removed role from themselves.")
 
 
-@bot.event
-async def on_message(message):
-    if message.channel == bot.get_channel(grotto_bot_channel) or message.channel == bot.get_channel(testing_channel):
-        # if message.author != bot.user:
-        if message.author.id == dev_id:
-            if len(message.attachments) >= 1:
-                for attachment in message.attachments:
-                    async with aiohttp.ClientSession() as session:
-                        async with session.get(attachment.url) as response:
-                            bytes = await response.read()
-                            path = io.BytesIO(bytes)
-                            location = grotto_image_recognition.match_image(path)
-                            location = location.removesuffix(".png")
-                            embed = create_embed("Location %s" % location)
-                            await message.reply(embed=embed)
+# @bot.event
+# async def on_message(message):
+#     if message.channel == bot.get_channel(grotto_bot_channel) or message.channel == bot.get_channel(testing_channel):
+#         # if message.author != bot.user:
+#         if message.author.id == dev_id:
+#             if len(message.attachments) >= 1:
+#                 for attachment in message.attachments:
+#                     async with aiohttp.ClientSession() as session:
+#                         async with session.get(attachment.url) as response:
+#                             bytes = await response.read()
+#                             path = io.BytesIO(bytes)
+#                             location = grotto_image_recognition.match_image(path)
+#                             location = location.removesuffix(".png")
+#                             embed = create_embed("Location %s" % location)
+#                             await message.reply(embed=embed)
 
 
 def int_from_string(string):

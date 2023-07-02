@@ -507,7 +507,10 @@ async def grotto_func(material, environment, suffix, level, location):
         }
 
         if location is not None:
-            params["loc"] = str(int(location, base=16))
+            try:
+                params["loc"] = str(int(location, base=16))
+            except ValueError:
+                pass
 
         async with session.get(grotto_search_url, params=params) as response:
             text = await response.text()

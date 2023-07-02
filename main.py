@@ -22,7 +22,7 @@ token = os.getenv("TOKEN")
 bot = discord.Bot(intents=discord.Intents.all())
 
 dev_id = 496392770374860811
-dev_tag = "@CompuGeniusPrograms#"
+dev_tag = "@CompuGeniusPrograms"
 dev_paypal = "paypal.me/cgprograms"
 
 guild_id = 655390550698098700
@@ -512,7 +512,6 @@ async def grotto_func(material, environment, suffix, level, location):
         async with session.get(grotto_search_url, params=params) as response:
             text = await response.text()
             selector = Selector(text=text)
-            # selector.xpath('//div[@class="minimap"]').drop()
             divs = selector.xpath('//div[@class="inner"]//text()')
             grottos = divs.getall()
 
@@ -666,23 +665,6 @@ async def on_raw_reaction_remove(payload):
             role_id = role_jp
 
         await user.remove_roles(discord.utils.get(guild.roles, id=role_id), reason="User removed role from themselves.")
-
-
-# @bot.event
-# async def on_message(message):
-#     if message.channel == bot.get_channel(grotto_bot_channel) or message.channel == bot.get_channel(testing_channel):
-#         # if message.author != bot.user:
-#         if message.author.id == dev_id:
-#             if len(message.attachments) >= 1:
-#                 for attachment in message.attachments:
-#                     async with aiohttp.ClientSession() as session:
-#                         async with session.get(attachment.url) as response:
-#                             bytes = await response.read()
-#                             path = io.BytesIO(bytes)
-#                             location = grotto_image_recognition.match_image(path)
-#                             location = location.removesuffix(".png")
-#                             embed = create_embed("Location %s" % location)
-#                             await message.reply(embed=embed)
 
 
 def int_from_string(string):

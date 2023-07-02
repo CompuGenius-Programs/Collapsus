@@ -22,8 +22,8 @@ token = os.getenv("TOKEN")
 bot = discord.Bot(intents=discord.Intents.all())
 
 dev_id = 496392770374860811
-dev_tag = "@CompuGenius Programs#2368"
-dev_paypal = "paypal.me/compugeniusprograms"
+dev_tag = "@CompuGeniusPrograms#"
+dev_paypal = "paypal.me/cgprograms"
 
 guild_id = 655390550698098700
 testing_channel = 973619817317797919

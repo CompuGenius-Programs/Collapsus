@@ -6,4 +6,3 @@ parsel
 titlecase
 emoji
 Pillow
-opencv-contrib-python

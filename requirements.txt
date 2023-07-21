@@ -6,3 +6,5 @@ parsel
 titlecase
 emoji
 Pillow
+bs4
+werkzeug

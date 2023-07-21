@@ -3,6 +3,7 @@ import json
 import math
 import os
 import random
+from asyncio import sleep
 
 import aiohttp
 import discord
@@ -23,7 +24,7 @@ bot = discord.Bot(intents=discord.Intents.all())
 
 dev_id = 496392770374860811
 dev_tag = "@CompuGeniusPrograms"
-dev_paypal = "paypal.me/cgprograms"
+dev_paypal = "paypal.me/cgprograms | venmo.com/CompuGeniusCode"
 
 guild_id = 655390550698098700
 testing_channel = 973619817317797919
@@ -43,6 +44,8 @@ role_jp = 859563030220374057
 role_celestrian = 655438935278878720
 
 grotto_bot_channel = 845339551173050389
+
+stream_channel = 655390551138631704
 
 logo_url = "https://cdn.discordapp.com/emojis/856330729528361000.png"
 website_url = "https://dq9.carrd.co"
@@ -90,6 +93,64 @@ A bot created by <@%s> for The Quester's Rest (<%s>).
     embed = create_embed("Collapsus v2 Help [Click For Server Website]", description=description, error="",
                          image=logo_url, url=website_url)
     await ctx.respond(embed=embed)
+
+
+@bot.slash_command(name="parse_songs", description="Parses the songs.")
+async def _parse_songs(ctx):
+    await ctx.defer()
+
+    with open("songs.html", "r", encoding="utf-8") as fp:
+        html = fp.read()
+    songs = parsers.parse_songs(html)
+
+    data = {
+        "songs": songs
+    }
+
+    with open("songs.json", "w+", encoding="utf-8") as fp:
+        json.dump(data, fp, indent=2)
+
+    embed = create_embed("%i Songs Parsed Successfully" % len(songs))
+    await ctx.followup.send(embed=embed)
+
+
+async def get_songs(ctx: discord.AutocompleteContext):
+    return [song for song in parsers.songs if ctx.value.lower() in song.lower()]
+
+
+@bot.slash_command(name="song", description="Plays a song.")
+async def _song(ctx, song_name: Option(str, "Song Name", autocomplete=get_songs, required=True)):
+    voice_state = ctx.author.voice
+    if voice_state is None:
+        embed = create_embed("You need to be in a voice channel to use this command.")
+        return await ctx.respond(embed=embed, ephemeral=True)
+
+    channel = voice_state.channel.id
+    if channel == stream_channel:
+        embed = create_embed("You can't use this command in the stream channel.")
+        return await ctx.respond(embed=embed, ephemeral=True)
+
+    await ctx.defer()
+
+    with open("songs.json", "r", encoding="utf-8") as fp:
+        data = json.load(fp)
+    songs = data["songs"]
+
+    index = next(filter(lambda s: s["title"].lower() == song_name.lower(), songs), None)
+    song = parsers.Song.from_dict(index)
+    await play(ctx, song, channel)
+
+
+async def play(ctx, song: parsers.Song, channel):
+    source = discord.FFmpegPCMAudio(song.url, executable="ffmpeg")
+    voice_client = await bot.get_channel(channel).connect()
+    voice_client.play(source)
+    embed = create_embed("Playing `%s`" % song.title)
+    await ctx.followup.send(embed=embed)
+
+    while voice_client.is_playing():
+        await sleep(1)
+    await voice_client.disconnect()
 
 
 @bot.slash_command(name="parse_quests", description="Parses the quests.")
@@ -668,6 +729,17 @@ async def on_raw_reaction_remove(payload):
             role_id = role_jp
 
         await user.remove_roles(discord.utils.get(guild.roles, id=role_id), reason="User removed role from themselves.")
+
+
+@bot.event
+async def on_voice_state_update(member, before, after):
+    voice_client = discord.utils.get(bot.voice_clients, guild=bot.get_guild(guild_id))
+    if voice_client is None:
+        return
+    music_voice_channel = voice_client.channel
+    if len(music_voice_channel.members) <= 1:
+        if voice_client and voice_client.is_connected():
+            await voice_client.disconnect()
 
 
 def int_from_string(string):

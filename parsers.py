@@ -1,7 +1,9 @@
 import re
 from dataclasses import dataclass
 
+from bs4 import BeautifulSoup
 from dataclasses_json import dataclass_json
+from werkzeug.urls import url_fix
 
 
 @dataclass_json
@@ -79,6 +81,14 @@ class Translation:
     french: str = ""
     german: str = ""
     italian: str = ""
+
+
+@dataclass_json
+@dataclass
+class Song:
+    """Class for a song."""
+    title: str = ""
+    url: str = ""
 
 
 translation_languages = [
@@ -176,6 +186,23 @@ weapon_types = ["claws", "axes", "fans", "bows", "wands", "knives", "boomerangs"
                 "hammers"]
 armor_types = ["torso", "legs", "feet", "head", "shields", "arms"]
 accessory_types = ["accessories"]
+
+songs = ["00 - Overture IX", "01 - Intermezzo", "02 - Come to Our Town", "03 - Our Dreaming Town",
+         "04 - The Sun Gathering Village", "05 - Evening in the Village", "06 - Pub Polka", "07 - Alchemy Pot",
+         "08 - Healed by a Hymn", "09 - The Palace Oboe", "10 - Heaven's Prayer", "11 - Assemble, People",
+         "12 - Cross the Fields, Cross the Mountains", "13 - Guide Them to Their Fate", "14 - With My Companions",
+         "15 - Sea Breeze", "16 - Riding in the Ark", "17 - Dark Den of Thieves", "18 - Omen of Towering Death",
+         "19 - A Temple With No Master", "20 - Dungeon", "21 - Are You a Loser", "22 - Swirling Desire",
+         "23 - The Time of the Decisive Battle", "24 - The Dragonlord", "25 - Malroth ~ The True Evil",
+         "26 - Gruelling Fight", "27 - Hero's Challenge", "28 - Incarnation of Evil", "29 - Evil One",
+         "30 - Lord Mildrath", "31 - Monsters", "32 - Demon Combat", "33 - Orgo Demila", "34 - Dhoulmagus",
+         "35 - Battle in the Heavens", "36 - Verse of Prayer", "37 - Sandy's Theme",
+         "38 - Protectors of the Starry Sky", "39 - Painful Feelings", "40 - Toward the Starry Sky",
+         "41 - Sandy's Tears", "42 - Cave Waltz", "43 - Accepting a Quest", "44 - Quest Clear", "45 - Job Change",
+         "46 - Level Up", "47 - Victory", "48 - Stay at the Inn", "49 - Gained an Ally", "50 - Found Mini Medal",
+         "51 - Defeated", "52 - Church Treatment", "53 - Pray at the Church", "54 - Cursed", "55 - Fanfare1",
+         "56 - Fanfare2", "57 - Found Precious Item", "58 - Harp Melody", "59 - Superstar", "60 - Surprise",
+         "61 - You Lose", "62 - Tragic Prologue (with Effects)", "63 - Swirling Desire ~ Destiny (with Effects)"]
 
 
 def remove_extra_whitespace(string):
@@ -283,3 +310,16 @@ def parse_regex(type, string):
 
         quest = Quest(number, name, story, location, request, solution, reward, prerequisite, repeat)
         return quest.to_dict()
+
+
+def parse_songs(html_data):
+    soup = BeautifulSoup(html_data, "html.parser")
+    rows = soup.find_all("tr")
+    songs = []
+    for row in rows:
+        anchor_tag = row.find("td").find("a")
+        title = anchor_tag.text.strip().replace("Dragon Quest 9 ", "")
+        url = url_fix(anchor_tag["href"])
+        songs.append(Song(title, url).to_dict())
+
+    return songs

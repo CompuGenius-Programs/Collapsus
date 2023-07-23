@@ -438,8 +438,12 @@ async def get_recipes(ctx: discord.AutocompleteContext):
     with open("recipes.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
     recipes = data["recipes"]
-    return [parsers.Recipe.from_dict(recipe).result for recipe in recipes if
-            ctx.value.lower() in parsers.Recipe.from_dict(recipe).result.lower()]
+    results = []
+    for r in recipes:
+        recipe = parsers.Recipe.from_dict(r)
+        if ctx.value.lower() in recipe.result.lower():
+            results.append(titlecase(recipe.result))
+    return results
 
 
 @bot.slash_command(name="recipe", description="Sends info about a recipe.")
@@ -494,8 +498,12 @@ async def get_monsters(ctx: discord.AutocompleteContext):
     with open("monsters.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
     monsters = data["monsters"]
-    return [parsers.Monster.from_dict(monster).name for monster in monsters if
-            ctx.value.lower() in parsers.Monster.from_dict(monster).name.lower()]
+    results = []
+    for m in monsters:
+        monster = parsers.Monster.from_dict(m)
+        if ctx.value.lower() in monster.name.lower():
+            results.append(monster.number + " - " + titlecase(monster.name))
+    return results
 
 
 @bot.slash_command(name="monster", description="Sends info about a monster.")
@@ -521,12 +529,9 @@ async def _monster(ctx,
 
     embeds = []
     for index in indexes:
-        index["num_str"] = index["number"]
-        index["number"] = int_from_string(index["number"])
-
         monster = parsers.Monster.from_dict(index)
 
-        title = "%s - %s (Level: %s)" % (monster.num_str, titlecase(monster.name), monster.level)
+        title = "%s - %s (Level: %s)" % (monster.number, titlecase(monster.name), monster.level)
         description = '''
 **Family:** %s | **EXP:** %s | **Gold:** %s
 

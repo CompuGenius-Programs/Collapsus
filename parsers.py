@@ -12,11 +12,11 @@ class Recipe:
     """Class for a recipe."""
     type: str = ""
     result: str = ""
-    qty1: int = ""
+    qty1: int = 0
     item1: str = ""
-    qty2: int = ""
+    qty2: int = 0
     item2: str = ""
-    qty3: int = ""
+    qty3: int = 0
     item3: str = ""
     alchemiracle: bool = False
     notes: str = ""
@@ -42,9 +42,8 @@ class Quest:
 @dataclass
 class Monster:
     """Class for a monster."""
-    number: int = 0
-    num_str: str = ""
-    level: int = 0
+    number: str = ""
+    level: str = ""
     name: str = ""
     exp: int = 0
     gold: int = 0

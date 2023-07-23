@@ -178,7 +178,7 @@ async def _all_songs(ctx):
         songs = data["songs"]
 
         message = None
-        for index, s in songs:
+        for index, s in enumerate(songs):
             song = parsers.Song.from_dict(s)
             if voice_client is None:
                 voice_client = await bot.get_channel(channel).connect()

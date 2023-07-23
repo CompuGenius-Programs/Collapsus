@@ -200,10 +200,11 @@ async def _stop_song(ctx):
 
 
 async def play(ctx, voice_client, song: parsers.Song, channel):
-    source = discord.FFmpegPCMAudio(song.url, executable="ffmpeg")
-    voice_client.play(source)
-    embed = create_embed("Playing `%s`" % song.title)
-    await ctx.followup.send(embed=embed)
+    if voice_client.is_connected():
+        source = discord.FFmpegPCMAudio(song.url, executable="ffmpeg")
+        voice_client.play(source)
+        embed = create_embed("Playing `%s`" % song.title)
+        await ctx.followup.send(embed=embed)
 
 
 @bot.slash_command(name="parse_quests", description="Parses the quests.")

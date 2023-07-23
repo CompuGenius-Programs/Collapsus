@@ -117,6 +117,7 @@ async def _parse_songs(ctx):
     await ctx.followup.send(embed=embed)
 
 
+
 async def get_songs(ctx: discord.AutocompleteContext):
     return [song for song in parsers.songs if ctx.value.lower() in song.lower()]
 
@@ -434,8 +435,15 @@ async def translate_grotto_command(ctx, material, environment, suffix, language_
         await grotto_command(ctx, material, environment, suffix, level, location)
 
 
+async def get_recipes(ctx: discord.AutocompleteContext):
+    with open("recipes.json", "r", encoding="utf-8") as fp:
+        data = json.load(fp)
+    recipes = data["recipes"]
+    return [parsers.Recipe.from_dict(recipe) for recipe in recipes if ctx.value.lower() in recipe.result.lower()]
+
+
 @bot.slash_command(name="recipe", description="Sends info about a recipe.")
-async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine)", required=True)):
+async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine)", autocomplete=get_recipes, required=True)):
     with open("recipes.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
@@ -481,9 +489,16 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
     await ctx.respond(embed=embed)
 
 
+async def get_monsters(ctx: discord.AutocompleteContext):
+    with open("monsters.json", "r", encoding="utf-8") as fp:
+        data = json.load(fp)
+    monsters = data["monsters"]
+    return [parsers.Monster.from_dict(monster) for monster in monsters if ctx.value.lower() in monster.name.lower()]
+
+
 @bot.slash_command(name="monster", description="Sends info about a monster.")
 async def _monster(ctx,
-                   monster_identifier: Option(str, "Monster Identifier (Ex. Slime or 1)", required=True)):
+                   monster_identifier: Option(str, "Monster Identifier (Ex. Slime or 1)", autocomplete=get_monsters, required=True)):
     with open("monsters.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 

@@ -185,11 +185,10 @@ async def _all_songs(ctx):
             await play(ctx, voice_client, song, channel)
 
             channel = voice_state.channel.id
+            embed = create_embed("Playing all songs. Currently playing `%s` in <#%s>" % (song.title, channel))
             if index == 0:
-                embed = create_embed("Playing all songs. Currently playing `%s` in <#%s>" % (songs[0].title, channel))
                 message = await ctx.followup.send(embed=embed)
             else:
-                embed = create_embed("Playing all songs. Currently playing `%s` in <#%s>" % (song.title, channel))
                 await message.edit(embed=embed)
 
             while voice_client.is_playing():

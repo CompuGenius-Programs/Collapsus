@@ -84,6 +84,9 @@ A bot created by <@%s> for The Quester's Rest (<%s>).
 **/monster** - *Displays all info for a monster*
 **/quest** - *Displays all info for a specific quest*
 **/recipe** - *Displays all info for a recipe*
+**/song** - *Plays a song*
+**/songs_all** - *Plays all songs*
+**/stop** - *Stops playing a song*
 **/translate** - *Translate a word or phrase*
 **/translate_grotto(\_[language])** - *Translate a grotto name*
 
@@ -157,7 +160,7 @@ async def _song(ctx, song_name: Option(str, "Song Name", autocomplete=get_songs,
         return await ctx.respond(embed=embed, ephemeral=True)
 
 
-@bot.slash_command(name="all_songs", description="Plays all songs.")
+@bot.slash_command(name="songs_all", description="Plays all songs.")
 async def _all_songs(ctx):
     voice_client = discord.utils.get(bot.voice_clients, guild=bot.get_guild(guild_id))
     if voice_client is None or not voice_client.is_playing():
@@ -208,7 +211,7 @@ async def _stop_song(ctx):
 
     await voice_client.disconnect()
 
-    embed = create_embed("Stopped playing song.")
+    embed = create_embed("Stopped playing.")
     await ctx.respond(embed=embed)
 
 

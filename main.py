@@ -501,7 +501,7 @@ async def get_monsters(ctx: discord.AutocompleteContext):
     results = []
     for m in monsters:
         monster = parsers.Monster.from_dict(m)
-        if ctx.value.lower() in monster.name.lower():
+        if ctx.value.lower() in monster.name.lower() or ctx.value.lower() in monster.number.lower():
             results.append(monster.number + " - " + titlecase(monster.name))
     return results
 

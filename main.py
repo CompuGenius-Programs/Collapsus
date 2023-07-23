@@ -145,7 +145,8 @@ async def _song(ctx, song_name: Option(str, "Song Name", autocomplete=get_songs,
             voice_client = await bot.get_channel(channel).connect()
         await play(ctx, voice_client, song, channel)
 
-        embed = create_embed("Playing `%s`" % song.title)
+        channel = voice_state.channel.id
+        embed = create_embed("Playing `%s` in <#%s>" % (song.title, channel))
         await ctx.followup.send(embed=embed)
 
         while voice_client.is_playing():
@@ -176,17 +177,21 @@ async def _all_songs(ctx):
             data = json.load(fp)
         songs = data["songs"]
 
-        embed = create_embed("Playing all songs. Currently playing `%s`" % songs[0].title)
-        message = await ctx.followup.send(embed=embed)
-
+        message = None
         for index, s in songs:
             song = parsers.Song.from_dict(s)
-            if index != 0:
-                embed = create_embed("Playing all songs. Currently playing `%s`" % song.title)
-                await message.edit(embed=embed)
             if voice_client is None:
                 voice_client = await bot.get_channel(channel).connect()
             await play(ctx, voice_client, song, channel)
+
+            channel = voice_state.channel.id
+            if index == 0:
+                embed = create_embed("Playing all songs. Currently playing `%s` in <#%s>" % (songs[0].title, channel))
+                message = await ctx.followup.send(embed=embed)
+            else:
+                embed = create_embed("Playing all songs. Currently playing `%s` in <#%s>" % (song.title, channel))
+                await message.edit(embed=embed)
+
             while voice_client.is_playing():
                 await sleep(1)
         await voice_client.disconnect()

@@ -174,7 +174,7 @@ async def _all_songs(ctx):
             embed = create_embed("You can't use this command in the stream channel.")
             return await ctx.respond(embed=embed, ephemeral=True)
 
-        await ctx.defer()
+        await ctx.respond("Playing all songs. Please wait...")
 
         with open("songs.json", "r", encoding="utf-8") as fp:
             data = json.load(fp)
@@ -189,10 +189,10 @@ async def _all_songs(ctx):
 
             channel = voice_state.channel.id
             embed = create_embed("Playing all songs. Currently playing `%s` in <#%s>" % (song.title, channel))
-            if index == 0:
-                message = await ctx.followup.send(embed=embed)
-            else:
+            try:
                 await message.edit(embed=embed)
+            except:
+                message = await ctx.send(embed=embed)
 
             while voice_client.is_playing():
                 await sleep(1)

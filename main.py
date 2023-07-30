@@ -179,11 +179,15 @@ async def _all_songs(ctx):
             data = json.load(fp)
         songs = data["songs"]
 
+        if voice_client is None:
+            voice_client = await bot.get_channel(channel).connect()
+
         message = None
         for index, s in enumerate(songs):
+            if not voice_client.is_connected():
+                break
+
             song = parsers.Song.from_dict(s)
-            if voice_client is None:
-                voice_client = await bot.get_channel(channel).connect()
             await play(ctx, voice_client, song, channel)
 
             embed = create_embed("Playing all songs. Currently playing `%s` in <#%s>" % (song.title, channel))

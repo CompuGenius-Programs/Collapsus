@@ -314,16 +314,18 @@ translate_grotto = bot.create_group(name="translate_grotto", description="Transl
 
 
 @translate_grotto.command(name="english", description="Translate a grotto from English to a different language.")
-async def _translate_grotto(ctx,
-                            material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
-                                             required=True),
-                            environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
-                                                required=True),
-                            suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
-                            language_output: Option(str, "Output Language (Ex. Japanese)",
-                                                    choices=parsers.translation_languages, required=False),
-                            level: Option(int, "Level (Ex. 1)", required=False),
-                            location: Option(str, "Location (Ex. 05)", required=False)):
+async def _translate_grotto_english(ctx,
+                                    material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
+                                                     required=True),
+                                    environment: Option(str, "Environment (Ex. Tunnel)",
+                                                        choices=parsers.grotto_environments,
+                                                        required=True),
+                                    suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes,
+                                                   required=True),
+                                    language_output: Option(str, "Output Language (Ex. Japanese)",
+                                                            choices=parsers.translation_languages, required=False),
+                                    level: Option(int, "Level (Ex. 1)", required=False),
+                                    location: Option(str, "Location (Ex. 05)", required=False)):
     await translate_grotto_command(ctx, material, environment, suffix, 0, language_output, level, location)
 
 

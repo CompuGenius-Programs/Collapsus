@@ -73,7 +73,7 @@ async def on_ready():
                                                         name="over The Quester's Rest. Type /help ."))
 
 
-@bot.slash_command(name="help", description="Get help for using the bot.")
+@bot.command(name="help", description="Get help for using the bot.")
 async def _help(ctx):
     description = '''
 A bot created by <@%s> for The Quester's Rest (<%s>).
@@ -88,7 +88,7 @@ A bot created by <@%s> for The Quester's Rest (<%s>).
 **/songs_all** - *Plays all songs*
 **/stop** - *Stops playing a song*
 **/translate** - *Translate a word or phrase*
-**/translate_grotto(\_[language])** - *Translate a grotto name*
+**/translate_grotto [language]** - *Translate a grotto name*
 
 **/help** - *Displays this message*
 ''' % (dev_id, server_invite_url)
@@ -98,30 +98,11 @@ A bot created by <@%s> for The Quester's Rest (<%s>).
     await ctx.respond(embed=embed)
 
 
-@bot.slash_command(name="parse_songs", description="Parses the songs.")
-async def _parse_songs(ctx):
-    await ctx.defer()
-
-    with open("songs.html", "r", encoding="utf-8") as fp:
-        html = fp.read()
-    songs = parsers.parse_songs(html)
-
-    data = {
-        "songs": songs
-    }
-
-    with open("songs.json", "w+", encoding="utf-8") as fp:
-        json.dump(data, fp, indent=2)
-
-    embed = create_embed("%i Songs Parsed Successfully" % len(songs))
-    await ctx.followup.send(embed=embed)
-
-
 async def get_songs(ctx: discord.AutocompleteContext):
     return [song for song in parsers.songs if ctx.value.lower() in song.lower()]
 
 
-@bot.slash_command(name="song", description="Plays a song.")
+@bot.command(name="song", description="Plays a song.")
 async def _song(ctx, song_name: Option(str, "Song Name", autocomplete=get_songs, required=True)):
     voice_client = discord.utils.get(bot.voice_clients, guild=bot.get_guild(guild_id))
     if voice_client is None or not voice_client.is_playing():
@@ -159,7 +140,7 @@ async def _song(ctx, song_name: Option(str, "Song Name", autocomplete=get_songs,
         return await ctx.respond(embed=embed, ephemeral=True)
 
 
-@bot.slash_command(name="songs_all", description="Plays all songs.")
+@bot.command(name="songs_all", description="Plays all songs.")
 async def _all_songs(ctx):
     voice_client = discord.utils.get(bot.voice_clients, guild=bot.get_guild(guild_id))
     if voice_client is None or not voice_client.is_playing():
@@ -204,7 +185,7 @@ async def _all_songs(ctx):
         return await ctx.respond(embed=embed, ephemeral=True)
 
 
-@bot.slash_command(name="stop", description="Stops playing a song.")
+@bot.command(name="stop", description="Stops playing a song.")
 async def _stop_song(ctx):
     voice_client = discord.utils.get(bot.voice_clients, guild=bot.get_guild(guild_id))
     if voice_client is None or not voice_client.is_playing():
@@ -223,7 +204,7 @@ async def play(ctx, voice_client, song: parsers.Song, channel):
         voice_client.play(source)
 
 
-@bot.slash_command(name="parse_quests", description="Parses the quests.")
+@bot.command(name="parse_quests", description="Parses the quests.")
 async def _parse_quests(ctx):
     await ctx.defer()
 
@@ -245,7 +226,7 @@ async def _parse_quests(ctx):
     await ctx.followup.send(embed=embed)
 
 
-@bot.slash_command(name="quest", description="Sends info about a quest.")
+@bot.command(name="quest", description="Sends info about a quest.")
 async def _quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required=True)):
     with open("quests.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
@@ -276,7 +257,7 @@ async def _quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required
     await ctx.respond(embed=embed)
 
 
-@bot.slash_command(name="translate", description="Translate a word or phrase to a different language.")
+@bot.command(name="translate", description="Translate a word or phrase to a different language.")
 async def _translate(ctx,
                      phrase: Option(str, "Word or Phrase (Ex. Copper Sword)", required=True),
                      language_input: Option(str, "Input Language (Ex. English)", choices=parsers.translation_languages,
@@ -329,7 +310,10 @@ async def _translate(ctx,
     await ctx.respond(embed=embed)
 
 
-@bot.slash_command(name="translate_grotto", description="Translate a grotto to a different language.")
+translate_grotto = bot.create_group(name="translate_grotto", description="Translate a grotto to a different language.")
+
+
+@translate_grotto.command(name="english", description="Translate a grotto from English to a different language.")
 async def _translate_grotto(ctx,
                             material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
                                              required=True),
@@ -343,11 +327,10 @@ async def _translate_grotto(ctx,
     await translate_grotto_command(ctx, material, environment, suffix, 0, language_output, level, location)
 
 
-@bot.slash_command(name="translate_grotto_japanese",
-                   description="Translate a grotto from Japanese to a different language.")
+@translate_grotto.command(name="japanese", description="Translate a grotto from Japanese to a different language.")
 async def _translate_grotto_japanese(ctx,
                                      material: Option(str, "Material (Ex. Granite)",
-                                                      choices=parsers.grotto_prefixes_japanesh, required=True),
+                                                      choices=parsers.grotto_prefixes_japanese, required=True),
                                      suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_japanesh,
                                                     required=True),
                                      environment: Option(str, "Environment (Ex. Tunnel)",
@@ -359,8 +342,7 @@ async def _translate_grotto_japanese(ctx,
     await translate_grotto_command(ctx, material, environment, suffix, 1, language_output, level, location)
 
 
-@bot.slash_command(name="translate_grotto_spanish",
-                   description="Translate a grotto from Spanish to a different language.")
+@translate_grotto.command(name="spanish", description="Translate a grotto from Spanish to a different language.")
 async def _translate_grotto_spanish(ctx,
                                     environment: Option(str, "Environment (Ex. Tunnel)",
                                                         choices=parsers.grotto_environments_spanish, required=True),
@@ -375,8 +357,7 @@ async def _translate_grotto_spanish(ctx,
     await translate_grotto_command(ctx, material, environment, suffix, 2, language_output, level, location)
 
 
-@bot.slash_command(name="translate_grotto_french",
-                   description="Translate a grotto from French to a different language.")
+@translate_grotto.command(name="french", description="Translate a grotto from French to a different language.")
 async def _translate_grotto_french(ctx,
                                    environment: Option(str, "Environment (Ex. Tunnel)",
                                                        choices=parsers.grotto_environments_french, required=True),
@@ -391,8 +372,7 @@ async def _translate_grotto_french(ctx,
     await translate_grotto_command(ctx, material, environment, suffix, 3, language_output, level, location)
 
 
-@bot.slash_command(name="translate_grotto_german",
-                   description="Translate a grotto from German to a different language.")
+@translate_grotto.command(name="german", description="Translate a grotto from German to a different language.")
 async def _translate_grotto_german(ctx,
                                    material: Option(str, "Material (Ex. Granite)",
                                                     choices=parsers.grotto_prefixes_german, required=True),
@@ -407,8 +387,7 @@ async def _translate_grotto_german(ctx,
     await translate_grotto_command(ctx, material, environment, suffix, 4, language_output, level, location)
 
 
-@bot.slash_command(name="translate_grotto_italian",
-                   description="Translate a grotto from Italian to a different language.")
+@translate_grotto.command(name="italian", description="Translate a grotto from Italian to a different language.")
 async def _translate_grotto_italian(ctx,
                                     environment: Option(str, "Environment (Ex. Tunnel)",
                                                         choices=parsers.grotto_environments_italian, required=True),
@@ -448,7 +427,7 @@ async def get_recipes(ctx: discord.AutocompleteContext):
     return results
 
 
-@bot.slash_command(name="recipe", description="Sends info about a recipe.")
+@bot.command(name="recipe", description="Sends info about a recipe.")
 async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine)", autocomplete=get_recipes,
                                              required=True)):
     with open("recipes.json", "r", encoding="utf-8") as fp:
@@ -508,7 +487,7 @@ async def get_monsters(ctx: discord.AutocompleteContext):
     return results
 
 
-@bot.slash_command(name="monster", description="Sends info about a monster.")
+@bot.command(name="monster", description="Sends info about a monster.")
 async def _monster(ctx,
                    monster_identifier: Option(str, "Monster Identifier (Ex. Slime or 1)", autocomplete=get_monsters,
                                               required=True)):
@@ -584,7 +563,7 @@ async def _monster(ctx,
         await ctx.respond(embed=embeds[0])
 
 
-@bot.slash_command(name="character", description="Sends info for a randomly-generated character.")
+@bot.command(name="character", description="Sends info for a randomly-generated character.")
 async def _character(ctx):
     gender = random.choice(["Male", "Female"])
     body_type = random.randint(1, 5)
@@ -614,7 +593,7 @@ async def _character(ctx):
     await ctx.respond(embed=embed)
 
 
-@bot.slash_command(name="grotto", description="Sends info about a grotto.")
+@bot.command(name="grotto", description="Sends info about a grotto.")
 async def _grotto(ctx,
                   material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
                   environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
@@ -625,7 +604,7 @@ async def _grotto(ctx,
     await grotto_command(ctx, material, environment, suffix, level, location)
 
 
-@bot.slash_command(name="gg", description="Sends info about a grotto with location required.")
+@bot.command(name="gg", description="Sends info about a grotto with location required.")
 async def _grotto_location(ctx,
                            material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
                                             required=True),

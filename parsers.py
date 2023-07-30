@@ -1,9 +1,7 @@
 import re
 from dataclasses import dataclass
 
-from bs4 import BeautifulSoup
 from dataclasses_json import dataclass_json
-from werkzeug.urls import url_fix
 
 
 @dataclass_json
@@ -124,7 +122,7 @@ grotto_environments = ['Cave', 'Tunnel', 'Mine', 'Crevasse', 'Marsh', 'Lair', 'I
 grotto_suffixes = ['of Joy', 'of Bliss', 'of Glee', 'of Doubt', 'of Woe', 'of Dolour', 'of Regret', 'of Bane',
                    'of Fear', 'of Dread', 'of Hurt', 'of Gloom', 'of Doom', 'of Evil', 'of Ruin', 'of Death']
 
-grotto_prefixes_japanesh = ['はかなき', 'ちいさな', 'うす暗き', 'ゆらめく', 'ざわめく', 'ねむれる', '怒れる', '呪われし', '放たれし',
+grotto_prefixes_japanese = ['はかなき', 'ちいさな', 'うす暗き', 'ゆらめく', 'ざわめく', 'ねむれる', '怒れる', '呪われし', '放たれし',
                             'けだかき', 'わななく', '残された', '見えざる', 'あらぶる', 'とどろく', '大いなる']
 grotto_environments_japanesh = ['洞くつ', '地下道', '坑道', '雪道', '沼地', 'アジト', '氷穴', '地底湖', '火口', '道', '雪原',
                                 '湿原', '牢ごく', '墓場', '巣', '遺跡', '凍土', '水脈', '世界', '奈落', '迷宮',
@@ -309,16 +307,3 @@ def parse_regex(type, string):
 
         quest = Quest(number, name, story, location, request, solution, reward, prerequisite, repeat)
         return quest.to_dict()
-
-
-def parse_songs(html_data):
-    soup = BeautifulSoup(html_data, "html.parser")
-    rows = soup.find_all("tr")
-    songs = []
-    for row in rows:
-        anchor_tag = row.find("td").find("a")
-        title = anchor_tag.text.strip().replace("Dragon Quest 9 ", "")
-        url = url_fix(anchor_tag["href"])
-        songs.append(Song(title, url).to_dict())
-
-    return songs

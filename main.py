@@ -98,6 +98,119 @@ A bot created by <@%s> for The Quester's Rest (<%s>).
     await ctx.respond(embed=embed)
 
 
+@bot.command(name="migrate_resources")
+async def _migrate_resources(ctx):
+    await ctx.defer()
+
+    test_mode = True
+
+    simple_migrations = [
+        {
+            "test_channel": 1142195244264345670,
+            "channel": 655463607030644747,
+            "title": "EXP Manipulation",
+        },
+        {
+            "test_channel": 1142195245661032479,
+            "channel": 706892011718049802,
+            "title": "Seed Farming",
+        },
+        {
+            "test_channel": 1142195247158411274,
+            "channel": 691066485279424582,
+            "title": "Alchemy",
+        },
+        {
+            "test_channel": 1142195249721118780,
+            "channel": 688861170236391626,
+            "title": "Hoimi Table",
+        },
+        {
+            "test_channel": 1142195251159765044,
+            "channel": 695401106305712228,
+            "title": "Accolades",
+        },
+        {
+            "test_channel": 1142195255446356030,
+            "channel": 655392079819833354,
+            "title": "Other Info"
+        }
+    ]
+
+    test_resources_channel = 1142886986949087272
+    resources_channel = 1142882746268663848
+
+    for migration in reversed(simple_migrations):
+        if test_mode:
+            resources_channel = test_resources_channel
+            migration["channel"] = migration["test_channel"]
+
+        messages = await bot.get_channel(migration["channel"]).history().flatten()
+        messages.sort(key=lambda message: message.created_at)
+
+        post = await bot.get_channel(resources_channel).create_thread(migration["title"], messages[0].content)
+        message = await post.fetch_message(post.id)
+        await message.edit(files=[await f.to_file() for f in messages[0].attachments])
+
+        for message in messages[1:]:
+            await post.send(content=message.content, files=[await f.to_file() for f in message.attachments])
+
+        await post.edit(locked=True)
+
+        embed = create_embed("Copied over messages from <#%s> to <#%s>." % (migration["channel"], post.id))
+        await ctx.followup.send(embed=embed)
+
+
+    thread_migrations = [
+        {
+            "test_channel": 1142195240833388655,
+            "channel": 891711067976249375,
+            "test_forum": 1142990563105325116,
+            "forum": 1142990563105325116,
+            "title": "Grotto Info"
+        },
+        {
+            "test_channel": 1142195242494337034,
+            "channel": 788454671684468771,
+            "test_forum": 1142990742130802689,
+            "forum": 1142990742130802689,
+            "title": "Vocation Info"
+        },
+        {
+            "test_channel": 1142195248429269022,
+            "channel": 766039065849495574,
+            "test_forum": 1142990802352607232,
+            "forum": 1142990802352607232,
+            "title": "Quests List"
+        }
+    ]
+
+    for migration in thread_migrations:
+        if test_mode:
+            migration["channel"] = migration["test_channel"]
+            migration["forum"] = migration["test_forum"]
+
+        archived_threads = await bot.get_channel(migration["channel"]).archived_threads().flatten()
+        for thread in archived_threads:
+            messages = await thread.history().flatten()
+            messages.sort(key=lambda message: message.created_at)
+
+            post = await bot.get_channel(migration["forum"]).create_thread(thread.name, messages[0].content)
+            message = await post.fetch_message(post.id)
+            await message.edit(files=[await f.to_file() for f in messages[0].attachments])
+
+            for message in messages[1:]:
+                await post.send(content=message.content, files=[await f.to_file() for f in message.attachments])
+
+            await post.edit(locked=True)
+
+            embed = create_embed("Copied over messages from <#%s> to <#%s>." % (thread.id, post.id))
+            await ctx.followup.send(embed=embed)
+
+        embed = create_embed("Copied over messages from <#%s> to <#%s>." % (migration["channel"], migration["forum"]))
+        await ctx.followup.send(embed=embed)
+
+
 async def get_songs(ctx: discord.AutocompleteContext):
     return [song for song in parsers.songs if ctx.value.lower() in song.lower()]
 

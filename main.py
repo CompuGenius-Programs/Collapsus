@@ -104,6 +104,12 @@ async def _migrate_resources(ctx):
 
     test_mode = True
 
+    test_resources_channel = 1142886986949087272
+    resources_channel = 1142882746268663848
+
+    if test_mode:
+        resources_channel = test_resources_channel
+
     simple_migrations = [
         {
             "test_channel": 1142195244264345670,
@@ -137,12 +143,9 @@ async def _migrate_resources(ctx):
         }
     ]
 
-    test_resources_channel = 1142886986949087272
-    resources_channel = 1142882746268663848
 
     for migration in reversed(simple_migrations):
         if test_mode:
-            resources_channel = test_resources_channel
             migration["channel"] = migration["test_channel"]
 
         messages = await bot.get_channel(migration["channel"]).history().flatten()
@@ -157,7 +160,7 @@ async def _migrate_resources(ctx):
 
         await post.edit(locked=True)
 
-        embed = create_embed("Copied over messages from <#%s> to <#%s>." % (migration["channel"], post.id))
+        embed = create_embed("Migrated messages from <#%s> to <#%s>." % (migration["channel"], post.id))
         await ctx.followup.send(embed=embed)
 
 
@@ -165,22 +168,16 @@ async def _migrate_resources(ctx):
         {
             "test_channel": 1142195240833388655,
             "channel": 891711067976249375,
-            "test_forum": 1142990563105325116,
-            "forum": 1142990563105325116,
             "title": "Grotto Info"
         },
         {
             "test_channel": 1142195242494337034,
             "channel": 788454671684468771,
-            "test_forum": 1142990742130802689,
-            "forum": 1142990742130802689,
             "title": "Vocation Info"
         },
         {
             "test_channel": 1142195248429269022,
             "channel": 766039065849495574,
-            "test_forum": 1142990802352607232,
-            "forum": 1142990802352607232,
             "title": "Quests List"
         }
     ]
@@ -188,27 +185,43 @@ async def _migrate_resources(ctx):
     for migration in thread_migrations:
         if test_mode:
             migration["channel"] = migration["test_channel"]
-            migration["forum"] = migration["test_forum"]
+
+        all_threads = []
+        all_messages = []
 
         archived_threads = await bot.get_channel(migration["channel"]).archived_threads().flatten()
         for thread in archived_threads:
+            all_threads.append(thread)
             messages = await thread.history().flatten()
             messages.sort(key=lambda message: message.created_at)
+            all_messages.append(messages)
 
-            post = await bot.get_channel(migration["forum"]).create_thread(thread.name, messages[0].content)
-            message = await post.fetch_message(post.id)
-            await message.edit(files=[await f.to_file() for f in messages[0].attachments])
+        string = ""
 
-            for message in messages[1:]:
-                await post.send(content=message.content, files=[await f.to_file() for f in message.attachments])
+        post = await bot.get_channel(resources_channel).create_thread(migration["title"], all_messages[0][0].content)
+        message = await post.fetch_message(post.id)
+        await message.edit(files=[await f.to_file() for f in all_messages[0][0].attachments])
 
-            await post.edit(locked=True)
+        string += "**%s** - %s\n" % (all_threads[0].name, message.jump_url)
 
-            embed = create_embed("Copied over messages from <#%s> to <#%s>." % (thread.id, post.id))
-            await ctx.followup.send(embed=embed)
+        all_messages[0] = all_messages[0][1:]
 
-        embed = create_embed("Copied over messages from <#%s> to <#%s>." % (migration["channel"], migration["forum"]))
+        for t, messages in enumerate(all_messages):
+            for i, message in enumerate(messages):
+                mes = await post.send(content=message.content, files=[await f.to_file() for f in message.attachments])
+                if i == 0:
+                    string += "**%s** - %s\n" % (all_threads[t].name, mes.jump_url)
+
+        embed = create_embed("Quick Jump URLs", string)
+        await post.send(embed=embed)
+
+        await post.edit(locked=True)
+
+        embed = create_embed("Migrated messages from <#%s> to <#%s>." % (migration["channel"], post.id))
         await ctx.followup.send(embed=embed)
+
+    embed = create_embed("Finished migration.")
+    await ctx.followup.send(embed=embed)
 
 
 async def get_songs(ctx: discord.AutocompleteContext):

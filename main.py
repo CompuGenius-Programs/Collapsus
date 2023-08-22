@@ -171,11 +171,12 @@ async def _migrate_resources(ctx):
             all_messages = []
 
             archived_threads = await bot.get_channel(migration["channel"]).archived_threads().flatten()
-            archived_threads.sort(key=lambda message: message.created_at)
             for thread in archived_threads:
                 messages = await thread.history().flatten()
                 messages.sort(key=lambda message: message.created_at)
                 all_messages.append(messages)
+
+            all_messages.sort(key=lambda messages: messages[0].created_at)
 
             first_message_too_long = True
             while first_message_too_long:

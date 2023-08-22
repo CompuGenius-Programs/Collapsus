@@ -102,7 +102,7 @@ A bot created by <@%s> for The Quester's Rest (<%s>).
 async def _migrate_resources(ctx):
     await ctx.defer()
 
-    test_mode = True
+    test_mode = os.getenv("TEST_MODE", "FALSE").lower() == "true"
 
     test_resources_channel = 1142886986949087272
     resources_channel = 1143509536783736965

@@ -59,6 +59,7 @@ krak_pop_image_url = "https://cdn.discordapp.com/attachments/698157074420334612/
 item_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/item/%s.png"
 weapon_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/weapon/%s.png"
 armor_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/armor/%s.png"
+shields_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/shield/%s.png"
 accessory_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/accessory/%s.png"
 
 
@@ -669,6 +670,8 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
             recipe_images_url = armor_images_url
         elif recipe.type.lower() in parsers.accessory_types:
             recipe_images_url = accessory_images_url
+        elif recipe.type.lower() == "shields":
+            recipe_images_url = shields_images_url
 
         if recipe_images_url != "":
             recipe.image = recipe_images_url % clean_text(recipe.result, False, True)

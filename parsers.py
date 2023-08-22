@@ -181,7 +181,7 @@ cleanup_regex = r'([\w\d\.\-:/() ]+)'
 item_types = ["items"]
 weapon_types = ["claws", "axes", "fans", "bows", "wands", "knives", "boomerangs", "staves", "whips", "spears", "swords",
                 "hammers"]
-armor_types = ["torso", "legs", "feet", "head", "shields", "arms"]
+armor_types = ["torso", "legs", "feet", "head", "arms"]
 accessory_types = ["accessories"]
 
 songs = ["00 - Overture IX", "01 - Intermezzo", "02 - Come to Our Town", "03 - Our Dreaming Town",

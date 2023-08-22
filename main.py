@@ -53,6 +53,8 @@ server_invite_url = "https://discord.gg/DQ9"
 
 grotto_search_url = "https://www.yabd.org/apps/dq9/grottosearch.php"
 
+character_image_url = "https://www.woodus.com/den/games/dq9ds/characreate/index.php?"
+
 monster_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/monster/%s.webp"
 
 krak_pop_image_url = "https://cdn.discordapp.com/attachments/698157074420334612/982389321506099300/unknown.png"
@@ -864,6 +866,45 @@ async def _character(ctx):
     skin_tone = random.randint(1, 8)
     eye_color = random.randint(1, 8)
 
+    keys = {
+        "headcolor": skin_tone,
+        "hairnum": hair_style,
+        "haircolor": hair_color,
+        "eyecolor": eye_color,
+    }
+
+    remapped_eyes_female = {
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 12,
+        5: 13,
+        6: 14,
+        7: 15,
+        8: 16,
+        9: 17,
+        10: 20,
+    }
+
+    remapped_eyes_male = {
+        1: 4,
+        2: 5,
+        3: 6,
+        4: 7,
+        5: 8,
+        6: 9,
+        7: 10,
+        8: 11,
+        9: 18,
+        10: 19,
+    }
+
+    if gender == "Male":
+        keys["hairnum"] += 10
+        keys["eyesnum"] = remapped_eyes_male[face_style]
+    else:
+        keys["eyesnum"] = remapped_eyes_female[face_style]
+
     description = '''
 **Gender:** %s
     
@@ -879,7 +920,12 @@ async def _character(ctx):
     
 **Eye Color:** %s
 ''' % (gender, body_type, hair_style, hair_color, face_style, skin_tone, eye_color)
-    embed = create_embed("Random Character Generator", description)
+
+    params = ""
+    for key, value in keys.items():
+        params += "%s=%s&" % (key, value)
+
+    embed = create_embed("Random Character Generator", description, image=character_image_url + params[:-1])
 
     await ctx.respond(embed=embed)
 

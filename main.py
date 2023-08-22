@@ -321,7 +321,7 @@ async def _migrate_challenges(ctx):
     test_mode = os.getenv("TEST_MODE", "FALSE").lower() == "true"
 
     test_challenges_channel = 1143641065560227910
-    challenges_channel = 1143509536783736965
+    challenges_channel = 1143670710443716680
 
     if test_mode:
         challenges_channel = test_challenges_channel

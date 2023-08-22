@@ -346,7 +346,7 @@ async def _migrate_challenges(ctx):
             migration["channel"] = migration["test_channel"]
 
         archived_threads = await bot.get_channel(migration["channel"]).archived_threads().flatten()
-        for thread in reversed(archived_threads):
+        for thread in archived_threads:
             messages = await thread.history().flatten()
             messages.sort(key=lambda message: message.created_at)
 

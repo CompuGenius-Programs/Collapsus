@@ -161,42 +161,30 @@ async def _migrate_resources(ctx):
         }
     ]
 
-
     for migration in reversed(migrations):
         if test_mode:
             migration["channel"] = migration["test_channel"]
 
         if migration.get("thread", False):
-            all_threads = []
             all_messages = []
 
             archived_threads = await bot.get_channel(migration["channel"]).archived_threads().flatten()
             for thread in archived_threads:
-                all_threads.append(thread)
                 messages = await thread.history().flatten()
                 messages.sort(key=lambda message: message.created_at)
                 all_messages.append(messages)
-
-            string = ""
 
             post = await bot.get_channel(resources_channel).create_thread(migration["title"],
                                                                           all_messages[0][0].content)
             message = await post.fetch_message(post.id)
             await message.edit(files=[await f.to_file() for f in all_messages[0][0].attachments])
 
-            string += "**%s** - %s\n" % (all_threads[0].name, message.jump_url)
-
             all_messages[0] = all_messages[0][1:]
 
             for t, messages in enumerate(all_messages):
                 for i, message in enumerate(messages):
-                    mes = await post.send(content=message.content,
-                                          files=[await f.to_file() for f in message.attachments])
-                    if i == 0:
-                        string += "**%s** - %s\n" % (all_threads[t].name, mes.jump_url)
-
-            embed = create_embed("Quick Jump URLs", string)
-            await post.send(embed=embed)
+                    await post.send(content=message.content,
+                                    files=[await f.to_file() for f in message.attachments])
 
             await post.edit(locked=True)
 

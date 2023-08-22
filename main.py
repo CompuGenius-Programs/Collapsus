@@ -161,6 +161,8 @@ async def _migrate_resources(ctx):
         }
     ]
 
+    large_messages = []
+
     for migration in reversed(migrations):
         if test_mode:
             migration["channel"] = migration["test_channel"]
@@ -174,17 +176,25 @@ async def _migrate_resources(ctx):
                 messages.sort(key=lambda message: message.created_at)
                 all_messages.append(messages)
 
-            post = await bot.get_channel(resources_channel).create_thread(migration["title"],
-                                                                          all_messages[0][0].content)
-            message = await post.fetch_message(post.id)
-            await message.edit(files=[await f.to_file() for f in all_messages[0][0].attachments])
+            try:
+                post = await bot.get_channel(resources_channel).create_thread(migration["title"],
+                                                                              all_messages[0][0].content)
+                message = await post.fetch_message(post.id)
+                await message.edit(files=[await f.to_file() for f in all_messages[0][0].attachments])
+            except discord.errors.ApplicationCommandInvokeError as ex:
+                if "Must be 2000 or fewer in length." in str(ex):
+                    large_messages.append(all_messages[0][0])
 
             all_messages[0] = all_messages[0][1:]
 
             for t, messages in enumerate(all_messages):
                 for i, message in enumerate(messages):
-                    await post.send(content=message.content,
-                                    files=[await f.to_file() for f in message.attachments])
+                    try:
+                        await post.send(content=message.content,
+                                        files=[await f.to_file() for f in message.attachments])
+                    except discord.errors.ApplicationCommandInvokeError as ex:
+                        if "Must be 2000 or fewer in length." in str(ex):
+                            large_messages.append(message)
 
             await post.edit(locked=True)
 
@@ -206,6 +216,13 @@ async def _migrate_resources(ctx):
 
             embed = create_embed("Migrated messages from <#%s> to <#%s>." % (migration["channel"], post.id))
             await ctx.followup.send(embed=embed)
+
+    if large_messages:
+        embed = create_embed("The following messages were too large to migrate.")
+        desc = ""
+        for message in large_messages:
+            desc += "%s\n" % message.jump_url
+        await ctx.followup.send(embed=embed)
 
     embed = create_embed("Finished migration.")
     await ctx.followup.send(embed=embed)

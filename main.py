@@ -105,12 +105,24 @@ async def _migrate_resources(ctx):
     test_mode = True
 
     test_resources_channel = 1142886986949087272
-    resources_channel = 1142882746268663848
+    resources_channel = 1143509536783736965
 
     if test_mode:
         resources_channel = test_resources_channel
 
-    simple_migrations = [
+    migrations = [
+        {
+            "test_channel": 1142195240833388655,
+            "channel": 891711067976249375,
+            "thread": True,
+            "title": "Grotto Info"
+        },
+        {
+            "test_channel": 1142195242494337034,
+            "channel": 788454671684468771,
+            "thread": True,
+            "title": "Vocation Info"
+        },
         {
             "test_channel": 1142195244264345670,
             "channel": 655463607030644747,
@@ -125,6 +137,12 @@ async def _migrate_resources(ctx):
             "test_channel": 1142195247158411274,
             "channel": 691066485279424582,
             "title": "Alchemy",
+        },
+        {
+            "test_channel": 1142195248429269022,
+            "channel": 766039065849495574,
+            "thread": True,
+            "title": "Quests List"
         },
         {
             "test_channel": 1142195249721118780,
@@ -144,81 +162,62 @@ async def _migrate_resources(ctx):
     ]
 
 
-    for migration in reversed(simple_migrations):
+    for migration in reversed(migrations):
         if test_mode:
             migration["channel"] = migration["test_channel"]
 
-        messages = await bot.get_channel(migration["channel"]).history().flatten()
-        messages.sort(key=lambda message: message.created_at)
+        if migration.get("thread", False):
+            all_threads = []
+            all_messages = []
 
-        post = await bot.get_channel(resources_channel).create_thread(migration["title"], messages[0].content)
-        message = await post.fetch_message(post.id)
-        await message.edit(files=[await f.to_file() for f in messages[0].attachments])
+            archived_threads = await bot.get_channel(migration["channel"]).archived_threads().flatten()
+            for thread in archived_threads:
+                all_threads.append(thread)
+                messages = await thread.history().flatten()
+                messages.sort(key=lambda message: message.created_at)
+                all_messages.append(messages)
 
-        for message in messages[1:]:
-            await post.send(content=message.content, files=[await f.to_file() for f in message.attachments])
+            string = ""
 
-        await post.edit(locked=True)
+            post = await bot.get_channel(resources_channel).create_thread(migration["title"],
+                                                                          all_messages[0][0].content)
+            message = await post.fetch_message(post.id)
+            await message.edit(files=[await f.to_file() for f in all_messages[0][0].attachments])
 
-        embed = create_embed("Migrated messages from <#%s> to <#%s>." % (migration["channel"], post.id))
-        await ctx.followup.send(embed=embed)
+            string += "**%s** - %s\n" % (all_threads[0].name, message.jump_url)
 
+            all_messages[0] = all_messages[0][1:]
 
-    thread_migrations = [
-        {
-            "test_channel": 1142195240833388655,
-            "channel": 891711067976249375,
-            "title": "Grotto Info"
-        },
-        {
-            "test_channel": 1142195242494337034,
-            "channel": 788454671684468771,
-            "title": "Vocation Info"
-        },
-        {
-            "test_channel": 1142195248429269022,
-            "channel": 766039065849495574,
-            "title": "Quests List"
-        }
-    ]
+            for t, messages in enumerate(all_messages):
+                for i, message in enumerate(messages):
+                    mes = await post.send(content=message.content,
+                                          files=[await f.to_file() for f in message.attachments])
+                    if i == 0:
+                        string += "**%s** - %s\n" % (all_threads[t].name, mes.jump_url)
 
-    for migration in thread_migrations:
-        if test_mode:
-            migration["channel"] = migration["test_channel"]
+            embed = create_embed("Quick Jump URLs", string)
+            await post.send(embed=embed)
 
-        all_threads = []
-        all_messages = []
+            await post.edit(locked=True)
 
-        archived_threads = await bot.get_channel(migration["channel"]).archived_threads().flatten()
-        for thread in archived_threads:
-            all_threads.append(thread)
-            messages = await thread.history().flatten()
+            embed = create_embed("Migrated messages from <#%s> to <#%s>." % (migration["channel"], post.id))
+            await ctx.followup.send(embed=embed)
+
+        else:
+            messages = await bot.get_channel(migration["channel"]).history().flatten()
             messages.sort(key=lambda message: message.created_at)
-            all_messages.append(messages)
 
-        string = ""
+            post = await bot.get_channel(resources_channel).create_thread(migration["title"], messages[0].content)
+            message = await post.fetch_message(post.id)
+            await message.edit(files=[await f.to_file() for f in messages[0].attachments])
 
-        post = await bot.get_channel(resources_channel).create_thread(migration["title"], all_messages[0][0].content)
-        message = await post.fetch_message(post.id)
-        await message.edit(files=[await f.to_file() for f in all_messages[0][0].attachments])
+            for message in messages[1:]:
+                await post.send(content=message.content, files=[await f.to_file() for f in message.attachments])
 
-        string += "**%s** - %s\n" % (all_threads[0].name, message.jump_url)
+            await post.edit(locked=True)
 
-        all_messages[0] = all_messages[0][1:]
-
-        for t, messages in enumerate(all_messages):
-            for i, message in enumerate(messages):
-                mes = await post.send(content=message.content, files=[await f.to_file() for f in message.attachments])
-                if i == 0:
-                    string += "**%s** - %s\n" % (all_threads[t].name, mes.jump_url)
-
-        embed = create_embed("Quick Jump URLs", string)
-        await post.send(embed=embed)
-
-        await post.edit(locked=True)
-
-        embed = create_embed("Migrated messages from <#%s> to <#%s>." % (migration["channel"], post.id))
-        await ctx.followup.send(embed=embed)
+            embed = create_embed("Migrated messages from <#%s> to <#%s>." % (migration["channel"], post.id))
+            await ctx.followup.send(embed=embed)
 
     embed = create_embed("Finished migration.")
     await ctx.followup.send(embed=embed)

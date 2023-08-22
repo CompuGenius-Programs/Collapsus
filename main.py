@@ -312,6 +312,82 @@ Guardian Angel/Lionheart/Sent from Above/Watched-over One/Storied Saviour: Defau
     await ctx.followup.send(embed=embed)
 
 
+@bot.command(name="migrate_challenges")
+async def _migrate_challenges(ctx):
+    await ctx.defer()
+
+    test_mode = os.getenv("TEST_MODE", "FALSE").lower() == "true"
+
+    test_challenges_channel = 1143641065560227910
+    challenges_channel = 1143509536783736965
+
+    if test_mode:
+        challenges_channel = test_challenges_channel
+
+    migrations = [
+        {
+            "test_channel": 1142195226312704061,
+            "channel": 1020384998567706694,
+            "title": "Challenges"
+        },
+        {
+            "test_channel": 1142195227742969877,
+            "channel": 724610856565997599,
+            "title": "Challenge Runs"
+        }
+    ]
+
+    large_messages = []
+
+    for migration in reversed(migrations):
+        if test_mode:
+            migration["channel"] = migration["test_channel"]
+
+        archived_threads = await bot.get_channel(migration["channel"]).archived_threads().flatten()
+        for thread in reversed(archived_threads):
+            messages = await thread.history().flatten()
+            messages.sort(key=lambda message: message.created_at)
+
+            first_message_too_long = True
+            while first_message_too_long:
+                try:
+                    post = await bot.get_channel(challenges_channel).create_thread(
+                        migration["title"] + " - " + thread.name.replace(" " + migration["title"], ""), messages[0].content)
+                    message = await post.fetch_message(post.id)
+                    await message.edit(files=[await f.to_file() for f in messages[0].attachments])
+                    first_message_too_long = False
+                except discord.errors.HTTPException as ex:
+                    if "Must be 2000 or fewer in length." in str(ex):
+                        large_messages.append(messages[0])
+                        messages = messages[1:]
+
+            messages = messages[1:]
+
+            for i, message in enumerate(messages):
+                try:
+                    await post.send(content=message.content,
+                                    files=[await f.to_file() for f in message.attachments])
+                except discord.errors.HTTPException as ex:
+                    if "Must be 2000 or fewer in length." in str(ex):
+                        large_messages.append(message)
+
+            await post.edit(locked=True)
+
+            embed = create_embed("Migrated messages from <#%s> to <#%s>." % (thread.id, post.id))
+            await ctx.send(embed=embed)
+
+    if large_messages:
+        desc = ""
+        for message in large_messages:
+            desc += "%s\n" % message.jump_url
+
+        embed = create_embed("The following messages were too large to migrate.", desc)
+        await ctx.send(embed=embed)
+
+    embed = create_embed("Finished migration.")
+    await ctx.followup.send(embed=embed)
+
+
 async def get_songs(ctx: discord.AutocompleteContext):
     return [song for song in parsers.songs if ctx.value.lower() in song.lower()]
 

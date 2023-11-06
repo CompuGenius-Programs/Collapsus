@@ -354,8 +354,7 @@ async def _migrate_challenges(ctx):
             while first_message_too_long:
                 try:
                     post = await bot.get_channel(challenges_channel).create_thread(
-                        migration["title"] + " - " + thread.name.replace(" " + migration["title"], ""),
-                        messages[0].content)
+                        migration["title"] + " - " + thread.name.replace(" " + migration["title"], ""), messages[0].content)
                     message = await post.fetch_message(post.id)
                     await message.edit(files=[await f.to_file() for f in messages[0].attachments])
                     first_message_too_long = False
@@ -731,7 +730,7 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
 
     if index is None:
         embed = create_embed("Ahem! Oh dear. I'm afraid I don't seem to be\nable to make anything with that particular"
-                             "\ncreation name of `%s`." % creation_name, thumbnail=krak_pop_image_url)
+                             "\ncreation name of `%s`." % creation_name, image=krak_pop_image_url)
         return await ctx.respond(embed=embed)
 
     recipe = parsers.Recipe.from_dict(index)
@@ -754,7 +753,7 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
 
         if recipe_images_url != "":
             recipe.image = recipe_images_url % clean_text(recipe.result, False, True)
-    embed = create_embed(title, color=color, thumbnail=recipe.image)
+    embed = create_embed(title, color=color, image=recipe.image)
 
     embed.add_field(name="Type", value=recipe.type, inline=False)
     if recipe.item1 != "":
@@ -843,7 +842,7 @@ async def _monster(ctx,
         if monster.image == "":
             monster.image = monster_images_url % clean_text(monster.name, False, True)
 
-        embed = create_embed(title, description, thumbnail=monster.image)
+        embed = create_embed(title, description, image=monster.image)
         embeds.append(embed)
 
         if monster_number != 0 and monster_number == monster.number:
@@ -926,7 +925,7 @@ async def _character(ctx):
     for key, value in keys.items():
         params += "%s=%s&" % (key, value)
 
-    embed = create_embed("Random Character Generator", description, thumbnail=character_image_url + params[:-1])
+    embed = create_embed("Random Character Generator", description, image=character_image_url + params[:-1])
 
     await ctx.respond(embed=embed)
 
@@ -1237,11 +1236,9 @@ def create_collage(files, file_name):
 def create_embed(title, description=None, color=discord.Color.green(),
                  footer="Consider supporting the developer at %s" % dev_paypal,
                  error="Any errors? Please report to %s" % dev_tag,
-                 thumbnail="", *, url="", author="", image=""):
+                 image="", *, url="", author=""):
     embed = discord.Embed(title=title, description=description, url=url, color=color)
     embed.set_footer(text="%s\n%s" % (footer, error))
-    if thumbnail != "":
-        embed.set_thumbnail(url=thumbnail)
     if image != "":
         embed.set_image(url=image)
     embed.set_author(name=author)

@@ -410,7 +410,7 @@ async def _song(ctx, song_name: Option(str, "Song Name", autocomplete=get_songs,
 
         await ctx.defer()
 
-        with open("songs.json", "r", encoding="utf-8") as fp:
+        with open("data/songs.json", "r", encoding="utf-8") as fp:
             data = json.load(fp)
         songs = data["songs"]
 
@@ -448,7 +448,7 @@ async def _all_songs(ctx):
 
         await ctx.respond("Playing all songs. Please wait...")
 
-        with open("songs.json", "r", encoding="utf-8") as fp:
+        with open("data/songs.json", "r", encoding="utf-8") as fp:
             data = json.load(fp)
         songs = data["songs"]
 
@@ -511,7 +511,7 @@ async def _parse_quests(ctx):
     data = {
         "quests": sorted(quests, key=lambda quest: quest["number"])
     }
-    with open("quests.json", "w+", encoding="utf-8") as fp:
+    with open("data/quests.json", "w+", encoding="utf-8") as fp:
         json.dump(data, fp, indent=2)
 
     embed = create_embed("%i Quests Parsed Successfully" % len(quests))
@@ -520,7 +520,7 @@ async def _parse_quests(ctx):
 
 @bot.command(name="quest", description="Sends info about a quest.")
 async def _quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required=True)):
-    with open("quests.json", "r", encoding="utf-8") as fp:
+    with open("data/quests.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
     quests = data["quests"]
@@ -707,7 +707,7 @@ async def translate_grotto_command(ctx, material, environment, suffix, language_
 
 
 async def get_recipes(ctx: discord.AutocompleteContext):
-    with open("recipes.json", "r", encoding="utf-8") as fp:
+    with open("data/recipes.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
     recipes = data["recipes"]
     results = []
@@ -721,7 +721,7 @@ async def get_recipes(ctx: discord.AutocompleteContext):
 @bot.command(name="recipe", description="Sends info about a recipe.")
 async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine)", autocomplete=get_recipes,
                                              required=True)):
-    with open("recipes.json", "r", encoding="utf-8") as fp:
+    with open("data/recipes.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
     recipes = data["recipes"]
@@ -769,7 +769,7 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
 
 
 async def get_monsters(ctx: discord.AutocompleteContext):
-    with open("monsters.json", "r", encoding="utf-8") as fp:
+    with open("data/monsters.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
     monsters = data["monsters"]
     results = []
@@ -784,7 +784,7 @@ async def get_monsters(ctx: discord.AutocompleteContext):
 async def _monster(ctx,
                    monster_identifier: Option(str, "Monster Identifier (Ex. Slime or 1)", autocomplete=get_monsters,
                                               required=True)):
-    with open("monsters.json", "r", encoding="utf-8") as fp:
+    with open("data/monsters.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
     monsters = data["monsters"]
@@ -1042,7 +1042,7 @@ async def grotto_func(material, environment, suffix, level, location):
 
 
 async def translate_grotto(material, environment, suffix, language_input, language_output):
-    with open("grottos_translated.json", "r", encoding="utf-8") as fp:
+    with open("data/grottos_translated.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
     translations = data["translations"]

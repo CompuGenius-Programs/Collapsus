@@ -218,7 +218,7 @@ async def _migrate_resources(ctx):
             while first_message_too_long:
                 try:
                     if migration["title"] == "Accolades":
-                        first_part = """Game Completion Accolades In order of Priority:
+                        first_part = """**Game Completion Accolades In order of Priority**:
 ```yml
 Light-Speed Champion - clear time under 12 hours
 Jot to Trot - clear time 12-19 hours
@@ -245,7 +245,7 @@ Steady Eddie/Edwina - clear time 76-151:59 hours
 Party Hopper - multiplayer is 30% but less than 50% total time played
 Immaculate Completion - party wiped out 0 times
 Guardian Angel/Lionheart/Sent from Above/Watched-over One/Storied Saviour: Default titles. They depend on your class/level when completing.```"""
-                        second_part = """**Grotto Accolades:**
+                        second_part = """**Grotto Accolades**:
 ```yml
 1: Celestial Sentinel -- Awarded to xxx on the occasion of his/her victory over various renowned denizens of the depths.
 [Defeat all Legacy Bosses.]

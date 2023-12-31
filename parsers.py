@@ -107,11 +107,11 @@ translation_languages_simple = [
 ]
 
 translation_files = [
-    "items_translated.json",
-    "grottos_translated.json",
-    "accolades_translated.json",
-    "places_translated.json",
-    "attributes_translated.json"
+    "data/items_translated.json",
+    "data/grottos_translated.json",
+    "data/accolades_translated.json",
+    "data/places_translated.json",
+    "data/attributes_translated.json"
 ]
 
 grotto_prefixes = ['Clay', 'Rock', 'Granite', 'Basalt', 'Graphite', 'Iron', 'Copper', 'Bronze', 'Steel', 'Silver',

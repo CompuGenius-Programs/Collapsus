@@ -91,7 +91,7 @@ A bot created by <@%s> for The Quester's Rest (<%s>).
 **/songs_all** - *Play all songs*
 **/stop** - *Stop playing songs*
 **/translate** - *Translate a word or phrase*
-**/translate_grotto(\_[language])** - *Translate a grotto name*
+**/grotto_translate(\_[language])** - *Translate a grotto name*
 
 **/help** - *Displays this message*
 ''' % (dev_id, server_invite_url)
@@ -602,7 +602,7 @@ async def _translate(ctx,
     await ctx.respond(embed=embed)
 
 
-@bot.command(name="translate_grotto", description="Translate a grotto from English to a different language.")
+@bot.command(name="grotto_translate", description="Translate a grotto from English to a different language.")
 async def _translate_grotto_english(ctx,
                                     material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
                                                      required=True),
@@ -618,7 +618,7 @@ async def _translate_grotto_english(ctx,
     await translate_grotto_command(ctx, material, environment, suffix, 0, language_output, level, location)
 
 
-@bot.command(name="translate_grotto_japanese", description="Translate a grotto from Japanese to a different language.")
+@bot.command(name="grotto_translate_japanese", description="Translate a grotto from Japanese to a different language.")
 async def _translate_grotto_japanese(ctx,
                                      material: Option(str, "Material (Ex. Granite)",
                                                       choices=parsers.grotto_prefixes_japanese, required=True),
@@ -633,7 +633,7 @@ async def _translate_grotto_japanese(ctx,
     await translate_grotto_command(ctx, material, environment, suffix, 1, language_output, level, location)
 
 
-@bot.command(name="translate_grotto_spanish", description="Translate a grotto from Spanish to a different language.")
+@bot.command(name="grotto_translate_spanish", description="Translate a grotto from Spanish to a different language.")
 async def _translate_grotto_spanish(ctx,
                                     environment: Option(str, "Environment (Ex. Tunnel)",
                                                         choices=parsers.grotto_environments_spanish, required=True),
@@ -648,7 +648,7 @@ async def _translate_grotto_spanish(ctx,
     await translate_grotto_command(ctx, material, environment, suffix, 2, language_output, level, location)
 
 
-@bot.command(name="translate_grotto_french", description="Translate a grotto from French to a different language.")
+@bot.command(name="grotto_translate_french", description="Translate a grotto from French to a different language.")
 async def _translate_grotto_french(ctx,
                                    environment: Option(str, "Environment (Ex. Tunnel)",
                                                        choices=parsers.grotto_environments_french, required=True),
@@ -663,7 +663,7 @@ async def _translate_grotto_french(ctx,
     await translate_grotto_command(ctx, material, environment, suffix, 3, language_output, level, location)
 
 
-@bot.command(name="translate_grotto_german", description="Translate a grotto from German to a different language.")
+@bot.command(name="grotto_translate_german", description="Translate a grotto from German to a different language.")
 async def _translate_grotto_german(ctx,
                                    material: Option(str, "Material (Ex. Granite)",
                                                     choices=parsers.grotto_prefixes_german, required=True),
@@ -678,7 +678,7 @@ async def _translate_grotto_german(ctx,
     await translate_grotto_command(ctx, material, environment, suffix, 4, language_output, level, location)
 
 
-@bot.command(name="translate_grotto_italian", description="Translate a grotto from Italian to a different language.")
+@bot.command(name="grotto_translate_italian", description="Translate a grotto from Italian to a different language.")
 async def _translate_grotto_italian(ctx,
                                     environment: Option(str, "Environment (Ex. Tunnel)",
                                                         choices=parsers.grotto_environments_italian, required=True),

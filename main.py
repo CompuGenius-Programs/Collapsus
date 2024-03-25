@@ -36,11 +36,13 @@ rules_channel_en = 688480621856686196
 rules_channel_fr = 965694046049800222
 rules_channel_de = 965693961907875850
 rules_channel_jp = 965693827568529448
+rules_channel_es = 1221871725663223818
 
 role_en = 879436700256964700
 role_fr = 965696709290262588
 role_de = 965696853951795221
 role_jp = 859563030220374057
+role_es = 1221871392451203113
 role_celestrian = 655438935278878720
 
 grotto_bot_channel = 845339551173050389
@@ -1111,7 +1113,8 @@ async def on_raw_reaction_add(payload):
         bot.get_channel(rules_channel_en),
         bot.get_channel(rules_channel_fr),
         bot.get_channel(rules_channel_de),
-        bot.get_channel(rules_channel_jp)
+        bot.get_channel(rules_channel_jp),
+        bot.get_channel(rules_channel_es)
     ]
 
     message = await channel.fetch_message(payload.message_id)
@@ -1125,6 +1128,8 @@ async def on_raw_reaction_add(payload):
             role_id = role_de
         if emoji_name == ":Japan:":
             role_id = role_jp
+        if emoji_name == ":Spain:":
+            role_id = role_es
 
         await user.add_roles(discord.utils.get(guild.roles, id=role_id), reason="User assigned role to themselves.")
 
@@ -1152,6 +1157,8 @@ async def on_raw_reaction_remove(payload):
             role_id = role_de
         if emoji_name == ":Japan:":
             role_id = role_jp
+        if emoji_name == ":Spain:":
+            role_id = role_es
 
         await user.remove_roles(discord.utils.get(guild.roles, id=role_id), reason="User removed role from themselves.")
 

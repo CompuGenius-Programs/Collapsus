@@ -9,6 +9,7 @@ import aiohttp
 import discord
 import dotenv
 import emoji
+import requests
 from PIL import Image
 from discord import Option
 from discord.ext.pages import Paginator, Page as _Page
@@ -932,6 +933,47 @@ async def _character(ctx):
     await ctx.respond(embed=embed)
 
 
+@bot.command(name="tourney", description="Generates a tournament of monsters.")
+async def _tourney(ctx, name: str, amount: int):
+    with open("data/monsters.json", "r", encoding="utf-8") as fp:
+        data = json.load(fp)
+
+    monsters = data["monsters"]
+
+    monsters_picked = [parsers.Monster.from_dict(monster) for monster in random.sample(monsters, amount)]
+    monster_images = [monster_images_url % clean_text(monster.name, False, True) for monster in monsters_picked]
+
+    embed = create_embed(name, ", ".join(
+        [f"{letter}: {monster.name}" for letter, monster in zip(["A", "B", "C", "D"], monsters_picked)]))
+
+    file_name = "monsters.png"
+    create_collage(monster_images, file_name)
+    with open(file_name, 'rb') as fp:
+        data = io.BytesIO(fp.read())
+    file = discord.File(data, file_name)
+    embed.set_image(url="attachment://%s" % file_name)
+
+    await ctx.respond(embed=embed, file=file)
+
+
+@bot.command(name="test_tourney", description="Generates a tournament of monsters.")
+async def _test_tourney(ctx, name: str, amount: int):
+    grottos_picked = [random.sample(range(0, 143), amount)]
+    images = [grotto + ".png" for grotto in grottos_picked]
+
+    embed = create_embed(name, ", ".join(
+        [f"{letter}: {grotto}" for letter, grotto in zip(["A", "B", "C", "D"], grottos_picked)]))
+
+    file_name = "grottos.png"
+    create_collage(images   , file_name)
+    with open(file_name, 'rb') as fp:
+        data = io.BytesIO(fp.read())
+    file = discord.File(data, file_name)
+    embed.set_image(url="attachment://%s" % file_name)
+
+    await ctx.respond(embed=embed, file=file)
+
+
 @bot.command(name="grotto", description="Sends info about a grotto.")
 async def _grotto(ctx,
                   material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
@@ -1233,7 +1275,11 @@ def create_collage(files, file_name):
     for row in range(rows):
         for col in range(columns):
             if index < len(files):
-                image = Image.open(files[index])
+                if files[index].startswith("http"):
+                    response = requests.get(files[index])
+                    image = Image.open(io.BytesIO(response.content))
+                else:
+                    image = Image.open(files[index])
                 collage.paste(image, (128 * col, 96 * row))
                 index += 1
 

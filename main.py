@@ -935,16 +935,21 @@ async def _character(ctx):
 
 @bot.command(name="tourney", description="Generates a tournament of monsters.")
 async def _tourney(ctx, name: str, amount: int):
+    await ctx.defer()
     with open("data/monsters.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
 
     monsters = data["monsters"]
 
     monsters_picked = [parsers.Monster.from_dict(monster) for monster in random.sample(monsters, amount)]
-    monster_images = [monster_images_url % clean_text(monster.name, False, True) for monster in monsters_picked]
+    for monster in monsters_picked:
+        if monster.image == "":
+            monster.image = monster_images_url % clean_text(monster.name, False, True)
+
+    monster_images = [monster.image for monster in monsters_picked]
 
     embed = create_embed(name, ", ".join(
-        [f"{letter}: {monster.name}" for letter, monster in zip(["A", "B", "C", "D"], monsters_picked)]))
+        [f"**{index + 1}:** {monster.name}" for index, monster in enumerate(monsters_picked)]))
 
     file_name = "monsters.png"
     create_collage(monster_images, file_name)
@@ -953,25 +958,7 @@ async def _tourney(ctx, name: str, amount: int):
     file = discord.File(data, file_name)
     embed.set_image(url="attachment://%s" % file_name)
 
-    await ctx.respond(embed=embed, file=file)
-
-
-@bot.command(name="test_tourney", description="Generates a tournament of monsters.")
-async def _test_tourney(ctx, name: str, amount: int):
-    grottos_picked = [random.sample(range(0, 143), amount)]
-    images = [grotto + ".png" for grotto in grottos_picked]
-
-    embed = create_embed(name, ", ".join(
-        [f"{letter}: {grotto}" for letter, grotto in zip(["A", "B", "C", "D"], grottos_picked)]))
-
-    file_name = "grottos.png"
-    create_collage(images   , file_name)
-    with open(file_name, 'rb') as fp:
-        data = io.BytesIO(fp.read())
-    file = discord.File(data, file_name)
-    embed.set_image(url="attachment://%s" % file_name)
-
-    await ctx.respond(embed=embed, file=file)
+    await ctx.followup.send(embed=embed, file=file)
 
 
 @bot.command(name="grotto", description="Sends info about a grotto.")
@@ -1277,7 +1264,10 @@ def create_collage(files, file_name):
             if index < len(files):
                 if files[index].startswith("http"):
                     response = requests.get(files[index])
-                    image = Image.open(io.BytesIO(response.content))
+                    try:
+                        image = Image.open(io.BytesIO(response.content))
+                    except:
+                        print(files[index])
                 else:
                     image = Image.open(files[index])
                 collage.paste(image, (128 * col, 96 * row))

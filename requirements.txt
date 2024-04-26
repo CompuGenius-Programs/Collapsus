@@ -8,3 +8,4 @@ emoji
 Pillow
 bs4
 werkzeug
+requests

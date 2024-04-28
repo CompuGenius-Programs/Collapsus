@@ -1,6 +1,5 @@
 import io
 import json
-import math
 import os
 import random
 from asyncio import sleep
@@ -9,6 +8,7 @@ import aiohttp
 import discord
 import dotenv
 import emoji
+import math
 import requests
 from PIL import Image
 from discord import Option
@@ -60,11 +60,11 @@ character_image_url = "https://www.woodus.com/den/games/dq9ds/characreate/index.
 
 monster_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/monster/%s.webp"
 
-krak_pop_image_url = "https://cdn.discordapp.com/attachments/698157074420334612/982389321506099300/unknown.png"
+krak_pot_image_url = "https://cdn.discordapp.com/emojis/866763396108386304.png"
 item_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/item/%s.png"
 weapon_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/weapon/%s.png"
 armor_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/armor/%s.png"
-shields_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/shield/%s.png"
+shield_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/shield/%s.png"
 accessory_images_url = "https://www.woodus.com/den/gallery/graphics/dq9ds/accessory/%s.png"
 
 
@@ -75,8 +75,8 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching,
-                                                        name="over The Quester's Rest. Type /help ."))
+    await bot.change_presence(
+        activity=discord.Activity(type=discord.ActivityType.watching, name="over The Quester's Rest. Type /help ."))
 
 
 @bot.command(name="help", description="Get help for using the bot.")
@@ -117,55 +117,15 @@ async def _migrate_resources(ctx):
         resources_channel = test_resources_channel
 
     migrations = [
-        {
-            "test_channel": 1142195240833388655,
-            "channel": 891711067976249375,
-            "thread": True,
-            "title": "Grotto Info"
-        },
-        {
-            "test_channel": 1142195242494337034,
-            "channel": 788454671684468771,
-            "thread": True,
-            "title": "Vocation Info"
-        },
-        {
-            "test_channel": 1142195244264345670,
-            "channel": 655463607030644747,
-            "title": "EXP Manipulation",
-        },
-        {
-            "test_channel": 1142195245661032479,
-            "channel": 706892011718049802,
-            "title": "Seed Farming",
-        },
-        {
-            "test_channel": 1142195247158411274,
-            "channel": 691066485279424582,
-            "title": "Alchemy",
-        },
-        {
-            "test_channel": 1142195248429269022,
-            "channel": 766039065849495574,
-            "thread": True,
-            "title": "Quests List"
-        },
-        {
-            "test_channel": 1142195249721118780,
-            "channel": 688861170236391626,
-            "title": "Hoimi Table",
-        },
-        {
-            "test_channel": 1142195251159765044,
-            "channel": 695401106305712228,
-            "title": "Accolades",
-        },
-        {
-            "test_channel": 1142195255446356030,
-            "channel": 655392079819833354,
-            "title": "Other Info"
-        }
-    ]
+        {"test_channel": 1142195240833388655, "channel": 891711067976249375, "thread": True, "title": "Grotto Info"},
+        {"test_channel": 1142195242494337034, "channel": 788454671684468771, "thread": True, "title": "Vocation Info"},
+        {"test_channel": 1142195244264345670, "channel": 655463607030644747, "title": "EXP Manipulation", },
+        {"test_channel": 1142195245661032479, "channel": 706892011718049802, "title": "Seed Farming", },
+        {"test_channel": 1142195247158411274, "channel": 691066485279424582, "title": "Alchemy", },
+        {"test_channel": 1142195248429269022, "channel": 766039065849495574, "thread": True, "title": "Quests List"},
+        {"test_channel": 1142195249721118780, "channel": 688861170236391626, "title": "Hoimi Table", },
+        {"test_channel": 1142195251159765044, "channel": 695401106305712228, "title": "Accolades", },
+        {"test_channel": 1142195255446356030, "channel": 655392079819833354, "title": "Other Info"}]
 
     large_messages = []
 
@@ -202,8 +162,7 @@ async def _migrate_resources(ctx):
             for t, messages in enumerate(all_messages):
                 for i, message in enumerate(messages):
                     try:
-                        await post.send(content=message.content,
-                                        files=[await f.to_file() for f in message.attachments])
+                        await post.send(content=message.content, files=[await f.to_file() for f in message.attachments])
                     except discord.errors.HTTPException as ex:
                         if "Must be 2000 or fewer in length." in str(ex):
                             large_messages.append(message)
@@ -279,8 +238,7 @@ Guardian Angel/Lionheart/Sent from Above/Watched-over One/Storied Saviour: Defau
 
 14: Caving Lunatic -- The Cavers' Cooperative would like to congratulate xxx for the outstanding achievement of completing 1000 grottoes.```"""
 
-                        post = await bot.get_channel(resources_channel).create_thread(migration["title"],
-                                                                                      first_part)
+                        post = await bot.get_channel(resources_channel).create_thread(migration["title"], first_part)
                         await post.send(content=second_part)
                     else:
                         post = await bot.get_channel(resources_channel).create_thread(migration["title"],
@@ -329,18 +287,8 @@ async def _migrate_challenges(ctx):
     if test_mode:
         challenges_channel = test_challenges_channel
 
-    migrations = [
-        {
-            "test_channel": 1142195226312704061,
-            "channel": 1020384998567706694,
-            "title": "Challenges"
-        },
-        {
-            "test_channel": 1142195227742969877,
-            "channel": 724610856565997599,
-            "title": "Challenge Runs"
-        }
-    ]
+    migrations = [{"test_channel": 1142195226312704061, "channel": 1020384998567706694, "title": "Challenges"},
+                  {"test_channel": 1142195227742969877, "channel": 724610856565997599, "title": "Challenge Runs"}]
 
     large_messages = []
 
@@ -357,7 +305,8 @@ async def _migrate_challenges(ctx):
             while first_message_too_long:
                 try:
                     post = await bot.get_channel(challenges_channel).create_thread(
-                        migration["title"] + " - " + thread.name.replace(" " + migration["title"], ""), messages[0].content)
+                        migration["title"] + " - " + thread.name.replace(" " + migration["title"], ""),
+                        messages[0].content)
                     message = await post.fetch_message(post.id)
                     await message.edit(files=[await f.to_file() for f in messages[0].attachments])
                     first_message_too_long = False
@@ -370,8 +319,7 @@ async def _migrate_challenges(ctx):
 
             for i, message in enumerate(messages):
                 try:
-                    await post.send(content=message.content,
-                                    files=[await f.to_file() for f in message.attachments])
+                    await post.send(content=message.content, files=[await f.to_file() for f in message.attachments])
                 except discord.errors.HTTPException as ex:
                     if "Must be 2000 or fewer in length." in str(ex):
                         large_messages.append(message)
@@ -511,9 +459,7 @@ async def _parse_quests(ctx):
         for message in messages:
             quests.append(parsers.parse_regex(parsers.Quest, message.content))
 
-    data = {
-        "quests": sorted(quests, key=lambda quest: quest["number"])
-    }
+    data = {"quests": sorted(quests, key=lambda quest: quest["number"])}
     with open("data/quests.json", "w+", encoding="utf-8") as fp:
         json.dump(data, fp, indent=2)
 
@@ -534,8 +480,8 @@ async def _quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required
 
     quest = parsers.Quest.from_dict(quests[index])
 
-    title = ":star: Quest #%i - %s :star:" % (quest.number, quest.name) if quest.story \
-        else "Quest #%i - %s" % (quest.number, quest.name)
+    title = ":star: Quest #%i - %s :star:" % (quest.number, quest.name) if quest.story else "Quest #%i - %s" % (
+        quest.number, quest.name)
     color = discord.Color.gold() if quest.story else discord.Color.green()
     embed = create_embed(title, color=color)
     if quest.location != "":
@@ -553,15 +499,12 @@ async def _quest(ctx, quest_number: Option(int, "Quest Number (1-184)", required
 
 
 @bot.command(name="translate", description="Translate a word or phrase to a different language.")
-async def _translate(ctx,
-                     phrase: Option(str, "Word or Phrase (Ex. Copper Sword)", required=True),
+async def _translate(ctx, phrase: Option(str, "Word or Phrase (Ex. Copper Sword)", required=True),
                      language_input: Option(str, "Input Language (Ex. English)", choices=parsers.translation_languages,
                                             required=True),
                      language_output: Option(str, "Output Language (Ex. Japanese)",
                                              choices=parsers.translation_languages, required=False)):
-    data = {
-        "translations": []
-    }
+    data = {"translations": []}
     for file in parsers.translation_files:
         with open(file, "r", encoding="utf-8") as fp:
             data["translations"] += json.load(fp)["translations"]
@@ -577,14 +520,8 @@ async def _translate(ctx,
         return await ctx.respond(embed=embed)
 
     translation = parsers.Translation.from_dict(index)
-    all_languages = [
-        translation.english,
-        translation.japanese,
-        translation.spanish,
-        translation.french,
-        translation.german,
-        translation.italian
-    ]
+    all_languages = [translation.english, translation.japanese, translation.spanish, translation.french,
+                     translation.german, translation.italian]
 
     title = "Translation of: %s" % titlecase(all_languages[parsers.translation_languages.index(language_input)])
     color = discord.Color.green()
@@ -610,8 +547,7 @@ async def _translate_grotto_english(ctx,
                                     material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
                                                      required=True),
                                     environment: Option(str, "Environment (Ex. Tunnel)",
-                                                        choices=parsers.grotto_environments,
-                                                        required=True),
+                                                        choices=parsers.grotto_environments, required=True),
                                     suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes,
                                                    required=True),
                                     language_output: Option(str, "Output Language (Ex. Japanese)",
@@ -622,13 +558,12 @@ async def _translate_grotto_english(ctx,
 
 
 @bot.command(name="grotto_translate_japanese", description="Translate a grotto from Japanese to a different language.")
-async def _translate_grotto_japanese(ctx,
-                                     material: Option(str, "Material (Ex. Granite)",
-                                                      choices=parsers.grotto_prefixes_japanese, required=True),
+async def _translate_grotto_japanese(ctx, material: Option(str, "Material (Ex. Granite)",
+                                                           choices=parsers.grotto_prefixes_japanese, required=True),
                                      suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_japanesh,
-                                                    required=True),
-                                     environment: Option(str, "Environment (Ex. Tunnel)",
-                                                         choices=parsers.grotto_environments_japanesh, required=True),
+                                                    required=True), environment: Option(str, "Environment (Ex. Tunnel)",
+                                                                                        choices=parsers.grotto_environments_japanesh,
+                                                                                        required=True),
                                      language_output: Option(str, "Output Language (Ex. Japanese)",
                                                              choices=parsers.translation_languages, required=False),
                                      level: Option(int, "Level (Ex. 1)", required=False),
@@ -637,9 +572,9 @@ async def _translate_grotto_japanese(ctx,
 
 
 @bot.command(name="grotto_translate_spanish", description="Translate a grotto from Spanish to a different language.")
-async def _translate_grotto_spanish(ctx,
-                                    environment: Option(str, "Environment (Ex. Tunnel)",
-                                                        choices=parsers.grotto_environments_spanish, required=True),
+async def _translate_grotto_spanish(ctx, environment: Option(str, "Environment (Ex. Tunnel)",
+                                                             choices=parsers.grotto_environments_spanish,
+                                                             required=True),
                                     material: Option(str, "Material (Ex. Granite)",
                                                      choices=parsers.grotto_prefixes_spanish, required=True),
                                     suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_spanish,
@@ -652,9 +587,8 @@ async def _translate_grotto_spanish(ctx,
 
 
 @bot.command(name="grotto_translate_french", description="Translate a grotto from French to a different language.")
-async def _translate_grotto_french(ctx,
-                                   environment: Option(str, "Environment (Ex. Tunnel)",
-                                                       choices=parsers.grotto_environments_french, required=True),
+async def _translate_grotto_french(ctx, environment: Option(str, "Environment (Ex. Tunnel)",
+                                                            choices=parsers.grotto_environments_french, required=True),
                                    material: Option(str, "Material (Ex. Granite)",
                                                     choices=parsers.grotto_prefixes_french, required=True),
                                    suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_french,
@@ -667,9 +601,8 @@ async def _translate_grotto_french(ctx,
 
 
 @bot.command(name="grotto_translate_german", description="Translate a grotto from German to a different language.")
-async def _translate_grotto_german(ctx,
-                                   material: Option(str, "Material (Ex. Granite)",
-                                                    choices=parsers.grotto_prefixes_german, required=True),
+async def _translate_grotto_german(ctx, material: Option(str, "Material (Ex. Granite)",
+                                                         choices=parsers.grotto_prefixes_german, required=True),
                                    environment: Option(str, "Environment (Ex. Tunnel)",
                                                        choices=parsers.grotto_environments_german, required=True),
                                    suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_german,
@@ -682,9 +615,9 @@ async def _translate_grotto_german(ctx,
 
 
 @bot.command(name="grotto_translate_italian", description="Translate a grotto from Italian to a different language.")
-async def _translate_grotto_italian(ctx,
-                                    environment: Option(str, "Environment (Ex. Tunnel)",
-                                                        choices=parsers.grotto_environments_italian, required=True),
+async def _translate_grotto_italian(ctx, environment: Option(str, "Environment (Ex. Tunnel)",
+                                                             choices=parsers.grotto_environments_italian,
+                                                             required=True),
                                     material: Option(str, "Material (Ex. Granite)",
                                                      choices=parsers.grotto_prefixes_italian, required=True),
                                     suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_italian,
@@ -733,7 +666,7 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
 
     if index is None:
         embed = create_embed("Ahem! Oh dear. I'm afraid I don't seem to be\nable to make anything with that particular"
-                             "\ncreation name of `%s`." % creation_name, image=krak_pop_image_url)
+                             "\ncreation name of `%s`." % creation_name, image=krak_pot_image_url)
         return await ctx.respond(embed=embed)
 
     recipe = parsers.Recipe.from_dict(index)
@@ -752,7 +685,7 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
         elif recipe.type.lower() in parsers.accessory_types:
             recipe_images_url = accessory_images_url
         elif recipe.type.lower() == "shields":
-            recipe_images_url = shields_images_url
+            recipe_images_url = shield_images_url
 
         if recipe_images_url != "":
             recipe.image = recipe_images_url % clean_text(recipe.result, False, True)
@@ -797,13 +730,12 @@ async def _monster(ctx,
     if " - " in monster_identifier:
         monster_number = monster_identifier.split(" - ")[0]
         indexes = list(filter(lambda r: clean_text(r["name"].lower()) == clean_text(
-            monster_identifier.split(" - ")[1].lower()) or clean_text(
-            r.get("altname", "").lower()) == clean_text(monster_identifier.split(" - ")[1].lower()), monsters))
+            monster_identifier.split(" - ")[1].lower()) or clean_text(r.get("altname", "").lower()) == clean_text(
+            monster_identifier.split(" - ")[1].lower()), monsters))
     else:
         indexes = list(filter(
             lambda r: clean_text(r["name"].lower()) == clean_text(monster_identifier.lower()) or clean_text(
-                r.get("altname", "").lower()) == clean_text(
-                monster_identifier.lower()), monsters))
+                r.get("altname", "").lower()) == clean_text(monster_identifier.lower()), monsters))
         if not indexes:
             monster_number = "#" + "%03d" % int_from_string(monster_identifier) + monster_identifier[-1] if \
                 monster_identifier[-1].isalpha() else ""
@@ -811,8 +743,8 @@ async def _monster(ctx,
                 filter(lambda r: int_from_string(r["number"]) == int_from_string(monster_identifier), monsters))
 
     if len(indexes) == 0:
-        embed = create_embed("No monster found with the identifier `%s`. Please check spelling and try again."
-                             % monster_identifier)
+        embed = create_embed(
+            "No monster found with the identifier `%s`. Please check spelling and try again." % monster_identifier)
         return await ctx.respond(embed=embed)
 
     proper_page = 0
@@ -830,11 +762,9 @@ async def _monster(ctx,
 **Blast:** %s | **Earth:** %s | **Dark:** %s | **Light:** %s
 
 **Haunts:** %s
-''' % (
-            monster.family, monster.exp, monster.gold, monster.hp, monster.mp, monster.atk, monster.defn, monster.agi,
-            monster.fire, monster.ice, monster.wind, monster.blast, monster.earth, monster.dark, monster.light,
-            titlecase(monster.haunts)
-        )
+''' % (monster.family, monster.exp, monster.gold, monster.hp, monster.mp, monster.atk, monster.defn, monster.agi,
+       monster.fire, monster.ice, monster.wind, monster.blast, monster.earth, monster.dark, monster.light,
+       titlecase(monster.haunts))
         if monster.drop1 != "":
             description += "\n**__Drop 1 | Common Drop__**\n%s\n" % titlecase(monster.drop1)
         if monster.drop2 != "":
@@ -869,38 +799,11 @@ async def _character(ctx):
     skin_tone = random.randint(1, 8)
     eye_color = random.randint(1, 8)
 
-    keys = {
-        "headcolor": skin_tone,
-        "hairnum": hair_style,
-        "haircolor": hair_color,
-        "eyecolor": eye_color,
-    }
+    keys = {"headcolor": skin_tone, "hairnum": hair_style, "haircolor": hair_color, "eyecolor": eye_color, }
 
-    remapped_eyes_female = {
-        1: 1,
-        2: 2,
-        3: 3,
-        4: 12,
-        5: 13,
-        6: 14,
-        7: 15,
-        8: 16,
-        9: 17,
-        10: 20,
-    }
+    remapped_eyes_female = {1: 1, 2: 2, 3: 3, 4: 12, 5: 13, 6: 14, 7: 15, 8: 16, 9: 17, 10: 20, }
 
-    remapped_eyes_male = {
-        1: 4,
-        2: 5,
-        3: 6,
-        4: 7,
-        5: 8,
-        6: 9,
-        7: 10,
-        8: 11,
-        9: 18,
-        10: 19,
-    }
+    remapped_eyes_male = {1: 4, 2: 5, 3: 6, 4: 7, 5: 8, 6: 9, 7: 10, 8: 11, 9: 18, 10: 19, }
 
     if gender == "Male":
         keys["hairnum"] += 10
@@ -933,37 +836,55 @@ async def _character(ctx):
     await ctx.respond(embed=embed)
 
 
-@bot.command(name="tourney", description="Generates a tournament of monsters.")
-async def _tourney(ctx, name: str, amount: int):
+class TourneySelection(discord.ui.Select):
+    def __init__(self, data):
+        self.data = data
+        super().__init__(placeholder="Vote for Your Choice!", min_values=1, max_values=1, options=[discord.SelectOption(
+            label=choice) for choice in self.data])
+
+    async def callback(self, interaction: discord.Interaction):
+        await interaction.response.send_message("You voted for %s!" % interaction.data["values"][0],
+                                                ephemeral=True)
+
+
+@bot.command(name="tourney", description="Generates a tournament.")
+async def _tourney(ctx, name: Option(str, "Name (Ex. Cutest Monster)", required=True),
+                   amount: Option(int, "Amount (Ex. 8)", required=True),
+                   data: Option(str, "Data (Ex. Monster)", choices=parsers.tourney_data_types, required=True)):
     await ctx.defer()
-    with open("data/monsters.json", "r", encoding="utf-8") as fp:
-        data = json.load(fp)
 
-    monsters = data["monsters"]
+    data_type = data.lower()
+    with open("data/%s.json" % data_type, "r", encoding="utf-8") as fp:
+        json_data = json.load(fp)
 
-    monsters_picked = [parsers.Monster.from_dict(monster) for monster in random.sample(monsters, amount)]
-    for monster in monsters_picked:
-        if monster.image == "":
-            monster.image = monster_images_url % clean_text(monster.name, False, True)
+    data_list = json_data[data_type]
 
-    monster_images = [monster.image for monster in monsters_picked]
+    parser = getattr(parsers, data_type[:-1].capitalize())
+    data_picked = [parser.from_dict(data) for data in random.sample(data_list, amount)]
+    for item in data_picked:
+        if item.image == "":
+            image_url = getattr(__import__(__name__), data_type[:-1] + "_images_url")
+            item.image = image_url % clean_text(item.name, False, True)
+
+    data_images = [item.image for item in data_picked]
 
     embed = create_embed(name, ", ".join(
-        [f"**{index + 1}:** {monster.name}" for index, monster in enumerate(monsters_picked)]))
+        [f"**{index + 1}:** {titlecase(item.name)}" for index, item in enumerate(data_picked)]))
 
-    file_name = "monsters.png"
-    create_collage(monster_images, file_name)
+    file_name = "tourney.png"
+    create_collage(data_images, file_name)
     with open(file_name, 'rb') as fp:
         data = io.BytesIO(fp.read())
     file = discord.File(data, file_name)
     embed.set_image(url="attachment://%s" % file_name)
 
-    await ctx.followup.send(embed=embed, file=file)
+    view = discord.ui.View(timeout=None)
+    view.add_item(TourneySelection(data=[titlecase(item.name) for item in data_picked]))
+    await ctx.followup.send(embed=embed, file=file, view=view)
 
 
 @bot.command(name="grotto", description="Sends info about a grotto.")
-async def _grotto(ctx,
-                  material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
+async def _grotto(ctx, material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
                   environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
                                       required=True),
                   suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
@@ -973,9 +894,8 @@ async def _grotto(ctx,
 
 
 @bot.command(name="gg", description="Sends info about a grotto with location required.")
-async def _grotto_location(ctx,
-                           material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
-                                            required=True),
+async def _grotto_location(ctx, material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
+                                                 required=True),
                            environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
                                                required=True),
                            suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
@@ -1015,13 +935,9 @@ async def grotto_command(ctx, material, environment, suffix, level, location):
 
 async def grotto_func(material, environment, suffix, level, location):
     async with aiohttp.ClientSession() as session:
-        params = {
-            "search": "Search",
-            "prefix": str(parsers.grotto_prefixes.index(titlecase(material)) + 1),
-            "envname": str(parsers.grotto_environments.index(titlecase(environment)) + 1),
-            "suffix": str(parsers.grotto_suffixes.index(suffix) + 1),
-            "level": str(level),
-        }
+        params = {"search": "Search", "prefix": str(parsers.grotto_prefixes.index(titlecase(material)) + 1),
+                  "envname": str(parsers.grotto_environments.index(titlecase(environment)) + 1),
+                  "suffix": str(parsers.grotto_suffixes.index(suffix) + 1), "level": str(level), }
 
         if location is not None:
             try:
@@ -1107,14 +1023,8 @@ async def translate_grotto(material, environment, suffix, language_input, langua
     translation.german = "%s%s %s" % (translation_german[0], translation_german[1], translation_german[2])
     translation.italian = "%s %s %s" % (translation_italian[1], translation_italian[0], translation_italian[2])
 
-    all_languages = [
-        translation.english,
-        translation.japanese,
-        translation.spanish,
-        translation.french,
-        translation.german,
-        translation.italian
-    ]
+    all_languages = [translation.english, translation.japanese, translation.spanish, translation.french,
+                     translation.german, translation.italian]
 
     title = "Translation of: %s" % titlecase(all_languages[parsers.translation_languages_simple.index(language_input)])
     color = discord.Color.green()
@@ -1138,13 +1048,9 @@ async def on_raw_reaction_add(payload):
     guild = bot.get_guild(payload.guild_id)
     user = guild.get_member(payload.user_id)
 
-    rules_channels = [
-        bot.get_channel(rules_channel_en),
-        bot.get_channel(rules_channel_fr),
-        bot.get_channel(rules_channel_de),
-        bot.get_channel(rules_channel_jp),
-        bot.get_channel(rules_channel_es)
-    ]
+    rules_channels = [bot.get_channel(rules_channel_en), bot.get_channel(rules_channel_fr),
+                      bot.get_channel(rules_channel_de), bot.get_channel(rules_channel_jp),
+                      bot.get_channel(rules_channel_es)]
 
     message = await channel.fetch_message(payload.message_id)
     if message.channel == bot.get_channel(welcome_channel):
@@ -1212,8 +1118,7 @@ def int_from_string(string):
 
 
 def clean_text(text, remove_spaces=True, url=False):
-    text = text.lower().replace("'", "").replace("’", "").replace("ñ", "n").replace("ó", "o").replace(
-        ".", "")
+    text = text.lower().replace("'", "").replace("’", "").replace("ñ", "n").replace("ó", "o").replace(".", "")
     text = text.replace("-", "_") if url else text.replace("-", "")
     if remove_spaces:
         text = text.replace(" ", "")
@@ -1278,8 +1183,7 @@ def create_collage(files, file_name):
 
 def create_embed(title, description=None, color=discord.Color.green(),
                  footer="Consider supporting the developer at %s" % dev_paypal,
-                 error="Any errors? Please report to %s" % dev_tag,
-                 image="", *, url="", author=""):
+                 error="Any errors? Please report to %s" % dev_tag, image="", *, url="", author=""):
     embed = discord.Embed(title=title, description=description, url=url, color=color)
     embed.set_footer(text="%s\n%s" % (footer, error))
     if image != "":

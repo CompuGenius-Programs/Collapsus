@@ -184,6 +184,8 @@ weapon_types = ["claws", "axes", "fans", "bows", "wands", "knives", "boomerangs"
 armor_types = ["torso", "legs", "feet", "head", "arms"]
 accessory_types = ["accessories"]
 
+tourney_data_types = ["Monsters"]
+
 songs = ["00 - Overture IX", "01 - Intermezzo", "02 - Come to Our Town", "03 - Our Dreaming Town",
          "04 - The Sun Gathering Village", "05 - Evening in the Village", "06 - Pub Polka", "07 - Alchemy Pot",
          "08 - Healed by a Hymn", "09 - The Palace Oboe", "10 - Heaven's Prayer", "11 - Assemble, People",

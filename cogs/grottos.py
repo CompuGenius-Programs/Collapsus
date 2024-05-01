@@ -64,16 +64,18 @@ class Grottos(commands.Cog):
         await self.translate_grotto_command(ctx, material, environment, suffix, "japanese", language_output, level,
                                             location)
 
-    @discord.slash_command(description="Translate a Grotto")
-    async def grotto_translate_spanish(self, ctx, environment: Option(str, "Environment (Ex. Galería)",
+    @discord.slash_command(description="Traduce una Gruta")
+    async def grotto_translate_spanish(self, ctx, environment: Option(str, "Entorno (Ej. Galería)",
                                                                       choices=grotto_environments["spanish"],
                                                                       required=True),
-                                       material: Option(str, "Material (Ex. de Granito)",
+                                       material: Option(str, "Material (Ej. de Granito)",
                                                         choices=grotto_prefixes["spanish"], required=True),
-                                       suffix: Option(str, "Suffix (Ex. de la Congoja)",
+                                       suffix: Option(str, "Sufijo (Ej. de la Congoja)",
                                                       choices=grotto_suffixes["spanish"], required=True),
-                                       language_output: Option(str, choices=translation_languages, required=False),
-                                       level: Option(int, required=False), location: Option(str, required=False)):
+                                       language_output: Option(str, "Salida de Idioma (Ej. English)",
+                                                               choices=translation_languages, required=False),
+                                       level: Option(int, "Nivel (Ej. 1)", required=False),
+                                       location: Option(str, "Localización (Ej. 05)", required=False)):
         await self.translate_grotto_command(ctx, material, environment, suffix, "spanish", language_output, level,
                                             location)
 

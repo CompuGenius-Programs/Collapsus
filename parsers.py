@@ -1,3 +1,4 @@
+import json
 import re
 from dataclasses import dataclass
 
@@ -88,87 +89,31 @@ class Song:
     url: str = ""
 
 
-translation_languages = [
-    "English",
-    "Japanese (日本語)",
-    "Spanish (Español)",
-    "French (Français)",
-    "German (Deutsch)",
-    "Italian (Italiano)"
-]
+translation_languages = ["English", "Japanese (日本語)", "Spanish (Español)", "French (Français)", "German (Deutsch)",
+                         "Italian (Italiano)"]
 
-translation_languages_simple = [
-    "english",
-    "japanese",
-    "spanish",
-    "french",
-    "german",
-    "italian"
-]
+translation_languages_simple = ["english", "japanese", "spanish", "french", "german", "italian"]
 
-translation_files = [
-    "data/items_translated.json",
-    "data/grottos_translated.json",
-    "data/accolades_translated.json",
-    "data/places_translated.json",
-    "data/attributes_translated.json"
-]
+translation_files = ["items_translated.json", "grottos_translated.json", "accolades_translated.json",
+                     "places_translated.json", "attributes_translated.json"]
 
-grotto_prefixes = ['Clay', 'Rock', 'Granite', 'Basalt', 'Graphite', 'Iron', 'Copper', 'Bronze', 'Steel', 'Silver',
-                   'Gold', 'Platinum', 'Ruby', 'Emerald', 'Sapphire', 'Diamond']
-grotto_environments = ['Cave', 'Tunnel', 'Mine', 'Crevasse', 'Marsh', 'Lair', 'Icepit', 'Lake', 'Crater', 'Path',
-                       'Snowhall', 'Moor', 'Dungeon', 'Crypt', 'Nest', 'Ruins', 'Tundra', 'Waterway', 'World',
-                       'Abyss', 'Maze', 'Glacier', 'Chasm', 'Void']
-grotto_suffixes = ['of Joy', 'of Bliss', 'of Glee', 'of Doubt', 'of Woe', 'of Dolour', 'of Regret', 'of Bane',
-                   'of Fear', 'of Dread', 'of Hurt', 'of Gloom', 'of Doom', 'of Evil', 'of Ruin', 'of Death']
+with open('data/grottos_translated.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
 
-grotto_prefixes_japanese = ['はかなき', 'ちいさな', 'うす暗き', 'ゆらめく', 'ざわめく', 'ねむれる', '怒れる', '呪われし', '放たれし',
-                            'けだかき', 'わななく', '残された', '見えざる', 'あらぶる', 'とどろく', '大いなる']
-grotto_environments_japanesh = ['洞くつ', '地下道', '坑道', '雪道', '沼地', 'アジト', '氷穴', '地底湖', '火口', '道', '雪原',
-                                '湿原', '牢ごく', '墓場', '巣', '遺跡', '凍土', '水脈', '世界', '奈落', '迷宮',
-                                '氷河', '眠る地', 'じごく']
-grotto_suffixes_japanesh = ['花の', '岩の', '風の', '空の', '獣の', '夢の', '影の', '大地の', '運命の', '魂の', '闇の', '光の',
-                            '魔神の', '星々の', '悪霊の', '神々の']
+grotto_prefixes = {lang: [] for lang in translation_languages_simple}
+grotto_environments = {lang: [] for lang in translation_languages_simple}
+grotto_suffixes = {lang: [] for lang in translation_languages_simple}
 
-grotto_prefixes_spanish = ['de Arcilla', 'de Roca', 'de Granito', 'de Basalto', 'de Grafita', 'de Hierro', 'de Cobre',
-                           'de Bronce', 'de Acero', 'de Plata', 'de Oro', 'de Platino', 'de Rubí', 'de Esmeralda',
-                           'de Zafiro', 'de Diamante']
-grotto_environments_spanish = ['Cueva', 'Galería', 'Mina', 'Sima', 'Marisma', 'Guarida', 'Sima Helada', 'Laguna',
-                               'Boca', 'Galería', 'Nevera', 'Landa', 'Mazmorra', 'Cripta', 'Covacha', 'Ruina', 'Tundra',
-                               'Rivera', 'Guarida', 'Tierra', 'Cuenca', 'Laberinto', 'Madriguera', 'Sima']
-grotto_suffixes_spanish = ['de la Alegría', 'de la Felicidad', 'del Júbilo', 'de la Duda', 'de la Congoja', 'del Dolor',
-                           'de los Lamentos', 'de la Ruina', 'del Miedo', 'del Terror', 'del Sufrimiento',
-                           'de la Melancolía', 'del Sino', 'del Mal', 'de la Desgracia', 'de la Muerte']
-
-grotto_prefixes_french = ['d’argile', 'de pierre', 'de granit', 'de basalte', 'de graphite', 'de fer', 'de cuivre',
-                          'de bronze', 'd’acier', 'd’argent', 'd’or', 'de platine', 'de rubis', 'd’émeraude',
-                          'de saphir', 'de diamant']
-grotto_environments_french = ['Grotte', 'Tunnel', 'Mine', 'Crevasse', 'Marais', 'Repaire', 'Puits', 'Lac', 'Cratėre',
-                              'Sentier', 'Fosse', 'Lande', 'Donjon', 'Crypte', 'Vestiges', 'Steppe',
-                              'Riviėre', 'Taniėre', 'Monde', 'Gouffre', 'Déale', 'Glacier', 'Faille', 'Néant']
-grotto_suffixes_french = ['de la Joie', 'de la Félicité', 'de l’Allégresse', 'de l’Incertitude', 'de la Détresse',
-                          'de l’Affliction', 'du Regret', 'du Malheur', 'de la Peur', 'de l’Effroi', 'de la Souffrance',
-                          'de la Mélancolie', 'de l’Infortune', 'de l’Horreur', 'du Désastre', 'de la Mort']
-
-grotto_prefixes_german = ['Lehm-', 'Fels-', 'Granit-', 'Basalt-', 'Graphit-', 'Eisen-', 'Kupfer-', 'Bronze-', 'Stahl-',
-                          'Silber-', 'Gold-', 'Platin-', 'Rubin-', 'Smaragd-', 'Saphir-', 'Diamant-']
-grotto_environments_german = ['Höhle', 'Tunnel', 'Mine', 'Spalte', 'Marsch', 'Versteck', 'Eisgrube', 'See', 'Krater',
-                              'Pfad', 'Eispalast', 'Moor', 'Kerker', 'Krypta', 'Ruine', 'Tundra', 'Gewässer',
-                              'Nest', 'Welt', 'Abgrund', 'Labyrinth', 'Gletscher', 'Kluft', 'Leere']
-grotto_suffixes_german = ['der Freude', 'der Seligkeit', 'der Wonne', 'des Zweifels', 'des Grams', 'des Schmerzes',
-                          'der Reue', 'des Verderbens', 'der Furcht', 'des Grauens', 'der Qual', 'der Trübsal',
-                          'des Schicksals', 'des Bösen', 'des Ruins', 'des Todes']
-
-grotto_prefixes_italian = ['Argilla', 'Roccia', 'Granito', 'Basalto', 'Grafite', 'Ferro', 'Rame', 'Bronzo', 'Acciaio',
-                           'Argento', 'Oro', 'Platino', 'Rubino', 'Smeraldo', 'Zaffiro', 'Diamante']
-grotto_environments_italian = ['Grotta', 'Galleria', 'Miniera', 'Crepaccio', 'Palude', 'Tana', 'Abisso', 'Lago',
-                               'Cratere', 'Sentiero', 'Dedalo', 'Brughiera', 'Segreta', 'Cripta', 'Rovina',
-                               'Tundra', 'Canale', 'Nido', 'Reame', 'Abisso', 'Dedalo', 'Ghiacciaio', 'Spelonca',
-                               'Vuoto']
-grotto_suffixes_italian = ['della Gioia', 'della Benedizione', 'dell’Esultanza', 'della Miseria', 'dell’Angoscia',
-                           'della Pena', 'della Nostalgia', 'della Disgrazia', 'della Paura', 'della Fobia',
-                           'della Sofferenza', 'della Malasorte', 'della Maledizione', 'della Malvagità', 'della Fine',
-                           'della Morte']
+for index, translation in enumerate(data['translations']):
+    if index < 16:
+        for lang in translation_languages_simple:
+            grotto_prefixes[lang].append(translation[lang])
+    elif index < 16 + 24:
+        for lang in translation_languages_simple:
+            grotto_environments[lang].append(translation[lang])
+    elif index < 16 + 24 + 16:
+        for lang in translation_languages_simple:
+            grotto_suffixes[lang].append(translation[lang])
 
 grotto_special = "Has a special floor"
 grotto_keys = ("Seed", "Rank", "Name", "Boss", "Type", "Floors", "Monster Rank", "Chests", "Locations")

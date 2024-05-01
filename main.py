@@ -4,19 +4,15 @@ import os
 import random
 from asyncio import sleep
 
-import aiohttp
 import discord
 import dotenv
 import emoji
-import math
-import requests
-from PIL import Image
 from discord import Option
-from discord.ext.pages import Paginator, Page as _Page
-from parsel import Selector
+from discord.ext.pages import Page as _Page
 from titlecase import titlecase
 
 import parsers
+from utils import create_embed, clean_text, dev_tag, int_from_string, create_paginator, create_collage
 
 dotenv.load_dotenv()
 token = os.getenv("TOKEN")
@@ -24,8 +20,6 @@ token = os.getenv("TOKEN")
 bot = discord.Bot(intents=discord.Intents.all())
 
 dev_id = 496392770374860811
-dev_tag = "@CompuGeniusPrograms"
-dev_paypal = "paypal.me/cgprograms | venmo.com/CompuGeniusCode"
 
 guild_id = 655390550698098700
 testing_channel = 973619817317797919
@@ -46,15 +40,11 @@ role_jp = 859563030220374057
 role_es = 1221871392451203113
 role_celestrian = 655438935278878720
 
-grotto_bot_channel = 845339551173050389
-
 stream_channel = 655390551138631704
 
 logo_url = "https://cdn.discordapp.com/emojis/856330729528361000.png"
 website_url = "https://dq9.carrd.co"
 server_invite_url = "https://discord.gg/DQ9"
-
-grotto_search_url = "https://www.yabd.org/apps/dq9/grottosearch.php"
 
 character_image_url = "https://www.woodus.com/den/games/dq9ds/characreate/index.php?"
 
@@ -86,7 +76,7 @@ A bot created by <@%s> for The Quester's Rest (<%s>).
 
 **/character** - *Generate a random character*
 **/gg** - *Get grotto info (location required)*
-**/grotto** - *Get grotto info*
+**/grotto** - *Search for a grotto*
 **/monster** - *Get monster info*
 **/quest** - *Get quest info*
 **/recipe** - *Get an item's recipe*
@@ -94,7 +84,7 @@ A bot created by <@%s> for The Quester's Rest (<%s>).
 **/songs_all** - *Play all songs*
 **/stop** - *Stop playing songs*
 **/translate** - *Translate a word or phrase*
-**/grotto_translate(\_[language])** - *Translate a grotto name*
+**/grotto_translate(\_[language])** - *Translate a grotto*
 
 **/help** - *Displays this message*
 ''' % (dev_id, server_invite_url)
@@ -506,7 +496,7 @@ async def _translate(ctx, phrase: Option(str, "Word or Phrase (Ex. Copper Sword)
                                              choices=parsers.translation_languages, required=False)):
     data = {"translations": []}
     for file in parsers.translation_files:
-        with open(file, "r", encoding="utf-8") as fp:
+        with open("data/" + file, "r", encoding="utf-8") as fp:
             data["translations"] += json.load(fp)["translations"]
 
     translations = data["translations"]
@@ -540,106 +530,6 @@ async def _translate(ctx, phrase: Option(str, "Word or Phrase (Ex. Copper Sword)
                 embed.add_field(name=language, value=titlecase(translation), inline=False)
 
     await ctx.respond(embed=embed)
-
-
-@bot.command(name="grotto_translate", description="Translate a grotto from English to a different language.")
-async def _translate_grotto_english(ctx,
-                                    material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
-                                                     required=True),
-                                    environment: Option(str, "Environment (Ex. Tunnel)",
-                                                        choices=parsers.grotto_environments, required=True),
-                                    suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes,
-                                                   required=True),
-                                    language_output: Option(str, "Output Language (Ex. Japanese)",
-                                                            choices=parsers.translation_languages, required=False),
-                                    level: Option(int, "Level (Ex. 1)", required=False),
-                                    location: Option(str, "Location (Ex. 05)", required=False)):
-    await translate_grotto_command(ctx, material, environment, suffix, 0, language_output, level, location)
-
-
-@bot.command(name="grotto_translate_japanese", description="Translate a grotto from Japanese to a different language.")
-async def _translate_grotto_japanese(ctx, material: Option(str, "Material (Ex. Granite)",
-                                                           choices=parsers.grotto_prefixes_japanese, required=True),
-                                     suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_japanesh,
-                                                    required=True), environment: Option(str, "Environment (Ex. Tunnel)",
-                                                                                        choices=parsers.grotto_environments_japanesh,
-                                                                                        required=True),
-                                     language_output: Option(str, "Output Language (Ex. Japanese)",
-                                                             choices=parsers.translation_languages, required=False),
-                                     level: Option(int, "Level (Ex. 1)", required=False),
-                                     location: Option(str, "Location (Ex. 05)", required=False)):
-    await translate_grotto_command(ctx, material, environment, suffix, 1, language_output, level, location)
-
-
-@bot.command(name="grotto_translate_spanish", description="Translate a grotto from Spanish to a different language.")
-async def _translate_grotto_spanish(ctx, environment: Option(str, "Environment (Ex. Tunnel)",
-                                                             choices=parsers.grotto_environments_spanish,
-                                                             required=True),
-                                    material: Option(str, "Material (Ex. Granite)",
-                                                     choices=parsers.grotto_prefixes_spanish, required=True),
-                                    suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_spanish,
-                                                   required=True),
-                                    language_output: Option(str, "Output Language (Ex. Japanese)",
-                                                            choices=parsers.translation_languages, required=False),
-                                    level: Option(int, "Level (Ex. 1)", required=False),
-                                    location: Option(str, "Location (Ex. 05)", required=False)):
-    await translate_grotto_command(ctx, material, environment, suffix, 2, language_output, level, location)
-
-
-@bot.command(name="grotto_translate_french", description="Translate a grotto from French to a different language.")
-async def _translate_grotto_french(ctx, environment: Option(str, "Environment (Ex. Tunnel)",
-                                                            choices=parsers.grotto_environments_french, required=True),
-                                   material: Option(str, "Material (Ex. Granite)",
-                                                    choices=parsers.grotto_prefixes_french, required=True),
-                                   suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_french,
-                                                  required=True),
-                                   language_output: Option(str, "Output Language (Ex. Japanese)",
-                                                           choices=parsers.translation_languages, required=False),
-                                   level: Option(int, "Level (Ex. 1)", required=False),
-                                   location: Option(str, "Location (Ex. 05)", required=False)):
-    await translate_grotto_command(ctx, material, environment, suffix, 3, language_output, level, location)
-
-
-@bot.command(name="grotto_translate_german", description="Translate a grotto from German to a different language.")
-async def _translate_grotto_german(ctx, material: Option(str, "Material (Ex. Granite)",
-                                                         choices=parsers.grotto_prefixes_german, required=True),
-                                   environment: Option(str, "Environment (Ex. Tunnel)",
-                                                       choices=parsers.grotto_environments_german, required=True),
-                                   suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_german,
-                                                  required=True),
-                                   language_output: Option(str, "Output Language (Ex. English)",
-                                                           choices=parsers.translation_languages, required=False),
-                                   level: Option(int, "Level (Ex. 1)", required=False),
-                                   location: Option(str, "Location (Ex. 05)", required=False)):
-    await translate_grotto_command(ctx, material, environment, suffix, 4, language_output, level, location)
-
-
-@bot.command(name="grotto_translate_italian", description="Translate a grotto from Italian to a different language.")
-async def _translate_grotto_italian(ctx, environment: Option(str, "Environment (Ex. Tunnel)",
-                                                             choices=parsers.grotto_environments_italian,
-                                                             required=True),
-                                    material: Option(str, "Material (Ex. Granite)",
-                                                     choices=parsers.grotto_prefixes_italian, required=True),
-                                    suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes_italian,
-                                                   required=True),
-                                    language_output: Option(str, "Output Language (Ex. English)",
-                                                            choices=parsers.translation_languages, required=False),
-                                    level: Option(int, "Level (Ex. 1)", required=False),
-                                    location: Option(str, "Location (Ex. 05)", required=False)):
-    await translate_grotto_command(ctx, material, environment, suffix, 5, language_output, level, location)
-
-
-async def translate_grotto_command(ctx, material, environment, suffix, language_input, language_output, level,
-                                   location):
-    await ctx.defer()
-
-    embed, material, environment, suffix = await translate_grotto(material, environment, suffix,
-                                                                  parsers.translation_languages_simple[language_input],
-                                                                  language_output)
-    await ctx.followup.send(embed=embed)
-
-    if level is not None:
-        await grotto_command(ctx, material, environment, suffix, level, location)
 
 
 async def get_recipes(ctx: discord.AutocompleteContext):
@@ -839,12 +729,11 @@ async def _character(ctx):
 class TourneySelection(discord.ui.Select):
     def __init__(self, data):
         self.data = data
-        super().__init__(placeholder="Vote for Your Choice!", min_values=1, max_values=1, options=[discord.SelectOption(
-            label=choice) for choice in self.data])
+        super().__init__(placeholder="Vote for Your Choice!", min_values=1, max_values=1,
+                         options=[discord.SelectOption(label=choice) for choice in self.data])
 
     async def callback(self, interaction: discord.Interaction):
-        await interaction.response.send_message("You voted for %s!" % interaction.data["values"][0],
-                                                ephemeral=True)
+        await interaction.response.send_message("You voted for %s!" % interaction.data["values"][0], ephemeral=True)
 
 
 @bot.command(name="tourney", description="Generates a tournament.")
@@ -881,164 +770,6 @@ async def _tourney(ctx, name: Option(str, "Name (Ex. Cutest Monster)", required=
     view = discord.ui.View(timeout=None)
     view.add_item(TourneySelection(data=[titlecase(item.name) for item in data_picked]))
     await ctx.followup.send(embed=embed, file=file, view=view)
-
-
-@bot.command(name="grotto", description="Sends info about a grotto.")
-async def _grotto(ctx, material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes, required=True),
-                  environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
-                                      required=True),
-                  suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
-                  level: Option(int, "Level (Ex. 1)", required=True),
-                  location: Option(str, "Location (Ex. 05)", required=False)):
-    await grotto_command(ctx, material, environment, suffix, level, location)
-
-
-@bot.command(name="gg", description="Sends info about a grotto with location required.")
-async def _grotto_location(ctx, material: Option(str, "Material (Ex. Granite)", choices=parsers.grotto_prefixes,
-                                                 required=True),
-                           environment: Option(str, "Environment (Ex. Tunnel)", choices=parsers.grotto_environments,
-                                               required=True),
-                           suffix: Option(str, "Suffix (Ex. Woe)", choices=parsers.grotto_suffixes, required=True),
-                           level: Option(int, "Level (Ex. 1)", required=True),
-                           location: Option(str, "Location (Ex. 05)", required=True)):
-    await grotto_command(ctx, material, environment, suffix, level, location)
-
-
-async def grotto_command(ctx, material, environment, suffix, level, location):
-    if not ctx.response.is_done():
-        await ctx.defer()
-
-    embeds, files = await grotto_func(material, environment, suffix, level, location)
-
-    if len(embeds) > 1:
-        paginator = create_paginator(embeds, files)
-        await paginator.respond(ctx.interaction)
-    else:
-        if len(embeds) == 1:
-            embed = embeds[0]
-            fs = [file["file"] for file in files if file["id"] == 0]
-            file_name = "collages/collage0.png"
-            create_collage(fs, file_name)
-            with open(file_name, 'rb') as fp:
-                data = io.BytesIO(fp.read())
-            file = discord.File(data, file_name.removeprefix("collages/"))
-            embed.set_image(url="attachment://%s" % file_name.removeprefix("collages/"))
-        else:
-            embed = create_embed("No grotto found. Please check parameters and try again.")
-            file = None
-
-        if file is not None:
-            await ctx.followup.send(embed=embed, file=file)
-        else:
-            await ctx.followup.send(embed=embed)
-
-
-async def grotto_func(material, environment, suffix, level, location):
-    async with aiohttp.ClientSession() as session:
-        params = {"search": "Search", "prefix": str(parsers.grotto_prefixes.index(titlecase(material)) + 1),
-                  "envname": str(parsers.grotto_environments.index(titlecase(environment)) + 1),
-                  "suffix": str(parsers.grotto_suffixes.index(suffix) + 1), "level": str(level), }
-
-        if location is not None:
-            try:
-                params["loc"] = str(int(location, base=16))
-            except ValueError:
-                pass
-
-        async with session.get(grotto_search_url, params=params) as response:
-            text = await response.text()
-            selector = Selector(text=text)
-            divs = selector.xpath('//div[@class="inner"]//text()')
-            grottos = divs.getall()
-
-            embeds = []
-            files = []
-
-            for parsed in parsers.create_grotto(grottos):
-                special = parsers.is_special(parsed)
-                color = discord.Color.gold() if special else discord.Color.green()
-                embed = create_embed(None, color=color)
-
-                if special:
-                    parsed = parsed[1:]
-
-                zipped = zip(range(len(parsed)), parsers.grotto_keys, parsed)
-
-                for i, key, value in zipped:
-                    if key == "Name":
-                        if special:
-                            value = ":star: %s :star:" % value
-                        embed.title = "%s\n[Click For Full Info]" % value
-                    else:
-                        if key == "Seed":
-                            value = str(value).zfill(4)
-                        if key == "Chests":
-                            values = [str(x) for x in parsed[i:i + 10]]
-                            chests = list(zip(parsers.grotto_ranks, values))
-                            value = ", ".join([': '.join(x) for x in chests])
-                        if key == "Locations":
-                            values = [str(x).zfill(2) for x in parsed[i + 9:]]
-                            for v in values:
-                                files.append({"id": len(embeds), "file": "grotto_images/%s.png" % v})
-                            value = ', '.join(values)
-                        embed.add_field(name=key, value=value, inline=False)
-                embed.url = str(response.url)
-                embeds.append(embed)
-
-        return embeds, files
-
-
-async def translate_grotto(material, environment, suffix, language_input, language_output):
-    with open("data/grottos_translated.json", "r", encoding="utf-8") as fp:
-        data = json.load(fp)
-
-    translations = data["translations"]
-
-    translation = parsers.Translation
-
-    translation_english = []
-    translation_japanese = []
-    translation_spanish = []
-    translation_french = []
-    translation_german = []
-    translation_italian = []
-
-    phrases = [material, environment, suffix]
-    for p in phrases:
-        index = next(filter(lambda r: r[language_input].lower() == p.lower(), translations), None)
-
-        translation = parsers.Translation.from_dict(index)
-
-        translation_english.append(translation.english)
-        translation_japanese.append(translation.japanese)
-        translation_spanish.append(translation.spanish)
-        translation_french.append(translation.french)
-        translation_german.append(translation.german)
-        translation_italian.append(translation.italian)
-
-    translation.english = "%s %s %s" % (translation_english[0], translation_english[1], translation_english[2])
-    translation.japanese = "%s%s%s" % (translation_japanese[0], translation_japanese[2], translation_japanese[1])
-    translation.spanish = "%s %s %s" % (translation_spanish[1], translation_spanish[0], translation_spanish[2])
-    translation.french = "%s %s %s" % (translation_french[1], translation_french[0], translation_french[2])
-    translation.german = "%s%s %s" % (translation_german[0], translation_german[1], translation_german[2])
-    translation.italian = "%s %s %s" % (translation_italian[1], translation_italian[0], translation_italian[2])
-
-    all_languages = [translation.english, translation.japanese, translation.spanish, translation.french,
-                     translation.german, translation.italian]
-
-    title = "Translation of: %s" % titlecase(all_languages[parsers.translation_languages_simple.index(language_input)])
-    color = discord.Color.green()
-    embed = create_embed(title, color=color, error="Any errors? Want to contribute? Please speak to %s" % dev_tag)
-    if language_output is not None:
-        value = all_languages[parsers.translation_languages.index(language_output)]
-        if value != "":
-            embed.add_field(name=language_output, value=value, inline=False)
-    else:
-        for language, translation in zip(parsers.translation_languages, all_languages):
-            if translation != "":
-                embed.add_field(name=language, value=translation, inline=False)
-
-    return embed, translation_english[0], translation_english[1], translation_english[2]
 
 
 @bot.event
@@ -1109,25 +840,6 @@ async def on_voice_state_update(member, before, after):
             await voice_client.disconnect()
 
 
-def int_from_string(string):
-    integer = ''.join(filter(str.isdigit, string))
-    if integer != "":
-        return int(integer)
-    else:
-        return ""
-
-
-def clean_text(text, remove_spaces=True, url=False):
-    text = text.lower().replace("'", "").replace("’", "").replace("ñ", "n").replace("ó", "o").replace(".", "")
-    text = text.replace("-", "_") if url else text.replace("-", "")
-    if remove_spaces:
-        text = text.replace(" ", "")
-    else:
-        text = text.replace(" ", "_")
-
-    return text
-
-
 class Page(_Page):
     def update_files(self) -> list[discord.File] | None:
         """Updates :class:`discord.File` objects so that they can be sent multiple
@@ -1141,55 +853,7 @@ class Page(_Page):
         return self._files
 
 
-def create_paginator(embeds, files):
-    pages = []
-    for entry in embeds:
-        if files is None:
-            page = Page(embeds=[entry])
-        else:
-            fs = [file["file"] for file in files if file["id"] == embeds.index(entry)]
-            file_name = "collages/collage%s.png" % embeds.index(entry)
-            create_collage(fs, file_name)
-            with open(file_name, 'rb') as fp:
-                data = io.BytesIO(fp.read())
-            file = discord.File(data, file_name.removeprefix("collages/"))
-            entry.set_image(url="attachment://%s" % file_name.removeprefix("collages/"))
-            page = Page(embeds=[entry], files=[file])
-        pages.append(page)
-    return Paginator(pages=pages)
-
-
-def create_collage(files, file_name):
-    columns = math.ceil(math.sqrt(len(files)))
-    rows = math.ceil(len(files) / columns)
-    collage = Image.new("RGBA", (128 * columns, 96 * rows))
-    index = 0
-    for row in range(rows):
-        for col in range(columns):
-            if index < len(files):
-                if files[index].startswith("http"):
-                    response = requests.get(files[index])
-                    try:
-                        image = Image.open(io.BytesIO(response.content))
-                    except:
-                        print(files[index])
-                else:
-                    image = Image.open(files[index])
-                collage.paste(image, (128 * col, 96 * row))
-                index += 1
-
-    collage.save(file_name)
-
-
-def create_embed(title, description=None, color=discord.Color.green(),
-                 footer="Consider supporting the developer at %s" % dev_paypal,
-                 error="Any errors? Please report to %s" % dev_tag, image="", *, url="", author=""):
-    embed = discord.Embed(title=title, description=description, url=url, color=color)
-    embed.set_footer(text="%s\n%s" % (footer, error))
-    if image != "":
-        embed.set_image(url=image)
-    embed.set_author(name=author)
-    return embed
-
-
+cogs = [f"cogs.{f[:-3]}" for f in os.listdir("cogs") if f.endswith(".py")]
+for cog in cogs:
+    bot.load_extension(cog)
 bot.run(token)

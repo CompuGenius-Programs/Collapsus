@@ -101,7 +101,8 @@ class Grottos(commands.Cog):
                                                           choices=grotto_environments["german"], required=True),
                                       suffix: Option(str, "Anhang (z.B. des Grams)", choices=grotto_suffixes["german"],
                                                      required=True),
-                                      language_output: Option(str, "Sprachen Ausgabe (z.B. English)", choices=translation_languages, required=False),
+                                      language_output: Option(str, "Sprachen Ausgabe (z.B. English)",
+                                                              choices=translation_languages, required=False),
                                       level: Option(int, "Level (z.B. 1)", required=False),
                                       location: Option(str, "Standort (z.B. 05)", required=False)):
         await self.translate_grotto_command(ctx, material, environment, suffix, "german", language_output, level,
@@ -150,9 +151,9 @@ class Grottos(commands.Cog):
 
     async def grotto_func(self, material, environment, suffix, level, location):
         async with aiohttp.ClientSession() as session:
-            params = {"search": "Search", "prefix": str(grotto_prefixes.index(titlecase(material)) + 1),
-                      "envname": str(grotto_environments.index(titlecase(environment)) + 1),
-                      "suffix": str(grotto_suffixes.index(suffix) + 1), "level": str(level), }
+            params = {"search": "Search", "prefix": str(grotto_prefixes["english"].index(titlecase(material)) + 1),
+                      "envname": str(grotto_environments["english"].index(titlecase(environment)) + 1),
+                      "suffix": str(grotto_suffixes["english"].index(suffix) + 1), "level": str(level), }
 
             if location is not None:
                 try:

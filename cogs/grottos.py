@@ -101,7 +101,7 @@ class Grottos(commands.Cog):
                                                           choices=grotto_environments["german"], required=True),
                                       suffix: Option(str, "Anhang (z.B. des Grams)", choices=grotto_suffixes["german"],
                                                      required=True),
-                                      language_output: Option(str, choices=translation_languages, required=False),
+                                      language_output: Option(str, "Sprachen Ausgabe (z.B. English)", choices=translation_languages, required=False),
                                       level: Option(int, "Level (z.B. 1)", required=False),
                                       location: Option(str, "Standort (z.B. 05)", required=False)):
         await self.translate_grotto_command(ctx, material, environment, suffix, "german", language_output, level,

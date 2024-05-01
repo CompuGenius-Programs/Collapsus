@@ -34,7 +34,8 @@ class Grottos(commands.Cog):
                  environment: Option(str, "Environment (Ex. Tunnel)", choices=grotto_environments["english"],
                                      required=True),
                  suffix: Option(str, "Suffix (Ex. of Woe)", choices=grotto_suffixes["english"], required=True),
-                 level: Option(int, required=True), location: Option(str, required=True)):
+                 level: Option(int, "Level (Ex. 1)", required=True),
+                 location: Option(str, "Location (Ex. 05)", required=True)):
         await self.grotto_command(ctx, material, environment, suffix, level, location)
 
     @discord.slash_command(description="Translate a Grotto")
@@ -46,7 +47,8 @@ class Grottos(commands.Cog):
                                suffix: Option(str, "Suffix (Ex. of Woe)", choices=grotto_suffixes["english"],
                                               required=True),
                                language_output: Option(str, choices=translation_languages, required=False),
-                               level: Option(int, required=False), location: Option(str, required=False)):
+                               level: Option(int, "Level (Ex. 1)", required=False),
+                               location: Option(str, "Location (Ex. 05)", required=False)):
         await self.translate_grotto_command(ctx, material, environment, suffix, "english", language_output, level,
                                             location)
 
@@ -75,29 +77,31 @@ class Grottos(commands.Cog):
         await self.translate_grotto_command(ctx, material, environment, suffix, "spanish", language_output, level,
                                             location)
 
-    @discord.slash_command(description="Translate a Grotto")
-    async def grotto_translate_french(self, ctx, environment: Option(str, "Environment (Ex. Tunnel)",
+    @discord.slash_command(description="Traduire un Antre")
+    async def grotto_translate_french(self, ctx, environment: Option(str, "Environnement (Ex. Tunnel)",
                                                                      choices=grotto_environments["french"],
                                                                      required=True),
-                                      material: Option(str, "Material (Ex. de granit)",
+                                      material: Option(str, "Matériel (Ex. de granit)",
                                                        choices=grotto_prefixes["french"], required=True),
-                                      suffix: Option(str, "Suffix (Ex. de la Détresse)",
+                                      suffix: Option(str, "Affixe (Ex. de la Détresse)",
                                                      choices=grotto_suffixes["french"], required=True),
-                                      language_output: Option(str, choices=translation_languages, required=False),
-                                      level: Option(int, required=False), location: Option(str, required=False)):
+                                      language_output: Option(str, "Langue de Sortie (Ex. English)",
+                                                              choices=translation_languages, required=False),
+                                      level: Option(int, "Niveau (Ex. 1)", required=False),
+                                      location: Option(str, "Localisation (Ex. 05)", required=False)):
         await self.translate_grotto_command(ctx, material, environment, suffix, "french", language_output, level,
                                             location)
 
-    @discord.slash_command(description="Translate a Grotto")
-    async def grotto_translate_german(self, ctx,
-                                      material: Option(str, "Material (Ex. Granit-)", choices=grotto_prefixes["german"],
-                                                       required=True),
-                                      environment: Option(str, "Environment (Ex. Tunnel)",
+    @discord.slash_command(description="Übersetze eine Grotte")
+    async def grotto_translate_german(self, ctx, material: Option(str, "Material (z.B. Granit-)",
+                                                                  choices=grotto_prefixes["german"], required=True),
+                                      environment: Option(str, "Umgebung (z.B. Tunnel)",
                                                           choices=grotto_environments["german"], required=True),
-                                      suffix: Option(str, "Suffix (Ex. des Grams)", choices=grotto_suffixes["german"],
+                                      suffix: Option(str, "Anhang (z.B. des Grams)", choices=grotto_suffixes["german"],
                                                      required=True),
                                       language_output: Option(str, choices=translation_languages, required=False),
-                                      level: Option(int, required=False), location: Option(str, required=False)):
+                                      level: Option(int, "Level (z.B. 1)", required=False),
+                                      location: Option(str, "Standort (z.B. 05)", required=False)):
         await self.translate_grotto_command(ctx, material, environment, suffix, "german", language_output, level,
                                             location)
 

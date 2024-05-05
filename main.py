@@ -11,6 +11,7 @@ from discord import Option
 from discord.ext.pages import Page as _Page
 from titlecase import titlecase
 
+import cascade_recipes
 import parsers
 from utils import create_embed, clean_text, dev_tag, int_from_string, create_paginator, create_collage
 
@@ -592,6 +593,24 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
         embed.add_field(name="Notes", value="%s" % recipe.notes, inline=False)
 
     await ctx.respond(embed=embed)
+
+
+@bot.command(name="recipe_cascade", description="Sends cascading info about a recipe.")
+async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine)", autocomplete=get_recipes,
+                                                     required=True)):
+    ingredients = cascade_recipes.cascade(creation_name)
+    if ingredients:
+        description = "\n".join(
+            [f"{'---' * ing.level}{' ' if ing.level != 0 else ''}{titlecase(ing.name)} x{ing.count} ({ing.total})" for ing in ingredients])
+
+        for ing in ingredients:
+            if ing.location != '':
+                description += f"\n\n{ing.name} can be found at {ing.location}"
+        embed = create_embed("Ingredients for %s" % titlecase(creation_name), description)
+    else:
+        embed = create_embed("Ahem! Oh dear. I'm afraid I don't seem to be\nable to make anything with that particular"
+                             "\ncreation name of `%s`." % creation_name, image=krak_pot_image_url)
+    return await ctx.respond(embed=embed)
 
 
 async def get_monsters(ctx: discord.AutocompleteContext):

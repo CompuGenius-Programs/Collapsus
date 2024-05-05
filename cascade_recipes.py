@@ -249,7 +249,11 @@ locates = [["agate of evolution", "quest #178"], ["aggressence", "rank E grotto 
            ["yggdrasil leaf", "rank S grotto chest, quest #123, quest #160, bling badger, barbarus, greygnarl"],
            ["rusty armour", "quest #177"], ["rusty gauntlets", "quest #178"], ["rusty shield", "quest #49"],
            ["rusty sword", "Realm of the Mighty"]]
-recipes = []
+
+with open("data/recipes.json", "r") as data:
+    recipes_data = json.load(data)["recipes"]
+recipes = [[recipe["result"]] + [item for i in range(1, 4) if recipe[f"item{i}"] for item in
+                                 [recipe[f"item{i}"], recipe[f"qty{i}"]]] for recipe in recipes_data]
 
 
 @dataclass
@@ -269,12 +273,7 @@ def cascade(search_input=""):
         if recipe[0].lower() == search_input:
             ingredients = cascade_recursive(recipe[0], 1, 1, ingredients, trail, 0)
 
-    if ingredients:
-        print("\n".join(
-            [f"{'---' * ing.level}{' ' if ing.level != 0 else ''}{titlecase(ing.name)} x{ing.count} ({ing.total})"
-             f"{' - Found at %s' % ing.location if ing.location != '' else ''}" for ing in ingredients]))
-    else:
-        print("Item not found.")
+    return ingredients
 
 
 def cascade_recursive(recipe, count, mult, ingredients, trail, level):
@@ -304,9 +303,4 @@ def cascade_recursive(recipe, count, mult, ingredients, trail, level):
 
 
 if __name__ == "__main__":
-    with open("data/recipes.json", "r") as data:
-        recipes_data = json.load(data)["recipes"]
-    recipes = [[recipe["result"]] + [item for i in range(1, 4) if recipe[f"item{i}"] for item in
-                                     [recipe[f"item{i}"], recipe[f"qty{i}"]]] for recipe in recipes_data]
-
     cascade()

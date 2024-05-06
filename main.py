@@ -632,6 +632,11 @@ async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special
         with open(location_file, "w", encoding="utf-8") as f:
             f.write(location_description.replace("#", ""))
 
+        class SendLocationsButton(discord.ui.Button):
+            async def callback(self, interaction: discord.Interaction):
+                await interaction.response.send_message(file=discord.File(location_file))
+                await interaction.message.edit(view=None)
+
         recipe_images_url = ""
         if recipe.type.lower() in parsers.item_types:
             recipe_images_url = item_images_url
@@ -653,8 +658,9 @@ async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special
         # location_embed = create_embed(titlecase(recipe.name), location_description, image=image)
         # paginator = create_paginator([main_embed, location_embed])
         # await paginator.respond(ctx.interaction)
-        await ctx.respond(embed=main_embed)
-        await ctx.send(file=discord.File(location_file))
+        view = discord.ui.View()
+        view.add_item(SendLocationsButton(label="See Item Locations"))
+        await ctx.respond(embed=main_embed, view=view)
     else:
         embed = create_embed("Ahem! Oh dear. I'm afraid I don't seem to be\nable to make anything with that particular"
                              "\ncreation name of `%s`." % creation_name, image=krak_pot_image_url)

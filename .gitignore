@@ -4,3 +4,4 @@ venv/
 __pycache__/
 test_images/
 collages/
+location_description.yml

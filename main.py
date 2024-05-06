@@ -600,40 +600,59 @@ async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special
                                                      required=True)):
     ingredients = cascade_recipes.cascade(creation_name)
     if ingredients:
-        description = ""
-        if ingredients[0].location != '':
-            description += f"*{titlecase(ingredients[0].location)}*\n\n"
+        recipe = ingredients[0]
+        ingredients = ingredients[1:]
 
-        description += "**Ingredients**\n"
-        description += "\n".join(
-            [f"{' ' * ing.level}* {titlecase(ing.name)} x{ing.count} ({ing.total})" for ing in ingredients])
+        main_description = ""
+        if recipe.location != '':
+            main_description += f"*{titlecase(recipe.location)}*\n\n"
 
+        main_description += "**Ingredients**\n"
+        main_description += "\n".join(
+            [f"{' ' * (ing.level - 1)}- {titlecase(ing.name)} x{ing.count} ({ing.total})" for ing in ingredients])
+
+        location_description = ""
         has_location = any(ing.location != '' for ing in ingredients)
         if has_location:
-            description += "\n\n**Locations**\n"
-            description += "\n".join(
-                f"- **{titlecase(ing.name)}:** *{titlecase(ing.location)}*" for ing in ingredients if ing.location != '')
+            location_description += "\n\n**Locations**\n"
+
+            def remove_duplicates(ingredients):
+                unique = []
+                for ingredient in ingredients:
+                    if not any(ingredient.name == ing.name for ing in unique):
+                        unique.append(ingredient)
+                return unique
+
+            list_of_locations = remove_duplicates([ing for ing in ingredients if ing.location != ''])
+            location_description += "\n".join(
+                f"- **{titlecase(ing.name)}:** *{titlecase(ing.location)}*" for ing in list_of_locations)
 
         recipe_images_url = ""
-        if ingredients[0].type.lower() in parsers.item_types:
+        if recipe.type.lower() in parsers.item_types:
             recipe_images_url = item_images_url
-        elif ingredients[0].type.lower() in parsers.weapon_types:
+        elif recipe.type.lower() in parsers.weapon_types:
             recipe_images_url = weapon_images_url
-        elif ingredients[0].type.lower() in parsers.armor_types:
+        elif recipe.type.lower() in parsers.armor_types:
             recipe_images_url = armor_images_url
-        elif ingredients[0].type.lower() in parsers.accessory_types:
+        elif recipe.type.lower() in parsers.accessory_types:
             recipe_images_url = accessory_images_url
-        elif ingredients[0].type.lower() == "shields":
+        elif recipe.type.lower() == "shields":
             recipe_images_url = shield_images_url
 
         if recipe_images_url != "":
-            image = recipe_images_url % clean_text(ingredients[0].name, False, True)
+            image = recipe_images_url % clean_text(recipe.name, False, True)
+        else:
+            image = None
 
-        embed = create_embed(titlecase(ingredients[0].name), description, thumbnail=image)
+        main_embed = create_embed(titlecase(recipe.name), main_description, image=image)
+        # location_embed = create_embed(titlecase(recipe.name), location_description, image=image)
+        # paginator = create_paginator([main_embed, location_embed])
+        # await paginator.respond(ctx.interaction)
+        await ctx.respond(embed=main_embed)
     else:
         embed = create_embed("Ahem! Oh dear. I'm afraid I don't seem to be\nable to make anything with that particular"
                              "\ncreation name of `%s`." % creation_name, image=krak_pot_image_url)
-    return await ctx.respond(embed=embed)
+        return await ctx.respond(embed=embed)
 
 
 async def get_monsters(ctx: discord.AutocompleteContext):

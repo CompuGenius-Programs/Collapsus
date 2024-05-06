@@ -598,6 +598,8 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
 @bot.command(name="recipe_cascade", description="Sends cascading info about a recipe.")
 async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine)", autocomplete=get_recipes,
                                                      required=True)):
+    location_file = "location_description.yml"
+
     ingredients = cascade_recipes.cascade(creation_name)
     if ingredients:
         recipe = ingredients[0]
@@ -614,7 +616,7 @@ async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special
         location_description = ""
         has_location = any(ing.location != '' for ing in ingredients)
         if has_location:
-            location_description += "\n\n**Locations**\n"
+            location_description += "Locations\n\n"
 
             def remove_duplicates(ingredients):
                 unique = []
@@ -624,8 +626,11 @@ async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special
                 return unique
 
             list_of_locations = remove_duplicates([ing for ing in ingredients if ing.location != ''])
-            location_description += "\n".join(
-                f"- **{titlecase(ing.name)}:** *{titlecase(ing.location)}*" for ing in list_of_locations)
+            location_description += "\n\n".join(
+                f"- {titlecase(ing.name)}: {titlecase(ing.location)}" for ing in list_of_locations)
+
+        with open(location_file, "w", encoding="utf-8") as f:
+            f.write(location_description.replace("#", ""))
 
         recipe_images_url = ""
         if recipe.type.lower() in parsers.item_types:
@@ -649,6 +654,7 @@ async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special
         # paginator = create_paginator([main_embed, location_embed])
         # await paginator.respond(ctx.interaction)
         await ctx.respond(embed=main_embed)
+        await ctx.send(file=discord.File(location_file))
     else:
         embed = create_embed("Ahem! Oh dear. I'm afraid I don't seem to be\nable to make anything with that particular"
                              "\ncreation name of `%s`." % creation_name, image=krak_pot_image_url)

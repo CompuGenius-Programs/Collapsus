@@ -263,6 +263,7 @@ class Ingredient:
     total: int
     level: int
     location: str
+    type: str = ''
 
 
 def cascade(search_input=""):
@@ -287,7 +288,8 @@ def cascade_recursive(recipe, count, mult, ingredients, trail, level):
     for item in recipes:
         if item[0] == recipe:
             location = next((loc for loc in locates if loc[0] == recipe), None)
-            ingredients.append(Ingredient(item[0], count, count * mult, level, location[1] if location else ''))
+            recipe_type = next((rec["type"] for rec in recipes_data if rec["result"] == recipe), '')
+            ingredients.append(Ingredient(item[0], count, count * mult, level, location[1] if location else '', recipe_type))
 
             trail.append(item[0])
             for i in range(1, len(item), 2):

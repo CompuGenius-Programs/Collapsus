@@ -598,6 +598,7 @@ async def _recipe(ctx, creation_name: Option(str, "Creation (Ex. Special Medicin
 @bot.command(name="recipe_cascade", description="Sends cascading info about a recipe.")
 async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special Medicine)", autocomplete=get_recipes,
                                                      required=True)):
+    cascade_file = "cascade_description.md"
     location_file = "location_description.yml"
 
     ingredients = cascade_recipes.cascade(creation_name)
@@ -605,18 +606,18 @@ async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special
         recipe = ingredients[0]
         ingredients = ingredients[1:]
 
-        main_description = ""
+        cascade_description = ""
         if recipe.location != '':
-            main_description += f"*{titlecase(recipe.location)}*\n\n"
+            cascade_description += f"*{titlecase(recipe.location)}*\n\n"
 
-        main_description += "**Ingredients**\n"
-        main_description += "\n".join(
+        cascade_description += "**Ingredients**\n"
+        cascade_description += "\n".join(
             [f"{' ' * (ing.level - 1)}- {titlecase(ing.name)} x{ing.count} ({ing.total})" for ing in ingredients])
 
         location_description = ""
         has_location = any(ing.location != '' for ing in ingredients)
         if has_location:
-            location_description += "Locations\n\n"
+            location_description += "**Locations**\n\n"
 
             def remove_duplicates(ingredients):
                 unique = []
@@ -628,14 +629,6 @@ async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special
             list_of_locations = remove_duplicates([ing for ing in ingredients if ing.location != ''])
             location_description += "\n\n".join(
                 f"- {titlecase(ing.name)}: {titlecase(ing.location)}" for ing in list_of_locations)
-
-        with open(location_file, "w", encoding="utf-8") as f:
-            f.write(location_description.replace("#", ""))
-
-        class SendLocationsButton(discord.ui.Button):
-            async def callback(self, interaction: discord.Interaction):
-                await interaction.response.send_message(file=discord.File(location_file))
-                await interaction.message.edit(view=None)
 
         recipe_images_url = ""
         if recipe.type.lower() in parsers.item_types:
@@ -654,13 +647,35 @@ async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special
         else:
             image = None
 
-        main_embed = create_embed(titlecase(recipe.name), main_description, image=image)
-        # location_embed = create_embed(titlecase(recipe.name), location_description, image=image)
-        # paginator = create_paginator([main_embed, location_embed])
-        # await paginator.respond(ctx.interaction)
-        view = discord.ui.View()
-        view.add_item(SendLocationsButton(label="See Item Locations"))
-        await ctx.respond(embed=main_embed, view=view)
+        class SendLocationsButton(discord.ui.Button):
+            async def callback(self, interaction: discord.Interaction):
+                await interaction.response.send_message(file=discord.File(location_file))
+                await interaction.message.edit(view=None)
+
+        try:
+            embed = create_embed(titlecase(recipe.name), cascade_description + "\n\n" + location_description.replace("\n\n", "\n"), image=image)
+            await ctx.respond(embed=embed)
+        except discord.errors.HTTPException:
+            cascade_embed = create_embed(titlecase(recipe.name), cascade_description, image=image)
+
+            try:
+                location_embed = create_embed(titlecase(recipe.name), location_description.replace("\n\n", "\n"), image=image)
+                paginator = create_paginator([cascade_embed, location_embed])
+                await paginator.respond(ctx.interaction)
+            except discord.errors.HTTPException:
+                try:
+                    with open(location_file, "w", encoding="utf-8") as f:
+                        f.write(location_description.replace("#", "").replace("*", ""))
+
+                    view = discord.ui.View()
+                    view.add_item(SendLocationsButton(label="See Item Locations"))
+
+                    await ctx.respond(embed=cascade_embed, view=view)
+                except discord.errors.HTTPException:
+                    with open(cascade_file, "w", encoding="utf-8") as f:
+                        f.write(cascade_description.replace("*", ""))
+
+                    await ctx.respond(files=[discord.File(cascade_file), discord.File(location_file)])
     else:
         embed = create_embed("Ahem! Oh dear. I'm afraid I don't seem to be\nable to make anything with that particular"
                              "\ncreation name of `%s`." % creation_name, image=krak_pot_image_url)

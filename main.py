@@ -608,7 +608,7 @@ async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special
 
         cascade_description = ""
         if recipe.location != '':
-            cascade_description += f"*{titlecase(recipe.location)}*\n\n"
+            cascade_description += f"*{titlecase(', '.join(recipe.location))}*\n\n"
 
         cascade_description += "**Ingredients**\n"
         cascade_description += "\n".join(

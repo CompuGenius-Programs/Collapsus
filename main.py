@@ -628,7 +628,7 @@ async def _recipe_cascade(ctx, creation_name: Option(str, "Creation (Ex. Special
 
             list_of_locations = remove_duplicates([ing for ing in ingredients if ing.location != ''])
             location_description += "\n\n".join(
-                f"- {titlecase(ing.name)}: {titlecase(ing.location)}" for ing in list_of_locations)
+                f"- {titlecase(ing.name)}: {titlecase(', '.join(ing.location))}" for ing in list_of_locations)
 
         recipe_images_url = ""
         if recipe.type.lower() in parsers.item_types:

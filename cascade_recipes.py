@@ -1,6 +1,8 @@
 import json
 from dataclasses import dataclass
 
+import parsers
+
 with open("data/recipes.json", "r") as data:
     recipes_data = json.load(data)["recipes"]
 recipes = [[recipe["result"]] + [item for i in range(1, 4) if recipe[f"item{i}"] for item in
@@ -70,6 +72,25 @@ def cascade_recursive(recipe, count, mult, ingredients, trail, level):
 #         for item in locations:
 #             data["locations"].append({"result": item[0], "location": item[1]})
 #         json.dump(data, file, indent=2)
+
+
+def arrayify_locations():
+    with open("data/item_locations.json", "r") as file:
+        locations_data = json.load(file)
+    locations = locations_data["locations"]
+    for item in locations:
+        item["location"] = item["location"].split(", ")
+
+    with open("data/item_locations.json", "w") as file:
+        json.dump(locations_data, file, indent=2)
+
+
+def get_locations_from_sources():
+    with open("data/quests.json", "r", encoding="utf-8") as fp:
+        quest_data = json.load(fp)
+    quests = quest_data["quests"]
+
+    rewards = [parsers.Quest.from_dict(quest).reward for quest in quests]
 
 
 if __name__ == "__main__":

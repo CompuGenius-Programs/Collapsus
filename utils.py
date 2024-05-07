@@ -29,12 +29,13 @@ def create_collage(files, file_name):
     for row in range(rows):
         for col in range(columns):
             if index < len(files):
+                image = None
                 if files[index].startswith("http"):
                     response = requests.get(files[index])
                     try:
                         image = Image.open(io.BytesIO(response.content))
-                    except:
-                        print(files[index])
+                    except Exception as e:
+                        print(f"{e} when trying to add {files[index]} to collage")
                 else:
                     image = Image.open(files[index])
                 collage.paste(image, (128 * col, 96 * row))

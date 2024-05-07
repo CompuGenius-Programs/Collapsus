@@ -10,7 +10,8 @@
       "result": "aggressence",
       "location": [
         "rank E grotto chest",
-        "yore"
+        "yore",
+        "hammibal"
       ]
     },
     {
@@ -35,7 +36,8 @@
         "Upover shop",
         "Wormwood Creek shop",
         "rank H grotto chest",
-        "common enemy drop"
+        "chariot chappie",
+        "lost soul"
       ]
     },
     {
@@ -67,7 +69,11 @@
         "Upover shop",
         "Wormwood Creek shop",
         "rank I grotto chest",
-        "common enemy drop"
+        "cruelcumber",
+        "sacksquatch",
+        "bubble slime",
+        "gastropog",
+        "bodkin fletcher"
       ]
     },
     {
@@ -130,7 +136,8 @@
       "result": "beast claws",
       "location": [
         "rank B grotto chest",
-        "vermillion"
+        "vermillion",
+        "vermil lion"
       ]
     },
     {
@@ -158,7 +165,10 @@
     {
       "result": "blue orb",
       "location": [
-        "quest #180"
+        "quest #180",
+        "nimzo",
+        "nokturnus",
+        "orgodemir"
       ]
     },
     {
@@ -167,7 +177,8 @@
         "Dourbridge shop",
         "Porth Llaffan shop",
         "Slurry Quay shop",
-        "boss troll"
+        "boss troll",
+        "toxic zombie"
       ]
     },
     {
@@ -207,7 +218,8 @@
     {
       "result": "brainy bracer",
       "location": [
-        "quest #45"
+        "quest #45",
+        "quest #140"
       ]
     },
     {
@@ -223,7 +235,8 @@
         "Wormwood canyon",
         "goodybag",
         "cosmic chimaera",
-        "rashaverak"
+        "rashaverak",
+        "quest #142"
       ]
     },
     {
@@ -296,7 +309,8 @@
       "result": "chronocrystal",
       "location": [
         "lonely coast",
-        "tower of nod"
+        "tower of nod",
+        "quest #173"
       ]
     },
     {
@@ -316,7 +330,8 @@
       "location": [
         "Porth Llaffan shop",
         "tearwolf",
-        "sluggernaught"
+        "sluggernaught",
+        "sluggernaut"
       ]
     },
     {
@@ -335,7 +350,10 @@
         "Wormwood Creek shop",
         "Upover shop",
         "betterfly",
-        "cumaulus"
+        "cumaulus",
+        "dread admiral",
+        "treevil",
+        "hell ni\u00e3\u00b1o"
       ]
     },
     {
@@ -355,7 +373,8 @@
     {
       "result": "corundum",
       "location": [
-        "rank G grotto chest"
+        "rank G grotto chest",
+        "admirer"
       ]
     },
     {
@@ -382,7 +401,8 @@
         "Eastern Wormwood",
         "crabid",
         "spinchilla",
-        "belisha beakon"
+        "belisha beakon",
+        "knocktopus"
       ]
     },
     {
@@ -462,14 +482,17 @@
       "location": [
         "rank C grotto chest",
         "rank D grotto chest",
-        "wishmaster"
+        "wishmaster",
+        "drakulard",
+        "goreham-hogg"
       ]
     },
     {
       "result": "depressing shoes",
       "location": [
         "rank C grotto chest",
-        "quest #181"
+        "quest #181",
+        "liquid metal slime"
       ]
     },
     {
@@ -524,7 +547,10 @@
         "drakulord",
         "grand lizzier",
         "greygnarl",
-        "nodoph"
+        "nodoph",
+        "mandrake major",
+        "wyrtle",
+        "equinox"
       ]
     },
     {
@@ -593,14 +619,16 @@
       "result": "enchanted stone",
       "location": [
         "rank B grotto chest",
-        "quest #60"
+        "quest #60",
+        "larstastnaras"
       ]
     },
     {
       "result": "ethereal stone",
       "location": [
         "rank A grotto chest",
-        "quest #51"
+        "quest #51",
+        "gadrongo"
       ]
     },
     {
@@ -680,7 +708,9 @@
       "location": [
         "Western Stornway",
         "rank G grotto chest",
-        "rank H grotto chest"
+        "rank H grotto chest",
+        "morphean mushroom",
+        "mushroom mage"
       ]
     },
     {
@@ -705,7 +735,9 @@
         "mad moai",
         "grinade",
         "stone golem",
-        "geothaum"
+        "geothaum",
+        "living statue",
+        "golem"
       ]
     },
     {
@@ -836,7 +868,8 @@
       "result": "gold rosary",
       "location": [
         "lesionnaire",
-        "wight priest"
+        "wight priest",
+        "mimic"
       ]
     },
     {
@@ -848,7 +881,10 @@
     {
       "result": "green orb",
       "location": [
-        "quest #169"
+        "quest #169",
+        "psaro",
+        "estark",
+        "nokturnus"
       ]
     },
     {
@@ -911,7 +947,8 @@
         "Wormwood Creek shop",
         "robo-robin",
         "corrupt carter",
-        "cyber spider"
+        "cyber spider",
+        "trauminator"
       ]
     },
     {
@@ -932,7 +969,8 @@
       "result": "hela's hammer",
       "location": [
         "rank D grotto chest",
-        "hell's gatekeeper"
+        "hell's gatekeeper",
+        "quest #168"
       ]
     },
     {
@@ -986,7 +1024,10 @@
         "Wormwood Creek shop",
         "Zere shop",
         "rank I grotto chest",
-        "common enemy drop"
+        "teeny sanguini",
+        "firespirit",
+        "spirit",
+        "lost soul"
       ]
     },
     {
@@ -1145,7 +1186,10 @@
     {
       "result": "iron nails",
       "location": [
-        "rank H grotto chest"
+        "rank H grotto chest",
+        "clockwork cuckoo",
+        "shocktopus",
+        "killing machine"
       ]
     },
     {
@@ -1155,7 +1199,9 @@
         "lonely coast",
         "rank G grotto chest",
         "robo-robin",
-        "bad karmour"
+        "bad karmour",
+        "hunter mech",
+        "corrupt carter"
       ]
     },
     {
@@ -1198,7 +1244,8 @@
         "clawcerer",
         "parched peckerel",
         "purrestidigitator",
-        "power hammer"
+        "power hammer",
+        "purrestidgitator"
       ]
     },
     {
@@ -1227,7 +1274,9 @@
         "Wormwood Creek shop",
         "quest #126",
         "ram raider",
-        "drackal"
+        "drackal",
+        "rampage",
+        "battering ram"
       ]
     },
     {
@@ -1243,7 +1292,10 @@
         "bagma",
         "live lava",
         "scarlet fever",
-        "master of nu'un"
+        "master of nu'un",
+        "admirer",
+        "terrorhawk",
+        "magmalice"
       ]
     },
     {
@@ -1325,7 +1377,8 @@
       "result": "long spear",
       "location": [
         "alltrades abbey",
-        "zumeanie"
+        "zumeanie",
+        "scourgette"
       ]
     },
     {
@@ -1384,7 +1437,11 @@
         "master moosifer",
         "bling badger",
         "hexagoon",
-        "rover"
+        "rover",
+        "rampage",
+        "claw hammer",
+        "badja",
+        "swinoceros"
       ]
     },
     {
@@ -1397,7 +1454,8 @@
         "claw hammer",
         "battering ram",
         "seasaur",
-        "dreadful drackal"
+        "dreadful drackal",
+        "knocktopus"
       ]
     },
     {
@@ -1430,7 +1488,10 @@
         "rank E grotto chest",
         "rank F grotto chest",
         "rank I grotto chest",
-        "common enemy drop"
+        "firespirit",
+        "lunatick",
+        "magus",
+        "jinkster"
       ]
     },
     {
@@ -1472,7 +1533,8 @@
         "mummy",
         "blood mummy",
         "grrrgoyle",
-        "hottingham-gore"
+        "hottingham-gore",
+        "hootingham-gore"
       ]
     },
     {
@@ -1483,7 +1545,9 @@
         "mortoad",
         "toxic zombie",
         "ghoul",
-        "apeckalypse"
+        "apeckalypse",
+        "walking corpse",
+        "stenchurion"
       ]
     },
     {
@@ -1510,7 +1574,15 @@
         "Wormwood Creek shop",
         "Zere shop",
         "rank I grotto chest",
-        "common enemy drop"
+        "slime",
+        "teeny sanguini",
+        "dracky",
+        "she-slime",
+        "funghoul",
+        "boppin' badger",
+        "healslime",
+        "slugger",
+        "sootheslime"
       ]
     },
     {
@@ -1528,7 +1600,8 @@
     {
       "result": "mercury's bandana",
       "location": [
-        "Cap'n Max Meddlin' prize"
+        "Cap'n Max Meddlin' prize",
+        "quest #154"
       ]
     },
     {
@@ -1552,7 +1625,8 @@
     {
       "result": "metal slime shield",
       "location": [
-        "rank A grotto chest"
+        "rank A grotto chest",
+        "quest #136"
       ]
     },
     {
@@ -1570,7 +1644,8 @@
     {
       "result": "metal slime sword",
       "location": [
-        "rank A grotto chest"
+        "rank A grotto chest",
+        "quest #165"
       ]
     },
     {
@@ -1642,7 +1717,12 @@
         "Wormwood Creek shop",
         "Zere shop",
         "rank I grotto chest",
-        "common enemy drop"
+        "cruelcumber",
+        "batterfly",
+        "leafy larrikin",
+        "badger mager",
+        "man o' war",
+        "pink sanguini"
       ]
     },
     {
@@ -1658,7 +1738,10 @@
         "Western Coffinwell",
         "rank B grotto chest",
         "rank D grotto chest",
-        "void droid"
+        "void droid",
+        "quest #151",
+        "metal medley",
+        "golem"
       ]
     },
     {
@@ -1667,14 +1750,17 @@
         "Western Wormwood",
         "rank E grotto chest",
         "sculpture vulture",
-        "moai minstrel"
+        "moai minstrel",
+        "shivery shrubbery",
+        "tyrannosaurus wrecks"
       ]
     },
     {
       "result": "nectar",
       "location": [
         "snowberian coast",
-        "rank F grotto chest"
+        "rank F grotto chest",
+        "pink sanguini"
       ]
     },
     {
@@ -1765,7 +1851,8 @@
     {
       "result": "platinum headgear",
       "location": [
-        "Gleeba shop"
+        "Gleeba shop",
+        "shogum"
       ]
     },
     {
@@ -1783,7 +1870,8 @@
       "location": [
         "Dourbridge shop",
         "Slurry Quay shop",
-        "jinkster"
+        "jinkster",
+        "mean spirit"
       ]
     },
     {
@@ -1860,7 +1948,10 @@
     {
       "result": "purple orb",
       "location": [
-        "quest #182"
+        "quest #182",
+        "nokturnus",
+        "dhoulmagus",
+        "rhapthorne"
       ]
     },
     {
@@ -1882,7 +1973,8 @@
         "brainy badboon",
         "drastic drackal",
         "master moosifer",
-        "tyrannosaura wrecks"
+        "tyrannosaura wrecks",
+        "quest #158"
       ]
     },
     {
@@ -1909,7 +2001,9 @@
       "result": "red orb",
       "location": [
         "dragonlord",
-        "malroth"
+        "malroth",
+        "quest #166",
+        "nokturnus"
       ]
     },
     {
@@ -1925,7 +2019,8 @@
         "Cap'n Max Meddlin' store",
         "rank S grotto chest",
         "stone guardian",
-        "firn fiend"
+        "firn fiend",
+        "quest #173"
       ]
     },
     {
@@ -1935,7 +2030,10 @@
         "stone golem",
         "living statue",
         "stone guardian",
-        "grrrgoyle"
+        "grrrgoyle",
+        "quest #176",
+        "handsome crab",
+        "sculpture vulture"
       ]
     },
     {
@@ -1952,7 +2050,8 @@
         "grinade",
         "rockbomb",
         "bomboulder",
-        "flamin' drayman"
+        "flamin' drayman",
+        "scourgette"
       ]
     },
     {
@@ -1962,7 +2061,8 @@
         "drastic drackal",
         "terror troll",
         "barriearthenwarrior",
-        "ragin' contagion"
+        "ragin' contagion",
+        "mad moai"
       ]
     },
     {
@@ -2019,7 +2119,9 @@
         "rank B grotto chest",
         "rank C grotto chest",
         "dreadmaster",
-        "hottingham-gore"
+        "hottingham-gore",
+        "freezing fog",
+        "hootingham-gore"
       ]
     },
     {
@@ -2035,7 +2137,10 @@
         "rank C grotto chest",
         "rank F grotto chest",
         "quest #21",
-        "seavern"
+        "seavern",
+        "quest #177",
+        "sculptrice",
+        "genie sanguini"
       ]
     },
     {
@@ -2109,13 +2214,17 @@
     {
       "result": "silver orb",
       "location": [
-        "quest #153"
+        "quest #153",
+        "baramos",
+        "zoma",
+        "nokturnus"
       ]
     },
     {
       "result": "silver platter",
       "location": [
-        "rank H grotto chest"
+        "rank H grotto chest",
+        "quest #28"
       ]
     },
     {
@@ -2165,7 +2274,8 @@
       "location": [
         "king slime",
         "king cureslime",
-        "metal king slime"
+        "metal king slime",
+        "quest #165"
       ]
     },
     {
@@ -2230,7 +2340,8 @@
         "Bloomingdale shop",
         "man o'war",
         "bud brother",
-        "bagma"
+        "bagma",
+        "man o' war"
       ]
     },
     {
@@ -2238,13 +2349,15 @@
       "location": [
         "Angel Falls shop",
         "Stornway shop",
-        "wooper trooper"
+        "wooper trooper",
+        "earthenwarrior"
       ]
     },
     {
       "result": "sorcerer's stone",
       "location": [
-        "rank F grotto chest"
+        "rank F grotto chest",
+        "quest #166"
       ]
     },
     {
@@ -2282,7 +2395,8 @@
     {
       "result": "star's suit",
       "location": [
-        "quest #119"
+        "quest #119",
+        "elusid"
       ]
     },
     {
@@ -2308,7 +2422,8 @@
       "location": [
         "Bloomingdale shop",
         "Dourbridge shop",
-        "purrestidigitator"
+        "purrestidigitator",
+        "purrestidgitator"
       ]
     },
     {
@@ -2326,7 +2441,9 @@
         "Gleeba shop",
         "Upover shop",
         "rank H grotto chest",
-        "common enemy drop"
+        "treeface",
+        "raving lunatick",
+        "peckerel"
       ]
     },
     {
@@ -2337,7 +2454,13 @@
         "Upover shop",
         "Wormwood Creek shop",
         "rank I grotto chest",
-        "common enemy drop"
+        "bag o' laughs",
+        "leafy larrikin",
+        "metal slime",
+        "badboon",
+        "zumeanie",
+        "treeface",
+        "medislime"
       ]
     },
     {
@@ -2359,7 +2482,8 @@
         "Bloomingdale shop",
         "rank H grotto chest",
         "bud brother",
-        "pale whale"
+        "pale whale",
+        "treevil"
       ]
     },
     {
@@ -2385,7 +2509,8 @@
         "cumaulus",
         "window's pique",
         "cyber spider",
-        "tyrantula"
+        "tyrantula",
+        "widow's pique"
       ]
     },
     {
@@ -2407,7 +2532,8 @@
         "bloody manguini",
         "barbatos",
         "freaky tiki",
-        "garth goyle"
+        "garth goyle",
+        "manguini"
       ]
     },
     {
@@ -2450,7 +2576,8 @@
         "mortoad",
         "expload",
         "gloomy gastropog",
-        "blastoad"
+        "blastoad",
+        "giddy gastropog"
       ]
     },
     {
@@ -2461,7 +2588,8 @@
         "Slurry Quay shop",
         "crabid",
         "wyrtoise",
-        "wonder wyrtle"
+        "wonder wyrtle",
+        "wyrtle"
       ]
     },
     {
@@ -2477,7 +2605,8 @@
         "claw hammer",
         "ghoul",
         "mega moai",
-        "goreham-hogg"
+        "goreham-hogg",
+        "atlas"
       ]
     },
     {
@@ -2607,7 +2736,8 @@
         "Gleeba shop",
         "python priest",
         "abyss diver",
-        "slugly betty"
+        "slugly betty",
+        "slugly betsy"
       ]
     },
     {
@@ -2619,7 +2749,8 @@
     {
       "result": "white tights",
       "location": [
-        "Swinedimples Academy shop"
+        "Swinedimples Academy shop",
+        "nemean"
       ]
     },
     {
@@ -2642,7 +2773,8 @@
       "location": [
         "Coffinwell shop",
         "Stornway shop",
-        "blinkster"
+        "blinkster",
+        "magus"
       ]
     },
     {
@@ -2654,7 +2786,10 @@
     {
       "result": "yellow orb",
       "location": [
-        "quest #175"
+        "quest #175",
+        "murdaw",
+        "mortamor (head)",
+        "nokturnus"
       ]
     },
     {

@@ -146,4 +146,4 @@ def get_locations_from_sources():
 
 
 if __name__ == "__main__":
-    get_locations_from_sources()
+    cascade()

@@ -131,10 +131,17 @@ def get_locations_from_sources():
 
         for drop, monster in zip(drops, monsters):
             if modified_item["result"].lower() in drop and monster.name.lower() not in modified_item["location"]:
+                if monster.name.lower().startswith("hell ni"):
+                    monster.name = "hell niño"
                 modified_item["location"].append(monster.name.lower())
                 print(f"Added {monster.name} to {modified_item['result']}")
 
         if modified_item["location"]:
+            location_shops = [location.lower() for location in modified_item["location"] if location.lower().endswith("shop")]
+            location_quests = [location.lower() for location in modified_item["location"] if location.lower().startswith("quest")]
+            location_chests = [location.lower() for location in modified_item["location"] if location.lower().endswith("chest")]
+            location_monsters = [location.lower() for location in modified_item["location"] if location.lower() not in location_shops and location.lower() not in location_quests and location.lower() not in location_chests]
+            modified_item["location"] = sorted(location_shops) + sorted(location_quests) + sorted(location_chests) + sorted(location_monsters)
             all_items_modified.append(modified_item)
 
     print("Modified item locations count: " + str(len(all_items_modified)))

@@ -67,25 +67,6 @@ def cascade_recursive(recipe, count, mult, ingredients, trail, level):
     return ingredients
 
 
-# def jsonify_locates():
-#     with open("data/item_locations.json", "w") as file:
-#         data = {"locations": []}
-#         for item in locations:
-#             data["locations"].append({"result": item[0], "location": item[1]})
-#         json.dump(data, file, indent=2)
-
-
-def arrayify_locations():
-    with open("data/item_locations.json", "r") as file:
-        locations_data = json.load(file)
-    items = locations_data["locations"]
-    for item in items:
-        item["location"] = item["location"].split(", ")
-
-    with open("data/item_locations.json", "w") as file:
-        json.dump(locations_data, file, indent=2)
-
-
 def get_locations_from_sources():
     def sanitize_reward(strings):
         sanitized = []
@@ -111,39 +92,57 @@ def get_locations_from_sources():
                 sanitized.append(string.strip())
         return sanitized
 
+    with open("data/recipes.json", "r") as file:
+        recipes = json.load(file)["recipes"]
+        all_items = [item.lower() for recipe in recipes for item in
+                     [recipe["result"], recipe["item1"], recipe.get("item2", ""), recipe.get("item3", "")] if item]
+
     with open("data/item_locations.json", "r") as file:
         items = json.load(file)["locations"]
-        all_items = [item["result"].lower() for item in items]
+        all_items_with_locations = [item["result"].lower() for item in items]
 
     with open("data/quests.json", "r", encoding="utf-8") as file:
         quests = [parsers.Quest.from_dict(quest) for quest in json.load(file)["quests"]]
         rewards = [sanitize_reward(quest.reward.split(", ")) for quest in quests]
 
-    # not_in_items = [reward for reward in set(sum(rewards, [])) if reward not in all_items]
-    # print('\n'.join(sorted(not_in_items)))
-
-    for reward, quest in zip(rewards, quests):
-        for item in items:
-            if item["result"].lower() in reward and f"quest #{quest.number}" not in item["location"]:
-                item["location"].append(f"quest #{quest.number}")
-                print(f"Added quest #{quest.number} to {item['result']}")
-
     with open("data/monsters.json", "r") as file:
         monsters = [parsers.Monster.from_dict(monster) for monster in json.load(file)["monsters"]]
         drops = [sanitize_reward([monster.drop1, monster.drop2, monster.drop3]) for monster in monsters]
 
-    # not_in_items = [drop for drop in set(sum(drops, [])) if drop not in all_items]
-    # print('\n'.join(sorted(not_in_items)))
+    print("Item locations count: " + str(len(all_items_with_locations)))
 
-    for drop, monster in zip(drops, monsters):
-        for item in items:
-            if item["result"].lower() in drop and monster.name.lower() not in item["location"]:
-                item["location"].append(monster.name.lower())
-                print(f"Added {monster.name} to {item['result']}")
+    all_items_unique = set(all_items)
+    all_items_modified = []
+
+    items_dont_exist = [item for item in all_items_with_locations if item not in all_items_unique]
+    print("Items that don't exist: " + str(items_dont_exist))
+
+    for item in all_items_unique:
+        existing_item = next((i for i in items if i["result"].lower() == item), None)
+        if not existing_item:
+            modified_item = {"result": item, "location": []}
+        else:
+            modified_item = existing_item
+
+        for reward, quest in zip(rewards, quests):
+            if modified_item["result"].lower() in reward and f"quest #{quest.number}" not in modified_item["location"]:
+                modified_item["location"].append(f"quest #{quest.number}")
+                print(f"Added quest #{quest.number} to {modified_item['result']}")
+
+        for drop, monster in zip(drops, monsters):
+            if modified_item["result"].lower() in drop and monster.name.lower() not in modified_item["location"]:
+                modified_item["location"].append(monster.name.lower())
+                print(f"Added {monster.name} to {modified_item['result']}")
+
+        if modified_item["location"]:
+            all_items_modified.append(modified_item)
+
+    print("Modified item locations count: " + str(len(all_items_modified)))
+    all_items_modified.sort(key=lambda x: x["result"])
 
     with open("data/item_locations.json", "w") as file:
-        json.dump({"locations": items}, file, indent=2)
+        json.dump({"locations": all_items_modified}, file, indent=2)
 
 
 if __name__ == "__main__":
-    cascade()
+    get_locations_from_sources()

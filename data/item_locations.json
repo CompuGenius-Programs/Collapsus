@@ -1,6 +1,13 @@
 {
   "locations": [
     {
+      "result": "ace of clubs",
+      "location": [
+        "quest #132",
+        "gigantes"
+      ]
+    },
+    {
       "result": "agate of evolution",
       "location": [
         "quest #178"
@@ -97,6 +104,13 @@
       ]
     },
     {
+      "result": "assassin's dagger",
+      "location": [
+        "apeckalypse",
+        "raving reaper"
+      ]
+    },
+    {
       "result": "astral plume",
       "location": [
         "rank A grotto chest",
@@ -118,19 +132,19 @@
       ]
     },
     {
-      "result": "battle fork",
-      "location": [
-        "Bloomingdale shop",
-        "Gleeba shop",
-        "deadcurion"
-      ]
-    },
-    {
       "result": "battle axe",
       "location": [
         "Batsureg shop",
         "Gleeba shop",
         "Wormwood Creek shop"
+      ]
+    },
+    {
+      "result": "battle fork",
+      "location": [
+        "Bloomingdale shop",
+        "Gleeba shop",
+        "deadcurion"
       ]
     },
     {
@@ -153,6 +167,12 @@
       "result": "billowing bow",
       "location": [
         "quest #83"
+      ]
+    },
+    {
+      "result": "blessed bindings",
+      "location": [
+        "quest #140"
       ]
     },
     {
@@ -208,6 +228,12 @@
       "result": "boxer shorts",
       "location": [
         "sacksquatch"
+      ]
+    },
+    {
+      "result": "brahman boots",
+      "location": [
+        "quest #140"
       ]
     },
     {
@@ -267,6 +293,12 @@
         "batterfly",
         "betterfly",
         "dread admiral"
+      ]
+    },
+    {
+      "result": "cape of good karma",
+      "location": [
+        "quest #154"
       ]
     },
     {
@@ -422,6 +454,12 @@
       ]
     },
     {
+      "result": "crown of clarity",
+      "location": [
+        "quest #164"
+      ]
+    },
+    {
       "result": "dancer's costume",
       "location": [
         "Porth Llaffan shop"
@@ -459,7 +497,7 @@
       ]
     },
     {
-      "result": "deadly night blade",
+      "result": "deadly nightblade",
       "location": [
         "Bloomingdale shop",
         "handsome crab"
@@ -519,6 +557,12 @@
       ]
     },
     {
+      "result": "dragon mail",
+      "location": [
+        "claws"
+      ]
+    },
+    {
       "result": "dragon robe",
       "location": [
         "Cap'n Max Meddlin' prize"
@@ -555,6 +599,12 @@
       ]
     },
     {
+      "result": "dragon shield",
+      "location": [
+        "wonder wyrtle"
+      ]
+    },
+    {
       "result": "dragon top",
       "location": [
         "Wormwood Creek shop"
@@ -580,10 +630,22 @@
       ]
     },
     {
+      "result": "dragontail whip",
+      "location": [
+        "equinox"
+      ]
+    },
+    {
       "result": "driller pillar",
       "location": [
         "Batsureg shop",
         "Gleeba shop"
+      ]
+    },
+    {
+      "result": "eaglewing",
+      "location": [
+        "quest #85"
       ]
     },
     {
@@ -715,11 +777,30 @@
       ]
     },
     {
+      "result": "fizzle foil",
+      "location": [
+        "goresby-purrvis"
+      ]
+    },
+    {
       "result": "fizzle-retardant suit",
       "location": [
         "quest #95",
         "python priest",
         "cobra cardinal"
+      ]
+    },
+    {
+      "result": "flame shield",
+      "location": [
+        "Hell niño",
+        "bird of terrordise"
+      ]
+    },
+    {
+      "result": "flamenco shirt",
+      "location": [
+        "quest #101"
       ]
     },
     {
@@ -739,6 +820,12 @@
         "geothaum",
         "living statue",
         "golem"
+      ]
+    },
+    {
+      "result": "flowing dress",
+      "location": [
+        "cumulus hex"
       ]
     },
     {
@@ -774,6 +861,13 @@
       ]
     },
     {
+      "result": "friendly fan",
+      "location": [
+        "godsteed",
+        "tantamount"
+      ]
+    },
+    {
       "result": "full moon ring",
       "location": [
         "quest #130"
@@ -790,6 +884,12 @@
       "result": "fur poncho",
       "location": [
         "great gruffon"
+      ]
+    },
+    {
+      "result": "fur vest",
+      "location": [
+        "cyclops"
       ]
     },
     {
@@ -935,6 +1035,13 @@
       ]
     },
     {
+      "result": "halberd",
+      "location": [
+        "quest #65",
+        "charmour"
+      ]
+    },
+    {
       "result": "hallowed helm",
       "location": [
         "hammibal"
@@ -1008,6 +1115,12 @@
       ]
     },
     {
+      "result": "holy mail",
+      "location": [
+        "quest #107"
+      ]
+    },
+    {
       "result": "holy water",
       "location": [
         "Batsureg shop",
@@ -1073,6 +1186,13 @@
       ]
     },
     {
+      "result": "ice shield",
+      "location": [
+        "brrearthenwarrior",
+        "teaky mask"
+      ]
+    },
+    {
       "result": "icicle dirk",
       "location": [
         "Wormwood Creek shop",
@@ -1084,12 +1204,6 @@
       "result": "invincible trousers",
       "location": [
         "nemean"
-      ]
-    },
-    {
-      "result": "iron spear",
-      "location": [
-        "Coffinwell shop"
       ]
     },
     {
@@ -1220,6 +1334,12 @@
       ]
     },
     {
+      "result": "iron spear",
+      "location": [
+        "Coffinwell shop"
+      ]
+    },
+    {
       "result": "iron whip",
       "location": [
         "Batsureg shop",
@@ -1230,6 +1350,12 @@
       "result": "kestrel claws",
       "location": [
         "quest #75"
+      ]
+    },
+    {
+      "result": "killer pillar",
+      "location": [
+        "quest #71"
       ]
     },
     {
@@ -1513,6 +1639,12 @@
         "Gleeba shop",
         "shaman",
         "sorcerer"
+      ]
+    },
+    {
+      "result": "magma staff",
+      "location": [
+        "live lava"
       ]
     },
     {
@@ -1869,6 +2001,12 @@
       ]
     },
     {
+      "result": "platinum sword",
+      "location": [
+        "skeleton soldier"
+      ]
+    },
+    {
       "result": "pointy hat",
       "location": [
         "Dourbridge shop",
@@ -2040,7 +2178,7 @@
       ]
     },
     {
-      "result": "rober of serenity",
+      "result": "robe of serenity",
       "location": [
         "alltrades abbey"
       ]
@@ -2089,9 +2227,33 @@
       ]
     },
     {
+      "result": "rusty armour",
+      "location": [
+        "quest #177"
+      ]
+    },
+    {
+      "result": "rusty gauntlets",
+      "location": [
+        "quest #178"
+      ]
+    },
+    {
       "result": "rusty helmet",
       "location": [
         "Cap'n Max Meddlin' prize"
+      ]
+    },
+    {
+      "result": "rusty shield",
+      "location": [
+        "quest #49"
+      ]
+    },
+    {
+      "result": "rusty sword",
+      "location": [
+        "Realm of the Mighty"
       ]
     },
     {
@@ -2099,6 +2261,13 @@
       "location": [
         "Cap'n Max Meddlin' prize",
         "sir sanguinus"
+      ]
+    },
+    {
+      "result": "sacred claws",
+      "location": [
+        "scarewolf",
+        "claws"
       ]
     },
     {
@@ -2124,6 +2293,12 @@
         "dreadmaster",
         "freezing fog",
         "hootingham-gore"
+      ]
+    },
+    {
+      "result": "sage's robe",
+      "location": [
+        "quest #116"
       ]
     },
     {
@@ -2356,6 +2531,12 @@
       ]
     },
     {
+      "result": "sorcerer's ring",
+      "location": [
+        "quest #164"
+      ]
+    },
+    {
       "result": "sorcerer's stone",
       "location": [
         "rank F grotto chest",
@@ -2367,6 +2548,19 @@
       "location": [
         "Bloomingdale shop",
         "cannibelle"
+      ]
+    },
+    {
+      "result": "special medicine",
+      "location": [
+        "badja",
+        "great troll"
+      ]
+    },
+    {
+      "result": "spiked armour",
+      "location": [
+        "gloomy gastropog"
       ]
     },
     {
@@ -2515,6 +2709,18 @@
       ]
     },
     {
+      "result": "tantric trousers",
+      "location": [
+        "quest #140"
+      ]
+    },
+    {
+      "result": "technicolour dreamcloth",
+      "location": [
+        "quest #152"
+      ]
+    },
+    {
       "result": "terra firmer",
       "location": [
         "quest #81"
@@ -2535,6 +2741,12 @@
         "freaky tiki",
         "garth goyle",
         "manguini"
+      ]
+    },
+    {
+      "result": "thief's turban",
+      "location": [
+        "raving reaper"
       ]
     },
     {
@@ -2733,6 +2945,13 @@
       ]
     },
     {
+      "result": "warrior's sword",
+      "location": [
+        "quest #63",
+        "barriearthenwarrior"
+      ]
+    },
+    {
       "result": "watermaul wand",
       "location": [
         "Bloomingdale shop",
@@ -2746,6 +2965,12 @@
       "result": "white shield",
       "location": [
         "quest #87"
+      ]
+    },
+    {
+      "result": "white tiger fan",
+      "location": [
+        "quest #77"
       ]
     },
     {
@@ -2786,12 +3011,26 @@
       ]
     },
     {
+      "result": "wonder pants",
+      "location": [
+        "quest #179"
+      ]
+    },
+    {
       "result": "yellow orb",
       "location": [
         "quest #175",
         "murdaw",
         "mortamor (head)",
         "nokturnus"
+      ]
+    },
+    {
+      "result": "yggdrasil dew",
+      "location": [
+        "quest #40",
+        "quest #123",
+        "bomboulder"
       ]
     },
     {
@@ -2803,30 +3042,6 @@
         "bling badger",
         "barbarus",
         "greygnarl"
-      ]
-    },
-    {
-      "result": "rusty armour",
-      "location": [
-        "quest #177"
-      ]
-    },
-    {
-      "result": "rusty gauntlets",
-      "location": [
-        "quest #178"
-      ]
-    },
-    {
-      "result": "rusty shield",
-      "location": [
-        "quest #49"
-      ]
-    },
-    {
-      "result": "rusty sword",
-      "location": [
-        "Realm of the Mighty"
       ]
     }
   ]

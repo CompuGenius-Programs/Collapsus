@@ -68,7 +68,7 @@ def cascade_recursive(recipe, count, mult, ingredients, trail, level):
 
 
 def get_locations_from_sources():
-    def sanitize_reward(strings):
+    def sanitize_item(strings):
         sanitized = []
         for string in strings:
             if " and " in string:
@@ -103,11 +103,11 @@ def get_locations_from_sources():
 
     with open("data/quests.json", "r", encoding="utf-8") as file:
         quests = [parsers.Quest.from_dict(quest) for quest in json.load(file)["quests"]]
-        rewards = [sanitize_reward(quest.reward.split(", ")) for quest in quests]
+        rewards = [sanitize_item(quest.reward.split(", ")) for quest in quests]
 
     with open("data/monsters.json", "r") as file:
         monsters = [parsers.Monster.from_dict(monster) for monster in json.load(file)["monsters"]]
-        drops = [sanitize_reward([monster.drop1, monster.drop2, monster.drop3]) for monster in monsters]
+        drops = [sanitize_item([monster.drop1, monster.drop2, monster.drop3]) for monster in monsters]
 
     print("Item locations count: " + str(len(all_items_with_locations)))
 
@@ -118,11 +118,7 @@ def get_locations_from_sources():
     print("Items that don't exist: " + str(items_dont_exist))
 
     for item in all_items_unique:
-        existing_item = next((i for i in items if i["result"].lower() == item), None)
-        if not existing_item:
-            modified_item = {"result": item, "location": []}
-        else:
-            modified_item = existing_item
+        modified_item = next((i for i in items if i["result"].lower() == item), {"result": item, "location": []})
 
         for reward, quest in zip(rewards, quests):
             if modified_item["result"].lower() in reward and f"quest #{quest.number}" not in modified_item["location"]:
@@ -137,11 +133,16 @@ def get_locations_from_sources():
                 print(f"Added {monster.name} to {modified_item['result']}")
 
         if modified_item["location"]:
-            location_shops = [location.lower() for location in modified_item["location"] if location.lower().endswith("shop")]
-            location_quests = [location.lower() for location in modified_item["location"] if location.lower().startswith("quest")]
-            location_chests = [location.lower() for location in modified_item["location"] if location.lower().endswith("chest")]
-            location_monsters = [location.lower() for location in modified_item["location"] if location.lower() not in location_shops and location.lower() not in location_quests and location.lower() not in location_chests]
-            modified_item["location"] = sorted(location_shops) + sorted(location_quests) + sorted(location_chests) + sorted(location_monsters)
+            location_shops = [location.lower() for location in modified_item["location"] if
+                              location.lower().endswith("shop")]
+            location_quests = [location.lower() for location in modified_item["location"] if
+                               location.lower().startswith("quest")]
+            location_chests = [location.lower() for location in modified_item["location"] if
+                               location.lower().endswith("chest")]
+            location_monsters = [location.lower() for location in modified_item["location"] if
+                                 location.lower() not in location_shops and location.lower() not in location_quests and location.lower() not in location_chests]
+            modified_item["location"] = sorted(location_shops) + sorted(location_quests) + sorted(
+                location_chests) + sorted(location_monsters)
             all_items_modified.append(modified_item)
 
     print("Modified item locations count: " + str(len(all_items_modified)))
@@ -152,4 +153,4 @@ def get_locations_from_sources():
 
 
 if __name__ == "__main__":
-    get_locations_from_sources()
+    cascade()

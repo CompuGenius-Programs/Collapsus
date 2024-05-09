@@ -95,7 +95,7 @@ A bot created by <@%s> for The Quester's Rest (<%s>).
     await ctx.respond(embed=embed)
 
 
-@bot.command(name="migrate_resources")
+@bot.command(name="migrate_resources", guild_ids=[guild_id])
 async def _migrate_resources(ctx):
     await ctx.defer()
 
@@ -266,7 +266,7 @@ Guardian Angel/Lionheart/Sent from Above/Watched-over One/Storied Saviour: Defau
     await ctx.followup.send(embed=embed)
 
 
-@bot.command(name="migrate_challenges")
+@bot.command(name="migrate_challenges", guild_ids=[guild_id])
 async def _migrate_challenges(ctx):
     await ctx.defer()
 
@@ -438,7 +438,7 @@ async def play(ctx, voice_client, song: parsers.Song, channel):
         voice_client.play(source)
 
 
-@bot.command(name="parse_quests", description="Parses the quests.")
+@bot.command(name="parse_quests", description="Parses the quests.", guild_ids=[guild_id])
 async def _parse_quests(ctx):
     await ctx.defer()
 
@@ -824,7 +824,7 @@ class TourneySelection(discord.ui.Select):
         await interaction.response.send_message("You voted for %s!" % interaction.data["values"][0], ephemeral=True)
 
 
-@bot.command(name="tourney", description="Generates a tournament.")
+@bot.command(name="tourney", description="Generates a tournament.", guild_ids=[guild_id])
 async def _tourney(ctx, name: Option(str, "Name (Ex. Cutest Monster)", required=True),
                    amount: Option(int, "Amount (Ex. 8)", required=True),
                    data: Option(str, "Data (Ex. Monster)", choices=parsers.tourney_data_types, required=True)):

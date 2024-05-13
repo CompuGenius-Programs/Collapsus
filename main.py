@@ -46,7 +46,8 @@ stream_channel = 655390551138631704
 
 logo_url = "https://cdn.discordapp.com/emojis/856330729528361000.png"
 website_url = "https://dq9.carrd.co"
-server_invite_url = "https://discord.gg/DQ9"
+server_invite_url = "https://discord.gg/"
+server_invite_code = ""
 
 character_image_url = "https://www.woodus.com/den/games/dq9ds/characreate/index.php?"
 
@@ -67,6 +68,11 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
+    with open("data/config.json", "r", encoding="utf-8") as fp:
+        data = json.load(fp)
+        global server_invite_code
+        server_invite_code = data["server_invite_code"]
+
     await bot.change_presence(
         activity=discord.Activity(type=discord.ActivityType.watching, name="over The Quester's Rest. Type /help ."))
 
@@ -74,7 +80,7 @@ async def on_ready():
 @bot.command(name="help", description="Get help for using the bot.")
 async def _help(ctx):
     description = f'''
-A bot created by <@{dev_id}> for The Quester's Rest (<{server_invite_url}>).
+A bot created by <@{dev_id}> for The Quester's Rest (<{server_invite_url + server_invite_code}>).
 
 **/character** - *Generate a random character*
 **/gg** - *Get grotto info (location required) - <#{grotto_bot_commands_channel}> only*
@@ -95,6 +101,15 @@ A bot created by <@{dev_id}> for The Quester's Rest (<{server_invite_url}>).
     embed = create_embed("Collapsus v2 Help [Click For Server Website]", description=description, error="",
                          image=logo_url, url=website_url)
     await ctx.respond(embed=embed)
+
+
+@bot.command(name="change_invite", guild_ids=[guild_id])
+async def _change_server_invite(ctx, invite_code: Option(str, "Server Invite Code", required=True)):
+    global server_invite_code
+    server_invite_code = invite_code
+
+    with open("data/config.json", "w", encoding="utf-8") as fp:
+        json.dump({"server_invite_code": server_invite_code}, fp, indent=2)
 
 
 @bot.command(name="migrate_resources", guild_ids=[guild_id])

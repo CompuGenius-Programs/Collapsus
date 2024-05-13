@@ -26,6 +26,7 @@ guild_id = 655390550698098700
 testing_channel = 973619817317797919
 
 quests_channel = 766039065849495574
+grotto_bot_commands_channel = 845339551173050389
 
 welcome_channel = 965688638295924766
 rules_channel_en = 688480621856686196
@@ -72,23 +73,24 @@ async def on_ready():
 
 @bot.command(name="help", description="Get help for using the bot.")
 async def _help(ctx):
-    description = '''
-A bot created by <@%s> for The Quester's Rest (<%s>).
+    description = f'''
+A bot created by <@{dev_id}> for The Quester's Rest (<{server_invite_url}>).
 
 **/character** - *Generate a random character*
-**/gg** - *Get grotto info (location required)*
-**/grotto** - *Search for a grotto*
+**/gg** - *Get grotto info (location required) - <#{grotto_bot_commands_channel}> only*
+**/grotto** - *Search for a grotto - <#{grotto_bot_commands_channel}> only*
 **/monster** - *Get monster info*
 **/quest** - *Get quest info*
 **/recipe** - *Get an item's recipe*
+**/recipe_cascade** - *Get cascading info about a recipe*
 **/song** - *Play a song*
 **/songs_all** - *Play all songs*
 **/stop** - *Stop playing songs*
 **/translate** - *Translate a word or phrase*
-**/grotto_translate(\_[language])** - *Translate a grotto*
+**/grotto_translate(\_[language])** - *Translate a grotto - <#{grotto_bot_commands_channel}> only*
 
 **/help** - *Displays this message*
-''' % (dev_id, server_invite_url)
+'''
 
     embed = create_embed("Collapsus v2 Help [Click For Server Website]", description=description, error="",
                          image=logo_url, url=website_url)

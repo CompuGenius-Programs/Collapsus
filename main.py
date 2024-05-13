@@ -98,7 +98,7 @@ A bot created by <@{dev_id}> for The Quester's Rest (<{server_invite_url + serve
 **/help** - *Displays this message*
 '''
 
-    embed = create_embed("Collapsus v2 Help [Click For Server Website]", description=description, error="",
+    embed = create_embed("Collapsus Help [Click For Server Website]", description=description, error="",
                          image=logo_url, url=website_url)
     await ctx.respond(embed=embed)
 

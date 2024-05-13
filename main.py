@@ -111,6 +111,9 @@ async def _change_server_invite(ctx, invite_code: Option(str, "Server Invite Cod
     with open("data/config.json", "w", encoding="utf-8") as fp:
         json.dump({"server_invite_code": server_invite_code}, fp, indent=2)
 
+    embed = create_embed("Server Invite Code Changed", {server_invite_url + server_invite_code})
+    await ctx.respond(embed=embed)
+
 
 @bot.command(name="migrate_resources", guild_ids=[guild_id])
 async def _migrate_resources(ctx):

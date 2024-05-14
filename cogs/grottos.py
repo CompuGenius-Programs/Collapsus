@@ -63,9 +63,9 @@ class Grottos(commands.Cog):
                                                        required=True), environment: Option(str, "地形 (例：地下道)",
                                                                                            choices=grotto_environments[
                                                                                                "japanese"],
-                                                                                           required=True),
-                                        language_output: Option(str, "翻訳言語 (例：English)", choices=translation_languages,
-                                                                required=False),
+                                                                                           required=False),
+                                        language_output: Option(str, "翻訳言語 (例：English)",
+                                                                choices=translation_languages, required=False),
                                         level: Option(int, "Ｌｖ (例：1)", required=False),
                                         location: Option(str, "場所コード (例：05)", required=False)):
         await self.translate_grotto_command(ctx, material, environment, suffix, "japanese", language_output, level,
@@ -158,9 +158,11 @@ class Grottos(commands.Cog):
 
     async def grotto_func(self, material, environment, suffix, level, location):
         async with aiohttp.ClientSession() as session:
+            environment_name = str(
+                grotto_environments["english"].index(titlecase(environment)) + 1) if environment.lower() != "map" else ""
             params = {"search": "Search", "prefix": str(grotto_prefixes["english"].index(titlecase(material)) + 1),
-                      "envname": str(grotto_environments["english"].index(titlecase(environment)) + 1),
-                      "suffix": str(grotto_suffixes["english"].index(suffix) + 1), "level": str(level), }
+                      "envname": environment_name, "suffix": str(grotto_suffixes["english"].index(suffix) + 1),
+                      "level": str(level), }
 
             if location is not None:
                 try:
@@ -237,6 +239,9 @@ class Grottos(commands.Cog):
         translation_italian = []
 
         phrases = [material, environment, suffix]
+        if environment is None:
+            phrases.remove(environment)
+
         for p in phrases:
             index = next(filter(lambda r: r[language_input].lower() == p.lower(), translations), None)
 
@@ -248,6 +253,14 @@ class Grottos(commands.Cog):
             translation_french.append(translation.french)
             translation_german.append(translation.german)
             translation_italian.append(translation.italian)
+
+        if environment is None:
+            translation_english.insert(1, "Map")
+            translation_japanese.insert(1, "地図")
+            translation_spanish.insert(1, "Map")  # TODO Get translation for "map"
+            translation_french.insert(1, "Map")  # TODO Get translation for "map"
+            translation_german.insert(1, "Map")  # TODO Get translation for "map"
+            translation_italian.insert(1, "Map")  # TODO Get translation for "map"
 
         translation.english = "%s %s %s" % (translation_english[0], translation_english[1], translation_english[2])
         translation.japanese = "%s%s%s" % (translation_japanese[0], translation_japanese[2], translation_japanese[1])

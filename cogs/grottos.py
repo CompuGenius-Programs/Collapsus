@@ -56,15 +56,18 @@ class Grottos(commands.Cog):
         await self.translate_grotto_command(ctx, material, environment, suffix, "english", language_output, level,
                                             location)
 
-    @discord.slash_command(description="Translate a Grotto")
-    async def grotto_translate_japanese(self, ctx, material: Option(str, "Material (Ex. うす暗き)",
+    @discord.slash_command(description="宝の地図翻訳")
+    async def grotto_translate_japanese(self, ctx, material: Option(str, "形容詞 (例：うす暗き)",
                                                                     choices=grotto_prefixes["japanese"], required=True),
-                                        suffix: Option(str, "Suffix (Ex. 獣の)", choices=grotto_suffixes["japanese"],
-                                                       required=True),
-                                        environment: Option(str, "Environment (Ex. 地下道)",
-                                                            choices=grotto_environments["japanese"], required=True),
-                                        language_output: Option(str, choices=translation_languages, required=False),
-                                        level: Option(int, required=False), location: Option(str, required=False)):
+                                        suffix: Option(str, "名詞 (例：獣の)", choices=grotto_suffixes["japanese"],
+                                                       required=True), environment: Option(str, "地形 (例：地下道)",
+                                                                                           choices=grotto_environments[
+                                                                                               "japanese"],
+                                                                                           required=True),
+                                        language_output: Option(str, "翻訳言語 (例：English)", choices=translation_languages,
+                                                                required=False),
+                                        level: Option(int, "Ｌｖ (例：1)", required=False),
+                                        location: Option(str, "場所コード (例：05)", required=False)):
         await self.translate_grotto_command(ctx, material, environment, suffix, "japanese", language_output, level,
                                             location)
 

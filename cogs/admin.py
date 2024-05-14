@@ -4,6 +4,7 @@ import os
 import random
 
 import discord
+import emoji
 from discord import Option
 from discord.ext import commands
 from titlecase import titlecase
@@ -22,6 +23,18 @@ class Admin(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.quests_channel = 766039065849495574
+        self.welcome_channel = 965688638295924766
+        self.rules_channel_en = 688480621856686196
+        self.rules_channel_fr = 965694046049800222
+        self.rules_channel_de = 965693961907875850
+        self.rules_channel_jp = 965693827568529448
+        self.rules_channel_es = 1221871725663223818
+        self.role_en = 879436700256964700
+        self.role_fr = 965696709290262588
+        self.role_de = 965696853951795221
+        self.role_jp = 859563030220374057
+        self.role_es = 1221871392451203113
+        self.role_celestrian = 655438935278878720
 
     @discord.slash_command(name="change_invite", guild_ids=[guild_id])
     async def _change_server_invite(self, ctx, invite_code: Option(str, "Server Invite Code", required=True)):
@@ -334,3 +347,60 @@ class Admin(commands.Cog):
         view = discord.ui.View(timeout=None)
         view.add_item(self.TourneySelection(data=[titlecase(item.name) for item in data_picked]))
         await ctx.followup.send(embed=embed, file=file, view=view)
+
+    @commands.Cog.listener()
+    async def on_raw_reaction_add(self, payload):
+        emoji_name = emoji.demojize(payload.emoji.name)
+        channel = self.bot.get_channel(payload.channel_id)
+        guild = self.bot.get_guild(payload.guild_id)
+        user = guild.get_member(payload.user_id)
+
+        rules_channels = [self.bot.get_channel(self.rules_channel_en), self.bot.get_channel(self.rules_channel_fr),
+                          self.bot.get_channel(self.rules_channel_de), self.bot.get_channel(self.rules_channel_jp),
+                          self.bot.get_channel(self.rules_channel_es)]
+
+        message = await channel.fetch_message(payload.message_id)
+        if message.channel == self.bot.get_channel(self.welcome_channel):
+            role_id = 0
+            if emoji_name == ":United_Kingdom:":
+                role_id = self.role_en
+            if emoji_name == ":France:":
+                role_id = self.role_fr
+            if emoji_name == ":Germany:":
+                role_id = self.role_de
+            if emoji_name == ":Japan:":
+                role_id = self.role_jp
+            if emoji_name == ":Spain:":
+                role_id = self.role_es
+
+            await user.add_roles(discord.utils.get(guild.roles, id=role_id), reason="User assigned role to themselves.")
+
+        elif message.channel in rules_channels:
+            if emoji_name == ":thumbs_up:":
+                await user.add_roles(discord.utils.get(guild.roles, id=self.role_celestrian),
+                                     reason="User accepted rules.")
+                await message.remove_reaction(payload.emoji, user)
+
+    @commands.Cog.listener()
+    async def on_raw_reaction_remove(self, payload):
+        emoji_name = emoji.demojize(payload.emoji.name)
+        channel = self.bot.get_channel(payload.channel_id)
+        guild = self.bot.get_guild(payload.guild_id)
+        user = guild.get_member(payload.user_id)
+
+        message = await channel.fetch_message(payload.message_id)
+        if message.channel == self.bot.get_channel(self.welcome_channel):
+            role_id = 0
+            if emoji_name == ":United_Kingdom:":
+                role_id = self.role_en
+            if emoji_name == ":France:":
+                role_id = self.role_fr
+            if emoji_name == ":Germany:":
+                role_id = self.role_de
+            if emoji_name == ":Japan:":
+                role_id = self.role_jp
+            if emoji_name == ":Spain:":
+                role_id = self.role_es
+
+            await user.remove_roles(discord.utils.get(guild.roles, id=role_id),
+                                    reason="User removed role from themselves.")

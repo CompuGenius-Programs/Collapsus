@@ -30,7 +30,7 @@ class Admin(commands.Cog):
         with open("data/config.json", "w", encoding="utf-8") as fp:
             json.dump({"server_invite_code": main.server_invite_code}, fp, indent=2)
 
-        embed = create_embed("Server Invite Code Changed", {main.server_invite_code + main.server_invite_code})
+        embed = create_embed("Server Invite Code Changed", main.server_invite_url + main.server_invite_code)
         await ctx.respond(embed=embed)
 
     @discord.slash_command(name="migrate_resources", guild_ids=[guild_id])

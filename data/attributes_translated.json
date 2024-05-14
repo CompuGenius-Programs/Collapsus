@@ -2,72 +2,84 @@
   "translations": [
     {
       "english": "Strength",
+      "japanese": "ちから",
       "spanish": "Fuerza",
       "french": "Force",
       "german": "Stärke"
     },
     {
       "english": "Agility",
+      "japanese": "すばやさ",
       "spanish": "Agilidad",
       "french": "Agilité",
       "german": "Flinkheit"
     },
     {
       "english": "Resilience",
+      "japanese": "みのまもり",
       "spanish": "Resistencia",
       "french": "Vitalité",
       "german": "Ausdauer"
     },
     {
       "english": "Deftness",
+      "japanese": "きようさ",
       "spanish": "Pericia",
       "french": "Adresse",
       "german": "Geschick"
     },
     {
       "english": "Charm",
+      "japanese": "みりょく",
       "spanish": "Encanto",
       "french": "Charme",
       "german": "Charme"
     },
     {
       "english": "Magical Mending",
+      "japanese": "かいふく魔力",
       "spanish": "Terapeucidad",
       "french": "Soins magiques",
       "german": "Magische Medizin"
     },
     {
       "english": "Magical Might",
+      "japanese": "こうげき魔力",
       "spanish": "Fuerza mágica",
       "french": "Puissance magique",
       "german": "Magische Macht"
     },
     {
       "english": "Max. HP",
+      "japanese": "さいだいＨＰ",
       "spanish": "PV máx.",
       "french": "PV max.",
       "german": "LP-Max."
     },
     {
       "english": "Max. MP",
+      "japanese": "さいだいＭＰ",
       "spanish": "PM máx.",
       "french": "PM max.",
       "german": "MP-Max."
     },
     {
       "english": "Attack",
+      "japanese": "こうげき力",
       "spanish": "Ataque",
       "french": "Attaque",
       "german": "Angriff"
     },
     {
       "english": "Defence",
+      "japanese": "しゅび力",
       "spanish": "Defensa",
       "french": "Défense",
       "german": "Abwehr"
     },
     {
       "english": "Style",
+      "japanese": "おしゃれさ",
       "spanish": "Estilo",
       "french": "Style",
       "german": "Stil"

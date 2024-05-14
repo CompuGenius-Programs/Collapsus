@@ -182,7 +182,7 @@
       "story": false,
       "location": "Angel Falls (Girl inside house near the entrance).",
       "request": "Bring her 5 Belle Caps and 5 Fisticups.",
-      "solution": "Find the mushrooms at their respective spawn points and bring them to the girl to receive the Packed Lunch. Bring the Packed Lunch to her father who is near the entrance of Hexagon and then report back to the girl in Angel Falls.",
+      "solution": "Find the mushrooms at their respective spawn points and bring them to the girl to receive the Packed Lunch. Bring the Packed Lunch to her father who is near the entrance of Hexagon and then report back to the girl in Angel Falls. (Refer to \".gq Map\").",
       "reward": "Prayer Ring",
       "prerequisite": "None",
       "repeat": false
@@ -260,7 +260,7 @@
       "location": "Zere (Man outside of the church).",
       "request": "Scare 10 Betterflies.",
       "solution": "Have someone at a high enough level to make the Betterflies flee from you in battle. Level 25 is sufficient.",
-      "reward": "Seed of Defence (Toad Oil for repeat).",
+      "reward": "Seed of Defence; Toad Oil for repeat.",
       "prerequisite": "Need a character that has a high enough level to scare a Betterfly.",
       "repeat": true
     },
@@ -282,9 +282,9 @@
       "location": "Coffinwell (Outside the Mayors house).",
       "request": "Kill 10 Sluggers.",
       "solution": "You can find Sluggers outside of Coffinwell.",
-      "reward": "Mini Medal.",
+      "reward": "Mini Medal; Snakeskin for Repeat.",
       "prerequisite": "You have to have visited Alltrades Abbey.",
-      "repeat": false
+      "repeat": true
     },
     {
       "number": 27,
@@ -326,7 +326,7 @@
       "location": "Gleeba (Soldier in SW House in Gleeba).",
       "request": "Bring him 5 Grubby Bandages.",
       "solution": "They can be stolen from Mummy (#098) in the Plumbed Depths in Gleeba.",
-      "reward": "Ruby of Protection (Corundum for repeat).",
+      "reward": "Ruby of Protection; Corundum for repeat.",
       "prerequisite": "None",
       "repeat": true
     },
@@ -392,7 +392,7 @@
       "location": "Swinedimples Academy (Girl inside the school, near the church).",
       "request": "Bring her Holy Water and 2 Royal Soils.",
       "solution": "Buy the Holy Water and get the Royal Soil from the spawn points.",
-      "reward": "Salute Party Trick (Thunderball for repeat).",
+      "reward": "Salute Party Trick; Thunderball for repeat.",
       "prerequisite": "None",
       "repeat": true
     },
@@ -403,7 +403,7 @@
       "location": "Pluvi Island (Small island southeast of Gleeba, Man inside a well).",
       "request": "Bring him 3 Belle Caps.",
       "solution": "Find them at spawn points.",
-      "reward": "Finessence (Magic Beast Horn for repeat).",
+      "reward": "Finessence; Magic Beast Horn for repeat.",
       "prerequisite": "None",
       "repeat": true
     },
@@ -414,7 +414,7 @@
       "location": "Wormwood Creek (Man inside weapons shop).",
       "request": "Give a scarf to 3 types of Sanguini.",
       "solution": "Defeat each Sanguini until they accept the scarf. Teeny Sanguini (#003) is by Angel Falls, Pink Sanguini (#080) is by Bloomingdale and the Genie Sanguini (#189) is on a small island north of the lake by Stornway.",
-      "reward": "Elfin Elixir (Mystifying Mixture for repeat).",
+      "reward": "Elfin Elixir; Mystifying Mixture for repeat.",
       "prerequisite": "None",
       "repeat": true
     },
@@ -447,7 +447,7 @@
       "location": "Angel Falls (Professor by the well).",
       "request": "Bring him a Goododendron which is dropped by Slime (#001).",
       "solution": "Defeat Slimes until you get the flower",
-      "reward": "Seed of Agility (Nectar for repeat).",
+      "reward": "Seed of Agility; Nectar for repeat.",
       "prerequisite": "Post-game",
       "repeat": true
     },
@@ -524,7 +524,7 @@
       "location": "Slurry Quay (Barrel at the dock).",
       "request": "Bring it Holy Water, Freshwater, and Magic Water.",
       "solution": "Buy the Holy Water and Magic Water from item shops and get Fresh Water from the spawn points.",
-      "reward": "Seed of Defence (Gleeban Guinea for repeat)",
+      "reward": "Seed of Defence; Gleeban Guinea for repeat.",
       "prerequisite": "Post-game",
       "repeat": true
     },
@@ -579,7 +579,7 @@
       "location": "Wormwood creek (Boy in item shop).",
       "request": "Get a Magmalice Handprint.",
       "solution": "Defeat Magmalice (#168) in Magmaroo until they drop the item.",
-      "reward": "Prince's Pea Coat (Bow Tie for repeat).",
+      "reward": "Prince's Pea Coat; Bow Tie for repeat.",
       "prerequisite": "Post-game",
       "repeat": true
     },
@@ -590,7 +590,7 @@
       "location": "Wormwood creek (Girl inside the inn).",
       "request": "Get a Mega Moai Headprint.",
       "solution": "Defeat mega moai (#167) in Magmaroo until they drop the item.",
-      "reward": "Princess's Robe (Pink Pearl for repeat).",
+      "reward": "Princess's Robe; Pink Pearl for repeat.",
       "prerequisite": "Post-game",
       "repeat": true
     },
@@ -612,7 +612,7 @@
       "location": "Island at eastern Stornway (Man in southern house).",
       "request": "Retrieve the Memento Necklace.",
       "solution": "After accepting the request, speak the man in the northern house at night to discover that the necklace was stolen by an Abyss Diver (#170). Keep fighting this monster near the four corners of the sea until it drops the item.",
-      "reward": "Seed of Defence (Strength Ring for repeat).",
+      "reward": "Seed of Defence; Strength Ring for repeat.",
       "prerequisite": "Post-game and Sterling's Whistle",
       "repeat": true
     },
@@ -623,7 +623,7 @@
       "location": "Island at eastern Stornway (Man in northern house).",
       "request": "Retrieve the Memento Necklace.",
       "solution": "At night speak to the man in the southern house to find out that a Pink Sanguini (#080) stole the necklace. Defeat them in Bloomingdale until the item drops.",
-      "reward": "Seed of Agility (Agility Ring for repeat).",
+      "reward": "Seed of Agility; Agility Ring for repeat.",
       "prerequisite": "Post-game and Sterling's Whistle",
       "repeat": true
     },
@@ -765,7 +765,7 @@
       "story": false,
       "location": "Swinedimples Academy (Bench to the west in the courtyard).",
       "request": "Bring Molten Magma and Toad Oil to the Old Man.",
-      "solution": "Toad Oil is easily acquired by defeating Blastoads or their Alts as well as Snail Monsters. The Molten Magma is a special Item, which will only drop after accepting the Quest. It can be found by defeating Live Lavas at the Magmaroo.",
+      "solution": "Molten Magma by",
       "reward": "Wands and beyond (The Zing Stick Ability).",
       "prerequisite": "Quest #69 must have been beaten and a Party Member with 100 Wand Skill.",
       "repeat": false
@@ -785,8 +785,8 @@
       "number": 72,
       "name": "Jump for Joy",
       "story": false,
-      "location": "Swinedimples Academy (Blond man in western hallway in the school)",
-      "request": "Defeat Nemean with a normal attack while equipped with a Laundry Pole to receive the Staff Scroll.",
+      "location": "Swinedimples Academy (Blond man in western hallway in the school at night.)",
+      "request": "Defeat Nemean with a normal attack while equipped with a Laundry Pole to receive the Staff Scroll. Then return to Paulo at night to complete the quest.",
       "solution": "Buy the weapon in Stornway and Nemean (#284) is a low level grotto boss. Do about 2500 damage to him until you start hitting him with the Laundry Pole.",
       "reward": "Staff Studies (Counter Wait ability)",
       "prerequisite": "Finish Quest 71, Staff Skill 100, Access to low level grottos",
@@ -1062,7 +1062,7 @@
       "story": false,
       "location": "Alltrades Abbey (Martial Artist at the entrance)",
       "request": "Defeat 5 Scarewolves (#081) while they are scared with the Martial Artist's War Cry skill.",
-      "solution": "Fight them around Bloomingdale. They must be defeated in the same round they are stricken with fear.",
+      "solution": "Fight them around Bloomingdale. They must be defeated in the same round they are stricken with fear. If you are attempting this whilst solo, you can use tanglewebs to lower agility but otherwise good luck.",
       "reward": "Slick Slacks",
       "prerequisite": "Lv 15 Martial Artist",
       "repeat": false
@@ -1073,7 +1073,7 @@
       "story": false,
       "location": "Alltrades Abbey (Old man at the entrance)",
       "request": "Defeat three Golems (#161) with normal critical hits. Thunder Thrust and Hatchet Man do not count.",
-      "solution": "Fight them around the Lonely Coast or near Upover.",
+      "solution": "Fight them around the Lonely Coast or near Upover. Switch vocation to Ranger for highest natural deftness which will help with critical hit rate.",
       "reward": "\"Martial Artist's Manual\": Tension Saver ability",
       "prerequisite": "Finish Quest 97, Lv 40 Martial Artist",
       "repeat": false
@@ -1226,7 +1226,7 @@
       "name": "Ranger Changer",
       "story": false,
       "location": "Heights of Loneliness Entrance (The man at the entrance)",
-      "request": "Defeat 3 Hocus Chimaerae with Knife Skill, Toxic Dagger. They must die with poison damage.",
+      "request": "Defeat 3 Hocus Chimaeras with Knife Skill, Toxic Dagger. They must die with poison damage.",
       "solution": "Poison the enemy as soon as you can. Attack with a weak character and do about 50 damage to them. They will use Midheal so you may have to wait until they run out of MP before they finally die from poison damage.",
       "reward": "Ranger Vocation Unlocked",
       "prerequisite": "Toxic Dagger",
@@ -1260,7 +1260,7 @@
       "story": false,
       "location": "Gittingham Palace (Bookshelf on 2F)",
       "request": "Defeat 5 Great Trolls (#196) with the Mage's spell, Frizz.",
-      "solution": "You can find them in the Realm of the Mighty. Do about 700 damage to them before you start using Frizz.",
+      "solution": "You can find them in the Realm of the Mighty. Do about 600 damage to them before you start using Frizz.",
       "reward": "Sage Vocation Unlocked",
       "prerequisite": "Frizz",
       "repeat": false
@@ -1416,7 +1416,7 @@
       "request": "Help her unlock the book.",
       "solution": "Talk to the old man in Stornway's item shop. Clear a grotto with \"Silver\" in its title for the Little Key. Report back to the princess who is now in her room.",
       "reward": "Royal Regards Party Trick",
-      "prerequisite": "",
+      "prerequisite": "DLC, Finish Quests 23 and 127, Access to a Silver grotto",
       "repeat": false
     },
     {
@@ -1522,10 +1522,10 @@
       "number": 139,
       "name": "Has Sellma Sold Out?",
       "story": true,
-      "location": "Stornway (Talk to Erinn from behind the counter in the inn)",
+      "location": "Stornway (Talk to Sellma from behind the counter in the inn)",
       "request": "Help Sellma.",
       "solution": "Talk to Sellma, then the banker from behind the counter. You should get the Guestbook. Now talk to Erinn and Sellma and leave for Gleeba. At Gleeba go into the Plumbed Depths and go through the magic door. Make your way to the graveyard and access the secret stairs to B3 to fight Rover (#279). Report back to Erinn.",
-      "reward": "Sellma joins your part",
+      "reward": "Sellma joins your party",
       "prerequisite": "DLC, Finish Quest 125",
       "repeat": false
     },
@@ -1601,7 +1601,7 @@
       "story": true,
       "location": "Inside the Starflight Express; Talk to Stella",
       "request": "Make her a new outfit.",
-      "solution": "Bring her a Butterfly Wing, Technicolour Tutu, Sleeping Hibiscus and",
+      "solution": "Bring her a Butterfly Wing, Technicolour Tutu, Sleeping Hibiscus and Mythril Ore.",
       "reward": "Stellar Suit",
       "prerequisite": "DLC, Sterling's Whistle",
       "repeat": false
@@ -1623,7 +1623,7 @@
       "story": true,
       "location": "Inside the Starflight Express (Talk to Stella)",
       "request": "Help a girl in the inn at Dourbridge by giving her Stellar Medicine.",
-      "solution": "Talk to the girl in the inn after accepting the quest. Bring Stella an Elfin Elixer, Perfect Panacea, Special Medicine and a Yggdrasil Bud. Fly to the Yggrdrasil spawn point to receive the Bud and use the Alchemy Pot to get the rest. Talk to Stella in the Starflight when you have everything. Bring the Stellar Medicine to the girl and report back to Stella in the Starflight.",
+      "solution": "Talk to the girl in the inn after accepting the quest. Bring Stella an Elfin Elixir, Perfect Panacea, Special Medicine and a Yggdrasil Bud. Fly to the Yggrdrasil spawn point to receive the Bud and use the Alchemy Pot to get the rest. Talk to Stella in the Starflight when you have everything. Bring the Stellar Medicine to the girl and report back to Stella in the Starflight.",
       "reward": "Stellar Stockings and Blahnolo Maniks",
       "prerequisite": "DLC, Finish Quest 147",
       "repeat": false
@@ -1744,7 +1744,7 @@
       "story": true,
       "location": "Wormwood Creek (Mayor in his house)",
       "request": "Bring 5 Sleeping Hibiscus and 2 Celestial Skeins to the girl in the cave north of Wormwood Creek.",
-      "solution": "Buy the Sleeping Hibiscus in Bloomingdale & use the Alchemy Pot for the Yggdrasil Dew. Bring these to the girl and report to the mayor.",
+      "solution": "Buy the Sleeping Hibiscus in Bloomingdale & use the Alchemy Pot for the Celestial Skeins. Bring these to the girl and report to the mayor.",
       "reward": "3 Mini Medals",
       "prerequisite": "DLC",
       "repeat": false
@@ -1986,7 +1986,7 @@
       "story": false,
       "location": "Tower of Nod, north of Coffinwell (Man south of the tower)",
       "request": "Equip Borya's Bouffant, Borya's Robe and Borya's Boots.",
-      "solution": "Talk to Borya, make your birthday the same date as today and talk to him again, and make you hero a mage and talk to him one more time for the last piece of equipment.",
+      "solution": "Talk to Borya, make your birthday the same date as today and talk to him again, and make your hero a mage and talk to him one more time for the last piece of equipment.",
       "reward": "Depressing Shoes",
       "prerequisite": "DLC",
       "repeat": false

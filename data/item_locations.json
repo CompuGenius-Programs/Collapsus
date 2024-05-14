@@ -1,0 +1,3048 @@
+{
+  "locations": [
+    {
+      "result": "ace of clubs",
+      "location": [
+        "quest #132",
+        "gigantes"
+      ]
+    },
+    {
+      "result": "agate of evolution",
+      "location": [
+        "quest #178"
+      ]
+    },
+    {
+      "result": "aggressence",
+      "location": [
+        "rank e grotto chest",
+        "hammibal",
+        "yore"
+      ]
+    },
+    {
+      "result": "agility ring",
+      "location": [
+        "quest #57",
+        "rank g grotto chest",
+        "cyclown",
+        "goresby-purrvis",
+        "liquid metal slime",
+        "whirly girly"
+      ]
+    },
+    {
+      "result": "angel bell",
+      "location": [
+        "bloomingdale shop",
+        "dourbridge shop",
+        "gleeba shop",
+        "goretress shop",
+        "porth llaffan shop",
+        "slurry quay shop",
+        "upover shop",
+        "wormwood creek shop",
+        "rank h grotto chest",
+        "chariot chappie",
+        "lost soul"
+      ]
+    },
+    {
+      "result": "angel's bow",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "angel's robe",
+      "location": [
+        "tyrannosaurus wrecks"
+      ]
+    },
+    {
+      "result": "antidotal herb",
+      "location": [
+        "angel falls shop",
+        "batsureg shop",
+        "bloomingdale shop",
+        "coffinwell shop",
+        "dourbridge shop",
+        "gleeba shop",
+        "goretress shop",
+        "porth llaffan shop",
+        "slurry quay shop",
+        "stornway shop",
+        "swinedimples academy shop",
+        "upover shop",
+        "wormwood creek shop",
+        "rank i grotto chest",
+        "bodkin fletcher",
+        "bubble slime",
+        "cruelcumber",
+        "gastropog",
+        "sacksquatch"
+      ]
+    },
+    {
+      "result": "apprentice's gloves",
+      "location": [
+        "shogum"
+      ]
+    },
+    {
+      "result": "archer's armguard",
+      "location": [
+        "batsureg shop"
+      ]
+    },
+    {
+      "result": "ascetic robe",
+      "location": [
+        "quest #93",
+        "wight priest"
+      ]
+    },
+    {
+      "result": "assassin's dagger",
+      "location": [
+        "apeckalypse",
+        "raving reaper"
+      ]
+    },
+    {
+      "result": "astral plume",
+      "location": [
+        "quest #121",
+        "rank a grotto chest",
+        "rank d grotto chest"
+      ]
+    },
+    {
+      "result": "bad axe",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "bandana",
+      "location": [
+        "angel falls shop",
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "battle axe",
+      "location": [
+        "batsureg shop",
+        "gleeba shop",
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "battle fork",
+      "location": [
+        "bloomingdale shop",
+        "gleeba shop",
+        "deadcurion"
+      ]
+    },
+    {
+      "result": "beast claws",
+      "location": [
+        "rank b grotto chest",
+        "vermil lion"
+      ]
+    },
+    {
+      "result": "belle cap",
+      "location": [
+        "eastern wormwood",
+        "morphean mushroom",
+        "mushroom mage",
+        "western coffinwell"
+      ]
+    },
+    {
+      "result": "billowing bow",
+      "location": [
+        "quest #83"
+      ]
+    },
+    {
+      "result": "blessed bindings",
+      "location": [
+        "quest #140"
+      ]
+    },
+    {
+      "result": "blowy bow",
+      "location": [
+        "upover shop",
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "blue orb",
+      "location": [
+        "quest #180",
+        "nimzo",
+        "nokturnus",
+        "orgodemir"
+      ]
+    },
+    {
+      "result": "boomer briefs",
+      "location": [
+        "dourbridge shop",
+        "porth llaffan shop",
+        "slurry quay shop",
+        "boss troll",
+        "toxic zombie"
+      ]
+    },
+    {
+      "result": "boomerang",
+      "location": [
+        "porth llaffan shop"
+      ]
+    },
+    {
+      "result": "boss shield",
+      "location": [
+        "dourbridge shop",
+        "freaky tiki"
+      ]
+    },
+    {
+      "result": "bow tie",
+      "location": [
+        "dourbridge shop",
+        "gleeba shop",
+        "slurry quay shop",
+        "quest #53",
+        "expload"
+      ]
+    },
+    {
+      "result": "boxer shorts",
+      "location": [
+        "sacksquatch"
+      ]
+    },
+    {
+      "result": "brahman boots",
+      "location": [
+        "quest #140"
+      ]
+    },
+    {
+      "result": "brain drainer",
+      "location": [
+        "sir sanguinus"
+      ]
+    },
+    {
+      "result": "brainy bracer",
+      "location": [
+        "quest #140",
+        "quest #45"
+      ]
+    },
+    {
+      "result": "bright staff",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "brighten rock",
+      "location": [
+        "quest #142",
+        "cosmic chimaera",
+        "djust desert",
+        "goodybag",
+        "rashaverak",
+        "wormwood canyon"
+      ]
+    },
+    {
+      "result": "bronze knife",
+      "location": [
+        "coffinwell shop",
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "bruiser's bracers",
+      "location": [
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "bunny tail",
+      "location": [
+        "porth llaffan shop",
+        "zere shop",
+        "rank i grotto chest"
+      ]
+    },
+    {
+      "result": "butterfly wing",
+      "location": [
+        "batterfly",
+        "betterfly",
+        "dread admiral"
+      ]
+    },
+    {
+      "result": "cape of good karma",
+      "location": [
+        "quest #154"
+      ]
+    },
+    {
+      "result": "catholicon ring",
+      "location": [
+        "quest #143"
+      ]
+    },
+    {
+      "result": "cautery sword",
+      "location": [
+        "bloomingdale shop",
+        "dourbridge shop",
+        "axolhotl",
+        "grim grinner",
+        "infernal armour"
+      ]
+    },
+    {
+      "result": "celestial skein",
+      "location": [
+        "lleviathan"
+      ]
+    },
+    {
+      "result": "chain mail",
+      "location": [
+        "coffinwell shop",
+        "stornway shop",
+        "skeleton soldier"
+      ]
+    },
+    {
+      "result": "chain whip",
+      "location": [
+        "bloomingdale shop",
+        "gleeba shop"
+      ]
+    },
+    {
+      "result": "chronocrystal",
+      "location": [
+        "quest #173",
+        "lonely coast",
+        "tower of nod"
+      ]
+    },
+    {
+      "result": "circlet",
+      "location": [
+        "bloomingdale shop"
+      ]
+    },
+    {
+      "result": "clever clogs",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "cloak of evasion",
+      "location": [
+        "porth llaffan shop",
+        "sluggernaut",
+        "tearwolf"
+      ]
+    },
+    {
+      "result": "clogs",
+      "location": [
+        "coffinwell shop",
+        "zere shop",
+        "beakon"
+      ]
+    },
+    {
+      "result": "coagulant",
+      "location": [
+        "batsureg shop",
+        "upover shop",
+        "wormwood creek shop",
+        "betterfly",
+        "cumaulus",
+        "dread admiral",
+        "hell ni\u00f1o",
+        "treevil",
+        "western stornway"
+      ]
+    },
+    {
+      "result": "cobra claws",
+      "location": [
+        "stornway shop",
+        "hammer horror"
+      ]
+    },
+    {
+      "result": "cobra fan",
+      "location": [
+        "batsureg shop",
+        "seavern"
+      ]
+    },
+    {
+      "result": "corundum",
+      "location": [
+        "quest #30",
+        "rank g grotto chest",
+        "admirer"
+      ]
+    },
+    {
+      "result": "cotton gloves",
+      "location": [
+        "angel falls shop",
+        "stornway shop",
+        "wormwood creek chest",
+        "skeleton"
+      ]
+    },
+    {
+      "result": "cowpat",
+      "location": [
+        "bag o' laughs",
+        "mudraker",
+        "swinoceros",
+        "zere (region)"
+      ]
+    },
+    {
+      "result": "crimson coral",
+      "location": [
+        "belisha beakon",
+        "crabid",
+        "eastern wormwood",
+        "knocktopus",
+        "spinchilla"
+      ]
+    },
+    {
+      "result": "critical fan",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "crow's claws",
+      "location": [
+        "bloomingdale shop",
+        "gleeba shop",
+        "icikiller",
+        "weaken beakon"
+      ]
+    },
+    {
+      "result": "crown of clarity",
+      "location": [
+        "quest #164"
+      ]
+    },
+    {
+      "result": "dancer's costume",
+      "location": [
+        "porth llaffan shop"
+      ]
+    },
+    {
+      "result": "dangerous bikini top",
+      "location": [
+        "dourbridge shop"
+      ]
+    },
+    {
+      "result": "dangerous bustier",
+      "location": [
+        "rank e grotto chest"
+      ]
+    },
+    {
+      "result": "dangerous midriff wrap",
+      "location": [
+        "dourbridge shop"
+      ]
+    },
+    {
+      "result": "dark robe",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "dark shield",
+      "location": [
+        "fright knight",
+        "night knight"
+      ]
+    },
+    {
+      "result": "deadly nightblade",
+      "location": [
+        "bloomingdale shop",
+        "handsome crab"
+      ]
+    },
+    {
+      "result": "deft dagger",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "demon whip",
+      "location": [
+        "rank d grotto chest",
+        "alphyn"
+      ]
+    },
+    {
+      "result": "densinium",
+      "location": [
+        "rank c grotto chest",
+        "rank d grotto chest",
+        "drakulard",
+        "goreham-hogg",
+        "wishmaster"
+      ]
+    },
+    {
+      "result": "depressing shoes",
+      "location": [
+        "quest #181",
+        "rank c grotto chest",
+        "liquid metal slime"
+      ]
+    },
+    {
+      "result": "disturbin' turban",
+      "location": [
+        "gleeba shop"
+      ]
+    },
+    {
+      "result": "divine dagger",
+      "location": [
+        "coffinwell shop",
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "dragon claws",
+      "location": [
+        "upover shop",
+        "wormwood creek shop",
+        "drakulord",
+        "red dragon"
+      ]
+    },
+    {
+      "result": "dragon mail",
+      "location": [
+        "claws"
+      ]
+    },
+    {
+      "result": "dragon robe",
+      "location": [
+        "cap'n max meddlin' prize"
+      ]
+    },
+    {
+      "result": "dragon rod",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "dragon scale",
+      "location": [
+        "abyss diver",
+        "drakulard",
+        "drakularge",
+        "drakulord",
+        "equinox",
+        "grand lizzier",
+        "green dragon",
+        "greygnarl",
+        "mandrake major",
+        "mandrake marauder",
+        "mandrake marshal",
+        "mandrake monarch",
+        "nodoph",
+        "rashaverak",
+        "red dragon",
+        "riptide",
+        "seasaur",
+        "wyrtle",
+        "wyrtoise"
+      ]
+    },
+    {
+      "result": "dragon shield",
+      "location": [
+        "wonder wyrtle"
+      ]
+    },
+    {
+      "result": "dragon top",
+      "location": [
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "dragon trousers",
+      "location": [
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "dragonlord claws",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "dragonsbane",
+      "location": [
+        "wormwood creek shop",
+        "mandrake marshal"
+      ]
+    },
+    {
+      "result": "dragontail whip",
+      "location": [
+        "equinox"
+      ]
+    },
+    {
+      "result": "driller pillar",
+      "location": [
+        "batsureg shop",
+        "gleeba shop"
+      ]
+    },
+    {
+      "result": "eaglewing",
+      "location": [
+        "quest #85"
+      ]
+    },
+    {
+      "result": "edged boomerang",
+      "location": [
+        "batsureg shop",
+        "bloomingdale shop"
+      ]
+    },
+    {
+      "result": "elfin charm",
+      "location": [
+        "quest #27"
+      ]
+    },
+    {
+      "result": "elfin elixir",
+      "location": [
+        "quest #38",
+        "cap'n max meddlin' store",
+        "cobra cardinal"
+      ]
+    },
+    {
+      "result": "emerald moss",
+      "location": [
+        "green dragon",
+        "lleviathan",
+        "salamarauder",
+        "western wormwood"
+      ]
+    },
+    {
+      "result": "enchanted stone",
+      "location": [
+        "quest #60",
+        "rank b grotto chest",
+        "larstastnaras"
+      ]
+    },
+    {
+      "result": "ethereal stone",
+      "location": [
+        "quest #51",
+        "rank a grotto chest",
+        "gadrongo"
+      ]
+    },
+    {
+      "result": "evencloth",
+      "location": [
+        "dark skeleton",
+        "djust desert",
+        "geothaum",
+        "ondor cliffs",
+        "ragged reaper"
+      ]
+    },
+    {
+      "result": "falcon blade",
+      "location": [
+        "stornway shop",
+        "prime slime",
+        "slionheart"
+      ]
+    },
+    {
+      "result": "feather fan",
+      "location": [
+        "angel falls shop",
+        "stornway shop",
+        "mecha-mynah"
+      ]
+    },
+    {
+      "result": "feather headband",
+      "location": [
+        "bloomingdale shop"
+      ]
+    },
+    {
+      "result": "feathered cap",
+      "location": [
+        "porth llaffan shop"
+      ]
+    },
+    {
+      "result": "feline fan",
+      "location": [
+        "swinedimples academy shop"
+      ]
+    },
+    {
+      "result": "finessence",
+      "location": [
+        "quest #37",
+        "rank e grotto chest"
+      ]
+    },
+    {
+      "result": "fire blade",
+      "location": [
+        "upover shop",
+        "scarlet fever"
+      ]
+    },
+    {
+      "result": "fire claws",
+      "location": [
+        "upover shop",
+        "nemean"
+      ]
+    },
+    {
+      "result": "fishnet stockings",
+      "location": [
+        "dourbridge shop",
+        "slurry quay shop"
+      ]
+    },
+    {
+      "result": "fisticup",
+      "location": [
+        "rank g grotto chest",
+        "rank h grotto chest",
+        "morphean mushroom",
+        "mushroom mage",
+        "western stornway"
+      ]
+    },
+    {
+      "result": "fizzle foil",
+      "location": [
+        "goresby-purrvis"
+      ]
+    },
+    {
+      "result": "fizzle-retardant suit",
+      "location": [
+        "quest #95",
+        "cobra cardinal",
+        "python priest"
+      ]
+    },
+    {
+      "result": "flame shield",
+      "location": [
+        "bird of terrordise",
+        "hell ni\u00f1o"
+      ]
+    },
+    {
+      "result": "flamenco shirt",
+      "location": [
+        "quest #101"
+      ]
+    },
+    {
+      "result": "flametang boomerang",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "flintstone",
+      "location": [
+        "rank f grotto chest",
+        "geothaum",
+        "golem",
+        "grinade",
+        "living statue",
+        "mad moai",
+        "stone golem",
+        "the gittish empire (region)"
+      ]
+    },
+    {
+      "result": "flowing dress",
+      "location": [
+        "cumulus hex"
+      ]
+    },
+    {
+      "result": "flurry feather",
+      "location": [
+        "bloomingdale (region)",
+        "chimaera",
+        "mt. ulbaruun",
+        "weaken beakon"
+      ]
+    },
+    {
+      "result": "foehn fan",
+      "location": [
+        "bloomingdale shop",
+        "dourbridge shop"
+      ]
+    },
+    {
+      "result": "fowl fan",
+      "location": [
+        "gleeba shop",
+        "bird of terrordise",
+        "terrorhawk"
+      ]
+    },
+    {
+      "result": "fresh water",
+      "location": [
+        "cheeky tiki",
+        "mt. ulzuun",
+        "slurry coast"
+      ]
+    },
+    {
+      "result": "friendly fan",
+      "location": [
+        "godsteed",
+        "tantamount"
+      ]
+    },
+    {
+      "result": "full moon ring",
+      "location": [
+        "quest #130"
+      ]
+    },
+    {
+      "result": "fur hood",
+      "location": [
+        "dourbridge shop",
+        "slurry quay shop"
+      ]
+    },
+    {
+      "result": "fur poncho",
+      "location": [
+        "great gruffon"
+      ]
+    },
+    {
+      "result": "fur vest",
+      "location": [
+        "cyclops"
+      ]
+    },
+    {
+      "result": "garish garb",
+      "location": [
+        "coffinwell shop",
+        "slugger"
+      ]
+    },
+    {
+      "result": "giant's hammer",
+      "location": [
+        "stornway shop",
+        "atlas"
+      ]
+    },
+    {
+      "result": "gladius",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "glass frit",
+      "location": [
+        "cyclown",
+        "djust desert",
+        "parched peckerel",
+        "power hammer",
+        "stale whale",
+        "wyrmwing"
+      ]
+    },
+    {
+      "result": "gloomy gloves",
+      "location": [
+        "quest #124"
+      ]
+    },
+    {
+      "result": "gold bar",
+      "location": [
+        "quest #161",
+        "rank b grotto chest",
+        "rank s grotto chest",
+        "au-1000",
+        "drakularge",
+        "gem jamboree",
+        "gem slime",
+        "pandora's box",
+        "tyrannosaurus wrecks"
+      ]
+    },
+    {
+      "result": "gold bracer",
+      "location": [
+        "dourbridge shop",
+        "porth llaffan shop",
+        "rank h grotto chest",
+        "cannibox"
+      ]
+    },
+    {
+      "result": "gold ring",
+      "location": [
+        "dourbridge shop",
+        "porth llaffan shop",
+        "stornway shop",
+        "rank h grotto chest",
+        "aggrosculpture",
+        "drackyma",
+        "gold golem",
+        "mimic"
+      ]
+    },
+    {
+      "result": "gold rosary",
+      "location": [
+        "lesionnaire",
+        "mimic",
+        "wight priest"
+      ]
+    },
+    {
+      "result": "great bow",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "green orb",
+      "location": [
+        "quest #169",
+        "estark",
+        "nokturnus",
+        "psaro"
+      ]
+    },
+    {
+      "result": "green tights",
+      "location": [
+        "batsureg shop"
+      ]
+    },
+    {
+      "result": "gringham whip",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "groundbreaker",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "grubby bandage",
+      "location": [
+        "blood mummy",
+        "mummy",
+        "mummy boy"
+      ]
+    },
+    {
+      "result": "gusterang",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "hades' helm",
+      "location": [
+        "rank d grotto chest",
+        "bad karmour",
+        "hell's gatekeeper"
+      ]
+    },
+    {
+      "result": "hairband",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "halberd",
+      "location": [
+        "quest #65",
+        "charmour"
+      ]
+    },
+    {
+      "result": "hallowed helm",
+      "location": [
+        "hammibal"
+      ]
+    },
+    {
+      "result": "handrills",
+      "location": [
+        "batsureg shop",
+        "gleeba shop",
+        "wormwood creek shop",
+        "corrupt carter",
+        "cyber spider",
+        "robo-robin",
+        "trauminator"
+      ]
+    },
+    {
+      "result": "headsman's axe",
+      "location": [
+        "dourbridge shop"
+      ]
+    },
+    {
+      "result": "heavy handwear",
+      "location": [
+        "dourbridge shop",
+        "hammer horror",
+        "sluggerslaught"
+      ]
+    },
+    {
+      "result": "hela's hammer",
+      "location": [
+        "quest #168",
+        "rank d grotto chest",
+        "hell's gatekeeper"
+      ]
+    },
+    {
+      "result": "hephaestus' flame",
+      "location": [
+        "rank d grotto chest",
+        "rank e grotto chest",
+        "flamin' drayman",
+        "magmalice",
+        "rockbomb"
+      ]
+    },
+    {
+      "result": "hero's boots",
+      "location": [
+        "trauminator"
+      ]
+    },
+    {
+      "result": "high heels",
+      "location": [
+        "dourbridge shop",
+        "stornway shop",
+        "morag"
+      ]
+    },
+    {
+      "result": "holy lance",
+      "location": [
+        "bloomingdale shop",
+        "dourbridge shop",
+        "gleeba shop",
+        "trigertaur"
+      ]
+    },
+    {
+      "result": "holy mail",
+      "location": [
+        "quest #107"
+      ]
+    },
+    {
+      "result": "holy water",
+      "location": [
+        "batsureg shop",
+        "bloomingdale shop",
+        "coffinwell shop",
+        "dourbridge shop",
+        "gleeba shop",
+        "goretress shop",
+        "porth llaffan shop",
+        "slurry quay shop",
+        "stornway shop",
+        "swinedimples academy shop",
+        "upover shop",
+        "wormwood creek shop",
+        "zere shop",
+        "rank i grotto chest",
+        "firespirit",
+        "lost soul",
+        "spirit",
+        "teeny sanguini",
+        "western coffinwell"
+      ]
+    },
+    {
+      "result": "horse manure",
+      "location": [
+        "godsteed",
+        "iluugazar plains",
+        "sick trigertaur",
+        "tantamount",
+        "white trigertaur"
+      ]
+    },
+    {
+      "result": "hunter's bow",
+      "location": [
+        "batsureg shop",
+        "hunter mech"
+      ]
+    },
+    {
+      "result": "hunter's hat",
+      "location": [
+        "batsureg shop"
+      ]
+    },
+    {
+      "result": "ice axe",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "ice crystal",
+      "location": [
+        "brrearthenwarrior",
+        "firn fiend",
+        "freezing fog",
+        "shivery shrubbery",
+        "snowberia",
+        "snowberian coast",
+        "uncommon cold"
+      ]
+    },
+    {
+      "result": "ice shield",
+      "location": [
+        "brrearthenwarrior",
+        "teaky mask"
+      ]
+    },
+    {
+      "result": "icicle dirk",
+      "location": [
+        "wormwood creek shop",
+        "quest #67",
+        "uncommon cold"
+      ]
+    },
+    {
+      "result": "invincible trousers",
+      "location": [
+        "nemean"
+      ]
+    },
+    {
+      "result": "iron armour",
+      "location": [
+        "porth llaffan shop",
+        "alltrades abbey merchant",
+        "restless armour"
+      ]
+    },
+    {
+      "result": "iron axe",
+      "location": [
+        "porth llaffan shop"
+      ]
+    },
+    {
+      "result": "iron bar",
+      "location": [
+        "bloomingdale shop",
+        "dourbridge shop"
+      ]
+    },
+    {
+      "result": "iron broadsword",
+      "location": [
+        "coffinwell shop",
+        "gum shield",
+        "restless armour",
+        "slime knight"
+      ]
+    },
+    {
+      "result": "iron claws",
+      "location": [
+        "coffinwell shop",
+        "stornway shop",
+        "bewarewolf"
+      ]
+    },
+    {
+      "result": "iron cuirass",
+      "location": [
+        "coffinwell shop",
+        "lesionnaire"
+      ]
+    },
+    {
+      "result": "iron fan",
+      "location": [
+        "coffinwell shop",
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "iron gauntlets",
+      "location": [
+        "coffinwell shop",
+        "porth llaffan shop",
+        "wight knight"
+      ]
+    },
+    {
+      "result": "iron helmet",
+      "location": [
+        "porth llaffan shop",
+        "axolhotl",
+        "metal slime knight"
+      ]
+    },
+    {
+      "result": "iron kneecaps",
+      "location": [
+        "coffinwell shop"
+      ]
+    },
+    {
+      "result": "iron lance",
+      "location": [
+        "coffinwell shop",
+        "stornway shop",
+        "chariot chappie"
+      ]
+    },
+    {
+      "result": "iron mask",
+      "location": [
+        "bloomingdale shop",
+        "rank h grotto chest",
+        "alarmour",
+        "deadcurion",
+        "harmour"
+      ]
+    },
+    {
+      "result": "iron nails",
+      "location": [
+        "rank h grotto chest",
+        "clockwork cuckoo",
+        "killing machine",
+        "shocktopus"
+      ]
+    },
+    {
+      "result": "iron ore",
+      "location": [
+        "rank g grotto chest",
+        "bad karmour",
+        "corrupt carter",
+        "hunter mech",
+        "lonely coast",
+        "robo-robin",
+        "western coffinewell"
+      ]
+    },
+    {
+      "result": "iron sabatons",
+      "location": [
+        "coffinwell shop",
+        "porth llaffan shop"
+      ]
+    },
+    {
+      "result": "iron shield",
+      "location": [
+        "alltrades abbey",
+        "salamarauder"
+      ]
+    },
+    {
+      "result": "iron spear",
+      "location": [
+        "coffinwell shop"
+      ]
+    },
+    {
+      "result": "iron whip",
+      "location": [
+        "batsureg shop",
+        "gleeba shop"
+      ]
+    },
+    {
+      "result": "kestrel claws",
+      "location": [
+        "quest #75"
+      ]
+    },
+    {
+      "result": "killer pillar",
+      "location": [
+        "quest #71"
+      ]
+    },
+    {
+      "result": "king axe",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "kitty litter",
+      "location": [
+        "clawcerer",
+        "djust desert",
+        "parched peckerel",
+        "power hammer",
+        "purrestidgitator"
+      ]
+    },
+    {
+      "result": "kitty shield",
+      "location": [
+        "quest #16"
+      ]
+    },
+    {
+      "result": "knockout rod",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "kung fu shoes",
+      "location": [
+        "bloomingdale shop"
+      ]
+    },
+    {
+      "result": "lambswool",
+      "location": [
+        "batsureg shop",
+        "wormwood creek shop",
+        "quest #126",
+        "battering ram",
+        "drackal",
+        "ram raider",
+        "rampage",
+        "stornway shop (chest)"
+      ]
+    },
+    {
+      "result": "laundry pole",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "lava lump",
+      "location": [
+        "rank h grotto chest",
+        "admirer",
+        "bagma",
+        "live lava",
+        "magmalice",
+        "master of nu'un",
+        "scarlet fever",
+        "terrorhawk"
+      ]
+    },
+    {
+      "result": "leather boots",
+      "location": [
+        "coffinwell shop",
+        "zere shop"
+      ]
+    },
+    {
+      "result": "leather cape",
+      "location": [
+        "zere shop",
+        "bodkin bowyer"
+      ]
+    },
+    {
+      "result": "leather hat",
+      "location": [
+        "stornway shop",
+        "zere shop",
+        "bodkin archer",
+        "bodkin bowyer"
+      ]
+    },
+    {
+      "result": "leather kilt",
+      "location": [
+        "coffinwell shop",
+        "zere shop",
+        "brownie",
+        "hammerhood"
+      ]
+    },
+    {
+      "result": "leather whip",
+      "location": [
+        "angel falls shop",
+        "stornway shop",
+        "lunatick"
+      ]
+    },
+    {
+      "result": "life ring",
+      "location": [
+        "quest #19"
+      ]
+    },
+    {
+      "result": "light gauntlets",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "light shield",
+      "location": [
+        "bloomingdale shop",
+        "dourbridge shop",
+        "gum shield",
+        "metal slime knight"
+      ]
+    },
+    {
+      "result": "lightning lance",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "lightning staff",
+      "location": [
+        "batsureg shop",
+        "gleeba shop",
+        "cumulus rex"
+      ]
+    },
+    {
+      "result": "long spear",
+      "location": [
+        "alltrades abbey",
+        "scourgette",
+        "zumeanie"
+      ]
+    },
+    {
+      "result": "loud trousers",
+      "location": [
+        "bloomingdale shop"
+      ]
+    },
+    {
+      "result": "lucida shard",
+      "location": [
+        "quest #61",
+        "rank c grotto chest",
+        "wormwood creek chest",
+        "cosmic chimaera"
+      ]
+    },
+    {
+      "result": "lunar fan",
+      "location": [
+        "quest #22"
+      ]
+    },
+    {
+      "result": "lunaria",
+      "location": [
+        "boogie manguini",
+        "prism peacock"
+      ]
+    },
+    {
+      "result": "magic armour",
+      "location": [
+        "gleeba shop",
+        "charmour",
+        "lethal armour"
+      ]
+    },
+    {
+      "result": "magic beast hide",
+      "location": [
+        "badboon",
+        "badger mager",
+        "badja",
+        "bewarewolf",
+        "big badboon",
+        "bling badger",
+        "boppin' badger",
+        "brainy badboon",
+        "claw hammer",
+        "dreadful drackal",
+        "hexagoon",
+        "knocktopus",
+        "master moosifer",
+        "moosifer",
+        "octagoon",
+        "rampage",
+        "rover",
+        "scarewolf",
+        "splatterhorn",
+        "swinoceros",
+        "tearwolf",
+        "trigertaur"
+      ]
+    },
+    {
+      "result": "magic beast horn",
+      "location": [
+        "quest #37",
+        "battering ram",
+        "claw hammer",
+        "dreadful drackal",
+        "knocktopus",
+        "rampage",
+        "seasaur",
+        "shocktopus",
+        "splatterhorn",
+        "swinoceros"
+      ]
+    },
+    {
+      "result": "magic mittens",
+      "location": [
+        "gleeba shop"
+      ]
+    },
+    {
+      "result": "magic shield",
+      "location": [
+        "gleeba shop",
+        "cheeky tiki",
+        "grim grinner"
+      ]
+    },
+    {
+      "result": "magic water",
+      "location": [
+        "batsureg shop",
+        "bloomingdale shop",
+        "dourbridge shop",
+        "gleeba shop",
+        "goretress shop",
+        "porth llaffan shop",
+        "slurry quay shop",
+        "swinedimples academy shop",
+        "upover shop",
+        "wormwood creek shop",
+        "rank e grotto chest",
+        "rank f grotto chest",
+        "rank i grotto chest",
+        "firespirit",
+        "jinkster",
+        "lunatick",
+        "magus"
+      ]
+    },
+    {
+      "result": "magical hat",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "magical mace",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "magical robes",
+      "location": [
+        "gleeba shop",
+        "shaman",
+        "sorcerer"
+      ]
+    },
+    {
+      "result": "magma staff",
+      "location": [
+        "live lava"
+      ]
+    },
+    {
+      "result": "mail coif",
+      "location": [
+        "batsureg shop"
+      ]
+    },
+    {
+      "result": "majestic mantle",
+      "location": [
+        "quest #12"
+      ]
+    },
+    {
+      "result": "malicite",
+      "location": [
+        "rank f grotto chest",
+        "blood mummy",
+        "grrrgoyle",
+        "hootingham-gore",
+        "mummy"
+      ]
+    },
+    {
+      "result": "manky mud",
+      "location": [
+        "rank f grotto chest",
+        "apeckalypse",
+        "ghoul",
+        "mortoad",
+        "stenchurion",
+        "the gittish empire",
+        "toxic zombie",
+        "walking corpse"
+      ]
+    },
+    {
+      "result": "mayoress's mittens",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "medicinal herb",
+      "location": [
+        "angel falls shop",
+        "batsureg shop",
+        "bloomingdale shop",
+        "coffinwell shop",
+        "dourbridge shop",
+        "gleeba shop",
+        "goretress shop",
+        "porth llaffan shop",
+        "slurry quay shop",
+        "stornway shop",
+        "swinedimples academy shop",
+        "upover shop",
+        "wormwood creek shop",
+        "zere shop",
+        "rank i grotto chest",
+        "boppin' badger",
+        "dracky",
+        "funghoul",
+        "healslime",
+        "she-slime",
+        "slime",
+        "slugger",
+        "sootheslime",
+        "teeny sanguini"
+      ]
+    },
+    {
+      "result": "megaton hammer",
+      "location": [
+        "rank b grotto chest"
+      ]
+    },
+    {
+      "result": "mental mittens",
+      "location": [
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "mercury's bandana",
+      "location": [
+        "quest #154",
+        "cap'n max meddlin' prize"
+      ]
+    },
+    {
+      "result": "metal slime armour",
+      "location": [
+        "rank a grotto chest"
+      ]
+    },
+    {
+      "result": "metal slime gauntlets",
+      "location": [
+        "rank a grotto chest"
+      ]
+    },
+    {
+      "result": "metal slime helm",
+      "location": [
+        "rank a grotto chest"
+      ]
+    },
+    {
+      "result": "metal slime shield",
+      "location": [
+        "quest #136",
+        "rank a grotto chest"
+      ]
+    },
+    {
+      "result": "metal slime sollerets",
+      "location": [
+        "rank a grotto chest"
+      ]
+    },
+    {
+      "result": "metal slime spear",
+      "location": [
+        "rank a grotto chest"
+      ]
+    },
+    {
+      "result": "metal slime sword",
+      "location": [
+        "quest #165",
+        "rank a grotto chest"
+      ]
+    },
+    {
+      "result": "meteorang",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "meteorite bracer",
+      "location": [
+        "cap'n max meddlin' prize"
+      ]
+    },
+    {
+      "result": "mighty armlet",
+      "location": [
+        "quest #128"
+      ]
+    },
+    {
+      "result": "miracle sword",
+      "location": [
+        "cap'n max meddlin' prize",
+        "shogum"
+      ]
+    },
+    {
+      "result": "mirror armour",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "mirrorstone",
+      "location": [
+        "rank f grotto chest",
+        "alphyn",
+        "mega moai"
+      ]
+    },
+    {
+      "result": "mistick",
+      "location": [
+        "upover shop",
+        "wormwood creek shop",
+        "cumulus hex"
+      ]
+    },
+    {
+      "result": "moon axe",
+      "location": [
+        "upover shop",
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "moonwort bulb",
+      "location": [
+        "batsureg shop",
+        "bloomingdale shop",
+        "coffinwell shop",
+        "dourbridge shop",
+        "gleeba shop",
+        "porth llaffan shop",
+        "slurry quay shop",
+        "swinedimples academy shop",
+        "upover shop",
+        "wormwood creek shop",
+        "zere shop",
+        "rank i grotto chest",
+        "badger mager",
+        "batterfly",
+        "cruelcumber",
+        "leafy larrikin",
+        "man o' war",
+        "pink sanguini"
+      ]
+    },
+    {
+      "result": "mystifying mixture",
+      "location": [
+        "quest #38",
+        "rank d grotto chest",
+        "mudraker"
+      ]
+    },
+    {
+      "result": "mythril ore",
+      "location": [
+        "quest #151",
+        "rank b grotto chest",
+        "rank d grotto chest",
+        "golem",
+        "metal medley",
+        "void droid",
+        "western coffinwell"
+      ]
+    },
+    {
+      "result": "narspicious",
+      "location": [
+        "rank e grotto chest",
+        "moai minstrel",
+        "sculpture vulture",
+        "shivery shrubbery",
+        "tyrannosaurus wrecks",
+        "western wormwood"
+      ]
+    },
+    {
+      "result": "nectar",
+      "location": [
+        "quest #41",
+        "rank f grotto chest",
+        "pink sanguini",
+        "snowberian coast"
+      ]
+    },
+    {
+      "result": "nightmare gown",
+      "location": [
+        "tower of nod"
+      ]
+    },
+    {
+      "result": "oaken club",
+      "location": [
+        "rank i grotto chest",
+        "boss troll",
+        "cyclops",
+        "hammerhood",
+        "troll"
+      ]
+    },
+    {
+      "result": "oaken pole",
+      "location": [
+        "coffinwell shop",
+        "alltrades abbey merchant"
+      ]
+    },
+    {
+      "result": "oh-no bow",
+      "location": [
+        "rank d grotto chest"
+      ]
+    },
+    {
+      "result": "orichalcum",
+      "location": [
+        "quest #144",
+        "quest #162",
+        "rank a grotto chest",
+        "rank s grotto chest",
+        "cap'n max meddlin' store",
+        "gem slime",
+        "greygnarl",
+        "metal king slime"
+      ]
+    },
+    {
+      "result": "panacea",
+      "location": [
+        "rank e grotto chest",
+        "blastoad",
+        "cureslime"
+      ]
+    },
+    {
+      "result": "partisan",
+      "location": [
+        "batsureg shop",
+        "swinedimples academy shop",
+        "sick trigertaur",
+        "stenchurion"
+      ]
+    },
+    {
+      "result": "pentarang",
+      "location": [
+        "rank b grotto chest"
+      ]
+    },
+    {
+      "result": "perfect panacea",
+      "location": [
+        "rank c grotto chest"
+      ]
+    },
+    {
+      "result": "pink pearl",
+      "location": [
+        "dourbridge shop",
+        "gleeba shop",
+        "quest #54",
+        "goodybag"
+      ]
+    },
+    {
+      "result": "pixie boots",
+      "location": [
+        "cap'n max meddlin' store"
+      ]
+    },
+    {
+      "result": "platinum headgear",
+      "location": [
+        "gleeba shop",
+        "shogum"
+      ]
+    },
+    {
+      "result": "platinum ore",
+      "location": [
+        "quest #28",
+        "drackal",
+        "octagoon",
+        "platinum king jewel",
+        "snowberian coast"
+      ]
+    },
+    {
+      "result": "platinum sword",
+      "location": [
+        "skeleton soldier"
+      ]
+    },
+    {
+      "result": "pointy hat",
+      "location": [
+        "dourbridge shop",
+        "slurry quay shop",
+        "jinkster",
+        "mean spirit"
+      ]
+    },
+    {
+      "result": "poison moth knife",
+      "location": [
+        "coffinwell shop",
+        "crabber dabber doo",
+        "king crab"
+      ]
+    },
+    {
+      "result": "poison needle",
+      "location": [
+        "bloomingdale shop",
+        "dourbridge shop",
+        "peckerel"
+      ]
+    },
+    {
+      "result": "poker",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "pop socks",
+      "location": [
+        "dourbridge shop",
+        "porth llaffan shop",
+        "rank i grotto chest"
+      ]
+    },
+    {
+      "result": "potshot bow",
+      "location": [
+        "batsureg shop",
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "power shield",
+      "location": [
+        "dourbridge shop",
+        "upover shop"
+      ]
+    },
+    {
+      "result": "prayer ring",
+      "location": [
+        "quest #17",
+        "cap'n max meddlin' store",
+        "genie sanguini",
+        "hocus chimaera"
+      ]
+    },
+    {
+      "result": "prince's pea coat",
+      "location": [
+        "quest #53"
+      ]
+    },
+    {
+      "result": "princess's robe",
+      "location": [
+        "quest #54"
+      ]
+    },
+    {
+      "result": "purblind bow",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "purple orb",
+      "location": [
+        "quest #182",
+        "dhoulmagus",
+        "nokturnus",
+        "rhapthorne"
+      ]
+    },
+    {
+      "result": "queen's whip",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "raging bull helm",
+      "location": [
+        "wormwood creek shop",
+        "barbatos"
+      ]
+    },
+    {
+      "result": "raging ruby",
+      "location": [
+        "quest #158",
+        "brainy badboon",
+        "drastic drackal",
+        "master moosifer",
+        "tyrannosaura wrecks"
+      ]
+    },
+    {
+      "result": "rapier",
+      "location": [
+        "coffinwell shop",
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "razor-wing boomerang",
+      "location": [
+        "batsureg shop",
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "reckless necklace",
+      "location": [
+        "rank a grotto chest"
+      ]
+    },
+    {
+      "result": "red orb",
+      "location": [
+        "quest #166",
+        "dragonlord",
+        "malroth",
+        "nokturnus"
+      ]
+    },
+    {
+      "result": "red tights",
+      "location": [
+        "gleeba shop",
+        "belisha beakon"
+      ]
+    },
+    {
+      "result": "reset stone",
+      "location": [
+        "quest #173",
+        "rank s grotto chest",
+        "cap'n max meddlin' store",
+        "firn fiend",
+        "stone guardian"
+      ]
+    },
+    {
+      "result": "resurrock",
+      "location": [
+        "quest #176",
+        "rank g grotto chest",
+        "grrrgoyle",
+        "handsome crab",
+        "living statue",
+        "sculpture vulture",
+        "stone golem",
+        "stone guardian"
+      ]
+    },
+    {
+      "result": "robe of serenity",
+      "location": [
+        "alltrades abbey"
+      ]
+    },
+    {
+      "result": "rockbomb shard",
+      "location": [
+        "quest #55",
+        "rank h grotto chest",
+        "bomboulder",
+        "flamin' drayman",
+        "grinade",
+        "rockbomb",
+        "scourgette"
+      ]
+    },
+    {
+      "result": "royal soil",
+      "location": [
+        "rank h grotto chest",
+        "barriearthenwarrior",
+        "drastic drackal",
+        "mad moai",
+        "ragin' contagion",
+        "terror troll"
+      ]
+    },
+    {
+      "result": "ruby of protection",
+      "location": [
+        "quest #30",
+        "king godfrey"
+      ]
+    },
+    {
+      "result": "ruinous shield",
+      "location": [
+        "rank c grotto chest",
+        "alarmour"
+      ]
+    },
+    {
+      "result": "rune staff",
+      "location": [
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "rusty armour",
+      "location": [
+        "quest #177"
+      ]
+    },
+    {
+      "result": "rusty gauntlets",
+      "location": [
+        "quest #178"
+      ]
+    },
+    {
+      "result": "rusty helmet",
+      "location": [
+        "cap'n max meddlin' prize"
+      ]
+    },
+    {
+      "result": "rusty shield",
+      "location": [
+        "quest #49"
+      ]
+    },
+    {
+      "result": "rusty sword",
+      "location": [
+        "realm of the mighty"
+      ]
+    },
+    {
+      "result": "sacred armour",
+      "location": [
+        "cap'n max meddlin' prize",
+        "sir sanguinus"
+      ]
+    },
+    {
+      "result": "sacred claws",
+      "location": [
+        "claws",
+        "scarewolf"
+      ]
+    },
+    {
+      "result": "safety shoes",
+      "location": [
+        "wormwood creek shop",
+        "gramarye gruffon"
+      ]
+    },
+    {
+      "result": "sagacious sandals",
+      "location": [
+        "freezing fog"
+      ]
+    },
+    {
+      "result": "sage's elixir",
+      "location": [
+        "rank a grotto chest",
+        "rank b grotto chest",
+        "rank c grotto chest",
+        "rank s grotto chest",
+        "dreadmaster",
+        "freezing fog",
+        "hootingham-gore"
+      ]
+    },
+    {
+      "result": "sage's robe",
+      "location": [
+        "quest #116"
+      ]
+    },
+    {
+      "result": "sage's staff",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "saint's ashes",
+      "location": [
+        "quest #177",
+        "quest #21",
+        "rank c grotto chest",
+        "rank f grotto chest",
+        "cap'n max meddlin' store",
+        "genie sanguini",
+        "sculptrice",
+        "seavern"
+      ]
+    },
+    {
+      "result": "sainted soma",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "sandstorm spear",
+      "location": [
+        "batsureg shop",
+        "gleeba shop",
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "scale armour",
+      "location": [
+        "stornway shop",
+        "icikiller"
+      ]
+    },
+    {
+      "result": "scale shield",
+      "location": [
+        "stornway shop",
+        "zere shop",
+        "earthenwarrior"
+      ]
+    },
+    {
+      "result": "seashell",
+      "location": [
+        "crabber dabber doo",
+        "eastern stornway",
+        "hermany",
+        "spinchilla"
+      ]
+    },
+    {
+      "result": "sensible sandals",
+      "location": [
+        "elusid"
+      ]
+    },
+    {
+      "result": "short bow",
+      "location": [
+        "porth llaffan shop"
+      ]
+    },
+    {
+      "result": "silk robe",
+      "location": [
+        "stornway shop",
+        "zere shop",
+        "mean spirit",
+        "meowgician",
+        "spirit"
+      ]
+    },
+    {
+      "result": "silver mail",
+      "location": [
+        "bloomingdale shop",
+        "harmour",
+        "infernal armour"
+      ]
+    },
+    {
+      "result": "silver orb",
+      "location": [
+        "quest #153",
+        "baramos",
+        "nokturnus",
+        "zoma"
+      ]
+    },
+    {
+      "result": "silver platter",
+      "location": [
+        "quest #28",
+        "rank h grotto chest"
+      ]
+    },
+    {
+      "result": "silver tiara",
+      "location": [
+        "porth llaffan shop"
+      ]
+    },
+    {
+      "result": "siren sandals",
+      "location": [
+        "bloomingdale shop"
+      ]
+    },
+    {
+      "result": "skull helm",
+      "location": [
+        "blight knight",
+        "night knight"
+      ]
+    },
+    {
+      "result": "skull ring",
+      "location": [
+        "rank d grotto chest",
+        "aggrosculpture"
+      ]
+    },
+    {
+      "result": "sleeping hibiscus",
+      "location": [
+        "quest #1",
+        "eastern wormwood",
+        "funghoul",
+        "king crab",
+        "ram raider"
+      ]
+    },
+    {
+      "result": "sleepy stick",
+      "location": [
+        "batsureg shop"
+      ]
+    },
+    {
+      "result": "slime crown",
+      "location": [
+        "quest #165",
+        "king cureslime",
+        "king slime",
+        "metal king slime"
+      ]
+    },
+    {
+      "result": "slime earrings",
+      "location": [
+        "dourbridge shop",
+        "porth llaffan shop",
+        "slime stack"
+      ]
+    },
+    {
+      "result": "slimedrop",
+      "location": [
+        "bubble slime",
+        "cureslime",
+        "darkonium slime",
+        "healslime",
+        "king cureslime",
+        "king slime",
+        "medislime",
+        "metal medley",
+        "she-slime",
+        "slime",
+        "slime knight",
+        "slime stack",
+        "sootheslime"
+      ]
+    },
+    {
+      "result": "slipweed",
+      "location": [
+        "eastern coffinwell",
+        "western wormwood"
+      ]
+    },
+    {
+      "result": "smart suit",
+      "location": [
+        "bloomingdale shop",
+        "dark skeleton"
+      ]
+    },
+    {
+      "result": "snakeskin",
+      "location": [
+        "quest #26",
+        "diethon",
+        "flython",
+        "sail serpent"
+      ]
+    },
+    {
+      "result": "snakeskin whip",
+      "location": [
+        "bloomingdale shop",
+        "dourbridge shop",
+        "sail serpent"
+      ]
+    },
+    {
+      "result": "softwort",
+      "location": [
+        "bloomingdale shop",
+        "bagma",
+        "bud brother",
+        "man o' war"
+      ]
+    },
+    {
+      "result": "soldier's sword",
+      "location": [
+        "angel falls shop",
+        "stornway shop",
+        "earthenwarrior",
+        "wooper trooper"
+      ]
+    },
+    {
+      "result": "sorcerer's ring",
+      "location": [
+        "quest #164"
+      ]
+    },
+    {
+      "result": "sorcerer's stone",
+      "location": [
+        "quest #166",
+        "rank f grotto chest"
+      ]
+    },
+    {
+      "result": "spangled dress",
+      "location": [
+        "bloomingdale shop",
+        "cannibelle"
+      ]
+    },
+    {
+      "result": "special medicine",
+      "location": [
+        "badja",
+        "great troll"
+      ]
+    },
+    {
+      "result": "spiked armour",
+      "location": [
+        "gloomy gastropog"
+      ]
+    },
+    {
+      "result": "spiked steel whip",
+      "location": [
+        "quest #73"
+      ]
+    },
+    {
+      "result": "spirit bracer",
+      "location": [
+        "quest #155"
+      ]
+    },
+    {
+      "result": "spring breeze hat",
+      "location": [
+        "fowleye"
+      ]
+    },
+    {
+      "result": "staff of sentencing",
+      "location": [
+        "coffinwell shop",
+        "clawcerer"
+      ]
+    },
+    {
+      "result": "star's suit",
+      "location": [
+        "quest #119",
+        "elusid"
+      ]
+    },
+    {
+      "result": "stardust sword",
+      "location": [
+        "rank s grotto chest"
+      ]
+    },
+    {
+      "result": "stellar fan",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "stiletto heels",
+      "location": [
+        "quest #20"
+      ]
+    },
+    {
+      "result": "stolos' staff",
+      "location": [
+        "bloomingdale shop",
+        "dourbridge shop",
+        "purrestidgitator"
+      ]
+    },
+    {
+      "result": "strength ring",
+      "location": [
+        "quest #56",
+        "rank g grotto chest",
+        "big badboon",
+        "gigantes",
+        "walking corpse"
+      ]
+    },
+    {
+      "result": "strong antidote",
+      "location": [
+        "gleeba shop",
+        "upover shop",
+        "rank h grotto chest",
+        "peckerel",
+        "raving lunatick",
+        "treeface"
+      ]
+    },
+    {
+      "result": "strong medicine",
+      "location": [
+        "batsureg shop",
+        "gleeba shop",
+        "upover shop",
+        "wormwood creek shop",
+        "rank i grotto chest",
+        "badboon",
+        "bag o' laughs",
+        "leafy larrikin",
+        "medislime",
+        "metal slime",
+        "treeface",
+        "zumeanie"
+      ]
+    },
+    {
+      "result": "strongsam",
+      "location": [
+        "batsureg shop"
+      ]
+    },
+    {
+      "result": "sturdy slacks",
+      "location": [
+        "dourbridge shop"
+      ]
+    },
+    {
+      "result": "superior medicine",
+      "location": [
+        "bloomingdale shop",
+        "rank h grotto chest",
+        "bud brother",
+        "eastern wormwood",
+        "pale whale",
+        "treevil"
+      ]
+    },
+    {
+      "result": "swallowtail",
+      "location": [
+        "upover shop",
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "sword breaker",
+      "location": [
+        "upover shop",
+        "fright knight"
+      ]
+    },
+    {
+      "result": "tangleweb",
+      "location": [
+        "batsureg shop",
+        "upover shop",
+        "wormwood creek shop",
+        "cumaulus",
+        "cyber spider",
+        "tyrantula",
+        "widow's pique"
+      ]
+    },
+    {
+      "result": "tantric trousers",
+      "location": [
+        "quest #140"
+      ]
+    },
+    {
+      "result": "technicolour dreamcloth",
+      "location": [
+        "quest #152"
+      ]
+    },
+    {
+      "result": "terra firmer",
+      "location": [
+        "quest #81"
+      ]
+    },
+    {
+      "result": "terra tamper",
+      "location": [
+        "upover shop"
+      ]
+    },
+    {
+      "result": "terrible tattoo",
+      "location": [
+        "barbatos",
+        "bloody manguini",
+        "freaky tiki",
+        "garth goyle",
+        "gruffon",
+        "manguini"
+      ]
+    },
+    {
+      "result": "thief's turban",
+      "location": [
+        "raving reaper"
+      ]
+    },
+    {
+      "result": "thinkincense",
+      "location": [
+        "cringle coast",
+        "western wormwood",
+        "wyrmtail"
+      ]
+    },
+    {
+      "result": "thinking cap",
+      "location": [
+        "swinedimples academy shop",
+        "wormwood creek shop",
+        "darkonium slime"
+      ]
+    },
+    {
+      "result": "thunderball",
+      "location": [
+        "quest #36",
+        "cumulus rex",
+        "cumulus vex",
+        "hermany",
+        "wyrmwing"
+      ]
+    },
+    {
+      "result": "tint-tastic tutu",
+      "location": [
+        "stornway shop",
+        "prism peacock"
+      ]
+    },
+    {
+      "result": "toad oil",
+      "location": [
+        "quest #24",
+        "rank g grotto chest",
+        "blastoad",
+        "expload",
+        "gastropog",
+        "giddy gastropog",
+        "gloomy gastropog",
+        "mortoad"
+      ]
+    },
+    {
+      "result": "tortoiseshell",
+      "location": [
+        "dourbridge shop",
+        "porth llaffan shop",
+        "slurry quay shop",
+        "crabid",
+        "wonder wyrtle",
+        "wyrtle",
+        "wyrtoise"
+      ]
+    },
+    {
+      "result": "tortoiseshell fan",
+      "location": [
+        "bloomingdale shop"
+      ]
+    },
+    {
+      "result": "tough guy tattoo",
+      "location": [
+        "quest #89",
+        "atlas",
+        "claw hammer",
+        "ghoul",
+        "goreham-hogg",
+        "mega moai"
+      ]
+    },
+    {
+      "result": "training top",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "training trousers",
+      "location": [
+        "stornway shop"
+      ]
+    },
+    {
+      "result": "trident",
+      "location": [
+        "stale whale"
+      ]
+    },
+    {
+      "result": "tropotoga",
+      "location": [
+        "atlas"
+      ]
+    },
+    {
+      "result": "turban",
+      "location": [
+        "coffinwell shop",
+        "mummy boy"
+      ]
+    },
+    {
+      "result": "tussler's top",
+      "location": [
+        "bloomingdale shop"
+      ]
+    },
+    {
+      "result": "tussler's trousers",
+      "location": [
+        "bloomingdale shop"
+      ]
+    },
+    {
+      "result": "ultramarine mittens",
+      "location": [
+        "shaman"
+      ]
+    },
+    {
+      "result": "unhappy hat",
+      "location": [
+        "quest #11",
+        "rank c grotto chest"
+      ]
+    },
+    {
+      "result": "utility belt",
+      "location": [
+        "quest #14"
+      ]
+    },
+    {
+      "result": "valkyrie sword",
+      "location": [
+        "batsureg shop",
+        "wormwood creek shop",
+        "prime slime"
+      ]
+    },
+    {
+      "result": "velvet cape",
+      "location": [
+        "gleeba shop"
+      ]
+    },
+    {
+      "result": "vesta gauntlets",
+      "location": [
+        "equinox"
+      ]
+    },
+    {
+      "result": "victorious armour",
+      "location": [
+        "excalipurr"
+      ]
+    },
+    {
+      "result": "wakerobin",
+      "location": [
+        "bloomingdale shop"
+      ]
+    },
+    {
+      "result": "war fan",
+      "location": [
+        "coffinwell shop"
+      ]
+    },
+    {
+      "result": "war hammer",
+      "location": [
+        "batsureg shop",
+        "gleeba shop",
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "warrior's helm",
+      "location": [
+        "bloomingdale shop"
+      ]
+    },
+    {
+      "result": "warrior's shield",
+      "location": [
+        "wormwood creek shop"
+      ]
+    },
+    {
+      "result": "warrior's sword",
+      "location": [
+        "quest #63",
+        "barriearthenwarrior"
+      ]
+    },
+    {
+      "result": "watermaul wand",
+      "location": [
+        "bloomingdale shop",
+        "gleeba shop",
+        "abyss diver",
+        "python priest",
+        "slugly betsy"
+      ]
+    },
+    {
+      "result": "white shield",
+      "location": [
+        "quest #87"
+      ]
+    },
+    {
+      "result": "white tiger fan",
+      "location": [
+        "quest #77"
+      ]
+    },
+    {
+      "result": "white tights",
+      "location": [
+        "swinedimples academy shop",
+        "nemean"
+      ]
+    },
+    {
+      "result": "wing of bat",
+      "location": [
+        "bloody manguini",
+        "boogie manguini",
+        "diethon",
+        "drackmage",
+        "drackyma",
+        "flython",
+        "gramarye gruffon",
+        "great gruffon",
+        "gruffon",
+        "manguini"
+      ]
+    },
+    {
+      "result": "wizard's staff",
+      "location": [
+        "coffinwell shop",
+        "stornway shop",
+        "blinkster",
+        "magus"
+      ]
+    },
+    {
+      "result": "wizard's trousers",
+      "location": [
+        "gleeba shop"
+      ]
+    },
+    {
+      "result": "wonder pants",
+      "location": [
+        "quest #179"
+      ]
+    },
+    {
+      "result": "yellow orb",
+      "location": [
+        "quest #175",
+        "mortamor (head)",
+        "murdaw",
+        "nokturnus"
+      ]
+    },
+    {
+      "result": "yggdrasil dew",
+      "location": [
+        "quest #123",
+        "quest #40",
+        "bomboulder"
+      ]
+    },
+    {
+      "result": "yggdrasil leaf",
+      "location": [
+        "quest #123",
+        "quest #160",
+        "rank s grotto chest",
+        "barbarus",
+        "bling badger",
+        "greygnarl"
+      ]
+    }
+  ]
+}

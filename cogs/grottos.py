@@ -13,6 +13,10 @@ from parsers import grotto_prefixes, grotto_environments, grotto_suffixes, trans
 from utils import create_embed, dev_tag, create_paginator, create_collage
 
 
+def setup(bot):
+    bot.add_cog(Grottos(bot))
+
+
 class Grottos(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -265,7 +269,3 @@ class Grottos(commands.Cog):
                     embed.add_field(name=language, value=translation, inline=False)
 
         return embed, translation_english[0], translation_english[1], translation_english[2]
-
-
-def setup(bot):
-    bot.add_cog(Grottos(bot))

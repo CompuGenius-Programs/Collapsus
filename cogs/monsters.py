@@ -67,14 +67,14 @@ class Monsters(commands.Cog):
 
             title = "%s - %s (Level: %s)" % (monster.number, titlecase(monster.name), monster.level)
             description = '''
-    **Family:** %s | **EXP:** %s | **Gold:** %s
+**Family:** %s | **EXP:** %s | **Gold:** %s
 
-    **HP:** %s | **MP:** %s | **ATK:** %s | **DEF:** %s | **AGI:** %s
+**HP:** %s | **MP:** %s | **ATK:** %s | **DEF:** %s | **AGI:** %s
 
-    **Fire:** %s | **Ice:** %s | **Wind:** %s
-    **Blast:** %s | **Earth:** %s | **Dark:** %s | **Light:** %s
+**Fire:** %s | **Ice:** %s | **Wind:** %s
+**Blast:** %s | **Earth:** %s | **Dark:** %s | **Light:** %s
 
-    **Haunts:** %s
+**Haunts:** %s
     ''' % (monster.family, monster.exp, monster.gold, monster.hp, monster.mp, monster.atk, monster.defn, monster.agi,
            monster.fire, monster.ice, monster.wind, monster.blast, monster.earth, monster.dark, monster.light,
            titlecase(monster.haunts))

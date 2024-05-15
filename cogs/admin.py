@@ -126,62 +126,62 @@ class Admin(commands.Cog):
                     try:
                         if migration["title"] == "Accolades":
                             first_part = """**Game Completion Accolades In order of Priority**:
-    ```yml
-    Light-Speed Champion - clear time under 12 hours
-    Jot to Trot - clear time 12-19 hours
-    Sleeper on the Job - clear time 228+ hours
-    Easy Rider - clear time 152-227:59 hours
-    Exterminator - win 1500 battles
-    Shopaholic - wardrobe collection at 50%
-    Pacifist - 250 or fewer battles
-    Socialite - multiplayer time is 50%+ of total time played
-    Philanthropist - 60 quests cleared
-    Cartographer - 30 grottos cleared
-    Mighty Inviter - 50 tags (or maybe it's multiplayer sessions)
-    Entitled Adventurer - 60 accolades
-    Completely Potty - alchemy 120 times
-    Zoologist - defeated monster list 75%+
-    Punchbag - party wiped out 24+ times
-    Snappy Dresser - wardrobe collection at 38-49%
-    Recipe Researcher - recipes at 30%+
-    Moneybags - 90000+ gold (carried money + bank)
-    Grievous Angel - party wiped out 16-23 times
-    Monster Masher - 1000-1499 battles
-    Fleet Completer - clear time 19-26:59 hours
-    Steady Eddie/Edwina - clear time 76-151:59 hours
-    Party Hopper - multiplayer is 30% but less than 50% total time played
-    Immaculate Completion - party wiped out 0 times
-    Guardian Angel/Lionheart/Sent from Above/Watched-over One/Storied Saviour: Default titles. They depend on your class/level when completing.```"""
+```yml
+Light-Speed Champion - clear time under 12 hours
+Jot to Trot - clear time 12-19 hours
+Sleeper on the Job - clear time 228+ hours
+Easy Rider - clear time 152-227:59 hours
+Exterminator - win 1500 battles
+Shopaholic - wardrobe collection at 50%
+Pacifist - 250 or fewer battles
+Socialite - multiplayer time is 50%+ of total time played
+Philanthropist - 60 quests cleared
+Cartographer - 30 grottos cleared
+Mighty Inviter - 50 tags (or maybe it's multiplayer sessions)
+Entitled Adventurer - 60 accolades
+Completely Potty - alchemy 120 times
+Zoologist - defeated monster list 75%+
+Punchbag - party wiped out 24+ times
+Snappy Dresser - wardrobe collection at 38-49%
+Recipe Researcher - recipes at 30%+
+Moneybags - 90000+ gold (carried money + bank)
+Grievous Angel - party wiped out 16-23 times
+Monster Masher - 1000-1499 battles
+Fleet Completer - clear time 19-26:59 hours
+Steady Eddie/Edwina - clear time 76-151:59 hours
+Party Hopper - multiplayer is 30% but less than 50% total time played
+Immaculate Completion - party wiped out 0 times
+Guardian Angel/Lionheart/Sent from Above/Watched-over One/Storied Saviour: Default titles. They depend on your class/level when completing.```"""
                             second_part = """**Grotto Accolades**:
-    ```yml
-    1: Celestial Sentinel -- Awarded to xxx on the occasion of his/her victory over various renowned denizens of the depths.
-    [Defeat all Legacy Bosses.]
-    
-    2: Heralded Hero/Heralded Heroine -- Awarded to xxx to commemorate his/her victory over a grotto boss of level 25 or above.
-    
-    3: Superhero/Superheroine -- Awarded to xxx to commemorate his/her victory over a grotto boss of level 50 or above.
-    
-    4: Heavenly Hero/Heavenly Heroine -- Awarded to xxx to commemorate his/her victory over a grotto boss of level 75 or above.
-    
-    5: Legendary Hero/Legendary Heroine -- Awarded to xxx to commemorate his/her victory over a grotto boss of level 99.
-    
-    6: Spelunker -- Presented to xxx for clearance of a grotto of level 25 or above.
-    
-    7: Spunky Spelunker -- Presented to xxx for clearance of a grotto of level 50 or above.
-    
-    8: Spelunking Specialist -- Presented to xxx for clearance of a grotto of level 75 or above.
-    
-    9: Supreme Spelunker -- Presented to xxx for clearance of a grotto of level 99.
-    
-    10: Cave Dweller -- Awarded to xxx on the occasion of his/her 10th grotto clearance.
-    
-    11: Cave Craver -- Awarded to xxx on the occasion of his/her 50th grotto clearance.
-    
-    12: From Cradle to Cave -- Awarded to xxx on the occasion of his/her 100th grotto clearance.
-    
-    13: Stalag Mighty -- Awarded to xxx on the occasion of his/her 500th grotto clearance.
-    
-    14: Caving Lunatic -- The Cavers' Cooperative would like to congratulate xxx for the outstanding achievement of completing 1000 grottoes.```"""
+```yml
+1: Celestial Sentinel -- Awarded to xxx on the occasion of his/her victory over various renowned denizens of the depths.
+[Defeat all Legacy Bosses.]
+
+2: Heralded Hero/Heralded Heroine -- Awarded to xxx to commemorate his/her victory over a grotto boss of level 25 or above.
+
+3: Superhero/Superheroine -- Awarded to xxx to commemorate his/her victory over a grotto boss of level 50 or above.
+
+4: Heavenly Hero/Heavenly Heroine -- Awarded to xxx to commemorate his/her victory over a grotto boss of level 75 or above.
+
+5: Legendary Hero/Legendary Heroine -- Awarded to xxx to commemorate his/her victory over a grotto boss of level 99.
+
+6: Spelunker -- Presented to xxx for clearance of a grotto of level 25 or above.
+
+7: Spunky Spelunker -- Presented to xxx for clearance of a grotto of level 50 or above.
+
+8: Spelunking Specialist -- Presented to xxx for clearance of a grotto of level 75 or above.
+
+9: Supreme Spelunker -- Presented to xxx for clearance of a grotto of level 99.
+
+10: Cave Dweller -- Awarded to xxx on the occasion of his/her 10th grotto clearance.
+
+11: Cave Craver -- Awarded to xxx on the occasion of his/her 50th grotto clearance.
+
+12: From Cradle to Cave -- Awarded to xxx on the occasion of his/her 100th grotto clearance.
+
+13: Stalag Mighty -- Awarded to xxx on the occasion of his/her 500th grotto clearance.
+
+14: Caving Lunatic -- The Cavers' Cooperative would like to congratulate xxx for the outstanding achievement of completing 1000 grottoes.```"""
 
                             post = await self.bot.get_channel(resources_channel).create_thread(migration["title"],
                                                                                                first_part)

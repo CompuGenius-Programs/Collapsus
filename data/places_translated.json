@@ -2,198 +2,231 @@
   "translations": [
     {
       "english": "Angel Falls",
+      "japanese": "ウォルロ村",
       "spanish": "Salto del Ángel",
       "french": "Chérubelle",
       "german": "Engelsfälle"
     },
     {
       "english": "Zere",
+      "japanese": "エラフィタ村",
       "spanish": "Zere",
       "french": "Le Plicata",
       "german": "Bühltau"
     },
     {
       "english": "Stornway",
+      "japanese": "セントシュタイン城",
       "spanish": "Pedranía",
       "french": "Ablithia",
       "german": "Stinsbruck"
     },
     {
       "english": "Coffinwell",
+      "japanese": "ベクセリア",
       "spanish": "Catacumba",
       "french": "Bacilli",
       "german": "Siechau"
     },
     {
       "english": "Alltrades Abbey",
+      "japanese": "ダーマ神殿",
       "spanish": "Abadía Vocationis",
       "french": "Abbaye des Vocations",
       "german": "Allesneu-Abtei"
     },
     {
       "english": "Port Llaffan",
+      "japanese": "ツォの浜",
       "spanish": "Puerto Cachalote",
       "french": "Port Ehcep",
       "german": "Labskausen"
     },
     {
       "english": "Slurry Quay",
+      "japanese": "ふなつきば",
       "spanish": "Muelle Limoso",
       "french": "Rivesall",
       "german": "Altpier"
     },
     {
       "english": "Dourbridge",
+      "japanese": "カラコタ橋",
       "spanish": "Las Chungeras",
       "french": "Pontaudy",
       "german": "Welkham"
     },
     {
       "english": "Zere Rocks",
+      "japanese": "石の町",
       "spanish": "Macizo de Zere",
       "french": "Pic Lata",
       "german": "Neu-Bühltau"
     },
     {
       "english": "Bloomingdale",
+      "japanese": "サンマロウ",
       "spanish": "Moraleja del Soto",
       "french": "Finefleur",
       "german": "Blümlingen"
     },
     {
       "english": "Gleeba",
+      "japanese": "グビアナ城",
       "spanish": "Sheba",
       "french": "Ouadi",
       "german": "Wasaba"
     },
     {
       "english": "Batsureg",
+      "japanese": "カルバドの集落",
       "spanish": "Batsureg",
       "french": "Batsureg",
       "german": "Batsureg"
     },
     {
       "english": "Swinedimples Academy",
+      "japanese": "エルシオン学院",
       "spanish": "Academia Paracelso",
       "french": "École Saint-Sévaire",
       "german": "Schweinspickel-Schule"
     },
     {
       "english": "Wormwood Creek",
+      "japanese": "ナザム村",
       "spanish": "Draquipoche",
       "french": "Dracocardis",
       "german": "Wurmwald"
     },
     {
       "english": "Upover",
+      "japanese": "ドミールの里",
       "spanish": "Chimbamba",
       "french": "Kilimagmaro",
       "german": "Brennbergen"
     },
     {
       "english": "Magmaroo - Summit",
+      "japanese": "ドミール火山 (頂上)",
       "spanish": "El Magmánimo - Cumbre",
       "french": "Le Pahoehoe - Sommet",
       "german": "Magmaar - Gipfel"
     },
     {
       "english": "Gortress",
+      "japanese": "カデスのろうごく",
       "spanish": "Kerker",
       "french": "Morteresse",
       "german": "Fiese Festung"
     },
     {
       "english": "Gittingham Palace",
+      "japanese": "ガナン帝国城",
       "spanish": "Palacio Impío",
       "french": "Palais de Lanfair",
       "german": "Schloss Schroffenheim"
     },
     {
       "english": "The Hexagon",
+      "japanese": "キサゴナいせき",
       "spanish": "El Hexágono",
       "french": "L'Hexatère",
       "german": "Das Hexagon"
     },
     {
       "english": "Brigadoom",
+      "japanese": "ルディアノ城",
       "spanish": "Hado",
       "french": "Mortepeine",
       "german": "Schloss Schickstal"
     },
     {
       "english": "Quarantomb",
+      "japanese": "ふういんのほこら",
       "spanish": "Cuarantumba",
       "french": "Quarantombe",
       "german": "Quarantomben"
     },
     {
       "english": "Tower of Trades",
+      "japanese": "ダーマの塔",
       "spanish": "Torre Vocacional",
       "french": "Tour des Vocations",
       "german": "Fort Bieldung"
     },
     {
       "english": "Tywll Cave",
+      "japanese": "海べのどうくつ",
       "spanish": "Cueva Ojcura",
       "french": "Grotte Erion",
       "german": "Gruselige Grotte"
     },
     {
       "english": "Heights of Loneliness",
+      "japanese": "ビタリ山",
       "spanish": "Cumbres Solitarias",
       "french": "Haut d'Isolmont",
       "german": "Gipfel der Einsamkeit"
     },
     {
       "english": "Bad Cave",
+      "japanese": "サンマロウ北のどうくつ",
       "spanish": "La Malcueva",
       "french": "Tanières des Tyrans ",
       "german": "Ganovengrotte"
     },
     {
       "english": "The Plumbed Depths",
+      "japanese": "グビアナ地下すいどう",
       "spanish": "Prof. mistuberiosas",
       "french": "Les foggaras",
       "german": "Die Glucksenden Tiefen"
     },
     {
       "english": "Gerzuun",
+      "japanese": "カズチャ村",
       "spanish": "Gerzuun",
       "french": "Geerzuun",
       "german": "Gerzuun"
     },
     {
       "english": "The Old School",
+      "japanese": "エルシオン地下こうしゃ",
       "spanish": "La vieja escuela",
       "french": "L'ancienne école",
       "german": "Die Alte Schule"
     },
     {
       "english": "The Bowhole",
+      "japanese": "魔獣のどうくつ",
       "spanish": "Boca del Carcaj",
       "french": "La grotte de Sagitta",
       "german": "Die Olle Kuhle"
     },
     {
       "english": "The Magmaroo",
+      "japanese": "ドミールかざん (洞窟)",
       "spanish": "El Magmánimo",
       "french": "Le Pahoehoe",
       "german": "Der Magmaar"
     },
     {
       "english": "Oubliette",
+      "japanese": "とざされたろうごく",
       "spanish": "Oubliette",
       "french": "Oubliettes",
       "german": "Oubliette"
     },
     {
       "english": "Realm of the Mighty",
+      "japanese": "望と憎悪の魔宮",
       "spanish": "Reino del Poderoso",
       "french": "Royaume du Puissant",
       "german": "Reich des Mächtigen"
     },
     {
       "english": "Tower of Nod",
+      "japanese": "アルマの塔",
       "spanish": "Torre Leonina",
       "french": "Tour de l'Atonie",
       "german": "Turm des Schläfers"

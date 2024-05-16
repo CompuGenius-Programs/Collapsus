@@ -12,7 +12,7 @@ dev_paypal = "paypal.me/cgprograms | venmo.com/CompuGeniusCode"
 
 
 def create_embed(title, description=None, color=discord.Color.green(),
-                 footer="Consider supporting the developer at %s" % dev_paypal,
+                 footer="Consider supporting development:\n%s" % dev_paypal,
                  error="Any errors? Please report to %s" % dev_tag, image="", *, url="", author=""):
     embed = discord.Embed(title=title, description=description, url=url, color=color)
     embed.set_footer(text="%s\n%s" % (footer, error))

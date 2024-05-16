@@ -234,7 +234,7 @@ class Grottos(commands.Cog):
                         with open("data/locations.json", "r") as f:
                             locations = json.load(f)["locations"]
                             for location in locations_values:
-                                description += "\n**%s** : %s" % (location, locations[location])
+                                description += "\n**%s**: ||%s||" % (location, locations[location])
                     embed.description = description
                     embed.url = str(response.url)
                     embeds.append(embed)

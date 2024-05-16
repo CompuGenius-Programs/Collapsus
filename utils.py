@@ -1,5 +1,6 @@
 import io
 import math
+import os
 
 import discord
 import requests
@@ -41,6 +42,8 @@ def create_collage(files, file_name):
                 collage.paste(image, (128 * col, 96 * row))
                 index += 1
 
+    if not os.path.exists("collages"):
+        os.makedirs("collages")
     collage.save(file_name)
 
 

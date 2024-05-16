@@ -158,8 +158,8 @@ class Grottos(commands.Cog):
 
     async def grotto_func(self, material, environment, suffix, level, location):
         async with aiohttp.ClientSession() as session:
-            environment_name = str(
-                grotto_environments["english"].index(titlecase(environment)) + 1) if environment.lower() != "map" else ""
+            environment_name = str(grotto_environments["english"].index(
+                titlecase(environment)) + 1) if environment.lower() != "map" else ""
             params = {"search": "Search", "prefix": str(grotto_prefixes["english"].index(titlecase(material)) + 1),
                       "envname": environment_name, "suffix": str(grotto_suffixes["english"].index(suffix) + 1),
                       "level": str(level), }
@@ -189,6 +189,14 @@ class Grottos(commands.Cog):
 
                     zipped = zip(range(len(parsed)), grotto_keys, parsed)
 
+                    chests_value = ""
+                    locations_value = ""
+
+                    description = '''
+**Seed:** | **Rank:** | **Boss:**
+
+**Type:** | **Floors:** | **Monster Rank:**
+        '''
                     for i, key, value in zipped:
                         if key == "Name":
                             if special:
@@ -198,15 +206,23 @@ class Grottos(commands.Cog):
                             if key == "Seed":
                                 value = str(value).zfill(4)
                             if key == "Chests":
-                                values = [str(x) for x in parsed[i:i + 10]]
+                                values = [str(x) for x in parsed[i:i + 10] if int(x) != 0]
                                 chests = list(zip(grotto_ranks, values))
                                 value = ", ".join([': '.join(x) for x in chests])
+                                chests_value = value
                             if key == "Locations":
                                 values = [str(x).zfill(2) for x in parsed[i + 9:]]
                                 for v in values:
                                     files.append({"id": len(embeds), "file": "grotto_images/%s.png" % v})
                                 value = ', '.join(values)
-                            embed.add_field(name=key, value=value, inline=False)
+                                locations_value = value
+                            description = description.replace("**%s:**" % key, "**%s:** %s" % (key, value))
+
+                    if chests_value != "":
+                        description += "\n**Chests**\n%s\n" % chests_value
+                    if locations_value != "":
+                        description += "\n**Locations**\n%s\n" % locations_value
+                    embed.description = description
                     embed.url = str(response.url)
                     embeds.append(embed)
 

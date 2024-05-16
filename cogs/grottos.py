@@ -299,7 +299,7 @@ class Grottos(commands.Cog):
 
         title = "Translation of: %s" % titlecase(all_languages[translation_languages_simple.index(language_input)])
         color = discord.Color.green()
-        embed = create_embed(title, color=color, error="Any errors? Want to contribute? Please speak to %s" % dev_tag)
+        embed = create_embed(title, color=color, error="Any errors? Want to contribute data? Please speak to %s" % dev_tag)
         if language_output is not None:
             value = all_languages[translation_languages.index(language_output)]
             if value != "":

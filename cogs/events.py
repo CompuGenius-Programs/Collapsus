@@ -4,6 +4,8 @@ from datetime import datetime, timedelta
 import discord
 from discord.ext import commands
 
+import utils
+
 
 def setup(bot):
     bot.add_cog(Events(bot))
@@ -41,6 +43,6 @@ class Events(commands.Cog):
                                  "I can't believe I'm {age} years old already! I'm getting so old!",
                                  "I'm {age} years old now? I hope bots age like fine wine!",
                                  "{age} years. Wow. I hope Discord bots don't get rusty like other bots!"])
-        embed = discord.Embed(title="Happy Birthday!", description=message.format(age=age), color=discord.Color.gold(),
-                              image=self.party_popper)
+        embed = utils.create_embed(title="Happy Birthday!", description=message.format(age=age),
+                                   color=discord.Color.gold(), image=self.party_popper)
         await ctx.respond(embed=embed)

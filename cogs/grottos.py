@@ -1,5 +1,6 @@
 import io
 import json
+import re
 
 import aiohttp
 import discord
@@ -193,9 +194,11 @@ class Grottos(commands.Cog):
                     locations_value = ""
 
                     description = '''
-**Seed:** | **Rank:** | **Boss:**
+**Seed:** | **Rank:**
 
-**Type:** | **Floors:** | **Monster Rank:**
+**Type:** | **Floors:**
+
+**Boss:** | **Monster Rank:**
         '''
                     for i, key, value in zipped:
                         if key == "Name":
@@ -205,6 +208,12 @@ class Grottos(commands.Cog):
                         else:
                             if key == "Seed":
                                 value = str(value).zfill(4)
+                            if key == "Rank":
+                                value = str(value).replace(" / ", "/")
+                            if key == "Monster Rank":
+                                pattern = r'\((.*?)\)'
+                                matches = re.findall(pattern, value)
+                                value = '-'.join(matches)
                             if key == "Chests":
                                 values = [str(x) for x in parsed[i:i + 10] if int(x) != 0]
                                 chests = list(zip(grotto_ranks, values))

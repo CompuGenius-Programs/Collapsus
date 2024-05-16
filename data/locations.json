@@ -124,7 +124,7 @@
     "7A": "Wyrmwing",
     "7B": "South-West of Upover",
     "7C": "South-West Upover",
-    "7D": "South Upover, That's the Plateau in the Bottom Right",
+    "7D": "South Upover (That's the Plateau in the Bottom Right)",
     "7E": "North of Upover",
     "7F": "Behind Upover",
     "80": "Right Next to Upover",
@@ -141,14 +141,14 @@
     "8B": "<:Item_Whistle:854482500990009365> Required: Newid Isle Plateau",
     "8C": "<:Item_Whistle:854482500990009365> Required: Newid Isle Plateau",
     "8D": "<:Item_Whistle:854482500990009365> Required: East Lonely Coast",
-    "8E": "Lonely Coast Plateau",
-    "8F": "On Top the Plateau on the Lonely Coast",
+    "8E": "<:Item_Whistle:854482500990009365> Required: Lonely Coast Plateau",
+    "8F": "<:Item_Whistle:854482500990009365> Required: On Top the Plateau on the Lonely Coast",
     "90": "<:Item_Whistle:854482500990009365> Required: Djust Desert Plateau",
     "91": "<:Item_Whistle:854482500990009365> Required: Hermany, South of Swinedimples",
     "92": "<:Item_Whistle:854482500990009365> Required: North of Snowberian Coastline",
     "93": "<:Item_Whistle:854482500990009365> Required: West of Batsureg",
     "94": "<:Item_Whistle:854482500990009365> Required: South Wormwood Creek",
-    "95": "Plateau on the Way to the Bowhole)",
-    "96": "Southern Upover Plateau"
+    "95": "<:Item_Whistle:854482500990009365> Required: Plateau on the Way to the Bowhole",
+    "96": "<:Item_Whistle:854482500990009365> Required: Southern Upover Plateau"
   }
 }

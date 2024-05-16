@@ -191,7 +191,7 @@ class Grottos(commands.Cog):
                     zipped = zip(range(len(parsed)), grotto_keys, parsed)
 
                     chests_value = ""
-                    locations_value = ""
+                    locations_values = []
 
                     description = '''
 **Seed:** | **Rank:**
@@ -223,14 +223,18 @@ class Grottos(commands.Cog):
                                 values = [str(x).zfill(2) for x in parsed[i + 9:]]
                                 for v in values:
                                     files.append({"id": len(embeds), "file": "grotto_images/%s.png" % v})
-                                value = ', '.join(values)
-                                locations_value = value
+                                locations_values = values
                             description = description.replace("**%s:**" % key, "**%s:** %s" % (key, value))
 
                     if chests_value != "":
                         description += "\n**Chests**\n%s\n" % chests_value
-                    if locations_value != "":
-                        description += "\n**Locations**\n%s\n" % locations_value
+                    if len(locations_values) > 0:
+                        description += "\n**Locations**"
+
+                        with open("data/locations.json", "r") as f:
+                            locations = json.load(f)["locations"]
+                            for location in locations_values:
+                                description += "\n**%s** : %s" % (location, locations[location])
                     embed.description = description
                     embed.url = str(response.url)
                     embeds.append(embed)

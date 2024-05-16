@@ -32,7 +32,7 @@ class Events(commands.Cog):
             else:
                 await command.author.remove_roles(role)
 
-    @discord.slash_command()
+    @discord.slash_command(description="Wish the bot a happy birthday!")
     async def happy_birthday(self, ctx):
         age = datetime.now().year - self.bot.user.created_at.year
         message = random.choice(["Thank you so much! I can't believe I've been helping people for {age} years already!",

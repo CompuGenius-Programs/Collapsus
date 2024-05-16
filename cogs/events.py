@@ -27,7 +27,7 @@ class Events(commands.Cog):
     async def on_application_command(self, command):
         role = discord.utils.get(command.guild.roles, id=self.party_role)
         if role is not None:
-            if is_birthday_week():
+            if is_birthday_week() and command.name != "happy_birthday":
                 await command.author.add_roles(role)
             else:
                 await command.author.remove_roles(role)

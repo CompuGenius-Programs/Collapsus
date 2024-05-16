@@ -79,11 +79,11 @@ class Monsters(commands.Cog):
            monster.fire, monster.ice, monster.wind, monster.blast, monster.earth, monster.dark, monster.light,
            titlecase(monster.haunts))
             if monster.drop1 != "":
-                description += "\n**__Drop 1 | Common Drop__**\n%s\n" % titlecase(monster.drop1)
+                description += "\n**Drop 1 | Common Drop**\n%s\n" % titlecase(monster.drop1)
             if monster.drop2 != "":
-                description += "\n**__Drop 2 | Rare Drop__**\n%s\n" % titlecase(monster.drop2)
+                description += "\n**Drop 2 | Rare Drop**\n%s\n" % titlecase(monster.drop2)
             if monster.drop3 != "":
-                description += "\n**__Drop 3__**\n%s\n" % titlecase(monster.drop3)
+                description += "\n**Drop 3**\n%s\n" % titlecase(monster.drop3)
 
             if monster.image == "":
                 monster.image = self.monster_images_url % clean_text(monster.name, False, True)

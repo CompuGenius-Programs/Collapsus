@@ -249,7 +249,7 @@ class Grottos(commands.Cog):
             await self.grotto_command(ctx, material, environment, suffix, level, location)
 
     async def translate_grotto(self, material, environment, suffix, language_input, language_output):
-        with open("data/grottos_translated.json", "r", encoding="utf-8") as fp:
+        with open("data/grottos.json", "r", encoding="utf-8") as fp:
             data = json.load(fp)
 
         translations = data["translations"]

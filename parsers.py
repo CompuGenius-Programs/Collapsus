@@ -94,10 +94,7 @@ translation_languages = ["English", "Japanese (日本語)", "Spanish (Español)"
 
 translation_languages_simple = ["english", "japanese", "spanish", "french", "german", "italian"]
 
-translation_files = ["items_translated.json", "grottos_translated.json", "accolades_translated.json",
-                     "places_translated.json", "attributes_translated.json"]
-
-with open('data/grottos_translated.json', 'r', encoding='utf-8') as f:
+with open('data/translations/grottos.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 grotto_prefixes = {lang: [] for lang in translation_languages_simple}

@@ -1,0 +1,2460 @@
+{
+  "translations": [
+    {
+      "english": "slime",
+      "japanese": "スライム",
+      "spanish": "limo",
+      "french": "gluant",
+      "german": "Schleim",
+      "italian": "Slime"
+    },
+    {
+      "english": "she-slime",
+      "japanese": "スライムベス",
+      "spanish": "lima",
+      "french": "gluante",
+      "german": "Schleimette",
+      "italian": "Slime arancione"
+    },
+    {
+      "english": "metal slime",
+      "japanese": "メタルスライム",
+      "spanish": "limo metálico",
+      "french": "gluant de métal",
+      "german": "Metallschleim",
+      "italian": "Slime grigio"
+    },
+    {
+      "english": "dracky",
+      "japanese": "ドラキー",
+      "spanish": "dracanino",
+      "french": "vampivol",
+      "german": "Drako",
+      "italian": "Vampistrello"
+    },
+    {
+      "english": "drackmage",
+      "japanese": "タホドラキー",
+      "spanish": "dracanino mago",
+      "french": "vampimage",
+      "german": "Drakomagus",
+      "italian": "Verdestrello"
+    },
+    {
+      "english": "drackyma",
+      "japanese": "ドラキーマ",
+      "spanish": "dracanina",
+      "french": "vampivolle",
+      "german": "Drakina",
+      "italian": "Vampistrello giallo"
+    },
+    {
+      "english": "firespirit",
+      "japanese": "メラゴースト",
+      "spanish": "alma ígnea",
+      "french": "feu follet",
+      "german": "Feuergeist",
+      "italian": "Fuoco fatuo"
+    },
+    {
+      "english": "lost soul",
+      "japanese": "さまようたましい",
+      "spanish": "alma extraviada",
+      "french": "flammerolle",
+      "german": "Verlorene Seele",
+      "italian": "Fuoco blu"
+    },
+    {
+      "english": "funghoul",
+      "japanese": "おばけキノコ",
+      "spanish": "seta macabra",
+      "french": "champigoule",
+      "german": "Pestpilz",
+      "italian": "Nauseafungus"
+    },
+    {
+      "english": "Morphean mushroom",
+      "japanese": "マタンゴ",
+      "spanish": "seta onírica",
+      "french": "champitox",
+      "german": "Schlafpilz",
+      "italian": "Violafungus"
+    },
+    {
+      "english": "mushroom mage",
+      "japanese": "マージマタンゴ",
+      "spanish": "seta mágica",
+      "french": "champimage",
+      "german": "Pilzmagier",
+      "italian": "Magifungo"
+    },
+    {
+      "english": "meowgician",
+      "japanese": "ねこまどう",
+      "spanish": "magato",
+      "french": "miaougicien",
+      "german": "Miaugier",
+      "italian": "Miago"
+    },
+    {
+      "english": "clawcerer",
+      "japanese": "ジャガーメイジ",
+      "spanish": "miauchicero",
+      "french": "sorciergrif",
+      "german": "Nekromaunz",
+      "italian": "Magifelino"
+    },
+    {
+      "english": "purrestidigitator",
+      "japanese": "ベンガルクーン",
+      "spanish": "hechironrroneador",
+      "french": "prestigriffitateur",
+      "german": "Schnurrke",
+      "italian": "Artiglio stregato"
+    },
+    {
+      "english": "healslime",
+      "japanese": "ホイミスライム",
+      "spanish": "medulimo cicatrizante",
+      "french": "médigluant",
+      "german": "Doktorschleim",
+      "italian": "Dottor Slime"
+    },
+    {
+      "english": "man o' war",
+      "japanese": "しびれくらげ",
+      "spanish": "medusa guerrera",
+      "french": "méduse",
+      "german": "Seeblase",
+      "italian": "Medusa"
+    },
+    {
+      "english": "medislime",
+      "japanese": "ベホイミスライム",
+      "spanish": "semimedulimo",
+      "french": "coagluant",
+      "german": "Arztschleim",
+      "italian": "Medislime"
+    },
+    {
+      "english": "sootheslime",
+      "japanese": "ベホイムスライム",
+      "spanish": "alivialimo",
+      "french": "gluantibio",
+      "german": "Pflegerschleim",
+      "italian": "Lenislime"
+    },
+    {
+      "english": "cureslime",
+      "japanese": "ベホマスライム",
+      "spanish": "medulimo curativo",
+      "french": "guérigluant",
+      "german": "Heilschleim",
+      "italian": "Curaslime"
+    },
+    {
+      "english": "mecha-mynah",
+      "japanese": "メタッピー",
+      "spanish": "maquipájaro",
+      "french": "rouage-gorge",
+      "german": "Metallmeise",
+      "italian": "Pettirobot"
+    },
+    {
+      "english": "robo-robin",
+      "japanese": "アイアンクック",
+      "spanish": "robopájaro",
+      "french": "engrenoiseau",
+      "german": "Dampfdrossel",
+      "italian": "Pettirobot nero"
+    },
+    {
+      "english": "clockwork cuckoo",
+      "japanese": "ガチャコッコ",
+      "spanish": "mecanipájaro",
+      "french": "coucou mécanique",
+      "german": "Stahlspatz",
+      "italian": "Meccanicucù"
+    },
+    {
+      "english": "bodkin archer",
+      "japanese": "リリパット",
+      "spanish": "arquero punzante",
+      "french": "archer vert",
+      "german": "Schützenwicht",
+      "italian": "Anselmo Tell"
+    },
+    {
+      "english": "bodkin fletcher",
+      "japanese": "どくやずきん",
+      "spanish": "flechero punzante",
+      "french": "dardeur",
+      "german": "Pfeilwicht",
+      "italian": "Robin Good"
+    },
+    {
+      "english": "bodkin bowyer",
+      "japanese": "アローインプ",
+      "spanish": "tirador encapuchado",
+      "french": "tire-flèches",
+      "german": "Bogenwicht",
+      "italian": "Tegolas"
+    },
+    {
+      "english": "bubble slime",
+      "japanese": "バブルスライム",
+      "spanish": "burbujilimo",
+      "french": "gluanbulle",
+      "german": "Blasenschleim",
+      "italian": "Bollaslime"
+    },
+    {
+      "english": "liquid metal slime",
+      "japanese": "はぐれメタル",
+      "spanish": "burbujilimo metálico",
+      "french": "gluant de mercure",
+      "german": "Flüssigmetallschleim",
+      "italian": "Liquislime"
+    },
+    {
+      "english": "hammerhood",
+      "japanese": "おおきづち",
+      "spanish": "mazador",
+      "french": "marteleur",
+      "german": "Hämmerling",
+      "italian": "Martellus"
+    },
+    {
+      "english": "brownie",
+      "japanese": "ブラウニー",
+      "spanish": "macero",
+      "french": "martebrun",
+      "german": "Hammerkauz",
+      "italian": "Martellus magnus"
+    },
+    {
+      "english": "spirit",
+      "japanese": "ゆうれい",
+      "spanish": "espíritu",
+      "french": "esprit",
+      "german": "Geist",
+      "italian": "Spyr"
+    },
+    {
+      "english": "mean spirit",
+      "japanese": "しにがみ",
+      "spanish": "espíritu malvado",
+      "french": "esprit frappeur",
+      "german": "Garstige Geist",
+      "italian": "Malvaspyr"
+    },
+    {
+      "english": "batterfly",
+      "japanese": "じんめんちょう",
+      "spanish": "chafaposa",
+      "french": "peurpillon",
+      "german": "Zerschmetterling",
+      "italian": "Alabatt"
+    },
+    {
+      "english": "betterfly",
+      "japanese": "ひとくいが",
+      "spanish": "golpeposa",
+      "french": "frappillon",
+      "german": "Zerschmeißfliege",
+      "italian": "Neo Alabatt"
+    },
+    {
+      "english": "dread admiral",
+      "japanese": "しびれあげは",
+      "spanish": "mariposón",
+      "french": "papilon",
+      "german": "Furchtbare Falter",
+      "italian": "Gigabatt"
+    },
+    {
+      "english": "winkster",
+      "japanese": "みならいあくま",
+      "spanish": "truhán",
+      "french": "fée tide",
+      "german": "Blinzler",
+      "italian": "Lampeggino"
+    },
+    {
+      "english": "blinkster",
+      "japanese": "ベビーマジシャン",
+      "spanish": "bribón",
+      "french": "fée brile",
+      "german": "Zwinkerer",
+      "italian": "Occhiolino"
+    },
+    {
+      "english": "jinkster",
+      "japanese": "ひとつめピエロ",
+      "spanish": "tunante",
+      "french": "fée lée",
+      "german": "Blödler",
+      "italian": "Sveltolino"
+    },
+    {
+      "english": "cannibox",
+      "japanese": "ひとくいばこ",
+      "spanish": "cofre caníbal",
+      "french": "canniboîte",
+      "german": "Fresskiste",
+      "italian": "Cannibaule"
+    },
+    {
+      "english": "mimic",
+      "japanese": "ミミック",
+      "spanish": "cofre mimético",
+      "french": "imitapeur",
+      "german": "Imitator",
+      "italian": "Skrigno dentato"
+    },
+    {
+      "english": "Pandora's box",
+      "japanese": "パンドラボックス",
+      "spanish": "caja de Pandora",
+      "french": "boîte de Pandore",
+      "german": "Pandorabüchse",
+      "italian": "Skrigno a molla"
+    },
+    {
+      "english": "lunatick",
+      "japanese": "メーダ",
+      "spanish": "selenita",
+      "french": "luna-tique",
+      "german": "Zänkische Zecke",
+      "italian": "Solletinsetto"
+    },
+    {
+      "english": "raving lunatick",
+      "japanese": "メーダロード",
+      "spanish": "selenita lunático",
+      "french": "fana-tique",
+      "german": "Wirre Wanze",
+      "italian": "Solletinsetto ferox"
+    },
+    {
+      "english": "bag o' laughs",
+      "japanese": "わらいぶくろ",
+      "spanish": "saco de risas",
+      "french": "maransac",
+      "german": "Lachsack",
+      "italian": "Sacco golosone"
+    },
+    {
+      "english": "goodybag",
+      "japanese": "おどるほうせき",
+      "spanish": "saco de joyas",
+      "french": "sacatrésor",
+      "german": "Klunkerbeutel",
+      "italian": "Sacco ghiottone"
+    },
+    {
+      "english": "cumaulus",
+      "japanese": "ギズモ",
+      "spanish": "cúmulo",
+      "french": "flammulus",
+      "german": "Wolkenketzer",
+      "italian": "Cumulus"
+    },
+    {
+      "english": "hell niño",
+      "japanese": "ヒートギズモ",
+      "spanish": "borrascazo",
+      "french": "cramulus",
+      "german": "Wütende Wolke",
+      "italian": "Cumulus infernale"
+    },
+    {
+      "english": "freezing fog",
+      "japanese": "フロストギズモ",
+      "spanish": "niebla helada",
+      "french": "brumulus",
+      "german": "Frostnebel",
+      "italian": "Cumulus gelido"
+    },
+    {
+      "english": "leery lout",
+      "japanese": "シールドこぞう",
+      "spanish": "sonrisillas receloso",
+      "french": "bouclieux",
+      "german": "Listige Lümmel",
+      "italian": "Bandido"
+    },
+    {
+      "english": "grim grinner",
+      "japanese": "ダークホビット",
+      "spanish": "sonrisillas siniestro",
+      "french": "boucliblindé",
+      "german": "Grimmige Grinser",
+      "italian": "Minifante"
+    },
+    {
+      "english": "gum shield",
+      "japanese": "ビッグフェイス",
+      "spanish": "sonrillisas dentón",
+      "french": "rebonclier",
+      "german": "Zähneblecker",
+      "italian": "Stopper"
+    },
+    {
+      "english": "slugger",
+      "japanese": "テンツク",
+      "spanish": "calandraca",
+      "french": "limasson",
+      "german": "Miesmade",
+      "italian": "Lentolus"
+    },
+    {
+      "english": "sluggernaut",
+      "japanese": "スーパーテンツク",
+      "spanish": "calandraca movediza",
+      "french": "limassif",
+      "german": "Mördermade",
+      "italian": "Tensinsetto"
+    },
+    {
+      "english": "sluggerslaught",
+      "japanese": "ラストテンツク",
+      "spanish": "calandraca asesina",
+      "french": "limastard",
+      "german": "Massakermade",
+      "italian": "Calmassacrator"
+    },
+    {
+      "english": "pink sanguini",
+      "japanese": "ピンクモーモン",
+      "spanish": "sanguinino rosa",
+      "french": "sanguini rose",
+      "german": "Fledersau",
+      "italian": "Sanguonicum"
+    },
+    {
+      "english": "genie sanguini",
+      "japanese": "マポレーナ",
+      "spanish": "genio sanguinino",
+      "french": "sanguini irisé",
+      "german": "Flederdschinn",
+      "italian": "Bonsang"
+    },
+    {
+      "english": "teeny sanguini",
+      "japanese": "モーモン",
+      "spanish": "sanguinino",
+      "french": "sanguini vache",
+      "german": "Flederkuh",
+      "italian": "Sanguinis"
+    },
+    {
+      "english": "cruelcumber",
+      "japanese": "ズッキーニャ",
+      "spanish": "pepinillo guerrero",
+      "french": "concombrageur",
+      "german": "Saure Gurke",
+      "italian": "Verdurfante"
+    },
+    {
+      "english": "zumeanie",
+      "japanese": "ぶっちズキーニャ",
+      "spanish": "pepinillo revenido",
+      "french": "tropiconcombre",
+      "german": "Zickige Zucchini",
+      "italian": "Cetriolo del caos"
+    },
+    {
+      "english": "scourgette",
+      "japanese": "ブラックベジター",
+      "spanish": "pepinillo pasado",
+      "french": "secourgette",
+      "german": "Knallgurke",
+      "italian": "Esplortaggio"
+    },
+    {
+      "english": "wooper trooper",
+      "japanese": "ウパソルジャー",
+      "spanish": "tritón guerrero",
+      "french": "défamphibien",
+      "german": "Molchstrolch",
+      "italian": "Combamandra"
+    },
+    {
+      "english": "salamarauder",
+      "japanese": "かいぞくウーパー",
+      "spanish": "salamandro piratón",
+      "french": "amphigien",
+      "german": "Salamarodeur",
+      "italian": "Salamala"
+    },
+    {
+      "english": "axolhotl",
+      "japanese": "ウパパロン",
+      "spanish": "axalote",
+      "french": "ardamphibien",
+      "german": "Schwertlurch",
+      "italian": "Aholhotl"
+    },
+    {
+      "english": "sacksquatch",
+      "japanese": "ドロザラー",
+      "spanish": "sacalodo",
+      "french": "sacasable",
+      "german": "Sandsack",
+      "italian": "Sacksabb"
+    },
+    {
+      "english": "bagma",
+      "japanese": "ようがんピロー",
+      "spanish": "sacamagma",
+      "french": "lavensac",
+      "german": "Feuerbeutel",
+      "italian": "Lavagma"
+    },
+    {
+      "english": "slime stack",
+      "japanese": "スライムタワー",
+      "spanish": "trío limoso",
+      "french": "aggluantin",
+      "german": "Schleimstapel",
+      "italian": "Torreslime"
+    },
+    {
+      "english": "metal medley",
+      "japanese": "メタルブラザーズ",
+      "spanish": "trío metalimoso",
+      "french": "métaggluantin",
+      "german": "Stahlstaffel",
+      "italian": "Metallikon"
+    },
+    {
+      "english": "gem jamboree",
+      "japanese": "ゴールデントーテム",
+      "spanish": "trío ororoso",
+      "french": "aggluandor",
+      "german": "Edelschleimturm",
+      "italian": "Splendijem"
+    },
+    {
+      "english": "leafy larrikin",
+      "japanese": "もみじこぞう",
+      "spanish": "maldad patuda otoñal",
+      "french": "foufolia",
+      "german": "Blätterbalg",
+      "italian": "Fante fronduto"
+    },
+    {
+      "english": "bud brother",
+      "japanese": "まだらイチョウ",
+      "spanish": "maldad patuda",
+      "french": "folidaire",
+      "german": "Knospenknilch",
+      "italian": "Cespinfame"
+    },
+    {
+      "english": "gastropog",
+      "japanese": "デンデンがえる",
+      "spanish": "gasterópodo",
+      "french": "gastérapaud",
+      "german": "Schreckschnecke",
+      "italian": "Ranguscio"
+    },
+    {
+      "english": "giddy gastropog",
+      "japanese": "メダパニつむり",
+      "spanish": "gasterópodo aturdidor",
+      "french": "mauvellusque",
+      "german": "Schnickschnecke",
+      "italian": "Ranguscio terribilis"
+    },
+    {
+      "english": "gloomy gastropog",
+      "japanese": "ダークデンデン",
+      "spanish": "gasterópodo siniestro",
+      "french": "gros-gris",
+      "german": "Schattenschnecke",
+      "italian": "Ranguscio demoniaco"
+    },
+    {
+      "english": "earthenwarrior",
+      "japanese": "はにわナイト",
+      "spanish": "jinete de terracota",
+      "french": "cavalier de glaise",
+      "german": "Keramikkrieger",
+      "italian": "Milite d'argilla"
+    },
+    {
+      "english": "brrearthenwarrior",
+      "japanese": "ふゆしょうぐん",
+      "spanish": "jinete de terrorcota",
+      "french": "cavalier de glace",
+      "german": "Kalte Keramikkrieger",
+      "italian": "Palafreddo"
+    },
+    {
+      "english": "skeleton",
+      "japanese": "がいこつ",
+      "spanish": "esqueleto",
+      "french": "squelette",
+      "german": "Skelett",
+      "italian": "Skeletro"
+    },
+    {
+      "english": "skeleton soldier",
+      "japanese": "死霊の騎士",
+      "spanish": "esqueleto soldado",
+      "french": "soldat squelette",
+      "german": "Skelettsoldat",
+      "italian": "Soldaskeletro"
+    },
+    {
+      "english": "dark skeleton",
+      "japanese": "影の騎士",
+      "spanish": "esqueleto oscuro",
+      "french": "squelette noir",
+      "german": "Dunkle Skelett",
+      "italian": "Neroskeletro"
+    },
+    {
+      "english": "flython",
+      "japanese": "ウィングスネーク",
+      "spanish": "serpiente veladora",
+      "french": "veninconda",
+      "german": "Schwingenschleiche",
+      "italian": "Hisserp"
+    },
+    {
+      "english": "diethon",
+      "japanese": "ヘルバイパー",
+      "spanish": "sierpe alada",
+      "french": "toxicrotale",
+      "german": "Satansschleiche",
+      "italian": "Demonvipera"
+    },
+    {
+      "english": "sail serpent",
+      "japanese": "オーシャンナーガ",
+      "spanish": "serpiente marinera",
+      "french": "vipère sonique",
+      "german": "Segelschleiche",
+      "italian": "Aquarettile"
+    },
+    {
+      "english": "beakon",
+      "japanese": "おおくちばし",
+      "spanish": "aticuécano",
+      "french": "rapastrident",
+      "german": "Schandschnabel",
+      "italian": "Semplibeck"
+    },
+    {
+      "english": "weaken beakon",
+      "japanese": "デッドペッカー",
+      "spanish": "aticuécano debilitador",
+      "french": "altérapace",
+      "german": "Schindschnabel",
+      "italian": "Beck Beck"
+    },
+    {
+      "english": "belisha beakon",
+      "japanese": "アカイライ",
+      "spanish": "aticuécano picador",
+      "french": "rapacepasse",
+      "german": "Sturmschnabel",
+      "italian": "Flash Beck"
+    },
+    {
+      "english": "lesionnaire",
+      "japanese": "がいこつ兵",
+      "spanish": "lesionario",
+      "french": "lésionnaire",
+      "german": "Läsionär",
+      "italian": "Legionario"
+    },
+    {
+      "english": "deadcurion",
+      "japanese": "しにがみ兵",
+      "spanish": "letaurión",
+      "french": "sangturion",
+      "german": "Dekadenturio",
+      "italian": "Centurione"
+    },
+    {
+      "english": "stenchurion",
+      "japanese": "ゾンビナイト",
+      "spanish": "hedourión",
+      "french": "décarion",
+      "german": "Stinkurio",
+      "italian": "Lanciere velenoso"
+    },
+    {
+      "english": "cheeky tiki",
+      "japanese": "ガオン",
+      "spanish": "tikis mikis",
+      "french": "grimasque",
+      "german": "Grinsgötze",
+      "italian": "Maskerossa"
+    },
+    {
+      "english": "teaky mask",
+      "japanese": "トーテムキラー",
+      "spanish": "tiki de teka",
+      "french": "maskoteck",
+      "german": "Teak-Tiki",
+      "italian": "Ebetyssimus"
+    },
+    {
+      "english": "bewarewolf",
+      "japanese": "リカント",
+      "spanish": "lobobo",
+      "french": "folycanthrope",
+      "german": "Böse Wolf",
+      "italian": "Licanlupo"
+    },
+    {
+      "english": "tearwolf",
+      "japanese": "キラーリカント",
+      "spanish": "lobobo desgarrador",
+      "french": "grizzlycanthrope",
+      "german": "Reißwolf",
+      "italian": "Artigliupo"
+    },
+    {
+      "english": "scarewolf",
+      "japanese": "リカントマムル",
+      "spanish": "lobobo espantajo",
+      "french": "chienlycanthrope",
+      "german": "Wehwolf",
+      "italian": "Ululà"
+    },
+    {
+      "english": "walking corpse",
+      "japanese": "くさった死体",
+      "spanish": "zombi errante",
+      "french": "mort-vivant",
+      "german": "Wiedergänger",
+      "italian": "Zombie"
+    },
+    {
+      "english": "toxic zombie",
+      "japanese": "どくどくゾンビ",
+      "spanish": "zombi infeccioso",
+      "french": "zombitox",
+      "german": "Giftzombie",
+      "italian": "Zombie velenoso"
+    },
+    {
+      "english": "ghoul",
+      "japanese": "グール",
+      "spanish": "zombi necrófago",
+      "french": "goule",
+      "german": "Ghul",
+      "italian": "Zombie grigio"
+    },
+    {
+      "english": "cyclown",
+      "japanese": "かまいたち",
+      "spanish": "anticiclón",
+      "french": "cyclown",
+      "german": "Tornadoteufel",
+      "italian": "Ciclown"
+    },
+    {
+      "english": "spinchilla",
+      "japanese": "うずしおキング",
+      "spanish": "ciclón matón",
+      "french": "glacyclone",
+      "german": "Frostfritze",
+      "italian": "Wilfredd"
+    },
+    {
+      "english": "whirly girly",
+      "japanese": "レッドサイクロン",
+      "spanish": "tornada",
+      "french": "typhonphonphon",
+      "german": "Wirbeline",
+      "italian": "Gyra"
+    },
+    {
+      "english": "mummy boy",
+      "japanese": "ミイラ男",
+      "spanish": "pequemomia",
+      "french": "momignon",
+      "german": "Mumienknirps",
+      "italian": "Cocco di mummia"
+    },
+    {
+      "english": "mummy",
+      "japanese": "マミー",
+      "spanish": "momia",
+      "french": "momie",
+      "german": "Mumie",
+      "italian": "Mummia"
+    },
+    {
+      "english": "blood mummy",
+      "japanese": "ブラッドマミー",
+      "spanish": "momia ensangrentada",
+      "french": "momie sanglante",
+      "german": "Blutmumie",
+      "italian": "Mummia scarlatta"
+    },
+    {
+      "english": "wyrtle",
+      "japanese": "ガメゴン",
+      "spanish": "tortuverno",
+      "french": "tortugon",
+      "german": "Schilddrache",
+      "italian": "Tartadrago"
+    },
+    {
+      "english": "wyrtoise",
+      "japanese": "ガメゴンロード",
+      "spanish": "galapaverno",
+      "french": "dracarapace",
+      "german": "Panzerdrache",
+      "italian": "Dragoruga"
+    },
+    {
+      "english": "ram raider",
+      "japanese": "マッドオックス",
+      "spanish": "carnero campero",
+      "french": "boucboule",
+      "german": "Widderling",
+      "italian": "Hari-Hari"
+    },
+    {
+      "english": "rampage",
+      "japanese": "ゴートドン",
+      "spanish": "carnero pampero",
+      "french": "inhibélier",
+      "german": "Profibockser",
+      "italian": "Korna"
+    },
+    {
+      "english": "battering ram",
+      "japanese": "ビッグホーン",
+      "spanish": "carnero arietero",
+      "french": "boucabouche",
+      "german": "Rammbock",
+      "italian": "Pecheras"
+    },
+    {
+      "english": "rockbomb",
+      "japanese": "ばくだん岩",
+      "spanish": "rocobomba",
+      "french": "rochexplosif",
+      "german": "Felsenbombe",
+      "italian": "Esplo-sasso"
+    },
+    {
+      "english": "grinade",
+      "japanese": "スマイルロック",
+      "spanish": "piedrolo",
+      "french": "scorictus",
+      "german": "Sprengstein",
+      "italian": "Sorbomba"
+    },
+    {
+      "english": "bomboulder",
+      "japanese": "メガザルロック",
+      "spanish": "petrobomba",
+      "french": "vulcanobombe",
+      "german": "Bombenbrocken",
+      "italian": "Masso rosso"
+    },
+    {
+      "english": "restless armour",
+      "japanese": "さまようよろい",
+      "spanish": "armadura inquieta",
+      "french": "armure errante",
+      "german": "Ruhelose Rüstung",
+      "italian": "Armatura assassina"
+    },
+    {
+      "english": "infernal armour",
+      "japanese": "じごくのよろい",
+      "spanish": "armadura infernal",
+      "french": "armure infernale",
+      "german": "Höllenrüstung",
+      "italian": "Corazza infernale"
+    },
+    {
+      "english": "lethal armour",
+      "japanese": "キラーアーマー",
+      "spanish": "armadura letal",
+      "french": "armure fatale",
+      "german": "Todesrüstung",
+      "italian": "Armatura letale"
+    },
+    {
+      "english": "slime knight",
+      "japanese": "スライムナイト",
+      "spanish": "jinete de limo",
+      "french": "monte-gluant",
+      "german": "Schleimritter",
+      "italian": "Paladino Slime"
+    },
+    {
+      "english": "metal slime knight",
+      "japanese": "メタルライダー",
+      "spanish": "jinete de limo metálico",
+      "french": "monte-gluant de métal",
+      "german": "Metallschleimritter",
+      "italian": "Cavaliere Slime"
+    },
+    {
+      "english": "swinoceros",
+      "japanese": "突げきホーン",
+      "spanish": "maliceronte",
+      "french": "cornocéros",
+      "german": "Schweinozeros",
+      "italian": "Malignoceronte"
+    },
+    {
+      "english": "splatterhorn",
+      "japanese": "ライノキング",
+      "spanish": "feroceronte",
+      "french": "rudocéros",
+      "german": "Marterhorn",
+      "italian": "Rinoferoce"
+    },
+    {
+      "english": "mudraker",
+      "japanese": "ドロヌーバ",
+      "spanish": "fangal oscuro",
+      "french": "fangeux",
+      "german": "Schlammschlachter",
+      "italian": "Melmortifero"
+    },
+    {
+      "english": "admirer",
+      "japanese": "ジェリーマン",
+      "spanish": "cenagal mimético",
+      "french": "viscaire",
+      "german": "Matschmagier",
+      "italian": "Poltiglion"
+    },
+    {
+      "english": "live lava",
+      "japanese": "マグマロン",
+      "spanish": "lava viva",
+      "french": "brûlavif",
+      "german": "Lustige Lava",
+      "italian": "Lavaviva"
+    },
+    {
+      "english": "badboon",
+      "japanese": "マンドリル",
+      "spanish": "malandril",
+      "french": "babourin",
+      "german": "Gibbonze",
+      "italian": "Scimpanzer"
+    },
+    {
+      "english": "big badboon",
+      "japanese": "バブーン",
+      "spanish": "malandril grande",
+      "french": "combabouin",
+      "german": "Große Gibbonze",
+      "italian": "Gran Scimpanzer"
+    },
+    {
+      "english": "brainy badboon",
+      "japanese": "ヒババンゴ",
+      "spanish": "malandril inteligente",
+      "french": "ababouin",
+      "german": "Gescheite Gibbonze",
+      "italian": "Cerebroscimmia"
+    },
+    {
+      "english": "magus",
+      "japanese": "まじゅつし",
+      "spanish": "mago",
+      "french": "mage",
+      "german": "Magus",
+      "italian": "Magus"
+    },
+    {
+      "english": "shaman",
+      "japanese": "きとうし",
+      "spanish": "chamán",
+      "french": "shaman",
+      "german": "Schamane",
+      "italian": "Shaman"
+    },
+    {
+      "english": "sorcerer",
+      "japanese": "ようじゅつし",
+      "spanish": "hechicero",
+      "french": "sorcier",
+      "german": "Hexer",
+      "italian": "Stregon"
+    },
+    {
+      "english": "mandrake major",
+      "japanese": "リザードマン",
+      "spanish": "dracogento",
+      "french": "caporal mandragor",
+      "german": "Alraunenmajor",
+      "italian": "Mandrago maggiore"
+    },
+    {
+      "english": "mandrake marauder",
+      "japanese": "りゅう兵士",
+      "spanish": "merodeadraco",
+      "french": "soldat mandragor",
+      "german": "Alraunensoldat",
+      "italian": "Mandrago Ultra"
+    },
+    {
+      "english": "mandrake marshal",
+      "japanese": "シュプリンガー",
+      "spanish": "draconiente",
+      "french": "général mandragor",
+      "german": "Alraunenmarschall",
+      "italian": "Drapocalypse"
+    },
+    {
+      "english": "treeface",
+      "japanese": "じんめんじゅ",
+      "spanish": "arboligno",
+      "french": "tronc-bine",
+      "german": "Baumfratze",
+      "italian": "Faccia d'albero"
+    },
+    {
+      "english": "treevil",
+      "japanese": "ウドラー",
+      "spanish": "arboligno diabólico",
+      "french": "arbomination",
+      "german": "Baumteufel",
+      "italian": "Malalbero grigio"
+    },
+    {
+      "english": "chimaera",
+      "japanese": "キメラ",
+      "spanish": "quimera",
+      "french": "chimère",
+      "german": "Chimäre",
+      "italian": "Chimera"
+    },
+    {
+      "english": "hocus chimaera",
+      "japanese": "メイジキメラ",
+      "spanish": "quimera engañosa",
+      "french": "archimère",
+      "german": "Feuerchimäre",
+      "italian": "Chimera incantata"
+    },
+    {
+      "english": "ragged reaper",
+      "japanese": "かまっち",
+      "spanish": "muerte miserable",
+      "french": "faux-frère",
+      "german": "Sensenscheuche",
+      "italian": "Contadimonio"
+    },
+    {
+      "english": "raving reaper",
+      "japanese": "アサシンドール",
+      "spanish": "muerte mísera",
+      "french": "épouvantaille",
+      "german": "Düsterdrescher",
+      "italian": "Mietitore malvagio"
+    },
+    {
+      "english": "boppin' badger",
+      "japanese": "ポンポコだぬき",
+      "spanish": "malpache bailón",
+      "french": "blaireau bongo",
+      "german": "Diskodachs",
+      "italian": "Kan Kanide"
+    },
+    {
+      "english": "badger mager",
+      "japanese": "メイジポンポコ",
+      "spanish": "malpache",
+      "french": "blaireau mage",
+      "german": "Zauberdachs",
+      "italian": "Leocane"
+    },
+    {
+      "english": "badja",
+      "japanese": "ブラックタヌー",
+      "spanish": "malpache enmascarado",
+      "french": "blaireau ninja",
+      "german": "Frechdachs",
+      "italian": "Cattican"
+    },
+    {
+      "english": "chariot chappie",
+      "japanese": "とっしんこぞう",
+      "spanish": "carretero",
+      "french": "hécatombereau",
+      "german": "Wüste Wagenlenker",
+      "italian": "Er Car"
+    },
+    {
+      "english": "corrupt carter",
+      "japanese": "エビルチャリオット",
+      "spanish": "carretero corrupto",
+      "french": "charretier blindé",
+      "german": "Korrupte Kutscher",
+      "italian": "Carro arrabbiato"
+    },
+    {
+      "english": "mortoad",
+      "japanese": "ガマキャノン",
+      "spanish": "sapogaitas",
+      "french": "crapouillot",
+      "german": "Platzprotz",
+      "italian": "Rospomor"
+    },
+    {
+      "english": "expload",
+      "japanese": "デザートタンク",
+      "spanish": "sapogaitas explosivo",
+      "french": "croartilleur",
+      "german": "Knallfrosch",
+      "italian": "Ranabum"
+    },
+    {
+      "english": "blastoad",
+      "japanese": "キャノンキング",
+      "spanish": "sapogaitas petardo",
+      "french": "crapoxique",
+      "german": "Böllerkröte",
+      "italian": "Deflagrana"
+    },
+    {
+      "english": "parched peckerel",
+      "japanese": "デザートランナー",
+      "spanish": "pollastre reseco",
+      "french": "accélhéron",
+      "german": "Hünenpicker",
+      "italian": "Sbeccadoon reale"
+    },
+    {
+      "english": "peckerel",
+      "japanese": "アサシンエミュー",
+      "spanish": "pollastre",
+      "french": "pirvert",
+      "german": "Pick-Aas",
+      "italian": "Sbeccadoon"
+    },
+    {
+      "english": "knocktopus",
+      "japanese": "ニードルオクト",
+      "spanish": "pulplof",
+      "french": "poulpic",
+      "german": "Prollyp",
+      "italian": "Knocktopus"
+    },
+    {
+      "english": "shocktopus",
+      "japanese": "オクトスパイカー",
+      "spanish": "pulplof sorpresa",
+      "french": "pieuxvre",
+      "german": "Schocktopus",
+      "italian": "Shocktopus"
+    },
+    {
+      "english": "manguini",
+      "japanese": "アーゴンデビル",
+      "spanish": "bocazas",
+      "french": "manguini",
+      "german": "Maulheld",
+      "italian": "Laboca"
+    },
+    {
+      "english": "bloody manguini",
+      "japanese": "ブラッドアーゴン",
+      "spanish": "bocazas sanguinario",
+      "french": "manguini sanguinaire",
+      "german": "Blutige Maulheld",
+      "italian": "Boca magistra"
+    },
+    {
+      "english": "gruffon",
+      "japanese": "ヌボーン",
+      "spanish": "grifete",
+      "french": "escogriffon",
+      "german": "Angreif",
+      "italian": "Grifarruffo"
+    },
+    {
+      "english": "great gruffon",
+      "japanese": "ビッグボック",
+      "spanish": "gran grifete",
+      "french": "grand escogriffon",
+      "german": "Großangreif",
+      "italian": "Gran Grifo"
+    },
+    {
+      "english": "gramarye gruffon",
+      "japanese": "アロダイタス",
+      "spanish": "necrogrifete",
+      "french": "escogrillefon",
+      "german": "Uri-Geier",
+      "italian": "Magigrifo"
+    },
+    {
+      "english": "trigertaur",
+      "japanese": "タイガーランス",
+      "spanish": "tigretauro",
+      "french": "hippotigre",
+      "german": "Tigertaurus",
+      "italian": "Tricentauro"
+    },
+    {
+      "english": "white trigertaur",
+      "japanese": "ホワイトランサー",
+      "spanish": "tigretauro blanco",
+      "french": "hippotigre blanc",
+      "german": "Weiße Tigertaurus",
+      "italian": "Tricentauro gelido"
+    },
+    {
+      "english": "sick trigertaur",
+      "japanese": "キマライガー",
+      "spanish": "tigretauro enfermo",
+      "french": "hippotigrulk",
+      "german": "Kranke Tigertaurus",
+      "italian": "Tricentauro malefico"
+    },
+    {
+      "english": "moosifer",
+      "japanese": "アンクルホーン",
+      "spanish": "mucifer",
+      "french": "belzébik",
+      "german": "Bullzebub",
+      "italian": "Basettos"
+    },
+    {
+      "english": "barbatos",
+      "japanese": "ヘルバトラー",
+      "spanish": "barbatos",
+      "french": "barbatos",
+      "german": "Barbatos",
+      "italian": "Barbatos"
+    },
+    {
+      "english": "green dragon",
+      "japanese": "グリーンドラゴン",
+      "spanish": "dragón verde",
+      "french": "dragon vert",
+      "german": "Grüne Drache",
+      "italian": "Verdrago"
+    },
+    {
+      "english": "red dragon",
+      "japanese": "レッドドラゴン",
+      "spanish": "dragón rojo",
+      "french": "dragon rouge",
+      "german": "Rote Drache",
+      "italian": "Porpordrago"
+    },
+    {
+      "english": "rashaverak",
+      "japanese": "アンドレアル",
+      "spanish": "rashaverak",
+      "french": "rashaverak",
+      "german": "Rashaverak",
+      "italian": "Rashaverak"
+    },
+    {
+      "english": "living statue",
+      "japanese": "うごくせきぞう",
+      "spanish": "coloso viviente",
+      "french": "statue vivante",
+      "german": "Lebende Statue",
+      "italian": "Statua vivente"
+    },
+    {
+      "english": "stone guardian",
+      "japanese": "だいまじん",
+      "spanish": "coloso guardián",
+      "french": "gardien de pierre",
+      "german": "Steinwächter",
+      "italian": "Guardia di pietra"
+    },
+    {
+      "english": "drakularge",
+      "japanese": "ギガントヒルズ",
+      "spanish": "drácogran",
+      "french": "dracularge",
+      "german": "Wampir",
+      "italian": "Lardodragon"
+    },
+    {
+      "english": "drakulard",
+      "japanese": "ギガントドラゴン",
+      "spanish": "drácolard",
+      "french": "draculard",
+      "german": "Wanstdrache",
+      "italian": "Draku Lard"
+    },
+    {
+      "english": "drakulord",
+      "japanese": "ドラゴン・ウー",
+      "spanish": "dráculord",
+      "french": "draculord",
+      "german": "Drachenfürst",
+      "italian": "Lord Draku"
+    },
+    {
+      "english": "hunter mech",
+      "japanese": "メタルハンター",
+      "spanish": "roboarmadura guerrera",
+      "french": "mécachasseur",
+      "german": "Jagdroboter",
+      "italian": "Mechacentauro grigio"
+    },
+    {
+      "english": "killing machine",
+      "japanese": "キラーマシン",
+      "spanish": "máquina de matar",
+      "french": "machine à tuer",
+      "german": "Killermaschine",
+      "italian": "Mechacentauro"
+    },
+    {
+      "english": "king slime",
+      "japanese": "キングスライム",
+      "spanish": "limo rey",
+      "french": "roi gluant",
+      "german": "Königsschleim",
+      "italian": "Re Slime"
+    },
+    {
+      "english": "king cureslime",
+      "japanese": "スライムベホマズン",
+      "spanish": "limo rey curativo",
+      "french": "roi guérigluant",
+      "german": "Heilschleimkönig",
+      "italian": "Re Curaslime"
+    },
+    {
+      "english": "metal king slime",
+      "japanese": "メタルキング",
+      "spanish": "limo rey metálico",
+      "french": "roi gluant de métal",
+      "german": "Metallkönigschleim",
+      "italian": "Re Slime grigio"
+    },
+    {
+      "english": "cumulus rex",
+      "japanese": "くもの大王",
+      "spanish": "cúmulo rex",
+      "french": "cumulus lex",
+      "german": "Wolkenkönig",
+      "italian": "Nubis"
+    },
+    {
+      "english": "cumulus vex",
+      "japanese": "ヘルクラウダー",
+      "spanish": "cúmulo matón",
+      "french": "cumulus jex",
+      "german": "Wolkenkaiser",
+      "italian": "Nebulus"
+    },
+    {
+      "english": "darkonium slime",
+      "japanese": "スライムマデュラ",
+      "spanish": "limo tenebrum",
+      "french": "gluant ténérium",
+      "german": "Dunkelsteinschleim",
+      "italian": "Slime Darkonium"
+    },
+    {
+      "english": "gem slime",
+      "japanese": "ゴールデンスライム",
+      "spanish": "limo gema",
+      "french": "gluandor",
+      "german": "Edelschleim",
+      "italian": "Prezioslime"
+    },
+    {
+      "english": "stone golem",
+      "japanese": "ストーンマン",
+      "spanish": "gólem de piedra",
+      "french": "golem de pierre",
+      "german": "Steingolem",
+      "italian": "Golem di pietra"
+    },
+    {
+      "english": "gold golem",
+      "japanese": "ゴールドマン",
+      "spanish": "gólem de oro",
+      "french": "golem d'or",
+      "german": "Goldgolem",
+      "italian": "Golem dorato"
+    },
+    {
+      "english": "golem",
+      "japanese": "ゴーレム",
+      "spanish": "gólem",
+      "french": "golem",
+      "german": "Golem",
+      "italian": "Golem"
+    },
+    {
+      "english": "drackal",
+      "japanese": "ストロングアニマル",
+      "spanish": "dracal",
+      "french": "dracal",
+      "german": "Drakal",
+      "italian": "Drakallo"
+    },
+    {
+      "english": "drastic drackal",
+      "japanese": "ヘルジャッカル",
+      "spanish": "dracal drástico",
+      "french": "dracal bestial",
+      "german": "Drastische Drakal",
+      "italian": "Iper Drakallo"
+    },
+    {
+      "english": "dreadful drackal",
+      "japanese": "スケアリードッグ",
+      "spanish": "dracal atroz",
+      "french": "dracal fatal",
+      "german": "Drangsal-Drakal",
+      "italian": "Sciak Demon"
+    },
+    {
+      "english": "harmour",
+      "japanese": "デビルアーマー",
+      "spanish": "aymadura",
+      "french": "hauberserker",
+      "german": "Rüde Rüstung",
+      "italian": "Karmatura"
+    },
+    {
+      "english": "bad karmour",
+      "japanese": "てっこうまじん",
+      "spanish": "karmadura",
+      "french": "cuirassassin",
+      "german": "Eisenhauer",
+      "italian": "Karmatura del male"
+    },
+    {
+      "english": "alarmour",
+      "japanese": "サタンメイル",
+      "spanish": "alarmadura",
+      "french": "alarmure",
+      "german": "Panikpanzer",
+      "italian": "Allarmatura"
+    },
+    {
+      "english": "fright knight",
+      "japanese": "ナイトリッチ",
+      "spanish": "caballero horripilante",
+      "french": "seigneur malheur",
+      "german": "Albritter",
+      "italian": "Cavaliere della paura"
+    },
+    {
+      "english": "night knight",
+      "japanese": "ナイトキング",
+      "spanish": "caballero nocturno",
+      "french": "seigneur terreur",
+      "german": "Nachtritter",
+      "italian": "Paladino del terrore"
+    },
+    {
+      "english": "terrorhawk",
+      "japanese": "マッドファルコン",
+      "spanish": "halcorror",
+      "french": "épirevier",
+      "german": "Angstadler",
+      "italian": "Frenfalcon"
+    },
+    {
+      "english": "prism peacock",
+      "japanese": "にじくじゃく",
+      "spanish": "pavo prisma",
+      "french": "dark-en-ciel",
+      "german": "Prismapfau",
+      "italian": "Pavone prismatico"
+    },
+    {
+      "english": "bird of terrordise",
+      "japanese": "れんごくまちょう",
+      "spanish": "ave del terroriso",
+      "french": "oiseau de peuradis",
+      "german": "Terrordiesvogel",
+      "italian": "Alinferno"
+    },
+    {
+      "english": "mad moai",
+      "japanese": "ビッグモアイ",
+      "spanish": "moai loco",
+      "french": "moaï mutant",
+      "german": "Meschuggene Moai",
+      "italian": "Moai pazzo"
+    },
+    {
+      "english": "mega moai",
+      "japanese": "ゴードンヘッド",
+      "spanish": "megamoai",
+      "french": "moaïaïaï",
+      "german": "Mega-Moai",
+      "italian": "Mega Moai"
+    },
+    {
+      "english": "sculptrice",
+      "japanese": "ヘルビースト",
+      "spanish": "esculptricia",
+      "french": "glargouille",
+      "german": "Skrupellose Skulptur",
+      "italian": "Scultura gelida"
+    },
+    {
+      "english": "sculpture vulture",
+      "japanese": "リビングスタチュー",
+      "spanish": "buitre esculpido",
+      "french": "froicoucass",
+      "german": "Skalptur",
+      "italian": "Demone marmoreo"
+    },
+    {
+      "english": "aggrosculpture",
+      "japanese": "ウィングデビル",
+      "spanish": "agrrroscultura",
+      "french": "rapace-muraille",
+      "german": "Skulptortur",
+      "italian": "Aggrescultura"
+    },
+    {
+      "english": "wight priest",
+      "japanese": "デスプリースト",
+      "spanish": "sacerdote esquelético",
+      "french": "prêtre maudit",
+      "german": "Todespriester",
+      "italian": "Druido dell'ombra"
+    },
+    {
+      "english": "wight king",
+      "japanese": "ワイトキング",
+      "spanish": "pontífice esquelético",
+      "french": "roi maudit",
+      "german": "Todeskönig",
+      "italian": "Druido supremo"
+    },
+    {
+      "english": "claw hammer",
+      "japanese": "ヘルマリーン",
+      "spanish": "martillo con garras",
+      "french": "vilerequin pèlerin",
+      "german": "Klauenhammer",
+      "italian": "Pinz"
+    },
+    {
+      "english": "power hammer",
+      "japanese": "サンドシャーク",
+      "spanish": "martillo potente",
+      "french": "vilerequin tigre",
+      "german": "Krafthammer",
+      "italian": "Martellissimus"
+    },
+    {
+      "english": "python priest",
+      "japanese": "スネークロード",
+      "spanish": "pitoniso",
+      "french": "vicaire vipère",
+      "german": "Pythonpriester",
+      "italian": "Serpe sacrilega"
+    },
+    {
+      "english": "cobra cardinal",
+      "japanese": "じごくのメンドーサ",
+      "spanish": "pitoniso cardenal",
+      "french": "cardinal crotale",
+      "german": "Kobrakardinal",
+      "italian": "Caracobra"
+    },
+    {
+      "english": "tantamount",
+      "japanese": "れんごく天馬",
+      "spanish": "tantomonta",
+      "french": "tempétalon",
+      "german": "Gaul des Grauens",
+      "italian": "Tanamont"
+    },
+    {
+      "english": "godsteed",
+      "japanese": "レジェンドホース",
+      "spanish": "montatanto",
+      "french": "impur-sang",
+      "german": "Ross der Rache",
+      "italian": "Furia demoniaca"
+    },
+    {
+      "english": "Equinox",
+      "japanese": "黒竜丸",
+      "spanish": "Montadito",
+      "french": "Équinocte",
+      "german": "Hengst der Angst",
+      "italian": "Equinox"
+    },
+    {
+      "english": "cyclops",
+      "japanese": "サイクロプス",
+      "spanish": "cíclope titán",
+      "french": "cyclope",
+      "german": "Zyklop",
+      "italian": "Ciclope"
+    },
+    {
+      "english": "gigantes",
+      "japanese": "ギガンテス",
+      "spanish": "cíclope gigante",
+      "french": "géant",
+      "german": "Gigant",
+      "italian": "Gigante"
+    },
+    {
+      "english": "Atlas",
+      "japanese": "アトラス",
+      "spanish": "Atlas",
+      "french": "Atlas",
+      "german": "Atlas",
+      "italian": "Atlas"
+    },
+    {
+      "english": "troll",
+      "japanese": "トロル",
+      "spanish": "trol",
+      "french": "troll",
+      "german": "Troll",
+      "italian": "Troll"
+    },
+    {
+      "english": "boss troll",
+      "japanese": "ボストロール",
+      "spanish": "trol jefe",
+      "french": "chef troll",
+      "german": "Trollboss",
+      "italian": "Troll capo"
+    },
+    {
+      "english": "great troll",
+      "japanese": "トロルキング",
+      "spanish": "trol gigante",
+      "french": "grand troll",
+      "german": "Riesentroll",
+      "italian": "Grande Troll"
+    },
+    {
+      "english": "magmalice",
+      "japanese": "ようがんまじん",
+      "spanish": "magmalicioso",
+      "french": "magmasse",
+      "german": "Magmalefiz",
+      "italian": "Magmalvagio"
+    },
+    {
+      "english": "firn fiend",
+      "japanese": "ひょうがまじん",
+      "spanish": "firn",
+      "french": "glaglator",
+      "german": "Gletschergeist",
+      "italian": "Gelmonio"
+    },
+    {
+      "english": "Shogum",
+      "japanese": "スライムジェネラル",
+      "spanish": "Limiermo Tell",
+      "french": "Monte-gluancien",
+      "german": "Schleimurai",
+      "italian": "Slime Parabellum"
+    },
+    {
+      "english": "slionheart",
+      "japanese": "ゴッドライダー",
+      "spanish": "corazón de limón",
+      "french": "monte-gluancêtre",
+      "german": "Bismatsch",
+      "italian": "Cuor di Slime"
+    },
+    {
+      "english": "Trauminator",
+      "japanese": "Ｓキラーマシン",
+      "spanish": "Traumanator",
+      "french": "Trauminator",
+      "german": "Trauminator",
+      "italian": "Traumatizzator"
+    },
+    {
+      "english": "AU-1000",
+      "japanese": "ゴールドマジンガ",
+      "spanish": "AU-1000",
+      "french": "AU-1000",
+      "german": "AU-1000",
+      "italian": "AU-1000"
+    },
+    {
+      "english": "void droid",
+      "japanese": "ファイナルウェポン",
+      "spanish": "androide borde",
+      "french": "droïde arachnoïde",
+      "german": "Drohboter",
+      "italian": "Vacuum Droid"
+    },
+    {
+      "english": "alphyn",
+      "japanese": "キマイラロード",
+      "spanish": "leoncio",
+      "french": "imbroglion",
+      "german": "Pantherror",
+      "italian": "Signore dei leoni"
+    },
+    {
+      "english": "vermil lion",
+      "japanese": "じごくのヌエ",
+      "spanish": "bermeleón",
+      "french": "vermilion",
+      "german": "Lileu",
+      "italian": "Red Leo"
+    },
+    {
+      "english": "shivery shrubbery",
+      "japanese": "デビルスノー",
+      "spanish": "maldad patuda helada",
+      "french": "cryofolia",
+      "german": "Zitterzweig",
+      "italian": "Brem Trem"
+    },
+    {
+      "english": "apeckalypse",
+      "japanese": "ランドンクイナ",
+      "spanish": "pollastre apocalíptico",
+      "french": "aigrettox",
+      "german": "Apickalypse",
+      "italian": "Trisbecca"
+    },
+    {
+      "english": "Nemean",
+      "japanese": "ハヌマーン",
+      "spanish": "León de Nemea",
+      "french": "Némée",
+      "german": "Nemeische Löwe",
+      "italian": "Nemean"
+    },
+    {
+      "english": "wonder wyrtle",
+      "japanese": "ガメゴンレジェンド",
+      "spanish": "tortuverno del averno",
+      "french": "tortugondor",
+      "german": "Wunderdrache",
+      "italian": "Meraviguscio"
+    },
+    {
+      "english": "geothaum",
+      "japanese": "あんこくまじん",
+      "spanish": "accidente geológico",
+      "french": "géolem",
+      "german": "Tektokrat",
+      "italian": "Geomagico"
+    },
+    {
+      "english": "cosmic chimaera",
+      "japanese": "スターキメラ",
+      "spanish": "quimera cósmica",
+      "french": "chimère cosmique",
+      "german": "Kosmische Chimäre",
+      "italian": "Chimera cosmica"
+    },
+    {
+      "english": "master moosifer",
+      "japanese": "デスカイザー",
+      "spanish": "mucifer alfa",
+      "french": "maître belzébik",
+      "german": "Meister-Bullzebub",
+      "italian": "Basettos maximo"
+    },
+    {
+      "english": "freaky tiki",
+      "japanese": "まおうのかめん",
+      "spanish": "tiki tiki",
+      "french": "traumasque",
+      "german": "Magische Maske",
+      "italian": "Tantoterror"
+    },
+    {
+      "english": "mandrake monarch",
+      "japanese": "まかいファイター",
+      "spanish": "draconarca",
+      "french": "commandragor",
+      "german": "Alraunenmonarch",
+      "italian": "Drapocalypse supremo"
+    },
+    {
+      "english": "cumulus hex",
+      "japanese": "ヘルミラージュ",
+      "spanish": "cúmulo maldito",
+      "french": "cumulus rex",
+      "german": "Wolkenhexer",
+      "italian": "Nube infernale"
+    },
+    {
+      "english": "platinum king jewel",
+      "japanese": "プラチナキング",
+      "spanish": "rey joya de platino",
+      "french": "bijou royal en platine",
+      "german": "Platinkönigsjuwel",
+      "italian": "Platislime"
+    },
+    {
+      "english": "charmour",
+      "japanese": "マジックアーマー",
+      "spanish": "encantadura",
+      "french": "heaumage",
+      "german": "Erzmagier",
+      "italian": "Larmagic"
+    },
+    {
+      "english": "blight knight",
+      "japanese": "ヴァルハラー",
+      "spanish": "caballero maldito",
+      "french": "seigneur saigneur",
+      "german": "Verderbnisritter",
+      "italian": "Victorio"
+    },
+    {
+      "english": "moai minstrel",
+      "japanese": "クラウンヘッド",
+      "spanish": "moai payaso",
+      "french": "moaï marrant",
+      "german": "Moai-Musikant",
+      "italian": "Clown Moai"
+    },
+    {
+      "english": "grrrgoyle",
+      "japanese": "ホラービースト",
+      "spanish": "garrrgola",
+      "french": "grrrgouille",
+      "german": "Grrrgyl",
+      "italian": "Groargoyle"
+    },
+    {
+      "english": "wight emperor",
+      "japanese": "ロードコープス",
+      "spanish": "emperador esquelético",
+      "french": "empereur maudit",
+      "german": "Todeskaiser",
+      "italian": "Monarca incantatore"
+    },
+    {
+      "english": "boogie manguini",
+      "japanese": "イエローサタン",
+      "spanish": "bocazas endemoniado",
+      "french": "manguini boogie",
+      "german": "Zappelnde Maulheld",
+      "italian": "Boca suprema"
+    },
+    {
+      "english": "barriearthenwarrior",
+      "japanese": "ちていのばんにん",
+      "spanish": "jinete de defenscota",
+      "french": "cavalier de braise",
+      "german": "Harte Keramikkrieger",
+      "italian": "Cavaliere ceramico"
+    },
+    {
+      "english": "grim reaper",
+      "japanese": "メフィストフェレス",
+      "spanish": "muerte súbita",
+      "french": "glauque-mitaine",
+      "german": "Sensenmännchen",
+      "italian": "Macabrette"
+    },
+    {
+      "english": "bling badger",
+      "japanese": "ゴールドタヌ",
+      "spanish": "malpache dorado",
+      "french": "blaireau bling",
+      "german": "Glitzerdachs",
+      "italian": "Cancab"
+    },
+    {
+      "english": "flamin' drayman",
+      "japanese": "じごくぐるま",
+      "spanish": "carretero infernal",
+      "french": "chauffard d'assaut",
+      "german": "Flammende Fuhrmann",
+      "italian": "Carrofante"
+    },
+    {
+      "english": "hammer horror",
+      "japanese": "ダークマリーン",
+      "spanish": "martillo horroroso",
+      "french": "vilerequin marteau",
+      "german": "Horrorhammer",
+      "italian": "Marterribilis"
+    },
+    {
+      "english": "boa bishop",
+      "japanese": "ビュアール",
+      "spanish": "pitoniso obispo",
+      "french": "prélat boa",
+      "german": "Boabischof",
+      "italian": "Bad Boa"
+    },
+    {
+      "english": "handsome crab",
+      "japanese": "ガニラス",
+      "spanish": "cangrejo macizo",
+      "french": "crabat-joie",
+      "german": "Krabbarbar",
+      "italian": "Belgrank"
+    },
+    {
+      "english": "crabid",
+      "japanese": "ぐんたいガニ",
+      "spanish": "carabinero",
+      "french": "crabarbare",
+      "german": "Sabberkrabbe",
+      "italian": "Grankiolon"
+    },
+    {
+      "english": "crabber dabber doo",
+      "japanese": "じごくのハサミ",
+      "spanish": "camarón de la península",
+      "french": "crabject",
+      "german": "Krabba-Dabba-Du",
+      "italian": "Gran Grank"
+    },
+    {
+      "english": "king crab",
+      "japanese": "キラークラブ",
+      "spanish": "centollo",
+      "french": "crabsolutiste",
+      "german": "Königskrabbe",
+      "italian": "King Grank"
+    },
+    {
+      "english": "icikiller",
+      "japanese": "アイスビックル",
+      "spanish": "garrero gélido",
+      "french": "glaciatueur",
+      "german": "Eisklaue",
+      "italian": "Killer delle nevi"
+    },
+    {
+      "english": "riptide",
+      "japanese": "オーシャンクロー",
+      "spanish": "garrero marino",
+      "french": "rase-marée",
+      "german": "Schlitzer",
+      "italian": "Assalitore marino"
+    },
+    {
+      "english": "claws",
+      "japanese": "クローハンズ",
+      "spanish": "garrero",
+      "french": "griffeur",
+      "german": "Kralle",
+      "italian": "Assalitore gelido"
+    },
+    {
+      "english": "seasaur",
+      "japanese": "ギャオース",
+      "spanish": "oceanosaurio",
+      "french": "aquasaure",
+      "german": "Seesaurier",
+      "italian": "Drago d'acqua"
+    },
+    {
+      "english": "abyss diver",
+      "japanese": "ヘルダイバー",
+      "spanish": "oceanosaurio abisal",
+      "french": "abyssaure",
+      "german": "Abgrundtaucher",
+      "italian": "Dragoon"
+    },
+    {
+      "english": "seavern",
+      "japanese": "シーバーン",
+      "spanish": "guiverno marinero",
+      "french": "pélagosaure",
+      "german": "Seewurm",
+      "italian": "Vyverna marina"
+    },
+    {
+      "english": "terror troll",
+      "japanese": "ダークトロル",
+      "spanish": "trol terrorífico",
+      "french": "troll à trouille",
+      "german": "Terrortroll",
+      "italian": "Terror Troll"
+    },
+    {
+      "english": "prime slime",
+      "japanese": "デンガー",
+      "spanish": "primus inter limus",
+      "french": "monte-gluantique",
+      "german": "Pappoleon",
+      "italian": "Slime optimus"
+    },
+    {
+      "english": "scarlet fever",
+      "japanese": "エビルフレイム",
+      "spanish": "escarlatina",
+      "french": "scarlatin",
+      "german": "Masernmops",
+      "italian": "Febbre scarlatta"
+    },
+    {
+      "english": "hexagoon",
+      "japanese": "ブルドーガ",
+      "spanish": "hexatauro",
+      "french": "hexacorne",
+      "german": "Hexagoblin",
+      "italian": "Hexagon"
+    },
+    {
+      "english": "Wight Knight",
+      "japanese": "なぞの黒騎士",
+      "spanish": "Caballero Oscuro",
+      "french": "chevalier Karbon",
+      "german": "Schwarze Ritter",
+      "italian": "Cavaliere dell'Ombra"
+    },
+    {
+      "english": "Morag",
+      "japanese": "妖女イシュダル",
+      "spanish": "Morag",
+      "french": "Sylvane",
+      "german": "Morag",
+      "italian": "Morag"
+    },
+    {
+      "english": "Ragin' Contagion",
+      "japanese": "病魔パンデルム",
+      "spanish": "Pestilencia",
+      "french": "Épidémon",
+      "german": "Seine Pestilenz",
+      "italian": "Epidemon"
+    },
+    {
+      "english": "Master of Nu'un",
+      "japanese": "魔神ジャダーマ",
+      "spanish": "Andosiniestro",
+      "french": "Blaisephème",
+      "german": "Luziferius",
+      "italian": "Signore del Nulla"
+    },
+    {
+      "english": "Lleviathan",
+      "japanese": "ぬしさま",
+      "spanish": "Leviatán",
+      "french": "Moby Pick",
+      "german": "Leviatran",
+      "italian": "Baleviatan"
+    },
+    {
+      "english": "Garth Goyle",
+      "japanese": "石の番人",
+      "spanish": "Gárgol",
+      "french": "garde Gouille",
+      "german": "Gneisbeißer",
+      "italian": "Gran Goyle"
+    },
+    {
+      "english": "Tyrantula",
+      "japanese": "妖毒虫ズオー",
+      "spanish": "Tirántula",
+      "french": "Tyrantule",
+      "german": "Tyrantula",
+      "italian": "Tirantula"
+    },
+    {
+      "english": "Grand Lizzier",
+      "japanese": "アノン",
+      "spanish": "Draco",
+      "french": "Balthézard",
+      "german": "Kommodore Waran",
+      "italian": "Draklin"
+    },
+    {
+      "english": "Larstastnaras",
+      "japanese": "呪幻師シャルマナ",
+      "spanish": "Larstastnaras",
+      "french": "Larstastnaras",
+      "german": "Larstastnaras",
+      "italian": "Ynimiga"
+    },
+    {
+      "english": "Dreadmaster",
+      "japanese": "魔教師エルシオン",
+      "spanish": "Dire",
+      "french": "Directueur",
+      "german": "Grausige Pauker",
+      "italian": "Dyscyplos"
+    },
+    {
+      "english": "Gadrongo",
+      "japanese": "大怪像ガドンゴ",
+      "spanish": "Tejujú",
+      "french": "Gadrongo",
+      "german": "Gadrongo",
+      "italian": "Gadrongo"
+    },
+    {
+      "english": "Greygnarl",
+      "japanese": "グレイナル",
+      "spanish": "Dragris",
+      "french": "Grizius",
+      "german": "Graugnarz",
+      "italian": "Dragriphon"
+    },
+    {
+      "english": "Goreham-Hogg",
+      "japanese": "ゴレオン将軍",
+      "spanish": "Teniente Schwein",
+      "french": "général Mac Assin",
+      "german": "Hauptmann Grunz",
+      "italian": "Generale Soinos"
+    },
+    {
+      "english": "Hootingham-Gore",
+      "japanese": "ゲルニック将軍",
+      "spanish": "Teniente Eule",
+      "french": "général Mac Hulotte",
+      "german": "Hauptmann Kauz",
+      "italian": "Generale Gufus"
+    },
+    {
+      "english": "Goresby-Purrvis",
+      "japanese": "ギュメイ将軍",
+      "spanish": "Teniente Katze",
+      "french": "général Mac Léo",
+      "german": "Hauptmann Katz",
+      "italian": "Generale Pardus"
+    },
+    {
+      "english": "King Godwyn",
+      "japanese": "暗黒皇帝ガナサダイ",
+      "spanish": "rey König",
+      "french": "roi Govin de Klenfer",
+      "german": "König Gottfried",
+      "italian": "Imperatore Teufel"
+    },
+    {
+      "english": "Barbarus",
+      "japanese": "闇竜バルボロス",
+      "spanish": "Fafnir",
+      "french": "Barbarus",
+      "german": "Barbarus",
+      "italian": "Barbarus"
+    },
+    {
+      "english": "Corvus",
+      "japanese": "堕天使エルギオス",
+      "spanish": "Luzbel",
+      "french": "Corvus",
+      "german": "Corvus",
+      "italian": "Corvus"
+    },
+    {
+      "english": "octagoon",
+      "japanese": "アイアンブルドー",
+      "spanish": "octotauro",
+      "french": "octocorne",
+      "german": "Oktogoblin",
+      "italian": "Octagon"
+    },
+    {
+      "english": "Sir Sanguinus",
+      "japanese": "ブラッドナイト",
+      "spanish": "Sir Sanguinus",
+      "french": "baron Hémoglobon",
+      "german": "Sir Sanguinus",
+      "italian": "Sir Sanguinus"
+    },
+    {
+      "english": "cannibelle",
+      "japanese": "ヘルヴィーナス",
+      "spanish": "canibella",
+      "french": "cannibelle",
+      "german": "Kannibella",
+      "italian": "Cannibella"
+    },
+    {
+      "english": "uncommon cold",
+      "japanese": "マッドブリザード",
+      "spanish": "permafrost",
+      "french": "hypothermiasme",
+      "german": "Bibber-Bakillus",
+      "italian": "Gelo profondo"
+    },
+    {
+      "english": "Tyrannosaurus Wrecks",
+      "japanese": "破壊神フォロボス",
+      "spanish": "Cernunnos",
+      "french": "Tyrannomort",
+      "german": "Tyrannosaurus Hex",
+      "italian": "Tirannosaurus Max"
+    },
+    {
+      "english": "stale whale",
+      "japanese": "だいおうクジラ",
+      "spanish": "ballena varada",
+      "french": "léviathon",
+      "german": "Annodazu-Wal",
+      "italian": "Baledetta"
+    },
+    {
+      "english": "pale whale",
+      "japanese": "オーシャンボーン",
+      "spanish": "ballena blancuzca",
+      "french": "bhaleine",
+      "german": "Strahlwal",
+      "italian": "Cetaceus pallidus"
+    },
+    {
+      "english": "widow's pique",
+      "japanese": "デスタランチュラ",
+      "spanish": "pico de viuda",
+      "french": "veuve venin",
+      "german": "Pfuispinne",
+      "italian": "Tessitele"
+    },
+    {
+      "english": "cyber spider",
+      "japanese": "ボーンスパイダ",
+      "spanish": "ciberaraña",
+      "french": "armygale",
+      "german": "Robospinne",
+      "italian": "Technoaracnide"
+    },
+    {
+      "english": "slugly betsy",
+      "japanese": "うみうしひめ",
+      "spanish": "beafea",
+      "french": "laidy",
+      "german": "Igitte",
+      "italian": "Perfidya"
+    },
+    {
+      "english": "Elusid",
+      "japanese": "イデアラゴン",
+      "spanish": "Elusido",
+      "french": "Grévanescent",
+      "german": "Volataire",
+      "italian": "Elusid"
+    },
+    {
+      "english": "hell's gatekeeper",
+      "japanese": "ヘルガーディアン",
+      "spanish": "decapitado infernal",
+      "french": "gardien de l'enfer",
+      "german": "Höllenpförtner",
+      "italian": "Custode infernale"
+    },
+    {
+      "english": "wishmaster",
+      "japanese": "ギリメカラ",
+      "spanish": "genio malvado",
+      "french": "carnagénie",
+      "german": "Wunschmeister",
+      "italian": "Mastro Desiderio"
+    },
+    {
+      "english": "Hammibal",
+      "japanese": "怪力軍曹イボイノス",
+      "spanish": "Kochinillen",
+      "french": "Hannimal",
+      "german": "Clausewutz",
+      "italian": "Porcesare"
+    },
+    {
+      "english": "Fowleye",
+      "japanese": "邪眼皇帝アウルート",
+      "spanish": "Pajarraken",
+      "french": "Volattila",
+      "german": "Uhunhold",
+      "italian": "Gufugawa"
+    },
+    {
+      "english": "Excalipurr",
+      "japanese": "魔剣神レパルド",
+      "spanish": "Felinen",
+      "french": "Charibaldi",
+      "german": "Parserval",
+      "italian": "Bonapardus"
+    },
+    {
+      "english": "Yore",
+      "japanese": "いにしえの魔神",
+      "spanish": "Matasalén",
+      "french": "Fourax",
+      "german": "Megrusalem",
+      "italian": "Matsalem"
+    },
+    {
+      "english": "Nodoph",
+      "japanese": "アルマトラ",
+      "spanish": "Leonírico",
+      "french": "Atoner",
+      "german": "Tatzel",
+      "italian": "Nodoph"
+    },
+    {
+      "english": "Rover",
+      "japanese": "ギャングアニマル",
+      "spanish": "Lindo Pulgoso",
+      "french": "Médhor",
+      "german": "Lumpi",
+      "italian": "Doggy"
+    },
+    {
+      "english": "King Godfrey",
+      "japanese": "名をうばわれし王",
+      "spanish": "rey Káiser",
+      "french": "roi Godefroi de Klenfer",
+      "german": "König Gottlieb",
+      "italian": "Re Goffredo"
+    },
+    {
+      "english": "Tyrannosaura Wrecks",
+      "japanese": "フォロボシータ",
+      "spanish": "Cernunnas",
+      "french": "Tyrannamort",
+      "german": "Tyrannosaura Hex",
+      "italian": "Tirannosaura Lex"
+    },
+    {
+      "english": "Dragonlord",
+      "japanese": "竜王",
+      "spanish": "Draconarius",
+      "french": "Lordragon",
+      "german": "Drachenfürst",
+      "italian": "Dragonlord"
+    },
+    {
+      "english": "Malroth",
+      "japanese": "シドー",
+      "spanish": "Malroth",
+      "french": "Malroth",
+      "german": "Malroth",
+      "italian": "Malroth"
+    },
+    {
+      "english": "Baramos",
+      "japanese": "バラモス",
+      "spanish": "Baramos",
+      "french": "Baramos",
+      "german": "Baramos",
+      "italian": "Padramos"
+    },
+    {
+      "english": "Zoma",
+      "japanese": "ゾーマ",
+      "spanish": "Zoma",
+      "french": "Zoma",
+      "german": "Zoma",
+      "italian": "Zoma"
+    },
+    {
+      "english": "Psaro",
+      "japanese": "デスピサロ",
+      "spanish": "Psaro",
+      "french": "Psaro",
+      "german": "Psaro",
+      "italian": "Psaro"
+    },
+    {
+      "english": "Estark",
+      "japanese": "エスターク",
+      "spanish": "Estark",
+      "french": "Estark",
+      "german": "Estark",
+      "italian": "Estark"
+    },
+    {
+      "english": "Nimzo",
+      "japanese": "ミルドラース",
+      "spanish": "Nimzo",
+      "french": "Nimzo",
+      "german": "Nimzo",
+      "italian": "Nimzo"
+    },
+    {
+      "english": "Murdaw",
+      "japanese": "ムドー",
+      "spanish": "Murdaw",
+      "french": "Meurtor",
+      "german": "Mordar",
+      "italian": "Lacertow"
+    },
+    {
+      "english": "Mortamor",
+      "japanese": "デスタムーア",
+      "spanish": "Mortamor",
+      "french": "Mortamor",
+      "german": "Mortamor",
+      "italian": "Moltomort"
+    },
+    {
+      "english": "left claw",
+      "japanese": "ひだりて",
+      "spanish": "garra izquierda",
+      "french": "griffe gauche",
+      "german": "Linke Klaue",
+      "italian": "artiglio sinistro"
+    },
+    {
+      "english": "right claw",
+      "japanese": "みぎて",
+      "spanish": "garra derecha",
+      "french": "griffe droite",
+      "german": "Rechte Klaue",
+      "italian": "artiglio destro"
+    },
+    {
+      "english": "Orgodemir",
+      "japanese": "オルゴ・デミーラ",
+      "spanish": "Orgodemir",
+      "french": "Orgodémir",
+      "german": "Orgodemir",
+      "italian": "Granvert"
+    },
+    {
+      "english": "Dhoulmagus",
+      "japanese": "ドルマゲス",
+      "spanish": "Dhoulmagus",
+      "french": "Dhoulmagus",
+      "german": "Dhoulmagus",
+      "italian": "Dhoulmagus"
+    },
+    {
+      "english": "Rhapthorne",
+      "japanese": "ラプソーン",
+      "spanish": "Rhapthorne",
+      "french": "Rhapthorne",
+      "german": "Rhapthorne",
+      "italian": "Rhapthorne"
+    },
+    {
+      "english": "Nokturnus",
+      "japanese": "ダークドレアム",
+      "spanish": "Nokturnus",
+      "french": "Nokturnus",
+      "german": "Nokturnus",
+      "italian": "Nokturnus"
+    },
+    {
+      "english": "Aquila",
+      "japanese": "イザヤール",
+      "spanish": "Engel",
+      "french": "Aquila",
+      "german": "Aquila",
+      "italian": "Falko"
+    }
+  ]
+}

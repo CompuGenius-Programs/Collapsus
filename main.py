@@ -114,8 +114,9 @@ async def _translate(ctx, phrase: Option(str, "Word or Phrase (Ex. Copper Sword)
                      language_output: Option(str, "Output Language (Ex. Japanese)",
                                              choices=parsers.translation_languages, required=False)):
     data = {"translations": []}
-    for file in parsers.translation_files:
-        with open("data/" + file, "r", encoding="utf-8") as fp:
+
+    for file in os.listdir("data/translations"):
+        with open("data/translations/" + file, "r", encoding="utf-8") as fp:
             data["translations"] += json.load(fp)["translations"]
 
     translations = data["translations"]

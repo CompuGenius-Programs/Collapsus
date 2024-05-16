@@ -116,6 +116,8 @@ async def _translate(ctx, phrase: Option(str, "Word or Phrase (Ex. Copper Sword)
     data = {"translations": []}
 
     for file in os.listdir("data/translations"):
+        if file == "grotto.json":
+            continue
         with open("data/translations/" + file, "r", encoding="utf-8") as fp:
             data["translations"] += json.load(fp)["translations"]
 

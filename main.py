@@ -63,6 +63,7 @@ A bot created by <@{dev_id}> for The Quester's Rest (<{server_invite_url + serve
 **/songs_all** - *Play all songs*
 **/stop** - *Stop playing songs*
 **/translate** - *Translate a word or phrase*
+**/grotto_location** - *Get grotto location info - <#{grotto_bot_commands_channel}> only*
 **/grotto_translate(\_[language])** - *Translate a grotto - <#{grotto_bot_commands_channel}> only*
 
 **/help** - *Displays this message*

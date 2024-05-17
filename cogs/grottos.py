@@ -43,6 +43,25 @@ class Grottos(commands.Cog):
                  location: Option(str, "Location (Ex. 05)", required=True)):
         await self.grotto_command(ctx, material, environment, suffix, level, location)
 
+    @discord.slash_command(description="Get instructions to a grotto location")
+    async def grotto_location(self, ctx,
+                              location: Option(str, "Location (Ex. 05)", required=True)):
+        if not re.match(r'^[0-9a-fA-F]{2}$', location) or not 1 <= int(location, 16) <= 150:
+            embed = create_embed("Invalid location. Please provide a valid location code (Ex. 05)")
+            await ctx.respond(embed=embed)
+            return
+        with open("data/locations.json", "r") as f:
+            locations = json.load(f)["locations"]
+            description = "**%s**: ||%s||" % (location, locations[location])
+            embed = create_embed("Location Instructions", description=description)
+
+            file_name = "grotto_images/%s.png" % location
+            with open(file_name, 'rb') as fp:
+                data = io.BytesIO(fp.read())
+            file = discord.File(data, file_name.removeprefix("grotto_images/"))
+            embed.set_image(url="attachment://%s" % file_name.removeprefix("grotto_images/"))
+            await ctx.respond(embed=embed, file=file)
+
     @discord.slash_command(description="Translate a Grotto")
     async def grotto_translate(self, ctx,
                                material: Option(str, "Material (Ex. Granite)", choices=grotto_prefixes["english"],
@@ -303,7 +322,8 @@ class Grottos(commands.Cog):
 
         title = "Translation of: %s" % titlecase(all_languages[translation_languages_simple.index(language_input)])
         color = discord.Color.green()
-        embed = create_embed(title, color=color, error="Any errors? Want to contribute data? Please speak to %s" % dev_tag)
+        embed = create_embed(title, color=color,
+                             error="Any errors? Want to contribute data? Please speak to %s" % dev_tag)
         if language_output is not None:
             value = all_languages[translation_languages.index(language_output)]
             if value != "":

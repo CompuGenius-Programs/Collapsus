@@ -46,6 +46,7 @@ class Grottos(commands.Cog):
     @discord.slash_command(description="Get instructions to a grotto location")
     async def grotto_location(self, ctx,
                               location: Option(str, "Location (Ex. 05)", required=True)):
+        location = location.upper()
         if not re.match(r'^[0-9a-fA-F]{2}$', location) or not 1 <= int(location, 16) <= 150:
             embed = create_embed("Invalid location. Please provide a valid location code (Ex. 05)")
             await ctx.respond(embed=embed)

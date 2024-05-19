@@ -8,7 +8,7 @@ from PIL import Image
 from discord.ext.pages import Paginator, Page
 
 dev_tag = "@CompuGeniusPrograms"
-dev_paypal = "paypal.me/cgprograms | venmo.com/CompuGeniusCode"
+dev_paypal = "patreon.com/compugeniusprograms | paypal.me/cgprograms | venmo.com/CompuGeniusCode"
 
 
 def create_embed(title, description=None, color=discord.Color.green(),
@@ -47,7 +47,7 @@ def create_collage(files, file_name):
     collage.save(file_name)
 
 
-def create_paginator(embeds, files=None):
+def create_paginator(embeds, files=None, views=None):
     pages = []
     for entry in embeds:
         if files is None:
@@ -60,7 +60,7 @@ def create_paginator(embeds, files=None):
                 data = io.BytesIO(fp.read())
             file = discord.File(data, file_name.removeprefix("collages/"))
             entry.set_image(url="attachment://%s" % file_name.removeprefix("collages/"))
-            page = Page(embeds=[entry], files=[file])
+            page = Page(embeds=[entry], files=[file], custom_view=views[embeds.index(entry)] if views else None)
         pages.append(page)
     return Paginator(pages=pages)
 

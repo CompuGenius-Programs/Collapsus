@@ -7,6 +7,7 @@ import dotenv
 from discord import Option
 from titlecase import titlecase
 
+import grotto_db
 import parsers
 from utils import create_embed, clean_text, dev_tag
 
@@ -127,9 +128,9 @@ async def _translate(ctx, phrase: Option(str, "Word or Phrase (Ex. Copper Sword)
 
     translations = data["translations"]
 
-    index = next(filter(lambda t: clean_text(t.get(parsers.translation_languages_simple[
-        parsers.translation_languages.index(language_input)], "").lower()) == clean_text(phrase.lower()), translations),
-                 None)
+    index = next(filter(lambda t: clean_text(
+        t.get(parsers.translation_languages_simple[parsers.translation_languages.index(language_input)],
+              "").lower()) == clean_text(phrase.lower()), translations), None)
     if index is None:
         embed = create_embed("No word or phrase found matching `%s`. Please check phrase and try again." % phrase,
                              error="Any errors? Want to contribute data? Please speak to %s" % dev_tag)
@@ -205,6 +206,7 @@ async def _character(ctx):
     await ctx.respond(embed=embed)
 
 
+grotto_db.create_table()
 cogs = [f"cogs.{f[:-3]}" for f in os.listdir("cogs") if f.endswith(".py")]
 for cog in cogs:
     bot.load_extension(cog)

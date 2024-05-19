@@ -89,6 +89,24 @@ class Song:
     url: str = ""
 
 
+@dataclass
+class Grotto:
+    """Class for a grotto."""
+    name: str
+    url: str
+    special: int
+    seed: str
+    rank: str
+    type: str
+    floors: str
+    boss: str
+    monster_rank: str
+    chests: str
+    locations: str
+    notes: str = ""
+    owner: str = ""
+
+
 translation_languages = ["English", "Japanese (日本語)", "Spanish (Español)", "French (Français)", "German (Deutsch)",
                          "Italian (Italiano)"]
 

@@ -9,6 +9,9 @@ from discord.ext import commands
 from parsel import Selector
 from titlecase import titlecase
 
+import grotto_db
+import parsers
+from main import guild_id
 from parsers import grotto_prefixes, grotto_environments, grotto_suffixes, translation_languages, is_special, \
     create_grotto, grotto_keys, grotto_ranks, Translation, translation_languages_simple
 from utils import create_embed, dev_tag, create_paginator, create_collage
@@ -18,11 +21,42 @@ def setup(bot):
     bot.add_cog(Grottos(bot))
 
 
+class SaveGrottoModal(discord.ui.Modal):
+    def __init__(self, grotto):
+        super().__init__(title="Save Grotto")
+        self.grotto = grotto
+
+        self.add_item(discord.ui.InputText(label="Grotto Notes", placeholder="Cool Grotto"))
+
+    async def callback(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+        self.grotto.notes = self.children[0].value
+        if grotto_db.confirm_unique_note(self.grotto.owner, self.grotto.notes):
+            grotto_db.insert_grotto(self.grotto)
+            await interaction.followup.send("Grotto saved successfully!", ephemeral=True)
+        else:
+            await interaction.followup.send("Grotto with the same notes already exists. Please enter a unique note.",
+                                            ephemeral=True)
+            return
+
+
+class SaveGrottoView(discord.ui.View):
+    def __init__(self, grotto):
+        super().__init__()
+        self.grotto = grotto
+
+    @discord.ui.button(label="Save Grotto", style=discord.ButtonStyle.primary)
+    async def button_callback(self, button, interaction):
+        self.grotto.owner = interaction.user.id
+        await interaction.response.send_modal(SaveGrottoModal(self.grotto))
+
+
 class Grottos(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.grotto_bot_channel = 845339551173050389
         self.grotto_search_url = "https://www.yabd.org/apps/dq9/grottosearch.php"
+        self.contributor_role = 1241808955580219453
 
     @discord.slash_command(description="Search for a Grotto")
     async def grotto(self, ctx,
@@ -31,7 +65,8 @@ class Grottos(commands.Cog):
                                          required=True),
                      suffix: Option(str, "Suffix (Ex. of Woe)", choices=grotto_suffixes["english"], required=True),
                      level: Option(int, required=True), location: Option(str, required=False)):
-        await self.grotto_command(ctx, material, environment, suffix, level, location)
+        await self.grotto_command(ctx, material, environment, suffix, level, location,
+                                  ctx.author.get_role(self.contributor_role) is not None)
 
     @discord.slash_command(description="Search for a Grotto (Location Required)")
     async def gg(self, ctx,
@@ -41,11 +76,56 @@ class Grottos(commands.Cog):
                  suffix: Option(str, "Suffix (Ex. of Woe)", choices=grotto_suffixes["english"], required=True),
                  level: Option(int, "Level (Ex. 1)", required=True),
                  location: Option(str, "Location (Ex. 05)", required=True)):
-        await self.grotto_command(ctx, material, environment, suffix, level, location)
+        await self.grotto_command(ctx, material, environment, suffix, level, location,
+                                  ctx.author.get_role(self.contributor_role) is not None)
+
+    @discord.slash_command(description="Browse saved personal grottos", guild_ids=[guild_id])
+    async def my_grottos(self, ctx):
+        if ctx.author.get_role(self.contributor_role) is None:
+            embed = create_embed("You must be a contributor to use this command.")
+            await ctx.respond(embed=embed)
+            return
+        grottos = grotto_db.get_grottos(ctx.author.id)
+        if len(grottos) == 0:
+            embed = create_embed("No grottos saved. Save a grotto with the /grotto command.",
+                                 footer="Thank you for supporting development!")
+            await ctx.respond(embed=embed, ephemeral=True)
+            return
+
+        page_count = len(grottos) // 8 + 1
+        embeds = []
+
+        for i in range(page_count):
+            name = f"{ctx.author.display_name}'s Personal Grotto List - Page {i + 1}"
+            description = ""
+
+            for grotto in grottos[i * 8:(i + 1) * 8]:
+                grotto_numb = grottos.index(grotto) + 1
+                if grotto.special:
+                    grotto.name = ":star: %s :star:" % grotto.name
+                description += f"**{grotto_numb}**: **[{grotto.name}]({grotto.url})**: {grotto.notes}\n\n"
+
+            embed = create_embed(name, description=description, footer="Thank you for supporting development!")
+            embeds.append(embed)
+
+        paginator = create_paginator(embeds)
+        await paginator.respond(ctx.interaction, ephemeral=True)
+
+    @discord.slash_command(description="Delete a saved personal grotto", guild_ids=[guild_id])
+    async def delete_grotto(self, ctx, grotto_note: Option(str, "Grotto Note", required=True)):
+        if ctx.author.get_role(self.contributor_role) is None:
+            embed = create_embed("You must be a contributor to use this command.")
+            await ctx.respond(embed=embed)
+            return
+        if grotto_db.delete_grotto(ctx.author.id, grotto_note):
+            embed = create_embed("Grotto deleted successfully.", footer="Thank you for supporting development!")
+        else:
+            embed = create_embed("Grotto with that note does not exist.",
+                                 footer="Thank you for supporting development!")
+        await ctx.respond(embed=embed, ephemeral=True)
 
     @discord.slash_command(description="Get instructions to a grotto location")
-    async def grotto_location(self, ctx,
-                              location: Option(str, "Location (Ex. 05)", required=True)):
+    async def grotto_location(self, ctx, location: Option(str, "Location (Ex. 05)", required=True)):
         location = location.upper()
         if not re.match(r'^[0-9a-fA-F]{2}$', location) or not 1 <= int(location, 16) <= 150:
             embed = create_embed("Invalid location. Please provide a valid location code (Ex. 05)")
@@ -149,14 +229,18 @@ class Grottos(commands.Cog):
         await self.translate_grotto_command(ctx, material, environment, suffix, "italian", language_output, level,
                                             location)
 
-    async def grotto_command(self, ctx, material, environment, suffix, level, location):
+    async def grotto_command(self, ctx, material, environment, suffix, level, location, premium):
         if not ctx.response.is_done():
             await ctx.defer()
 
-        embeds, files = await self.grotto_func(material, environment, suffix, level, location)
+        embeds, files, grottos = await self.grotto_func(material, environment, suffix, level, location)
 
         if len(embeds) > 1:
-            paginator = create_paginator(embeds, files)
+            if premium:
+                views = [SaveGrottoView(grotto) for grotto in grottos]
+                paginator = create_paginator(embeds, files, views)
+            else:
+                paginator = create_paginator(embeds, files)
             await paginator.respond(ctx.interaction)
         else:
             if len(embeds) == 1:
@@ -173,9 +257,17 @@ class Grottos(commands.Cog):
                 file = None
 
             if file is not None:
-                await ctx.followup.send(embed=embed, file=file)
+                if premium:
+                    view = SaveGrottoView(grottos[0])
+                    await ctx.followup.send(embed=embed, file=file, view=view)
+                else:
+                    await ctx.followup.send(embed=embed, file=file)
             else:
-                await ctx.followup.send(embed=embed)
+                if premium:
+                    view = SaveGrottoView(grottos[0])
+                    await ctx.followup.send(embed=embed, view=view)
+                else:
+                    await ctx.followup.send(embed=embed)
 
     async def grotto_func(self, material, environment, suffix, level, location):
         async with aiohttp.ClientSession() as session:
@@ -195,12 +287,13 @@ class Grottos(commands.Cog):
                 text = await response.text()
                 selector = Selector(text=text)
                 divs = selector.xpath('//div[@class="inner"]//text()')
-                grottos = divs.getall()
+                grottos_res = divs.getall()
 
                 embeds = []
                 files = []
+                grottos = []
 
-                for parsed in create_grotto(grottos):
+                for parsed in create_grotto(grottos_res):
                     special = is_special(parsed)
                     color = discord.Color.gold() if special else discord.Color.green()
                     embed = create_embed(None, color=color)
@@ -209,6 +302,13 @@ class Grottos(commands.Cog):
                         parsed = parsed[1:]
 
                     zipped = zip(range(len(parsed)), grotto_keys, parsed)
+
+                    seed = ""
+                    rank = ""
+                    type = ""
+                    floors = ""
+                    boss = ""
+                    monster_rank = ""
 
                     chests_value = ""
                     locations_values = []
@@ -228,16 +328,25 @@ class Grottos(commands.Cog):
                         else:
                             if key == "Seed":
                                 value = str(value).zfill(4)
+                                seed = value
                             if key == "Rank":
                                 value = str(value).replace(" / ", "/")
+                                rank = value
+                            if key == "Type":
+                                type = value
+                            if key == "Floors":
+                                floors = value
+                            if key == "Boss":
+                                boss = value
                             if key == "Monster Rank":
                                 pattern = r'\((.*?)\)'
                                 matches = re.findall(pattern, value)
                                 value = '-'.join(matches)
+                                monster_rank = value
                             if key == "Chests":
-                                values = [str(x) for x in parsed[i:i + 10] if int(x) != 0]
+                                values = [str(x) for x in parsed[i:i + 10]]
                                 chests = list(zip(grotto_ranks, values))
-                                value = ", ".join([': '.join(x) for x in chests])
+                                value = ", ".join([': '.join(x) for x in chests if x[1] != "0"])
                                 chests_value = value
                             if key == "Locations":
                                 values = [str(x).zfill(2) for x in parsed[i + 9:]]
@@ -259,7 +368,17 @@ class Grottos(commands.Cog):
                     embed.url = str(response.url)
                     embeds.append(embed)
 
-            return embeds, files
+                    name = embed.title.replace(":star: ", "").replace(" :star:", "").split("\n")[0]
+                    locations = locations_values
+                    chests = chests_value.replace("*", "").split(", ")
+                    if len(chests) > 0 and chests[0] != "":
+                        chests = {x.split(": ")[0]: x.split(": ")[1] for x in chests}
+                    grotto = parsers.Grotto(name=name, url=embed.url, special=int(special), seed=seed, rank=rank,
+                                            type=type, floors=floors, boss=boss, monster_rank=monster_rank,
+                                            chests=str(chests), locations=str(locations))
+                    grottos.append(grotto)
+
+            return embeds, files, grottos
 
     async def translate_grotto_command(self, ctx, material, environment, suffix, language_input, language_output, level,
                                        location):

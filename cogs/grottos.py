@@ -111,6 +111,62 @@ class Grottos(commands.Cog):
         paginator = create_paginator(embeds)
         await paginator.respond(ctx.interaction, ephemeral=True)
 
+    @discord.slash_command(description="Get a saved personal grotto", guild_ids=[guild_id])
+    async def get_grotto(self, ctx, grotto_note: Option(str, "Grotto Note", required=True)):
+        if ctx.author.get_role(self.contributor_role) is None:
+            embed = create_embed("You must be a contributor to use this command.")
+            await ctx.respond(embed=embed)
+            return
+        grotto = grotto_db.get_grotto(ctx.author.id, grotto_note)
+        if grotto is None:
+            embed = create_embed("Grotto with that note does not exist.",
+                                 footer="Thank you for supporting development!")
+            await ctx.respond(embed=embed, ephemeral=True)
+            return
+
+        if grotto.special:
+            grotto.name = ":star: %s :star:" % grotto.name
+        title = f"{grotto.name} - {grotto.notes}"
+        description = '''
+**Seed:** %s | **Rank:** %s
+
+**Type:** %s | **Floors:** %s
+
+**Boss:** %s | **Monster Rank:** %s
+        ''' % (grotto.seed, grotto.rank, grotto.type, grotto.floors, grotto.boss, grotto.monster_rank)
+
+        files = []
+
+        if grotto.chests != "":
+            grotto.chests = grotto.chests.replace("'", "\"")
+            chests = json.loads(grotto.chests)
+            description += "\n**Chests**\n%s\n" % ", ".join([f"**{k}**: {v}" for k, v in chests.items()])
+        if grotto.locations != "":
+            description += "\n**Locations**"
+
+            grotto.locations = grotto.locations.replace("'", "\"")
+            locations_values = json.loads(grotto.locations)
+            with open("data/locations.json", "r") as f:
+                locations = json.load(f)["locations"]
+                for location in locations_values:
+                    description += "\n**%s**: ||%s||" % (location, locations[location])
+                    files.append({"id": 0, "file": "grotto_images/%s.png" % location})
+
+        embed = create_embed(title, description=description, footer="Thank you for supporting development!")
+
+        fs = [file["file"] for file in files if file["id"] == 0]
+        file_name = "collages/collage0.png"
+        create_collage(fs, file_name)
+        with open(file_name, 'rb') as fp:
+            data = io.BytesIO(fp.read())
+        file = discord.File(data, file_name.removeprefix("collages/"))
+        embed.set_image(url="attachment://%s" % file_name.removeprefix("collages/"))
+
+        if grotto.special:
+            embed.color = discord.Color.gold()
+
+        await ctx.respond(embed=embed, file=file, ephemeral=True)
+
     @discord.slash_command(description="Delete a saved personal grotto", guild_ids=[guild_id])
     async def delete_grotto(self, ctx, grotto_note: Option(str, "Grotto Note", required=True)):
         if ctx.author.get_role(self.contributor_role) is None:

@@ -59,6 +59,17 @@ def get_grottos(user_id):
     return grottos
 
 
+def get_grotto(user_id, grotto_note):
+    conn = sqlite3.connect('grottos.db')
+    c = conn.cursor()
+
+    c.execute('''SELECT * FROM grottos WHERE owner = ? AND notes = ?''', (user_id, grotto_note))
+    grotto_db = c.fetchone()
+
+    conn.close()
+    return parsers.Grotto(*grotto_db) if grotto_db else None
+
+
 def confirm_unique_note(user_id, note):
     conn = sqlite3.connect('grottos.db')
     c = conn.cursor()

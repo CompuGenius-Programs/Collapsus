@@ -1,4 +1,5 @@
 import io
+import itertools
 import json
 import re
 
@@ -208,23 +209,23 @@ class Grottos(commands.Cog):
             await ctx.respond(embed=embed, ephemeral=True)
             return
 
-        page_count = len(grottos) // 8 + 1
-        embeds = []
-
-        for i in range(page_count):
-            name = f"All Personal Grotto List - Page {i + 1}"
+        # split grottos into pages per owner
+        pages = []
+        for owner, grottos in itertools.groupby(grottos, key=lambda x: x.owner):
+            grottos = list(grottos)
+            name = f"{grottos[0].owner}'s Personal Grotto List"
             description = ""
 
-            for grotto in grottos[i * 8:(i + 1) * 8]:
+            for grotto in grottos:
                 grotto_numb = grottos.index(grotto) + 1
                 if grotto.special:
                     grotto.name = ":star: %s :star:" % grotto.name
                 description += f"**{grotto_numb}**: **[{grotto.name}]({grotto.url})**: {grotto.notes}\n\n"
 
             embed = create_embed(name, description=description, footer="Thank you for supporting development!")
-            embeds.append(embed)
+            pages.append(embed)
 
-        paginator = create_paginator(embeds)
+        paginator = create_paginator(pages)
         await paginator.respond(ctx.interaction, ephemeral=True)
 
     @discord.slash_command(description="Get instructions to a grotto location")

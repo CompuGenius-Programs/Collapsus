@@ -1,6 +1,7 @@
 import sqlite3
 
 import parsers
+from cogs.grottos import Grottos
 
 
 def create_table():
@@ -58,7 +59,18 @@ def delete_grotto(user_id, grotto_note):
     return c.rowcount > 0
 
 
-def get_grottos(user_id):
+def get_grottos(user_id, all_grottos=False):
+    if all_grottos and user_id == Grottos.admin_user:
+        conn = sqlite3.connect('grottos.db')
+        c = conn.cursor()
+
+        c.execute('''SELECT * FROM grottos''')
+        grottos_db = c.fetchall()
+
+        conn.close()
+        grottos = [parsers.Grotto(*grotto) for grotto in grottos_db]
+        return grottos
+
     conn = sqlite3.connect('grottos.db')
     c = conn.cursor()
 

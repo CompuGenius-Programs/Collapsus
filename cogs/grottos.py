@@ -26,7 +26,8 @@ class SaveGrottoModal(discord.ui.Modal):
         super().__init__(title="Save Grotto")
         self.grotto = grotto
 
-        self.add_item(discord.ui.InputText(label="Grotto Notes", placeholder="Cool Grotto"))
+        self.add_item(
+            discord.ui.InputText(style=discord.InputTextStyle.long, label="Grotto Notes", placeholder="Cool Grotto"))
 
     async def callback(self, interaction: discord.Interaction):
         await interaction.response.defer()
@@ -56,6 +57,7 @@ class Grottos(commands.Cog):
         self.bot = bot
         self.grotto_bot_channel = 845339551173050389
         self.grotto_search_url = "https://www.yabd.org/apps/dq9/grottosearch.php"
+        self.admin_user = 496392770374860811
         self.contributor_role = 1241808955580219453
 
     @discord.slash_command(description="Search for a Grotto")
@@ -193,6 +195,37 @@ class Grottos(commands.Cog):
             embed = create_embed("Grotto with that note does not exist.",
                                  footer="Thank you for supporting development!")
         await ctx.respond(embed=embed, ephemeral=True)
+
+    @discord.slash_command(description="View all saved grottos", guild_ids=[guild_id])
+    async def all_grottos(self, ctx):
+        if ctx.author.id != self.admin_user:
+            embed = create_embed("Invalid permissions.")
+            await ctx.respond(embed=embed)
+            return
+        grottos = grotto_db.get_grottos(ctx.author.id, True)
+        if len(grottos) == 0:
+            embed = create_embed("No grottos saved.", footer="Thank you for supporting development!")
+            await ctx.respond(embed=embed, ephemeral=True)
+            return
+
+        page_count = len(grottos) // 8 + 1
+        embeds = []
+
+        for i in range(page_count):
+            name = f"All Personal Grotto List - Page {i + 1}"
+            description = ""
+
+            for grotto in grottos[i * 8:(i + 1) * 8]:
+                grotto_numb = grottos.index(grotto) + 1
+                if grotto.special:
+                    grotto.name = ":star: %s :star:" % grotto.name
+                description += f"**{grotto_numb}**: **[{grotto.name}]({grotto.url})**: {grotto.notes}\n\n"
+
+            embed = create_embed(name, description=description, footer="Thank you for supporting development!")
+            embeds.append(embed)
+
+        paginator = create_paginator(embeds)
+        await paginator.respond(ctx.interaction, ephemeral=True)
 
     @discord.slash_command(description="Get instructions to a grotto location")
     async def grotto_location(self, ctx, location: Option(str, "Location (Ex. 05)", required=True)):

@@ -167,6 +167,20 @@ class Grottos(commands.Cog):
 
         await ctx.respond(embed=embed, file=file, ephemeral=True)
 
+    @discord.slash_command(description="Update the notes of a saved personal grotto", guild_ids=[guild_id])
+    async def update_grotto(self, ctx, old_note: Option(str, "Grotto Note", required=True),
+                            new_note: Option(str, "New Grotto Note", required=True)):
+        if ctx.author.get_role(self.contributor_role) is None:
+            embed = create_embed("You must be a contributor to use this command.")
+            await ctx.respond(embed=embed)
+            return
+        if grotto_db.update_grotto(ctx.author.id, old_note, new_note):
+            embed = create_embed("Grotto updated successfully.", footer="Thank you for supporting development!")
+        else:
+            embed = create_embed("Grotto with that note does not exist.",
+                                 footer="Thank you for supporting development!")
+        await ctx.respond(embed=embed, ephemeral=True)
+
     @discord.slash_command(description="Delete a saved personal grotto", guild_ids=[guild_id])
     async def delete_grotto(self, ctx, grotto_note: Option(str, "Grotto Note", required=True)):
         if ctx.author.get_role(self.contributor_role) is None:

@@ -36,6 +36,17 @@ def insert_grotto(grotto):
     conn.close()
 
 
+def update_grotto(user_id, old_note, new_note):
+    conn = sqlite3.connect('grottos.db')
+    c = conn.cursor()
+
+    c.execute('''UPDATE grottos SET notes = ? WHERE owner = ? AND notes = ?''', (new_note, user_id, old_note))
+    conn.commit()
+    conn.close()
+
+    return c.rowcount > 0
+
+
 def delete_grotto(user_id, grotto_note):
     conn = sqlite3.connect('grottos.db')
     c = conn.cursor()

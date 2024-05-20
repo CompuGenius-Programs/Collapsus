@@ -213,7 +213,7 @@ class Grottos(commands.Cog):
         for owner, grottos in itertools.groupby(grottos, key=lambda x: x.owner):
             grottos = list(grottos)
             owner = self.bot.get_user(int(owner))
-            name = f"'{owner.display_name} - Personal Grotto List"
+            name = f"{owner.display_name} - Personal Grotto List"
             description = ""
 
             for grotto in grottos:

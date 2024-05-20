@@ -99,7 +99,7 @@ class Grottos(commands.Cog):
         embeds = []
 
         for i in range(page_count):
-            name = f"{ctx.author.display_name}'s Personal Grotto List - Page {i + 1}"
+            name = f"{ctx.author.display_name} - Personal Grotto List - Page {i + 1}"
             description = ""
 
             for grotto in grottos[i * 8:(i + 1) * 8]:
@@ -213,7 +213,7 @@ class Grottos(commands.Cog):
         for owner, grottos in itertools.groupby(grottos, key=lambda x: x.owner):
             grottos = list(grottos)
             owner = self.bot.get_user(int(owner))
-            name = f"{owner.display_name}'s Personal Grotto List"
+            name = f"'{owner.display_name} - Personal Grotto List"
             description = ""
 
             for grotto in grottos:

@@ -1,7 +1,6 @@
 import sqlite3
 
 import parsers
-from cogs.grottos import Grottos
 
 
 def create_table():
@@ -60,7 +59,7 @@ def delete_grotto(user_id, grotto_note):
 
 
 def get_grottos(user_id, all_grottos=False):
-    if all_grottos and user_id == Grottos.admin_user:
+    if all_grottos and user_id == 496392770374860811:
         conn = sqlite3.connect('grottos.db')
         c = conn.cursor()
 

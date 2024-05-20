@@ -209,11 +209,11 @@ class Grottos(commands.Cog):
             await ctx.respond(embed=embed, ephemeral=True)
             return
 
-        # split grottos into pages per owner
         pages = []
         for owner, grottos in itertools.groupby(grottos, key=lambda x: x.owner):
             grottos = list(grottos)
-            name = f"{grottos[0].owner}'s Personal Grotto List"
+            owner = self.bot.get_user(int(owner))
+            name = f"{owner.display_name}'s Personal Grotto List"
             description = ""
 
             for grotto in grottos:

@@ -48,8 +48,6 @@ async def on_ready():
     await bot.change_presence(
         activity=discord.Activity(type=discord.ActivityType.watching, name="over The Quester's Rest. Type /help ."))
 
-    print('\n'.join([f"</{command.name}:{command.id}>" for command in bot.commands]))
-
 
 @bot.command(name="help", description="Get help for using the bot.")
 async def _help(ctx):
@@ -68,7 +66,7 @@ A bot created by <@{dev_id}> for The Quester's Rest (<{server_invite_url + serve
 </stop:1132497509353267275> - *Stop playing songs*
 </translate:1038483499121913956> - *Translate a word or phrase*
 </grotto_location:1241043446882500681> - *Get grotto location info - <#{grotto_bot_commands_channel}> only*
-</grotto_translate:1194960010875256892> [language] - *Translate a grotto - <#{grotto_bot_commands_channel}> only*
+/grotto_translate [language] - *Translate a grotto - <#{grotto_bot_commands_channel}> only*
 
 </help:977004400352583690> - *Displays this message*
 '''

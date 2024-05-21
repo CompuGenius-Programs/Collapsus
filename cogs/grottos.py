@@ -14,7 +14,7 @@ import grotto_db
 import parsers
 from main import guild_id, grotto_translate
 from parsers import grotto_prefixes, grotto_environments, grotto_suffixes, translation_languages, is_special, \
-    create_grotto, grotto_keys, grotto_ranks, Translation, translation_languages_simple
+    create_grotto, grotto_keys, grotto_chest_ranks, Translation, translation_languages_simple
 from utils import create_embed, dev_tag, create_paginator, create_collage
 
 
@@ -58,6 +58,7 @@ class Grottos(commands.Cog):
         self.bot = bot
         self.grotto_bot_channel = 845339551173050389
         self.grotto_search_url = "https://www.yabd.org/apps/dq9/grottosearch.php"
+        self.grotto_details_url = "https://www.yabd.org/apps/dq9/grottodetails.php?map="
         self.admin_user = 496392770374860811
         self.contributor_role = 1241808955580219453
 
@@ -450,7 +451,7 @@ class Grottos(commands.Cog):
                                 monster_rank = value
                             if key == "Chests":
                                 values = [str(x) for x in parsed[i:i + 10]]
-                                chests = list(zip(grotto_ranks, values))
+                                chests = list(zip(grotto_chest_ranks, values))
                                 value = ", ".join([': '.join(x) for x in chests if x[1] != "0"])
                                 chests_value = value
                             if key == "Locations":
@@ -470,7 +471,8 @@ class Grottos(commands.Cog):
                             for location in locations_values:
                                 description += "\n**%s**: ||%s||" % (location, locations[location])
                     embed.description = description
-                    embed.url = str(response.url)
+                    # embed.url = str(response.url)
+                    embed.url = self.grotto_details_url + parsers.grotto_ranks[int(rank[0])] + seed
                     embeds.append(embed)
 
                     name = embed.title.replace(":star: ", "").replace(" :star:", "").split("\n")[0]

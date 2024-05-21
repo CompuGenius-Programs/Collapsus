@@ -133,7 +133,9 @@ for index, translation in enumerate(data['translations']):
 grotto_special = "Has a special floor"
 grotto_keys = ("Seed", "Rank", "Name", "Boss", "Type", "Floors", "Monster Rank", "Chests", "Locations")
 
-grotto_ranks = ["**S**", "**A**", "**B**", "**C**", "**D**", "**E**", "**F**", "**G**", "**H**", "**I**"]
+grotto_chest_ranks = ["**S**", "**A**", "**B**", "**C**", "**D**", "**E**", "**F**", "**G**", "**H**", "**I**"]
+grotto_ranks = {1: "02", 2: "38", 3: "3D", 4: "4C", 5: "51", 6: "65", 7: "79", 8: "8D", 9: "A1", 10: "B5", 11: "C9",
+                12: "DD"}
 
 quests_regex = r'^(?:(?:(⭐) )?\*\*Quest #(\d+) - (.+)\*\*(?: \1)?(?:```yml)?|(\w+): (.+?)(?:```)?)$'
 cleanup_regex = r'([\w\d\.\-:/() ]+)'

@@ -198,12 +198,14 @@ class Grottos(commands.Cog):
         await ctx.respond(embed=embed, ephemeral=True)
 
     @discord.slash_command(description="View all saved grottos", guild_ids=[guild_id])
-    async def all_grottos(self, ctx):
+    async def all_grottos(self, ctx, user: Option(discord.User, "User", required=False)):
         if ctx.author.id != self.admin_user:
             embed = create_embed("Invalid permissions.")
             await ctx.respond(embed=embed)
             return
-        grottos = grotto_db.get_grottos(ctx.author.id, True)
+        if user is None:
+            user = ctx.author
+        grottos = grotto_db.get_grottos(user.id, True)
         if len(grottos) == 0:
             embed = create_embed("No grottos saved.", footer="Thank you for supporting development!")
             await ctx.respond(embed=embed, ephemeral=True)

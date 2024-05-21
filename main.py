@@ -15,6 +15,7 @@ dotenv.load_dotenv()
 token = os.getenv("TOKEN")
 
 bot = discord.Bot(intents=discord.Intents.all())
+grotto_translate = bot.create_group("grotto_translate", "Grotto Translation Commands")
 
 dev_id = 496392770374860811
 
@@ -47,27 +48,29 @@ async def on_ready():
     await bot.change_presence(
         activity=discord.Activity(type=discord.ActivityType.watching, name="over The Quester's Rest. Type /help ."))
 
+    print('\n'.join([f"</{command.name}:{command.id}>" for command in bot.commands]))
+
 
 @bot.command(name="help", description="Get help for using the bot.")
 async def _help(ctx):
     description = f'''
 A bot created by <@{dev_id}> for The Quester's Rest (<{server_invite_url + server_invite_code}>).
 
-**/character** - *Generate a random character*
-**/gg** - *Get grotto info (location required) - <#{grotto_bot_commands_channel}> only*
-**/grotto** - *Search for a grotto - <#{grotto_bot_commands_channel}> only*
-**/monster** - *Get monster info*
-**/quest** - *Get quest info*
-**/recipe** - *Get an item's recipe*
-**/recipe_cascade** - *Get cascading info about a recipe*
-**/song** - *Play a song*
-**/songs_all** - *Play all songs*
-**/stop** - *Stop playing songs*
-**/translate** - *Translate a word or phrase*
-**/grotto_location** - *Get grotto location info - <#{grotto_bot_commands_channel}> only*
-**/grotto_translate(\_[language])** - *Translate a grotto - <#{grotto_bot_commands_channel}> only*
+</character:984820203483459635> - *Generate a random character*
+</gg:1038001809660334122> - *Get grotto info (location required) - <#{grotto_bot_commands_channel}> only*
+</grotto:1038001809660334121> - *Search for a grotto - <#{grotto_bot_commands_channel}> only*
+</monster:980895182859935765> - *Get monster info*
+</quest:977175507558875167> - *Get quest info*
+</recipe:977175507558875168> - *Get an item's recipe*
+</recipe_cascade:1236865730683863070> - *Get cascading info about a recipe*
+</song:1132033677585563799> - *Play a song*
+</songs_all:1132513511570935809>- *Play all songs*
+</stop:1132497509353267275> - *Stop playing songs*
+</translate:1038483499121913956> - *Translate a word or phrase*
+</grotto_location:1241043446882500681> - *Get grotto location info - <#{grotto_bot_commands_channel}> only*
+</grotto_translate:1194960010875256892> [language] - *Translate a grotto - <#{grotto_bot_commands_channel}> only*
 
-**/help** - *Displays this message*
+</help:977004400352583690> - *Displays this message*
 '''
 
     if ctx.guild_id != guild_id:

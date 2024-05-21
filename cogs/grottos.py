@@ -471,8 +471,7 @@ class Grottos(commands.Cog):
                             for location in locations_values:
                                 description += "\n**%s**: ||%s||" % (location, locations[location])
                     embed.description = description
-                    # embed.url = str(response.url)
-                    embed.url = self.grotto_details_url + parsers.grotto_ranks[int(rank[0])] + seed
+                    embed.url = self.grotto_details_url + parsers.grotto_ranks[int(rank.split()[0])] + seed
                     embeds.append(embed)
 
                     name = embed.title.replace(":star: ", "").replace(" :star:", "").split("\n")[0]

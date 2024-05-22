@@ -933,8 +933,8 @@
       "result": "gold bar",
       "location": [
         "quest #161",
-        "rank b grotto chest",
         "rank s grotto chest",
+        "rank b grotto chest",
         "au-1000",
         "drakularge",
         "gem jamboree",
@@ -1316,7 +1316,7 @@
         "hunter mech",
         "lonely coast",
         "robo-robin",
-        "western coffinewell"
+        "western coffinwell"
       ]
     },
     {
@@ -1931,8 +1931,8 @@
       "location": [
         "quest #144",
         "quest #162",
-        "rank a grotto chest",
         "rank s grotto chest",
+        "rank a grotto chest",
         "cap'n max meddlin' store",
         "gem slime",
         "greygnarl",
@@ -2286,10 +2286,10 @@
     {
       "result": "sage's elixir",
       "location": [
+        "rank s grotto chest",
         "rank a grotto chest",
         "rank b grotto chest",
         "rank c grotto chest",
-        "rank s grotto chest",
         "dreadmaster",
         "freezing fog",
         "hootingham-gore"

@@ -2,6 +2,6 @@
 
 I've been revived by @CompuGeniusPrograms to aid guests in The Quester's Rest.
 
-Consider supporting the developer using [Paypal](https://paypal.me/cgprograms) or [Venmo](https://venmo.com/CompuGeniusCode)
+Premium Features can be obtained by becoming a [Patreon](patreon.com/compugeniusprograms)
 
 https://github.com/CompuGenius-Programs/Collapsus

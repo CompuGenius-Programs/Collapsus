@@ -116,7 +116,8 @@ class Grottos(commands.Cog):
         await paginator.respond(ctx.interaction, ephemeral=True)
 
     @discord.slash_command(description="Get a saved personal grotto", guild_ids=[guild_id])
-    async def get_grotto(self, ctx, grotto_note: Option(str, "Grotto Note", required=True)):
+    async def get_grotto(self, ctx, grotto_note: Option(str, "Grotto Note", required=True),
+                         private: Option(bool, "Keep Private", required=False) = False):
         if ctx.author.get_role(self.contributor_role) is None:
             embed = create_embed("You must be a contributor to use this command.")
             await ctx.respond(embed=embed)
@@ -169,7 +170,7 @@ class Grottos(commands.Cog):
         if grotto.special:
             embed.color = discord.Color.gold()
 
-        await ctx.respond(embed=embed, file=file, ephemeral=True)
+        await ctx.respond(embed=embed, file=file, ephemeral=private)
 
     @discord.slash_command(description="Update the notes of a saved personal grotto", guild_ids=[guild_id])
     async def update_grotto(self, ctx, old_note: Option(str, "Grotto Note", required=True),

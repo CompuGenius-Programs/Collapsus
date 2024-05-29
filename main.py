@@ -15,7 +15,6 @@ dotenv.load_dotenv()
 token = os.getenv("TOKEN")
 
 bot = discord.Bot(intents=discord.Intents.all())
-grotto_translate = bot.create_group("grotto_translate", "Grotto Translation Commands")
 
 dev_id = 496392770374860811
 

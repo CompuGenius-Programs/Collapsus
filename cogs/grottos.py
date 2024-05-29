@@ -7,12 +7,13 @@ import aiohttp
 import discord
 from discord import Option
 from discord.ext import commands
+from discord.commands import SlashCommandGroup
 from parsel import Selector
 from titlecase import titlecase
 
 import grotto_db
 import parsers
-from main import guild_id, grotto_translate
+from main import guild_id
 from parsers import grotto_prefixes, grotto_environments, grotto_suffixes, translation_languages, is_special, \
     create_grotto, grotto_keys, grotto_chest_ranks, Translation, translation_languages_simple
 from utils import create_embed, dev_tag, create_paginator, create_collage
@@ -62,6 +63,8 @@ class Grottos(commands.Cog):
         self.admin_user = 496392770374860811
         self.contributor_role = 1241808955580219453
 
+    grotto_translate = SlashCommandGroup("grotto_translate", "Grotto Translation Commands")
+
     @discord.slash_command(description="Search for a Grotto")
     async def grotto(self, ctx,
                      material: Option(str, "Material (Ex. Granite)", choices=grotto_prefixes["english"], required=True),
@@ -69,8 +72,7 @@ class Grottos(commands.Cog):
                                          required=True),
                      suffix: Option(str, "Suffix (Ex. of Woe)", choices=grotto_suffixes["english"], required=True),
                      level: Option(int, required=True), location: Option(str, required=False)):
-        await self.grotto_command(ctx, material, environment, suffix, level, location,
-                                  ctx.author.get_role(self.contributor_role) is not None)
+        await self.grotto_command(ctx, material, environment, suffix, level, location)
 
     @discord.slash_command(description="Search for a Grotto (Location Required)")
     async def gg(self, ctx,
@@ -80,8 +82,7 @@ class Grottos(commands.Cog):
                  suffix: Option(str, "Suffix (Ex. of Woe)", choices=grotto_suffixes["english"], required=True),
                  level: Option(int, "Level (Ex. 1)", required=True),
                  location: Option(str, "Location (Ex. 05)", required=True)):
-        await self.grotto_command(ctx, material, environment, suffix, level, location,
-                                  ctx.author.get_role(self.contributor_role) is not None)
+        await self.grotto_command(ctx, material, environment, suffix, level, location)
 
     @discord.slash_command(description="Browse saved personal grottos", guild_ids=[guild_id])
     async def my_grottos(self, ctx):
@@ -336,12 +337,13 @@ class Grottos(commands.Cog):
         await self.translate_grotto_command(ctx, material, environment, suffix, "italian", language_output, level,
                                             location)
 
-    async def grotto_command(self, ctx, material, environment, suffix, level, location, premium):
+    async def grotto_command(self, ctx, material, environment, suffix, level, location):
         if not ctx.response.is_done():
             await ctx.defer()
 
         embeds, files, grottos = await self.grotto_func(material, environment, suffix, level, location)
 
+        premium = ctx.author.get_role(self.contributor_role) is not None
         if len(embeds) > 1:
             if premium:
                 views = [SaveGrottoView(grotto) for grotto in grottos]

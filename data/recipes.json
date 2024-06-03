@@ -278,7 +278,7 @@
     },
     {
       "type": "Spears",
-      "result": "gracos's trident",
+      "result": "gracos' trident",
       "qty1": 1,
       "item1": "trident",
       "qty2": 1,
@@ -902,7 +902,7 @@
     },
     {
       "type": "Whips",
-      "result": "empress's whip",
+      "result": "empress' whip",
       "qty1": 1,
       "item1": "queen's whip",
       "qty2": 1,
@@ -910,14 +910,13 @@
       "qty3": 1,
       "item3": "monarchic mark",
       "alchemiracle": false,
-      "notes": "",
-      "image": "https://www.woodus.com/den/gallery/graphics/dq9ds/weapon/empress_whip.png"
+      "notes": ""
     },
     {
       "type": "Whips",
       "result": "goddess whip",
       "qty1": 1,
-      "item1": "empress's whip",
+      "item1": "empress' whip",
       "qty2": 1,
       "item2": "goddess ring",
       "qty3": 1,
@@ -3879,7 +3878,7 @@
     },
     {
       "type": "Torso",
-      "result": "princess's robe",
+      "result": "princess' robe",
       "qty1": 1,
       "item1": "shimmering dress",
       "qty2": 1,
@@ -3893,7 +3892,7 @@
       "type": "Torso",
       "result": "queen's robe",
       "qty1": 1,
-      "item1": "princess's robe",
+      "item1": "princess' robe",
       "qty2": 1,
       "item2": "monarch's mittens",
       "qty3": 2,
@@ -3903,7 +3902,7 @@
     },
     {
       "type": "Torso",
-      "result": "empress's robe",
+      "result": "empress' robe",
       "qty1": 1,
       "item1": "queen's robe",
       "qty2": 1,
@@ -3911,8 +3910,7 @@
       "qty3": 3,
       "item3": "lambswool",
       "alchemiracle": false,
-      "notes": "",
-      "image": "https://www.woodus.com/den/gallery/graphics/dq9ds/armor/empress_robe.png"
+      "notes": ""
     },
     {
       "type": "Torso",
@@ -4216,9 +4214,9 @@
     },
     {
       "type": "Arms",
-      "result": "marquess's mittens",
+      "result": "marquess' mittens",
       "qty1": 1,
-      "item1": "mayoress's mittens",
+      "item1": "mayoress' mittens",
       "qty2": 1,
       "item2": "monarchic mark",
       "qty3": 0,
@@ -4230,7 +4228,7 @@
       "type": "Arms",
       "result": "monarch's mittens",
       "qty1": 1,
-      "item1": "marquess's mittens",
+      "item1": "marquess' mittens",
       "qty2": 1,
       "item2": "highness heels",
       "qty3": 0,

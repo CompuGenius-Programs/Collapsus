@@ -72,7 +72,7 @@ class Monsters(commands.Cog):
 
 **HP:** %s | **MP:** %s | **ATK:** %s | **DEF:** %s | **AGI:** %s
 
-__%% Damage Multipliers:__
+__**%% Damage Multipliers:**__
 **Fire:** %s | **Ice:** %s | **Wind:** %s
 **Blast:** %s | **Earth:** %s | **Dark:** %s | **Light:** %s
 

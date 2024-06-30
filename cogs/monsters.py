@@ -69,8 +69,10 @@ class Monsters(commands.Cog):
             description = '''
 **Family:** %s | **EXP:** %s | **Gold:** %s
 
+
 **HP:** %s | **MP:** %s | **ATK:** %s | **DEF:** %s | **AGI:** %s
 
+__\% Damage Multipliers:__
 **Fire:** %s | **Ice:** %s | **Wind:** %s
 **Blast:** %s | **Earth:** %s | **Dark:** %s | **Light:** %s
 

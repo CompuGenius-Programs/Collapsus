@@ -107,6 +107,16 @@ class Grotto:
     owner: str = ""
 
 
+@dataclass_json
+@dataclass
+class Quote:
+    """Class for a quote."""
+    name: str
+    author: str
+    content: str
+    aliases: list[str] = None
+
+
 translation_languages = ["English", "Japanese (日本語)", "Spanish (Español)", "French (Français)", "German (Deutsch)",
                          "Italian (Italiano)"]
 

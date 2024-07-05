@@ -44,6 +44,9 @@ async def on_ready():
         global server_invite_code
         server_invite_code = data["server_invite_code"]
 
+    for command in bot.commands:
+        print(f"Command: {command.name} | ID: {command.id}")
+
     await bot.change_presence(
         activity=discord.Activity(type=discord.ActivityType.watching, name="over The Quester's Rest. Type /help ."))
 
@@ -64,6 +67,7 @@ A bot created by <@{dev_id}> for The Quester's Rest (<{server_invite_url + serve
 </songs_all:1132513511570935809>- *Play all songs*
 </stop:1132497509353267275> - *Stop playing songs*
 </translate:1038483499121913956> - *Translate a word or phrase*
+</quote:1258579663354335302> - *Get a quote*
 </grotto_location:1241043446882500681> - *Get grotto location info - <#{grotto_bot_commands_channel}> only*
 /grotto_translate [language] - *Translate a grotto - <#{grotto_bot_commands_channel}> only*
 

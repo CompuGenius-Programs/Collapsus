@@ -2,7 +2,7 @@
     "quotes": [
         {
             "name": "BQ",
-            "author": "gradis",
+            "author": 263694336040894465,
             "content": "**Base Quality is based on:**```yml\n- Hero Highest level across all 12 vocations.\n- Hero Highest revocation number across all 12 vocations\n- The level of the last grotto beaten.```**Quality Ranges Between: 2 - 248\nExample BQ Calculation:**\n```yml\nHero Highest Level: 99\nHero Highest Revocation: +10\n(Each Revocation Adds 5 Quality, So 10*5 = 50)\nLevel of Last Grotto Beaten: 99\n99 + 50 + 99 = 248```",
             "image": "",
             "aliases": [
@@ -11,21 +11,21 @@
         },
         {
             "name": "Spreadsheet",
-            "author": "gradis",
-            "content": "You can find this information in my DQIX spreadsheet, listed [here](<https://discord.com/channels/655390550698098700/1197762578085064704/1197762592559616061>) in the server.",
+            "author": 263694336040894465,
+            "content": "You can find this information in my [DQIX spreadsheet](<https://docs.google.com/spreadsheets/d/10NEB9Kf_K6S1KAKvqHE-wt6VLY9vvSPeMWMvNKjR0Rg>).",
             "image": "",
             "aliases": []
         },
         {
             "name": "OldSchool",
-            "author": "gradis",
-            "content": "A lot of information within the [DQIX Resources forum channels](<https://discord.com/channels/655390550698098700/1143509536783736965>) are made cleaner than it used to be, however I know it's easier to link the regular archived channels still.\nIf you'd prefer having access to these old channels, type `?rank OldSchool` in [#Bot Commands Channel](<https://discord.com/channels/655390550698098700/692867688325709835>)",
+            "author": 263694336040894465,
+            "content": "A lot of information within <#1143509536783736965> are made cleaner than it used to be, however I know it's easier to link the regular archived channels still.\nIf you'd prefer having access to these old channels, type `?rank OldSchool` in <#692867688325709835>",
             "image": "",
             "aliases": []
         },
         {
             "name": "Metal Monsters",
-            "author": "compugeniusprograms",
+            "author": 263694336040894465,
             "content": "Metal Monsters:",
             "image": "https://cdn.discordapp.com/ephemeral-attachments/1258579665879302166/1258771878600900678/unknown.png?ex=6689422a&is=6687f0aa&hm=7b5031c6137810d1d08c92eb31e251782dc96ceb467d1f274b859060c0893496&",
             "aliases": []

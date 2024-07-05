@@ -114,6 +114,7 @@ class Quote:
     name: str
     author: str
     content: str
+    image: str = None
     aliases: list[str] = None
 
 

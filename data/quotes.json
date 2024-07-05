@@ -4,6 +4,7 @@
             "name": "BQ",
             "author": "gradis",
             "content": "**Base Quality is based on:**```yml\n- Hero Highest level across all 12 vocations.\n- Hero Highest revocation number across all 12 vocations\n- The level of the last grotto beaten.```**Quality Ranges Between: 2 - 248\nExample BQ Calculation:**\n```yml\nHero Highest Level: 99\nHero Highest Revocation: +10\n(Each Revocation Adds 5 Quality, So 10*5 = 50)\nLevel of Last Grotto Beaten: 99\n99 + 50 + 99 = 248```",
+            "image": "",
             "aliases": [
                 "bq"
             ]
@@ -12,18 +13,21 @@
             "name": "Spreadsheet",
             "author": "gradis",
             "content": "You can find this information in my DQIX spreadsheet, listed [here](<https://discord.com/channels/655390550698098700/1197762578085064704/1197762592559616061>) in the server.",
+            "image": "",
             "aliases": []
         },
         {
             "name": "OldSchool",
             "author": "gradis",
             "content": "A lot of information within the [DQIX Resources forum channels](<https://discord.com/channels/655390550698098700/1143509536783736965>) are made cleaner than it used to be, however I know it's easier to link the regular archived channels still.\nIf you'd prefer having access to these old channels, type `?rank OldSchool` in [#Bot Commands Channel](<https://discord.com/channels/655390550698098700/692867688325709835>)",
+            "image": "",
             "aliases": []
         },
         {
-            "name": "metal",
-            "author": "gradis",
-            "content": "https://cdn.discordapp.com/attachments/902573110409175130/1258666123075915817/unknown.png?ex=6688dfac&is=66878e2c&hm=42f7b607274260d74c28bd1a5edc53883bb71922d88bbd08417f7cd90821f501&",
+            "name": "Metal Monsters",
+            "author": "compugeniusprograms",
+            "content": "Metal Monsters:",
+            "image": "https://cdn.discordapp.com/ephemeral-attachments/1258579665879302166/1258771878600900678/unknown.png?ex=6689422a&is=6687f0aa&hm=7b5031c6137810d1d08c92eb31e251782dc96ceb467d1f274b859060c0893496&",
             "aliases": []
         }
     ]

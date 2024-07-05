@@ -45,7 +45,7 @@ async def on_ready():
         server_invite_code = data["server_invite_code"]
 
     for command in bot.commands:
-        print(f"Command: {command.name} | ID: {command.id}")
+        print(f"{command.name} | {command.id}")
 
     await bot.change_presence(
         activity=discord.Activity(type=discord.ActivityType.watching, name="over The Quester's Rest. Type /help ."))

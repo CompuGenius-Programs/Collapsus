@@ -41,7 +41,8 @@ class Quotes(commands.Cog):
             alias.lower() == quote_name.lower() for alias in q["aliases"])), None)
         quote = parsers.Quote.from_dict(index)
 
-        embed = create_embed(quote.name, description=quote.content, author=quote.author, color=discord.Color.green())
+        embed = create_embed(quote.name, description=quote.content, author=quote.author, color=discord.Color.green(),
+                             image=quote.image)
         if member is not None:
             await ctx.respond(member.mention, embed=embed)
         elif message_id is not None:
@@ -54,6 +55,7 @@ class Quotes(commands.Cog):
     @discord.slash_command(name="add_quote", description="Adds a quote.", guild_ids=[guild_id])
     async def _add_quote(self, ctx, quote_name: discord.Option(str, "Quote Name", required=True),
                          quote_content: discord.Option(str, "Quote Content", required=True),
+                         quote_image: discord.Option(discord.Attachment, "Quote Image", required=False),
                          quote_aliases: discord.Option(str, "Quote Aliases", required=False)):
         with open("data/quotes.json", "r", encoding="utf-8") as fp:
             data = json.load(fp)
@@ -66,7 +68,8 @@ class Quotes(commands.Cog):
             return await ctx.respond(embed=embed)
 
         aliases = quote_aliases.split(", ") if quote_aliases is not None else []
-        quote = parsers.Quote(quote_name, ctx.author.name, quote_content, aliases)
+
+        quote = parsers.Quote(quote_name, ctx.author.name, quote_content, quote_image.url, aliases)
         quotes.append(quote.to_dict())
 
         with open("data/quotes.json", "w", encoding="utf-8") as fp:

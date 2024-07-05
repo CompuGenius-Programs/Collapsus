@@ -40,7 +40,7 @@ class Admin(commands.Cog):
     async def _change_server_invite(self, ctx, invite_code: Option(str, "Server Invite Code", required=True)):
         main.server_invite_code = invite_code
 
-        with open("data/config.json", "w", encoding="utf-8") as fp:
+        with open("config.json", "w", encoding="utf-8") as fp:
             json.dump({"server_invite_code": main.server_invite_code}, fp, indent=2)
 
         embed = create_embed("Server Invite Code Changed", main.server_invite_url + main.server_invite_code)

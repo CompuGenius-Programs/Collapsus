@@ -39,7 +39,7 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
-    with open("data/config.json", "r", encoding="utf-8") as fp:
+    with open("config.json", "r", encoding="utf-8") as fp:
         data = json.load(fp)
         global server_invite_code
         server_invite_code = data["server_invite_code"]

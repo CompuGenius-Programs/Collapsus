@@ -41,7 +41,9 @@ class Quotes(commands.Cog):
             alias.lower() == quote_name.lower() for alias in q["aliases"])), None)
         quote = parsers.Quote.from_dict(index)
 
-        embed = create_embed(quote.name, description=quote.content, author=quote.author, color=discord.Color.green(),
+        author = ctx.guild.get_member(quote.author).display_name
+
+        embed = create_embed(quote.name, description=quote.content, author=author, color=discord.Color.green(),
                              image=quote.image)
         if member is not None:
             await ctx.respond(member.mention, embed=embed)
@@ -69,7 +71,7 @@ class Quotes(commands.Cog):
 
         aliases = quote_aliases.split(", ") if quote_aliases is not None else []
 
-        quote = parsers.Quote(quote_name, ctx.author.name, quote_content, quote_image.url, aliases)
+        quote = parsers.Quote(quote_name, ctx.author.id, quote_content, quote_image.url, aliases)
         quotes.append(quote.to_dict())
 
         with open("data/quotes.json", "w", encoding="utf-8") as fp:
@@ -108,7 +110,8 @@ class Quotes(commands.Cog):
         embeds = []
         for i in range(0, len(quotes)):
             quote = parsers.Quote.from_dict(quotes[i])
-            embed = create_embed(quote.name, description=quote.content, author=quote.author,
+            author = ctx.guild.get_member(quote.author).display_name
+            embed = create_embed(quote.name, description=quote.content, author=author,
                                  color=discord.Color.green(), image=quote.image)
             embeds.append(embed)
 

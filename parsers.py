@@ -112,7 +112,7 @@ class Grotto:
 class Quote:
     """Class for a quote."""
     name: str
-    author: str
+    author: int
     content: str
     image: str = None
     aliases: list[str] = None

@@ -6,7 +6,7 @@ from titlecase import titlecase
 
 import parsers
 from main import guild_id
-from utils import create_embed
+from utils import create_embed, create_paginator
 
 
 def setup(bot):
@@ -105,7 +105,12 @@ class Quotes(commands.Cog):
             data = json.load(fp)
 
         quotes = data["quotes"]
-        quote_list = "\n".join([quote["name"] for quote in quotes])
+        embeds = []
+        for i in range(0, len(quotes)):
+            quote = parsers.Quote.from_dict(quotes[i])
+            embed = create_embed(quote.name, description=quote.content, author=quote.author,
+                                 color=discord.Color.green(), image=quote.image)
+            embeds.append(embed)
 
-        embed = create_embed("Quote List", description=quote_list)
-        await ctx.respond(embed=embed, ephemeral=True)
+        paginator = create_paginator(embeds)
+        await paginator.respond(ctx.interaction, ephemeral=True)

@@ -71,7 +71,15 @@ class Quotes(commands.Cog):
 
         aliases = quote_aliases.split(", ") if quote_aliases is not None else []
 
-        quote = parsers.Quote(quote_name, ctx.author.id, quote_content, quote_image.url, aliases)
+        if quote_image is not None:
+            file = await quote_image.to_file()
+            embed = create_embed("Image quote created.", "**Do not delete this message.**")
+            message = await ctx.send(embed=embed, file=file)
+            quote_image_url = message.attachments[0].url
+        else:
+            quote_image_url = ""
+
+        quote = parsers.Quote(quote_name, ctx.author.id, quote_content, quote_image_url, aliases)
         quotes.append(quote.to_dict())
 
         with open("data/quotes.json", "w", encoding="utf-8") as fp:

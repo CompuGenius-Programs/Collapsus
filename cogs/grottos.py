@@ -95,7 +95,8 @@ class Grottos(commands.Cog):
 
         materials = [mat for mat in grotto_prefixes["english"] if mat.lower().startswith(material.lower())]
         environments = [env for env in grotto_environments["english"] if env.lower().startswith(environment.lower())]
-        suffixes = [suff for suff in grotto_suffixes["english"] if suff.lower().removeprefix('of ').startswith(suffix.lower())]
+        suffixes = [suff for suff in grotto_suffixes["english"] if
+                    suff.lower().removeprefix('of ').startswith(suffix.lower())]
 
         all_embeds = []
         all_files = []
@@ -283,17 +284,23 @@ class Grottos(commands.Cog):
         for owner, grottos in itertools.groupby(grottos, key=lambda x: x.owner):
             grottos = list(grottos)
             owner = self.bot.get_user(int(owner))
-            name = f"{owner.display_name} - Personal Grotto List"
-            description = ""
 
-            for grotto in grottos:
-                grotto_numb = grottos.index(grotto) + 1
-                if grotto.special:
-                    grotto.name = ":star: %s :star:" % grotto.name
-                description += f"**{grotto_numb}**: **[{grotto.name}]({grotto.url})**: {grotto.notes}\n\n"
+            page_count = len(grottos) // 14 + 1
+            embeds = []
 
-            embed = create_embed(name, description=description, footer="Thank you for supporting development!")
-            pages.append(embed)
+            for i in range(page_count):
+                name = f"{owner.display_name} - Personal Grotto List - Page {i + 1}"
+                description = ""
+
+                for grotto in grottos[i * 14:(i + 1) * 14]:
+                    grotto_numb = grottos.index(grotto) + 1
+                    if grotto.special:
+                        grotto.name = ":star: %s :star:" % grotto.name
+                    description += f"**{grotto_numb}**: **[{grotto.name}]({grotto.url})**: {grotto.notes}\n\n"
+
+                embed = create_embed(name, description=description, footer="Thank you for supporting development!")
+                embeds.append(embed)
+            pages.extend(embeds)
 
         paginator = create_paginator(pages)
         await paginator.respond(ctx.interaction, ephemeral=True)

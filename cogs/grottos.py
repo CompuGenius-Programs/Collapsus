@@ -6,8 +6,8 @@ import re
 import aiohttp
 import discord
 from discord import Option
-from discord.ext import commands
 from discord.commands import SlashCommandGroup
+from discord.ext import commands
 from parsel import Selector
 from titlecase import titlecase
 
@@ -83,6 +83,65 @@ class Grottos(commands.Cog):
                  level: Option(int, "Level (Ex. 1)", required=True),
                  location: Option(str, "Location (Ex. 05)", required=True)):
         await self.grotto_command(ctx, material, environment, suffix, level, location)
+
+    @discord.slash_command(description="Search for a Grotto Using Abbreviations (Location Required)")
+    async def gs(self, ctx, material: Option(str, "Material Abbreviation (Ex. G)", required=True),
+                 environment: Option(str, "Environment Abbreviation (Ex. T)", required=True),
+                 suffix: Option(str, "Suffix Abbreviation (Ex. of W)", required=True),
+                 level: Option(int, "Level (Ex. 1)", required=True),
+                 location: Option(str, "Location (Ex. 05)", required=True)):
+        materials = [mat for mat in grotto_prefixes["english"] if mat.lower().startswith(material.lower())]
+        environments = [env for env in grotto_environments["english"] if env.lower().startswith(environment.lower())]
+        suffixes = [suff for suff in grotto_suffixes["english"] if suff.lower().startswith(suffix.lower())]
+
+        all_embeds = []
+        all_files = []
+        all_grottos = []
+
+        for mat in materials:
+            for env in environments:
+                for suff in suffixes:
+                    embeds, files, grottos = await self.grotto_command(ctx, mat, env, suff, level, location,
+                                                                       abbreviations=True)
+                    if embeds is not None:
+                        all_embeds.extend(embeds)
+                        all_files.extend(files)
+                        all_grottos.extend(grottos)
+
+        premium = ctx.author.get_role(self.contributor_role) is not None
+        if len(all_embeds) > 1:
+            if premium:
+                views = [SaveGrottoView(grotto) for grotto in all_grottos]
+                paginator = create_paginator(all_embeds, all_files, views)
+            else:
+                paginator = create_paginator(all_embeds, all_files)
+            await paginator.respond(ctx.interaction)
+        else:
+            if len(all_embeds) == 1:
+                embed = all_embeds[0]
+                fs = [file["file"] for file in all_files if file["id"] == 0]
+                file_name = "collages/collage0.png"
+                create_collage(fs, file_name)
+                with open(file_name, 'rb') as fp:
+                    data = io.BytesIO(fp.read())
+                file = discord.File(data, file_name.removeprefix("collages/"))
+                embed.set_image(url="attachment://%s" % file_name.removeprefix("collages/"))
+            else:
+                embed = create_embed("No grotto found. Please check parameters and try again.")
+                file = None
+
+            if file is not None:
+                if premium:
+                    view = SaveGrottoView(all_grottos[0])
+                    await ctx.followup.send(embed=embed, file=file, view=view)
+                else:
+                    await ctx.followup.send(embed=embed, file=file)
+            else:
+                if premium and len(all_grottos) > 0:
+                    view = SaveGrottoView(all_grottos[0])
+                    await ctx.followup.send(embed=embed, view=view)
+                else:
+                    await ctx.followup.send(embed=embed)
 
     @discord.slash_command(description="Browse saved personal grottos", guild_ids=[guild_id])
     async def my_grottos(self, ctx):
@@ -337,11 +396,15 @@ class Grottos(commands.Cog):
         await self.translate_grotto_command(ctx, material, environment, suffix, "italian", language_output, level,
                                             location)
 
-    async def grotto_command(self, ctx, material, environment, suffix, level, location):
+    async def grotto_command(self, ctx, material, environment, suffix, level, location, abbreviations=False):
         if not ctx.response.is_done():
             await ctx.defer()
 
         embeds, files, grottos = await self.grotto_func(material, environment, suffix, level, location)
+        if abbreviations:
+            if len(embeds) == 0:
+                return None, None, None
+            return embeds, files, grottos
 
         premium = ctx.author.get_role(self.contributor_role) is not None
         if len(embeds) > 1:

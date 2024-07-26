@@ -372,7 +372,7 @@ class Grottos(commands.Cog):
                 else:
                     await ctx.followup.send(embed=embed, file=file)
             else:
-                if premium:
+                if premium and len(grottos) > 0:
                     view = SaveGrottoView(grottos[0])
                     await ctx.followup.send(embed=embed, view=view)
                 else:

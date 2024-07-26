@@ -95,7 +95,7 @@ class Grottos(commands.Cog):
 
         materials = [mat for mat in grotto_prefixes["english"] if mat.lower().startswith(material.lower())]
         environments = [env for env in grotto_environments["english"] if env.lower().startswith(environment.lower())]
-        suffixes = [suff for suff in grotto_suffixes["english"] if suff.lower().startswith(suffix.lower())]
+        suffixes = [suff for suff in grotto_suffixes["english"] if suff.lower().removeprefix('of ').startswith(suffix.lower())]
 
         all_embeds = []
         all_files = []
@@ -108,6 +108,9 @@ class Grottos(commands.Cog):
                                                                        abbreviations=True)
                     if embeds is not None:
                         all_embeds.extend(embeds)
+                        for file in files:
+                            embed = embeds[files.index(file)]
+                            file["id"] = all_embeds.index(embed)
                         all_files.extend(files)
                         all_grottos.extend(grottos)
 

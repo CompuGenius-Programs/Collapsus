@@ -90,6 +90,9 @@ class Grottos(commands.Cog):
                  suffix: Option(str, "Suffix Abbreviation (Ex. of W)", required=True),
                  level: Option(int, "Level (Ex. 1)", required=True),
                  location: Option(str, "Location (Ex. 05)", required=True)):
+        if not ctx.response.is_done():
+            await ctx.defer()
+
         materials = [mat for mat in grotto_prefixes["english"] if mat.lower().startswith(material.lower())]
         environments = [env for env in grotto_environments["english"] if env.lower().startswith(environment.lower())]
         suffixes = [suff for suff in grotto_suffixes["english"] if suff.lower().startswith(suffix.lower())]
@@ -397,8 +400,9 @@ class Grottos(commands.Cog):
                                             location)
 
     async def grotto_command(self, ctx, material, environment, suffix, level, location, abbreviations=False):
-        if not ctx.response.is_done():
-            await ctx.defer()
+        if not abbreviations:
+            if not ctx.response.is_done():
+                await ctx.defer()
 
         embeds, files, grottos = await self.grotto_func(material, environment, suffix, level, location)
         if abbreviations:

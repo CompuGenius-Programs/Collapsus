@@ -136,6 +136,10 @@ async def _translate(ctx, phrase: Option(str, "Word or Phrase (Ex. Copper Sword)
         t.get(parsers.translation_languages_simple[parsers.translation_languages.index(language_input)],
               "").lower()) == clean_text(phrase.lower()), translations), None)
     if index is None:
+        index = next(
+            filter(lambda t: clean_text(t.get("alias", "").lower()) == clean_text(phrase.lower()), translations), None)
+
+    if index is None:
         embed = create_embed("No word or phrase found matching `%s`. Please check phrase and try again." % phrase,
                              error="Any errors? Want to contribute data? Please speak to %s" % dev_tag)
         return await ctx.respond(embed=embed)

@@ -46,6 +46,26 @@ class Admin(commands.Cog):
         embed = create_embed("Server Invite Code Changed", main.server_invite_url + main.server_invite_code)
         await ctx.respond(embed=embed)
 
+    @discord.slash_command(name="edit_forum_message", guild_ids=[guild_id])
+    async def _edit_forum_message(self, ctx, channel: Option(discord.SlashCommandOptionType.channel, "Channel", required=True), thread_id: Option(str, "Thread ID", required=True), message_id: Option(str, "Message ID", required=True), content: Option(str, "Content", required=True)):
+        threads = await channel.archived_threads().flatten()
+        thread = discord.utils.get(threads, id=int(thread_id))
+        await thread.unarchive()
+        message = await thread.fetch_message(message_id)
+        await message.edit(content=content)
+        await thread.archive()
+
+        embed = create_embed("Message Edited", message.jump_url)
+        await ctx.respond(embed=embed, ephemeral=True)
+
+    @discord.slash_command(name="edit_message", guild_ids=[guild_id])
+    async def _edit_message(self, ctx, message_url: Option(str, "Message URL", required=True), content: Option(str, "Content", required=True)):
+        message = await commands.MessageConverter().convert(ctx, message_url)
+        await message.edit(content=content)
+
+        embed = create_embed("Message Edited", message.jump_url)
+        await ctx.respond(embed=embed, ephemeral=True)
+
     @discord.slash_command(name="migrate_resources", guild_ids=[guild_id])
     async def _migrate_resources(self, ctx):
         await ctx.defer()
